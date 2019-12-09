@@ -1,4 +1,4 @@
-## Contributing to UPOsHam
+## Contributing to the book
 
 Thank you for considering and taking the time to contribute!
 
