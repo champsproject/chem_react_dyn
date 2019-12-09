@@ -1,4 +1,7 @@
-
+---
+title: ""
+output: html_document
+---
 
 MA
 
@@ -35,13 +38,13 @@ _Dedicated to my family and my team_
 
 SN
 
-_Dedicated my mentors_
+_Dedicated to my mentors_
 
 
 SW
 
 _Dedicated to Lorena Barba, for her inspriration, and to all of students_
-_and  collaborators from I have learned much and who have made this project possible_
+_and  collaborators from whom I have learned much and who have made this project possible_
 
 
 
