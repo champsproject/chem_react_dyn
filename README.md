@@ -42,9 +42,9 @@ Contributing
 ------------
 
 Guidelines on how to contribute to this package can be found
-[here](https://github.com/champsproject/chem_react_dyn/blob/master/docs/contributing.md)
+[here](https://github.com/champsproject/chem_react_dyn/blob/docs/docs/contributing.md)
 along with the code of conduct
-[here](https://github.com/champsproject/chem_react_dyn/blob/master/docs/CODE_OF_CONDUCT.md)
+[here](https://github.com/champsproject/chem_react_dyn/blob/docs/docs/CODE_OF_CONDUCT.md)
 for engaging with the fellow contributors.
 
 Copyright and License
@@ -55,7 +55,7 @@ Copyright 2019
 All content is under Creative Commons Attribution [CC-BY
 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.txt) and all
 the python scripts are under [BSD-3
-clause](https://github.com/champsproject/chem_react_dyn/blob/master/docs/LICENSE).
+clause](https://github.com/champsproject/chem_react_dyn/blob/docs/docs/LICENSE).
 
 References
 ----------
