@@ -19,7 +19,7 @@ The following is a set of guidelines ([borrowed from the Atom project by Github]
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by the [Contributor Covenant](CODE_OF_CONDUCT.md). 
+This project and everyone participating in it is governed by the [Contributor Covenant](docs/CODE_OF_CONDUCT.md). 
 By participating, you are expected to uphold this code. Please report unacceptable behavior to [Prof. Stephen Wiggins](mailto:s.wiggins@bristol.ac.uk).
 
 ## What should I know before I get started?
@@ -32,8 +32,7 @@ We recommend using the Jupyter notebook or Markdown template files for contribut
 
 ### Reporting Bugs
 
-As per open-source *modus operandi*, open an issue in Github using the standard style listed [here](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#additional-notes). 
-Alternatively, you can send bug reports with a short description and the script to reproduce the error to the authors: [wl16298@bristol.ac.uk](mailto:wl16298@bristol.ac.uk) and or [shiba@vt.edu](mailto:shiba@vt.edu). 
+As per open-source *modus operandi*, open an issue in the Github repository for the book using the standard style listed [here](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#additional-notes).  
 
 
 
