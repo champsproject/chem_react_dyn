@@ -1,7 +1,3 @@
----
-title: "Chemical Reactions: A Journey into Phase Space"
-output: md_document
----
 # Chemical Reactions: A Journey into Phase Space
 
 **Authors**
