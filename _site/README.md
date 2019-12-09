@@ -1,11 +1,8 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3568210.svg)](https://doi.org/10.5281/zenodo.3568210)
-
 # Chemical Reactions: A Journey into Phase Space
 
 **Authors**
 
 Makrina Agaoglou, Broncio Aguilar-Sanjuan, Victor Jose García-Garrido, Rafael García-Meseguer, Francisco González-Montoya, Matthaios Katsanikas, Vladimír Krajňák, Shibabrat Naik, Stephen Wiggins
-
 
 Welcome to the GitHub repository! 
 
@@ -22,11 +19,9 @@ Researchers are increasingly finding that the conventional model describing chem
 Our vision and ambition for this book is to highlight the power and insight that “dynamical mathematics” can bring to the study of chemical reaction dynamics.  It is our hope that this book will encourage both mathematicians and chemists to further develop collaborative efforts  using the framework of applied and computational dynamical systems theory. An advantage of this open source project is that it provides an opportunity for a world wide scientific dialogue on this interdisciplinary topic. We warmly invite other researchers to join us in the further development of this topic and to participate in this way.
 
 
-
 ## Contributing
 
 Guidelines on how to contribute to this package can be found  [here](https://github.com/champsproject/chem_react_dyn/blob/docs/docs/contributing.md) along with the code of conduct [here](https://github.com/champsproject/chem_react_dyn/blob/docs/docs/CODE_OF_CONDUCT.md) for engaging with the fellow contributors.
-
 
 ## Copyright and License
 Copyright 2019

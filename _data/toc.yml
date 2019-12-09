@@ -24,6 +24,8 @@
   title: Preface
 - url: /prologue/prologue
   title: Prologue
+- url: /prologue/LDs/LDs_victor
+  title: Lagrangian Descriptors 
 - url: /fundamental_models/fundamental_models
   title: Fundamental Models
 - url: /act1/Morse/Morse
