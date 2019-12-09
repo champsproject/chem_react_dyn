@@ -1,80 +1,1592 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="" />
-  <title>System-bath</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>N-Degree-of-Freedom System-Bath Model 2</title>
+  <meta name="description" content="        N-Degree-of-Freedom System-Bath Model 2    $n$-Degree-of-Freedom System-Bath Model Introduction and Development of the Problem (REMOVE LD DESCRIPTION...">
+
+  <link rel="canonical" href="http://localhost:4444/act3/system_bath2/system_bath.html">
+  <link rel="alternate" type="application/rss+xml" title="CHAMPS Dynamical Systems Book" href="http://localhost:4444/feed.xml">
+
+  <meta property="og:url"         content="http://localhost:4444/act3/system_bath2/system_bath.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="N-Degree-of-Freedom System-Bath Model 2" />
+<meta property="og:description" content="        N-Degree-of-Freedom System-Bath Model 2    $n$-Degree-of-Freedom System-Bath Model Introduction and Development of the Problem (REMOVE LD DESCRIPTION..." />
+<meta property="og:image"       content="http://localhost:4444/images/logo/champs_logo.jpg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://localhost:4444/act3/system_bath2/system_bath.html",
+  "headline": "N-Degree-of-Freedom System-Bath Model 2",
+  "datePublished": "2019-12-09T16:38:44+00:00",
+  "dateModified": "2019-12-09T16:38:44+00:00",
+  "description": "        N-Degree-of-Freedom System-Bath Model 2    $n$-Degree-of-Freedom System-Bath Model Introduction and Development of the Problem (REMOVE LD DESCRIPTION...",
+  "author": {
+    "@type": "Person",
+    "name": "The CHAMPS group"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4444",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://localhost:4444",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    },
+    
+    // Number LaTeX-style equations
+    "TeX": {
+        equationNumbers: {
+          autoNumber: "all"
+        }
+    }
+    
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'jupyter/jupyter-book',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef",
+        mode: "python"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@latest/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.8.1/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52617120-7');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://localhost:4444") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
 </head>
-<body>
-<header>
-<h1 class="title">System-bath</h1>
-</header>
-<p><strong>Abstract</strong></p>
-<p>Reactive islands in phase space of isomerization have been useful for computing reaction rates since the work of De Leon, Marston, Davis <span class="citation" data-cites="davis_bottlenecks_1985 davis_phase_1987 marston_reactive_1989 de_leon_order_1989">(Davis 1985, 1987; Marston and De Leon 1989; De Leon and Marston 1989)</span>. We present an computational approach for obtaining the reactive islands based on computing the NHIM and its invariant manifolds. The results are presented in the context of isomerization reactions to show the direct connection between reactive islands as given by the invariant manifolds or detected using LD and sampling reactive trajectories and committor probabilities.</p>
-<h1 id="introduction">Introduction</h1>
-<p>Isomerization is one of the most prevalent reaction when studying atmospheric, medical, and industrial chemistry <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, and thus have garnered interest from both theoretical and applied chemistry <span class="citation" data-cites="wieder_dissociation_1962 mciver_structure_1972 dugave_cistrans_2003 donohoe_ruthenium-catalyzed_2009">(Wieder and Marcus 1962; McIver and Komornicki 1972; Dugave and Demange 2003; Donohoe, O’Riordan, and Rosa 2009)</span>. From an applied perspective, the influence of various solvents on the rate constant of conformational isomerization has been pursued for specific molecules <span class="citation" data-cites="price_solvent_1961 halicioglu_solvent_1969 flom_dynamic_1986 eberhardt_solvent_1992 duffy_solvent_1992">(Price and Snyder 1961; Halicioǧlu and Sinanoǧlu 1969; Flom, Nagarajan, and Barbara 1986; Eberhardt et al. 1992; Duffy, Severance, and Jorgensen 1992)</span>. From a theoretical perspective, as is adopted in this article, it is instructive to formulate a systematic approach for identifying reactive trajectories in the spirit of transition path sampling <span class="citation" data-cites="bolhuis_transition_2002">(Bolhuis et al. 2002)</span> and reactive islands <span class="citation" data-cites="davis_bottlenecks_1985 davis_phase_1987 marston_reactive_1989 de_leon_order_1989">(Davis 1985, 1987; Marston and De Leon 1989; De Leon and Marston 1989)</span>.</p>
-<h4 id="modeling-reaction-in-solvents.">Modeling reaction in solvents.</h4>
-<p>Following the derivation of the Langevin equations <span class="citation" data-cites="kramers_brownian_1940">(Kramers 1940)</span> and its generalized system dynamics in a heat bath <span class="citation" data-cites="zwanzig_nonlinear_1973">(Zwanzig 1973)</span>, the Kramers turnover of reaction rates (escape rates from a potential well) with increasing viscosity of the solvent (intensity of noise) has been used to obtain reaction rate expressions in gas and condensed phase reactions by Grote, Hynes, Pollak, Grabert, Hänggi <span class="citation" data-cites="pollak_theory_1989 pollak_transition-state_1995">(Pollak, Grabert, and Hänggi 1989; Pollak and Talkner 1995)</span>. The generalized Langevin equation of motion for a particle trapped in a one-dimensional well with a barrier height <span class="math inline">\(\mathcal{V}^{\ddagger}\)</span> and coupled to a medium such as gas or liquid is modeled by a bath with a viscosity parameter. This framework has received much attention in the literature where the system dynamics can be obtained explicitly. The Langevin dynamics represents the motion of the particle in a bath which is modeled using a large number of harmonic oscillators. In this set-up, the bath coordinates are coupled with the system coordinates, and the Hamiltonian is simply a sum of system and bath components. However, the system dynamics of a two or more degrees of freedom coupled with bath modes has not received a global analysis from a dynamical systems perspective of reactions. In this direction, the first step would be to consider a two degrees of freedom reaction with well-understood chemical observables such as <em>reaction coordinate</em>, and where the harmonic bath modes can be coupled to represent the reaction in a condensed phase. In this work, we will adopt the two degrees of freedom isomerization model of De Leon and Berne who have studied the chemical reaction dynamics extensively using a dynamical systems perspective <span class="citation" data-cites="de_leon_intramolecular_1981 de_leon_order_1989 de_leon_1991 de_leon_1991-1 de_leon_1992">(De Leon and Berne 1981; De Leon and Marston 1989; De Leon, Mehta, and Topper 1991b, 1991a; De Leon 1992)</span>. This model of isomerization describes the conformational change by the motion of an internal angle where the isomers are represented by the well in a double potential well separated by a barrier. The two degrees of freedom in the model correspond to the bond that undergoes structural change and to the bond that breaks above dissociation energy. Typically, this isomerization barrier height is lower than the dissociation energy of the molecule, and the activation energy for the isomerization is imparted by molecular collisions or photoexcitation.</p>
-<h4 id="effect-of-solvent-on-reaction-rates-and-role-of-phase-space-structures.">Effect of solvent on reaction rates and role of phase space structures.</h4>
-<p>Traditionally, the construction of a dividing surface (DS) was focused on critical points of the potential energy surface (PES), that is, in the configuration space describing the molecular system <span class="citation" data-cites="Komatsuzaki97 Komatsuzaki00">(Komatsuzaki and Nagoaka 1997; Komatsuzaki and Berry 2000)</span>. Critical points on the PES do have significance in phase space; they are the equilibrium points for zero momentum. But they continue to have influence for nonzero momentum for a range of energies above the energy of the equilibrium point. The construction of a DS separating the phase space into two parts, reactants and products, has been a focus from the dynamical systems point of view in recent years <span class="citation" data-cites="wiggins_impenetrable_2001 uzer_geometry_2002 waalkens2004direct">(Wiggins et al. 2001; Uzer et al. 2002; Waalkens and Wiggins 2004)</span>. In phase space, that is for nonzero momentum, the role of the <em>saddle point</em> is played by an <em>invariant manifold</em> of saddle stability type, the normally hyperbolic invariant manifold (NHIM) <span class="citation" data-cites="wiggins_geometry_1990 wiggins2013normally">(Wiggins 1990, 2013)</span>. In order to fully appreciate the NHIM and its role in reaction rate theory, it is useful to begin with a precursor concept the <em>periodic orbit dividing surface</em> or PODS. For systems with two DoF described by a natural Hamiltonian, kinetic plus potential energy, the problem of constructing the DS in phase space was solved during the 1970s by McLafferty, Pechukas and Pollak <span class="citation" data-cites="Pechukas73 Pechukas77 Pollak78 Pechukas79">(Pechukas and McLafferty 1973; Pechukas and Pollak 1977, 1979; Pollak and Pechukas 1978)</span>. They demonstrated that the DS at a specific energy is related to an invariant phase space structure, an unstable periodic orbit (UPO) which defines (it is the boundary of) the bottleneck in phase space through which the reaction occurs. The DS which intersects trajectories evolving from reactants to products can then be shown to have the geometry of a hemisphere in phase space whose boundary is the UPO. The same construction can be carried out for a DS intersecting trajectories crossing from products to reactants and these two hemispheres form a sphere for which the UPO is the equator. Generalisation of this construction of DS to high dimensional systems has been a central question in reaction dynamics and has only received a satisfactory answer in recent years <span class="citation" data-cites="wiggins_impenetrable_2001 uzer_geometry_2002 waalkens2004direct">(Wiggins et al. 2001; Uzer et al. 2002; Waalkens and Wiggins 2004)</span>. The key difficulty being the high dimensional analogue of the UPO used in the two DoF system for the construction of the DS and which is resolved by considering the NHIM, which has the appropriate dimensionality for anchoring the dividing surface in high dimensional phase space <span class="citation" data-cites="wiggins_geometry_1990">(Wiggins 1990)</span>. Normal hyperbolicity of these invariant manifolds means that their stability, in a precise sense, is of saddle type in the transverse direction, which implies that they possess stable and unstable invariant manifolds that are impenetrable barriers and mediate reactive trajectories in phase space. These invariant manifolds of the NHIM are structurally stable, that is, stable under perturbation <span class="citation" data-cites="wiggins2013normally">(Wiggins 2013)</span>. For two DoF systems, the NHIM is an unstable PO, and for an <span class="math inline">\(N &gt; 2\)</span> DoF system at a fixed energy, the NHIM has the topology of a <span class="math inline">\((2N-3)\)</span>-dimensional sphere and is the equator of a <span class="math inline">\((2N-2)\)</span>-dimensional sphere which is the DS. This DS can then be used to divide the <span class="math inline">\((2N-1)\)</span>-dimensional energy surface into two parts, reactants and products <span class="citation" data-cites="Gillilan91 Komatsuzaki96 Komatsuzaki97 Komatsuzaki00 Komatsuzaki02a">(Gillilan and Ezra 1991; Komatsuzaki and Nagaoka 1996; Komatsuzaki and Nagoaka 1997; Komatsuzaki and Berry 2000, 2002)</span>. An elementary description of the role of the NHIM in reaction dynamics is given in <span class="citation" data-cites="wiggins_role_2016">(Wiggins 2016)</span> along with description of their geometry using quadratic normal form Hamiltonians. Fundamental theorems assure the existence of the phase space structures  NHIM and its invariant manifolds for a range of energies above that of the saddle <span class="citation" data-cites="wiggins2013normally">(Wiggins 2013)</span>. However, the precise extent of this range, as well as the nature and consequences of any bifurcations of the phase space structures that might occur as energy is increased, is not known and is a topic of continuing research<span class="citation" data-cites="Li_bifurcation_2009 Inarrea_bifurcations_2011 Allahem_chaotic_2012 mauguiere_bifurcations_2013 mackay_bifurcations_2014 MacKay_morse_2015">(Li, Toda, and Komatsuzaki 2009; Inarrea et al. 2011; Allahem and Bartsch 2012; Mauguière et al. 2013; MacKay and Strub 2014; MacKay and Strub 2015)</span>.</p>
-<p>Thus, calculation of reaction rate (or flux) based on the geometry of phase space structures requires identifying trajectories that start in the <em>reactant</em> well, cross the dividing surface constructed from the NHIM, and reach the <em>product</em> well. This dividing surface has been shown to be the appropriate (locally no-recrossing) surface that reactive trajectories must cross since the calculated reaction rates do not need correction due to recrossings <span class="citation" data-cites="waalkens2004direct">(Waalkens and Wiggins 2004)</span>. This construction is in contrast to the “standard” transition-state-theory (TST) for constructing the dividing surface which is only exact in gas phase unimolecular reactions and when ergodicity of trajectories in the phase space holds <span class="citation" data-cites="pollak_transition-state_1995">(Pollak and Talkner 1995)</span>. As is now established, the no recrossing (locally) property of a dividing surface is a contribution of the phase space perspective of chemical reactions <span class="citation" data-cites="uzer_geometry_2002">(Uzer et al. 2002)</span>. While the standard TST relies on recrossing free surface for calculating reaction flux, a dividing surface constructed in the configuration space violates this condition in the case of solvent, and the TST based reaction rate is not exact. This violation of the recrossing property when DS is constructed in the configuration space of a reaction in a high viscosity solvent also follows from the Kramers’ diffusion model, Langevin equation, of chemical reactions <span class="citation" data-cites="pollak_transition-state_1995">(Pollak and Talkner 1995)</span>. Thus, finding the reactive trajectories, and the changes in the DS and NHIM due to a solvent presents a worthwhile step towards development of the role of phase space structures in reaction dynamics.</p>
-<p>The geometry of unimolecular reactions dynamics has been developed using a <span class="math inline">\(N\)</span> degrees of freedom Hamiltonian where the coordinates represent intermolecular bonds. As a natural step in studying unimolecular reaction dynamics in solvents, we adopt a model where the reaction coordinates (modeled as a system Hamiltonian) are coupled with a set of harmonic bath modes (modeled as a bath Hamiltonian) <span class="citation" data-cites="berezhkovskii_activated_1992 hershkovitz_multidimensional_1997 reese_curvilinear_1998 craig_chemical_2005">(Berezhkovskii, Pollak, and Zitserman 1992; Hershkovitz and Pollak 1997; Reese and Tucker 1998; Craig and Manolopoulos 2005)</span>. This is with the intention of parametrizing the effects of a bath (or solvent) on the system dynamics. This formulation of coupling harmonic bath modes with system dynamics also serves as a preliminary step in assessing the capabilities of a trajectory diagnostic called Lagrangian descriptors (LDs) <span class="citation" data-cites="mancho_2013">(Mancho et al. 2013)</span> in <em>realistic</em> (high dimensional) chemical systems. This system-bath model will also serve as a test bed for illustrating the use of LDs in directly computing the chemical observables. But before doing that, we would like to identify the reactive trajectories and develop a systematic approach for transition path sampling (in the sense of rare event sampling) for reactions in solvent. Thus, can we identify the qualitative changes in the isomerization of a molecule in the presence of a solvent? In particular, we would like to understand the influence of the coupling strength, the solvent’s viscosity, and the number of bath modes on the reactive trajectories. We will answer this using LDs which have been shown recently to be of use in detecting phase space structures that mediate reactive trajectories in dissipative, time-dependent models of chemical reactions <span class="citation" data-cites="junginger_uncovering_2016 junginger_transition_2016">(Junginger and Hernandez 2016b; Junginger, Craven, et al. 2016a)</span>, and for transition path sampling in two degrees of freedom models of chemical reactions <span class="citation" data-cites="patra_detecting_2018">(Patra and Keshavamurthy 2018)</span>. In this article, we will present an approach for sampling reactive trajectories and identifying reactive islands in high dimensional phase space of an isomerization reaction (system) in a solvent (bath coupled to each of the system configuration coordinates) which is following our work on quadratic normal form Hamiltonian systems <span class="citation" data-cites="naik2019afinding">(Naik, García-Garrido, and Wiggins 2019)</span>.</p>
-<p>This article is outlined as follows.</p>
-<h1 id="models-and-methods">Models and Methods</h1>
-<h2 id="system-dynamics-2-degrees-of-freedom-dof-isomerization">System dynamics: 2 degrees of freedom (DoF) isomerization</h2>
-<p>We will consider the two degrees-of-freedom Hamiltonian for a unimolecular conformational isomerization introduced and studied extensively by De Leon and co-authors <span class="citation" data-cites="de_leon_intramolecular_1981 de_leon_order_1989 Almeida1990 de_leon_1991 de_leon_1992">(De Leon and Berne 1981; De Leon and Marston 1989; Ozorio de Almeida et al. 1990; De Leon, Mehta, and Topper 1991b; De Leon 1992)</span>. This 2 degrees-of-freedom Hamiltonian is given by <span class="math display">\[\begin{aligned}
-\mathcal{H}(x,y,p_x,p_y) =&amp; T(p_x, p_y) + V_{\rm DB}(x,y)  \\
-=&amp; \frac{p_x^2}{2m_s} + \frac{p_y^2}{2m_s} + V_{\rm DB}(x,y)
-\end{aligned}
-\label{eqn:ham_db}\]</span> where the potential energy function <span class="math inline">\(V_{\rm DB}(x,y)\)</span> is (a detailed description is in the Appendix: <a href="#appsect:dbpot" data-reference-type="ref" data-reference="appsect:dbpot">[appsect:dbpot]</a>) <span class="math display">\[V_{\rm DB}(x,y) = D_x\left[ 1 - \exp(-\lambda x) \right]^2 + \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y^2(y^2 - 
-2y_w^2)\exp(-\zeta \lambda x) + \epsilon_s   
-\label{eqn:sys_pot}\]</span></p>
-<p>and we will focus on varying <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\zeta\)</span>.</p>
-<p>The underlying Hamiltonian vector field is given by <span class="math display">\[\begin{aligned}
-\dot{x} = \frac{\partial \mathcal{H}}{\partial p_x} &amp;= \frac{p_x}{m_s} \\
-\dot{y} = \frac{\partial \mathcal{H}}{\partial p_y} &amp;=  \frac{p_y}{m_s}  \\
-\dot{p_x} = - \frac{\partial \mathcal{H}}{\partial x}  &amp;= 2 D_x \lambda \exp(-\lambda x) 
-(\exp(-\lambda x) - 1) + \\ &amp; \qquad \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}\zeta 
-\lambda y^2(y^2 - 2y_w^2)\exp(-\zeta \lambda x)\\
-\dot{p_y} = -\frac{\partial \mathcal{H}}{\partial y} &amp;=  -4 
-\dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y(y^2 - y_w^2)\exp(- \zeta \lambda x)
-\end{aligned}
-\label{eqn:vec_field_db}\]</span></p>
-<p>The total energy will be denoted by <span class="math inline">\(\mathcal{H}(x,y,p_x,p_y) = E = E_{\rm saddle} + \Delta E\)</span> where <span class="math inline">\(\Delta E\)</span> is the excess energy above the isomerization barrier energy.</p>
-<p>The equilibrium points are located at <span class="math inline">\(\overline{q}_s = (0,0,0,0)\)</span> and at <span class="math inline">\(\overline{q}_c =(x_{eq},\pm y_w,0,0)\)</span> where the <span class="math inline">\(x\)</span>-coordinate, <span class="math inline">\(x_{eq}\)</span>, needs to be obtained using numerical root solver.</p>
-<p>The total energy of the equilibrium point <span class="math inline">\(\overline{q}_s\)</span> is <span class="math inline">\(\mathcal{H}(\overline{q}_s) = \epsilon_s\)</span> for all parameter values, and will be referred to as the <em>critical energy</em>. The total energy of the equilibrium point <span class="math inline">\(\overline{q}_c\)</span> is given by</p>
-<p><span class="math display">\[\mathcal{H}(\overline{q}_c) = D_x(1 - \exp(-\lambda x_{eq}))^2 - \mathcal{V}^{\ddagger} \exp(-\zeta \lambda x_{eq}) + \epsilon_s\]</span></p>
-<p>When <span class="math inline">\(\zeta = 0\)</span>, the equilibrium point <span class="math inline">\(\overline{q}_c\)</span> is at <span class="math inline">\((0,\pm y_w,0,0)\)</span>, and has total energy <span class="math inline">\(\epsilon_s - \mathcal{V}^{\ddagger}\)</span> (see Supplemental material for details).</p>
-<p><embed src="./figures/pe_contour_param_fig3-A1xy.pdf" style="width:33.0%" /> <embed src="./figures/pe_contour_param_fig3-B2x.pdf" style="width:33.0%" /> <embed src="./figures/pe_contour_param_fig3-C2x.pdf" style="width:33.0%" /> <span id="fig:pecontours_db" label="fig:pecontours_db">[fig:pecontours_db]</span></p>
-<p>Fig. 1. <strong>Potential energy function</strong> for the De Leon-Berne model of unimolecular isomerization for 3 different sets of coupling and range parameters used in<sub></sub>. It is to be noted that the potential energy surface is ``mostly’’ flat and then becomes steep for large <span class="math inline">\(x &lt; 0\)</span>. The coordinates of the saddle equilibrium point are also independent of the parameters and located at the origin.</p>
-<h2 id="system-bath-dynamics-2-dof-isomerization-coupled-with-bath-modes">System-bath dynamics: 2 DoF isomerization coupled with bath modes</h2>
-<p>In this section we describe the system-bath model for a system with two degrees-of-freedom (DoF). While system-bath models have received a great deal of attention in the chemistry and physics community, models with systems having more than 1 DoF have received much less attention.</p>
-<p>We will consider the 2 degree-of-freedom Hamiltonian <a href="#eqn:ham_db" data-reference-type="eqref" data-reference="eqn:ham_db">[eqn:ham_db]</a> coupled with harmonic oscillators for a system-bath model of the form <span class="citation" data-cites="berezhkovskii_activated_1992 hershkovitz_multidimensional_1997 reese_curvilinear_1998">(Berezhkovskii, Pollak, and Zitserman 1992; Hershkovitz and Pollak 1997; Reese and Tucker 1998)</span>:</p>
-<p><span class="math display">\[\begin{aligned}
-\mathcal{H}(x,y,x_j,y_j,p_x,p_y,p_{x_j},p_{y_j})  =  \underbrace{\frac{p_x^2}{2 m_s} +  \frac{p_y^2}{2 m_s} + V_{DB}(x,y)}_{\mbox{System Hamiltonian}} + &amp; \underbrace{\sum_{j=1}^{N_B} \frac{1}{2} \left[ \frac{p_{x_j}^2}{m_j} + \left(\omega_j x_j -\frac{c_{x,j} x}{\omega_j} \right)^2 \right]}_{\mbox{Coupling of the bath to $x$}} \\
-&amp; + \underbrace{\sum_{j=1}^{N_B} \frac{1}{2} \left[ \frac{p_{y_j}^2}{m_j} + \left(\omega_j y_j - \frac{c_{y,j} y}{\omega_j} \right)^2 \right]}_{\mbox{Coupling of the bath to $y$}} \\
-%&amp; = \mathcal{H}_{\mbox{system}} + \mathcal{H}_{\mbox{bath coupled to $x$}} + \mathcal{H}_{\mbox{bath coupled to $y$}}
-\end{aligned}
-\label{eqn:sb_ham}\]</span></p>
-<p>where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> denote the configuration space coordinates of the system, <span class="math inline">\(p_x\)</span> and <span class="math inline">\(p_y\)</span> are the associated conjugate momenta, <span class="math inline">\(p_{x_j}\)</span>, <span class="math inline">\(x_j\)</span> denote the <span class="math inline">\(j^{\rm th}\)</span> bath phase space coordinates associated with the system configuration space variable <span class="math inline">\(x\)</span>, and <span class="math inline">\(p_{y_j}\)</span>, <span class="math inline">\(y_j\)</span> denote the <span class="math inline">\(j^{\rm th}\)</span> bath phase space coordinates associated with the system configuration space variable <span class="math inline">\(y\)</span>. We assume that the frequencies, <span class="math inline">\(\omega_j\)</span>, are the same for each bath, and the coupling constants for each configuration space variable to the bath are given by <span class="math inline">\(c_{x,j}\)</span> and <span class="math inline">\(c_{y,j}\)</span>. In the supplemental material, we explicitly carry out the discretization that gives us the coupling constants <span class="math inline">\(c_{x,j}\)</span> and <span class="math inline">\(c_{y,j}\)</span> and the frequencies <span class="math inline">\(\omega_j\)</span>. These quantities are given by <span class="math display">\[\omega_j = -\omega_c \log \left(\frac{j-\frac{1}{2}}{N_B} \right),
-\quad j=1, \ldots, N_B \label{eqn:disc_freq_1}\]</span> and <span class="math display">\[\left.\begin{aligned}
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://champsproject.com"><img src="/images/logo/champs_logo.jpg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">CHAMPS Dynamical Systems Book</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/dedication">
+        <a class="c-sidebar__entry"
+          href="/docs/dedication.html"
+        >
+          
+            1.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/acknowledgements">
+        <a class="c-sidebar__entry"
+          href="/docs/acknowledgements.html"
+        >
+          
+            2.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/preface">
+        <a class="c-sidebar__entry"
+          href="/docs/preface.html"
+        >
+          
+            3.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/prologue">
+        <a class="c-sidebar__entry"
+          href="/prologue/prologue.html"
+        >
+          
+            4.
+          
+          Prologue
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/fundamental_models/fundamental_models">
+        <a class="c-sidebar__entry"
+          href="/fundamental_models/fundamental_models.html"
+        >
+          
+            5.
+          
+          Fundamental Models
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act1/Morse/Morse">
+        <a class="c-sidebar__entry"
+          href="/act1/Morse/Morse.html"
+        >
+          
+            6.
+          
+          Morse Oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/hamiltonian_sn/HSN_victor">
+        <a class="c-sidebar__entry"
+          href="/act2/hamiltonian_sn/HSN_victor.html"
+        >
+          
+            7.
+          
+          Saddle-Node Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/barbanis2D/barbanis2d">
+        <a class="c-sidebar__entry"
+          href="/act2/barbanis2D/barbanis2d.html"
+        >
+          
+            8.
+          
+          Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/caldera/caldera-1">
+        <a class="c-sidebar__entry"
+          href="/act2/caldera/caldera-1.html"
+        >
+          
+            9.
+          
+          Caldera model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/deLeon_Berne/deleon_berne">
+        <a class="c-sidebar__entry"
+          href="/act2/deLeon_Berne/deleon_berne.html"
+        >
+          
+            10.
+          
+          De Leon model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/system_bath1/system_bath1">
+        <a class="c-sidebar__entry"
+          href="/act2/system_bath1/system_bath1.html"
+        >
+          
+            11.
+          
+          System Bath 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/four_well_morse/booksprinttest_makrina">
+        <a class="c-sidebar__entry"
+          href="/act2/four_well_morse/booksprinttest_makrina.html"
+        >
+          
+            12.
+          
+          Four-well potential
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/double_morse/prueba">
+        <a class="c-sidebar__entry"
+          href="/act2/double_morse/prueba.html"
+        >
+          
+            13.
+          
+          Double-Morse oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/1-Ches/roam">
+        <a class="c-sidebar__entry"
+          href="/act2/1-Ches/roam.html"
+        >
+          
+            14.
+          
+          Chesnavich Model Part 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/2-Ches/roam_mass_energy_var">
+        <a class="c-sidebar__entry"
+          href="/act2/2-Ches/roam_mass_energy_var.html"
+        >
+          
+            15.
+          
+          Chesnavich Model Part 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/3-Ches/roamiso">
+        <a class="c-sidebar__entry"
+          href="/act2/3-Ches/roamiso.html"
+        >
+          
+            16.
+          
+          Chesnavich Model Part 3
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/barbanis_3dof/barbanis_3dof">
+        <a class="c-sidebar__entry"
+          href="/act3/barbanis_3dof/barbanis_3dof.html"
+        >
+          
+            17.
+          
+          Three degree-of-freedom Barbanis system
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath1/main">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath1/main.html"
+        >
+          
+            18.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath2/system_bath">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath2/system_bath.html"
+        >
+          
+            19.
+          
+          N-Degree-of-Freedom System-Bath Model 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="https://github.com/broncio123/champs-booksprint-planning">
+        <a class="c-sidebar__entry"
+          href="https://github.com/broncio123/champs-booksprint-planning"
+        >
+          
+          GitHub repository
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+                  <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">N-Degree-of-Freedom System-Bath Model 2</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="$n$-Degree-of-Freedom-System-Bath-Model">$n$-Degree-of-Freedom System-Bath Model<a class="anchor-link" href="#$n$-Degree-of-Freedom-System-Bath-Model"> </a></h1><h2 id="Introduction-and-Development-of-the-Problem">Introduction and Development of the Problem<a class="anchor-link" href="#Introduction-and-Development-of-the-Problem"> </a></h2><p>(REMOVE LD DESCRIPTION)</p>
+<p>Isomerization is one of the most prevalent reaction when studying
+atmospheric, medical, and industrial chemistry [^1], and thus have
+garnered interest from both theoretical and applied
+chemistry [@wieder_dissociation_1962; @mciver_structure_1972; @dugave_cistrans_2003; @donohoe_ruthenium-catalyzed_2009].
+From an applied perspective, the influence of various solvents on the
+rate constant of conformational isomerization has been pursued for
+specific
+molecules [@price_solvent_1961; @halicioglu_solvent_1969; @flom_dynamic_1986; @eberhardt_solvent_1992; @duffy_solvent_1992].
+From a theoretical perspective, as is adopted in this chapter, it is
+instructive to formulate a systematic approach for identifying reactive
+trajectories in the spirit of transition path
+sampling [@bolhuis_transition_2002] and reactive
+islands [@davis_bottlenecks_1985; @davis_phase_1987; @marston_reactive_1989; @de_leon_order_1989].</p>
+<p><strong>Modeling reaction in solvents</strong></p>
+<p>Following the derivation of the Langevin
+equations [@kramers_brownian_1940] and its generalized system dynamics
+in a heat bath [@zwanzig_nonlinear_1973], the Kramers turnover of
+reaction rates (escape rates from a potential well) with increasing
+viscosity of the solvent (intensity of noise) has been used to obtain
+reaction rate expressions in gas and condensed phase reactions by Grote,
+Hynes, Pollak, Grabert,
+Hänggi [@pollak_theory_1989; @pollak_transition-state_1995]. The
+generalized Langevin equation of motion for a particle trapped in a
+one-dimensional well with a barrier height $\mathcal{V}^{\ddagger}$ and
+coupled to a medium such as gas or liquid is modeled by a bath with a
+viscosity parameter. This framework has received much attention in the
+literature where the system dynamics can be obtained explicitly. The
+Langevin dynamics represents the motion of the particle in a bath which
+is modeled using a large number of harmonic oscillators. In this set-up,
+the bath coordinates are coupled with the system coordinates, and the
+Hamiltonian is simply a sum of system and bath components. However, the
+system dynamics of a two or more degrees of freedom coupled with bath
+modes has not received a global analysis from a dynamical systems
+perspective of reactions. In this direction, the first step would be to
+consider a two degrees of freedom reaction with well-understood chemical
+observables such as <em>reaction coordinate</em>, and where the harmonic bath
+modes can be coupled to represent the reaction in a condensed phase. In
+this work, we will adopt the two degrees of freedom isomerization model
+of De Leon and Berne who have studied the chemical reaction dynamics
+extensively using a dynamical systems
+perspective [@de_leon_intramolecular_1981; @de_leon_order_1989; @de_leon_1991; @de_leon_1991-1; @de_leon_1992].
+This model of isomerization describes the conformational change by the
+motion of an internal angle where the isomers are represented by the
+well in a double potential well separated by a barrier. The two degrees
+of freedom in the model correspond to the bond that undergoes structural
+change and to the bond that breaks above dissociation energy. Typically,
+this isomerization barrier height is lower than the dissociation energy
+of the molecule, and the activation energy for the isomerization is
+imparted by molecular collisions or photoexcitation.</p>
+<p><strong>Effect of solvent on reaction rates and role of phase space structures</strong></p>
+<p>Traditionally, the construction of a dividing surface (DS) was focused
+on critical points of the potential energy surface (PES), that is, in
+the configuration space describing the molecular
+system [@Komatsuzaki97; @Komatsuzaki00]. Critical points on the PES do
+have significance in phase space; they are the equilibrium points for
+zero momentum. But they continue to have influence for nonzero momentum
+for a range of energies above the energy of the equilibrium point. The
+construction of a DS separating the phase space into two parts,
+reactants and products, has been a focus from the dynamical systems
+point of view in recent
+years [@wiggins_impenetrable_2001; @uzer_geometry_2002; @waalkens2004direct].
+In phase space, that is for nonzero momentum, the role of the <em>saddle
+point</em> is played by an <em>invariant manifold</em> of saddle stability type,
+the normally hyperbolic invariant manifold
+(NHIM) [@wiggins_geometry_1990; @wiggins2013normally]. In order to fully
+appreciate the NHIM and its role in reaction rate theory, it is useful
+to begin with a precursor concept the <em>periodic orbit dividing surface</em>
+or PODS. For systems with two DoF described by a natural Hamiltonian,
+kinetic plus potential energy, the problem of constructing the DS in
+phase space was solved during the 1970s by McLafferty, Pechukas and
+Pollak [@Pechukas73; @Pechukas77; @Pollak78; @Pechukas79]. They
+demonstrated that the DS at a specific energy is related to an invariant
+phase space structure, an unstable periodic orbit (UPO) which defines
+(it is the boundary of) the bottleneck in phase space through which the
+reaction occurs. The DS which intersects trajectories evolving from
+reactants to products can then be shown to have the geometry of a
+hemisphere in phase space whose boundary is the UPO. The same
+construction can be carried out for a DS intersecting trajectories
+crossing from products to reactants and these two hemispheres form a
+sphere for which the UPO is the equator. Generalisation of this
+construction of DS to high dimensional systems has been a central
+question in reaction dynamics and has only received a satisfactory
+answer in recent years
+[@wiggins_impenetrable_2001; @uzer_geometry_2002; @waalkens2004direct].
+The key difficulty being the high dimensional analogue of the UPO used
+in the two DoF system for the construction of the DS and which is
+resolved by considering the NHIM, which has the appropriate
+dimensionality for anchoring the dividing surface in high dimensional
+phase space [@wiggins_geometry_1990]. Normal hyperbolicity of these
+invariant manifolds means that their stability, in a precise sense, is
+of saddle type in the transverse direction, which implies that they
+possess stable and unstable invariant manifolds that are impenetrable
+barriers and mediate reactive trajectories in phase space. These
+invariant manifolds of the NHIM are structurally stable, that is, stable
+under perturbation [@wiggins2013normally]. For two DoF systems, the NHIM
+is an unstable PO, and for an $N &gt; 2$ DoF system at a fixed energy, the
+NHIM has the topology of a $(2N-3)$-dimensional sphere and is the
+equator of a $(2N-2)$-dimensional sphere which is the DS. This DS can
+then be used to divide the $(2N-1)$-dimensional energy surface into two
+parts, reactants and
+products [@Gillilan91; @Komatsuzaki96; @Komatsuzaki97; @Komatsuzaki00; @Komatsuzaki02a].
+An elementary description of the role of the NHIM in reaction dynamics
+is given in [@wiggins_role_2016] along with description of their
+geometry using quadratic normal form Hamiltonians. Fundamental theorems
+assure the existence of the phase space structures  NHIM and its
+invariant manifolds for a range of energies above that of the saddle
+[@wiggins2013normally]. However, the precise extent of this range, as
+well as the nature and consequences of any bifurcations of the phase
+space structures that might occur as energy is increased, is not known
+and is a topic of continuing
+research[@Li_bifurcation_2009; @Inarrea_bifurcations_2011; @Allahem_chaotic_2012; @mauguiere_bifurcations_2013; @mackay_bifurcations_2014; @MacKay_morse_2015].</p>
+<p>Thus, calculation of reaction rate (or flux) based on the geometry of
+phase space structures requires identifying trajectories that start in
+the <em>reactant</em> well, cross the dividing surface constructed from the
+NHIM, and reach the <em>product</em> well. This dividing surface has been shown
+to be the appropriate (locally no-recrossing) surface that reactive
+trajectories must cross since the calculated reaction rates do not need
+correction due to recrossings [@waalkens2004direct]. This construction
+is in contrast to the "standard" transition-state-theory (TST) for
+constructing the dividing surface which is only exact in gas phase
+unimolecular reactions and when ergodicity of trajectories in the phase
+space holds [@pollak_transition-state_1995]. As is now established, the
+no recrossing (locally) property of a dividing surface is a contribution
+of the phase space perspective of chemical
+reactions [@uzer_geometry_2002]. While the standard TST relies on
+recrossing free surface for calculating reaction flux, a dividing
+surface constructed in the configuration space violates this condition
+in the case of solvent, and the TST based reaction rate is not exact.
+This violation of the recrossing property when DS is constructed in the
+configuration space of a reaction in a high viscosity solvent also
+follows from the Kramers' diffusion model, Langevin equation, of
+chemical reactions [@pollak_transition-state_1995]. Thus, finding the
+reactive trajectories, and the changes in the DS and NHIM due to a
+solvent presents a worthwhile step towards development of the role of
+phase space structures in reaction dynamics.</p>
+<p>The geometry of unimolecular reactions dynamics has been developed using
+a $N$ degrees of freedom Hamiltonian where the coordinates represent
+intermolecular bonds. As a natural step in studying unimolecular
+reaction dynamics in solvents, we adopt a model where the reaction
+coordinates (modeled as a system Hamiltonian) are coupled with a set of
+harmonic bath modes (modeled as a bath
+Hamiltonian) [@berezhkovskii_activated_1992; @hershkovitz_multidimensional_1997; @reese_curvilinear_1998; @craig_chemical_2005].
+This is with the intention of parametrizing the effects of a bath (or
+solvent) on the system dynamics. This formulation of coupling harmonic
+bath modes with system dynamics also serves as a preliminary step in
+assessing the capabilities of a trajectory diagnostic called Lagrangian
+descriptors (LDs) [@mancho_2013] in <em>realistic</em> (high dimensional)
+chemical systems. This system-bath model will also serve as a test bed
+for illustrating the use of LDs in directly computing the chemical
+observables. But before doing that, we would like to identify the
+reactive trajectories and develop a systematic approach for transition
+path sampling (in the sense of rare event sampling) for reactions in
+solvent. Thus, can we identify the qualitative changes in the
+isomerization of a molecule in the presence of a solvent? In particular,
+we would like to understand the influence of the coupling strength, the
+solvent's viscosity, and the number of bath modes on the reactive
+trajectories. We will answer this using LDs which have been shown
+recently to be of use in detecting phase space structures that mediate
+reactive trajectories in dissipative, time-dependent models of chemical
+reactions [@junginger_uncovering_2016; @junginger_transition_2016], and
+for transition path sampling in two degrees of freedom models of
+chemical reactions [@patra_detecting_2018]. In this article, we will
+present an approach for sampling reactive trajectories and identifying
+reactive islands in high dimensional phase space of an isomerization
+reaction (system) in a solvent (bath coupled to each of the system
+configuration coordinates) which is following our work on quadratic
+normal form Hamiltonian systems [@naik2019afinding].</p>
+<h3 id="Two-DoF-de-Leon-Berne-system-coupled-with-bath-modes">Two DoF de Leon-Berne system coupled with bath modes<a class="anchor-link" href="#Two-DoF-de-Leon-Berne-system-coupled-with-bath-modes"> </a></h3><p>In this section we describe the system-bath model for a system with two
+degrees-of-freedom (DoF). While system-bath models have received a great
+deal of attention in the chemistry and physics community, models with
+systems having more than 1 DoF have received much less attention.</p>
+<p>We will consider the 2 degree-of-freedom
+Hamiltonian <a href="#eqn:ham_db">[eqn:ham_db]</a>{reference-type="eqref"
+reference="eqn:ham_db"} coupled with harmonic oscillators for a
+system-bath model of the
+form [@berezhkovskii_activated_1992; @hershkovitz_multidimensional_1997; @reese_curvilinear_1998]:</p>
+\begin{align}
+\mathcal{H}(x,y,x_j,y_j,p_x,p_y,p_{x_j},p_{y_j})  =  \underbrace{\frac{p_x^2}{2 m_s} +  \frac{p_y^2}{2 m_s} + V_{DB}(x,y)}_{\text{System Hamiltonian}} + &amp; \underbrace{\sum_{j=1}^{N_B} \frac{1}{2} \left[ \frac{p_{x_j}^2}{m_j} + \left(\omega_j x_j -\frac{c_{x,j} x}{\omega_j} \right)^2 \right]}_{\text{Coupling of the bath to $x$}} \\
+&amp; + \underbrace{\sum_{j=1}^{N_B} \frac{1}{2} \left[ \frac{p_{y_j}^2}{m_j} + \left(\omega_j y_j - \frac{c_{y,j} y}{\omega_j} \right)^2 \right]}_{\text{Coupling of the bath to $y$}} \\
+%&amp; = \mathcal{H}_{\text{system}} + \mathcal{H}_{\text{bath coupled to $x$}} + \mathcal{H}_{\text{bath coupled to $y$}}
+\label{eqn:sb_ham}
+\end{align}<p>where $x$ and $y$ denote the configuration space coordinates of the
+system, $p_x$ and $p_y$ are the associated conjugate momenta, $p_{x_j}$,
+$x_j$ denote the $j^{\rm th}$ bath phase space coordinates associated
+with the system configuration space variable $x$, and $p_{y_j}$, $y_j$
+denote the $j^{\rm th}$ bath phase space coordinates associated with the
+system configuration space variable $y$. We assume that the frequencies,
+$\omega_j$, are the same for each bath, and the coupling constants for
+each configuration space variable to the bath are given by $c_{x,j}$ and
+$c_{y,j}$. We explicitly carry out the
+discretization that gives us the coupling constants $c_{x,j}$ and
+$c_{y,j}$ and the frequencies $\omega_j$.</p>
+<h4 id="Discretization-of-the-Spectral-Density:-Derivation-of-the-Parameters-of-the-Bath-{#app:discrete}">Discretization of the Spectral Density: Derivation of the Parameters of the Bath {#app:discrete}<a class="anchor-link" href="#Discretization-of-the-Spectral-Density:-Derivation-of-the-Parameters-of-the-Bath-{#app:discrete}"> </a></h4><p>The coupling of the bath of harmonic oscillators to the configuration
+space coordinates is described by a spectral density:</p>
+$$\begin{aligned}
+J_x (\omega) = \frac{\pi}{2} \sum_{i=1}^{N_B} \frac{c_{x,i}^2}{\omega_i} \delta (\omega - \omega_i), \label{x-disc_spec} \\
+J_y (\omega) = \frac{\pi}{2} \sum_{i=1}^{N_B}
+\frac{c_{y,i}^2}{\omega_i} \delta (\omega - \omega_i),
+\label{y-disc_spect}\end{aligned}$$<p>and these result from the discretization of a continuous Ohmic (linear)
+form with an exponential cutoff:</p>
+$$\begin{aligned}
+\bar{J}_x (\omega) = \eta_x \omega e^{-\frac{\omega}{\omega_{c}}}  , \label{z_1-cont_spec} \\
+\bar{J}_y (\omega) = \eta_y \omega e^{-\frac{\omega}{\omega_{c}}} , \label{z_2-cont_spect}\end{aligned}$$<p>the discretization that gives us the coupling constants $c_{x,j}$,
+$c_{y,j}$, and the frequencies $\omega_j$, and are given by
+$$\omega_j = -\omega_c \log \left(\frac{j-\frac{1}{2}}{N_B} \right),
+\quad j = 1, \ldots, N_B. \label{disc_freq_1}$$ and $$\begin{aligned}
+c_{x,j} = \sqrt{\frac{2 \eta_{x} \omega_{c}}{\pi N_B}} \, \omega_j, \label{coupling_x} \\
+c_{y,j} = \sqrt{\frac{2 \eta_{y} \omega_{c}}{\pi N_B}} \, \omega_j, \quad j = 1, \ldots, N_B. \label{coupling_y}\end{aligned}$$</p>
+<p>In this appendix we describe a scheme for discretizing the continuous
+spectral density which was given in [@craig_chemical_2005]. In the
+following we will drop the subscripts $z_1$ and $z_2$ on the various
+quantities for the sake of a simpler notation since we will follow the
+same discretization procedure for each spectral density. The subscripts
+can then be added back afterwards.</p>
+<p>Re-establishing the notation, the discrete spectral density function is
+given by:</p>
+$$J(\omega) = \frac{\pi}{2} \sum_{i=1}^{n_b} \frac{c_i^2}{\omega_i}
+\delta (\omega - \omega_i), \label{sf_disc}$$<p>and the continuous spectral density is given by:</p>
+$$\bar{J} (\omega) = \eta \omega e^{-\frac{\omega}{\omega_c}}.
+\label{sf_cont}$$<p>Discretization is obtained by carrying out the following steps.</p>
+<ol>
+<li><p>Require</p>
+<p>$$\int_{0}^{\infty} J(\omega) F(\omega) d \omega \approx</p>
+
+<pre><code>\int_{0}^{\infty} \bar{J} (\omega) F(\omega) d \omega,
+\label{quad_1}$$
+
+</code></pre>
+<p>for any integrable function $F(\omega)$</p>
+</li>
+<li><p>Substitute (<a href="#sf_disc">[sf_disc]</a>{reference-type="ref"
+reference="sf_disc"}) into the left-hand side of
+(<a href="#quad_1">[quad_1]</a>{reference-type="ref" reference="quad_1"}) to
+obtain:</p>
+<p>$$\frac{\pi}{2} \sum_{i=1}^{n_b} \frac{c_i^2}{\omega_i} F(\omega_i).</p>
+
+<pre><code>\label{quad_2}$$</code></pre>
+</li>
+<li><p>Approximate the right-hand side of
+(<a href="#quad_1">[quad_1]</a>{reference-type="ref" reference="quad_1"}) by
+an appropriate quadrature. This is the step that we will now carry
+out in detail.</p>
+</li>
+</ol>
+<p>The quadrature recommended in [@craig_chemical_2005] is the midpoint
+rule, after changing variables in the integral to $x =
+e^{-\frac{\omega}{\omega_c}}$. The reason that they give for choosing
+this quadrature is that it gives a uniform distribution of grid points
+in the unit interval $0 &lt; x_i &lt; 1$ and therefore a logarithmic
+distribution of bath frequencies $\omega_i = -\omega_c
+\log x_i$. They claim that such a distribution of bath frequencies is
+appropriate on physical grounds for an exponentially decaying density of
+bath states.</p>
+<p>The change of variables gives:</p>
+$$\begin{aligned}
+x = e^{-\frac{\omega}{\omega_c}}  \Rightarrow  \log x =
+-\frac{\omega}{\omega_c}  \Rightarrow \omega =-\omega_c \log x,
+\label{cv_1} \\
+dx = -\frac{1}{\omega_c} e^{-\frac{\omega}{\omega_c}} d \omega
+=  -\frac{1}{\omega_c} x d \omega.\label{cv_2}\end{aligned}$$<p>Then (<a href="#sf_cont">[sf_cont]</a>{reference-type="ref"
+reference="sf_cont"}) becomes</p>
+$$\bar{J} (\omega) = -\eta x \omega_c \log x, \label{sf_cont_cv}$$<p>and using this expression, and the change of variables given in
+(<a href="#cv_1">[cv_1]</a>{reference-type="ref" reference="cv_1"}) and
+(<a href="#cv_2">[cv_2]</a>{reference-type="ref" reference="cv_2"}), the
+right-hand side of (<a href="#quad_1">[quad_1]</a>{reference-type="ref"
+reference="quad_1"}) becomes:</p>
+$$-\int_{0}^{1} \eta \omega_c^2 ( \log x)  F(\omega (x)) dx.
+\label{quad_3}$$<p>We discretize this integral using the midpoint rule. We partition the
+unit interval into $n_b$ intervals of length $\frac{1}{n_b}$ and
+evaluate the integrand at the midpoint, $x_i$, of each sub-interval:</p>
+$$x_i = \frac{i-\frac{1}{2}}{n_b}, \, i=1, \ldots , n_b,
+\label{midpoint}$$<p>and obtain:</p>
+$$-\int_{0}^{1} \eta \omega_c^2 ( \log x)  F(\omega (x)) dx \approx
+-\sum_{i=1}^{n_b} \eta \omega_c^2 \log x_i F(\omega(x_i))
+\frac{i}{n_b}. \label{disc_quad_1}$$<p>Equating each term in the sum
+(<a href="#quad_2">[quad_2]</a>{reference-type="ref" reference="quad_2"}) to
+each term in the sum
+(<a href="#disc_quad_1">[disc_quad_1]</a>{reference-type="ref"
+reference="disc_quad_1"}) gives:</p>
+$$\frac{\pi}{2} \frac{c_i^2}{\omega_i} = -\frac{1}{n_b} \eta
+\omega_c^2 \log x_i = \frac{1}{n_b} \eta \omega_c \omega_i,$$<p>which gives:</p>
+$$c_i =\sqrt{\frac{2 \eta \omega_c}{\pi n_b}} \, \omega_i, \quad i=1,
+\ldots, n_b. \label{coupling}$$<p>and from (<a href="#cv_1">[cv_1]</a>{reference-type="ref" reference="cv_1"}) and
+(<a href="#midpoint">[midpoint]</a>{reference-type="ref" reference="midpoint"})
+we see that:</p>
+$$\omega_i = -\omega_c \log \left(\frac{i-\frac{1}{2}}{n_b} \right),
+\quad i=1, \ldots, n_b. \label{disc_freq_2}$$<p>[@craig_chemical_2005] choose $\omega_c = 500 {\rm cm}^{-1}$.</p>
+<p>Thus, these quantities are given by</p>
+\begin{equation}
+\omega_j = -\omega_c \log \left(\frac{j-\frac{1}{2}}{N_B} \right),
+\quad j=1, \ldots, N_B \label{eqn:disc_freq_1}
+\end{equation}<p>and</p>
+\begin{align}
 c_{x,j} =  \sqrt{\frac{2 \eta_{x} \omega_{c}}{\pi N_B}} \, \omega_j, \;
 c_{y,j}  = \sqrt{\frac{2 \eta_{y} \omega_{c}}{\pi N_B}} \,\omega_j, 
-\end{aligned}\right.
 \quad j=1, \ldots, N_B. 
-\label{eqn:coupling_coeff}\]</span> We note here that the baths are coupled to each other through the system dynamics. Hamilton’s equations for the system-bath dynamics, using Eqn. <a href="#eqn:sys_pot" data-reference-type="eqref" data-reference="eqn:sys_pot">[eqn:sys_pot]</a> and Eqn. <a href="#eqn:sb_ham" data-reference-type="eqref" data-reference="eqn:sb_ham">[eqn:sb_ham]</a>, are given by <span class="math display">\[\begin{aligned}
+\label{eqn:coupling_coeff}
+\end{align}<p>We note here that the baths are coupled to
+each other through the system dynamics. Hamilton's equations for the
+system-bath dynamics, using
+Eqn. <a href="#eqn:sys_pot">[eqn:sys_pot]</a>{reference-type="eqref"
+reference="eqn:sys_pot"} and
+Eqn. <a href="#eqn:sb_ham">[eqn:sb_ham]</a>{reference-type="eqref"
+reference="eqn:sb_ham"}, are given by</p>
+\begin{align}
 \dot{x} = &amp; \frac{\partial H}{\partial p_x} =  \frac{p_x}{m_s}, \\
 \dot{y} = &amp; \frac{\partial H}{\partial p_y} = \frac{p_y}{m_s}, \\
 \dot{x}_j = &amp; \frac{\partial H}{\partial p_{x_j}} =  \frac{p_{x_j}}{m_j},  \qquad j=1, \ldots, N_B \\
@@ -85,200 +1597,73 @@ c_{y,j}  = \sqrt{\frac{2 \eta_{y} \omega_{c}}{\pi N_B}} \,\omega_j,
 \dot{p}_y = &amp;- \frac{\partial H}{\partial y} = -4 \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y(y^2 - y_w^2)\exp(- \zeta \lambda x) + \sum_{j=1}^{N_B} \frac{c_{y,j}}{\omega_j} \left(\omega_j y_j -  \frac{c_{y,j} y}{\omega_j} \right), \\
 \dot{p}_{x_j} = &amp;- \frac{\partial H}{\partial {x_j}} = - \omega_j \left(\omega_j x_j - \frac{c_{x, j} x}{\omega_j} \right) ,  \qquad j=1, \ldots, N_B \\
 \dot{p}_{y_j} = &amp; -\frac{\partial H}{\partial {y_j}} = - \omega_j \left(\omega_j y_j - \frac{c_{y, j} y}{\omega_j} \right) , \qquad j=1, \ldots, N_B, \\
-\end{aligned}
-\label{eqn:Hameq_sys_bath}\]</span> where the bath frequencies <span class="math inline">\(\omega_j\)</span> and coupling coefficients <span class="math inline">\(c_{x,j},c_{y,j}\)</span> are given by Eqn. <a href="#eqn:disc_freq_1" data-reference-type="eqref" data-reference="eqn:disc_freq_1">[eqn:disc_freq_1]</a> and Eqn. <a href="#eqn:coupling_coeff" data-reference-type="eqref" data-reference="eqn:coupling_coeff">[eqn:coupling_coeff]</a>, respectively. The total energy will be denoted by <span class="math inline">\(\mathcal{H}(x,y,x_j,y_j,p_x,p_y,p_{x_j},p_{y_j}) = E = E_{\rm saddle} + \Delta E\)</span> where <span class="math inline">\(j=1, 2, \ldots, N_B\)</span> and <span class="math inline">\(\Delta E\)</span> is the excess energy with respect to the isomerization barrier energy. In this article, we are adopting the contraction <span class="math inline">\(x_j\)</span> to denote <span class="math inline">\(x_1, x_2, \ldots, x_{N_B}\)</span>; <span class="math inline">\(p_{x_j}\)</span> to denote <span class="math inline">\(p_{x_1}, p_{x_2}, \ldots, p_{x_{N_B}}\)</span>, and so forth.</p>
-<p>In this form of coupling each bath mode is coupled with all the degrees of freedom of the system, the total number of degrees of freedom are <span class="math inline">\(N_S N_B + N_S\)</span> and as a result the dimension of phase space is <span class="math inline">\(2N_S(N_B + 1)\)</span>. Thus, it gives rise to a high dimensional Hamiltonian model that allows us to incorporate a high number of degrees of freedom by increasing the number of bath modes. In this study, we will first focus on varying the number of bath modes, in particular when <span class="math inline">\(N_B = 1, 2, 4, 8, 16\)</span> which corresponds to <span class="math inline">\(8, 12, 20, 36, 68\)</span> dimensional phase space. Even though, the number of bath modes are not large enough to capture the effect of a solvent dynamics in the Langevin sense, but nonetheless this formulation can be extended as long as enough computational time is reserved to obtain trajectories and the associated diagnostic method. However, the high dimensionality of the system-bath model will be a setting to assess how the method of Lagrangian descriptors performs in more realistic chemical systems. This also gives a natural way to model the unimolecular conformational isomerization in a solvent and allows us to vary the friction of the environment from low-density gases to high-density liquids <span class="citation" data-cites="tucker_reaction_2000">(Tucker 2000)</span>.</p>
-<h4 id="equilibrium-points.">Equilibrium points.</h4>
-<p>The equilibrium points of the system-bath model <a href="#eqn:Hameq_sys_bath" data-reference-type="eqref" data-reference="eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a> are located at <span class="math inline">\(\overline{q}_s = (0,0,0_j,0_j,0,0,0_j,0_j)\)</span> and at <span class="math display">\[\overline{q}_c = (x_{eq},\pm y_w,(c_{x,j}/\omega_j^2)x_{eq},(c_{y,j}/\omega_j^2)y_w,0,0,0_j,0_j)\]</span> where <span class="math inline">\(x_{eq}\)</span> is the <span class="math inline">\(x\)</span>-coordinate of the equilibrium point in the system model and needs to be obtained using numerical nonlinear root solver. This shows the system coordinates <span class="math inline">\((x,y)\)</span> of the equilibrium points do not depend on the bath parameters and thus the isomer wells are still at the same location. This lets us use the same surface of section to compute Lagrangian descriptor even when increasing the bath modes.</p>
-<p>The linear stability analysis (shown in the appendix) of these equilibrium points gives their stability does not change from the system model by adding the bath modes in the form of Eqn. <a href="#eqn:sb_ham" data-reference-type="eqref" data-reference="eqn:sb_ham">[eqn:sb_ham]</a>. Next, the total energy of the index-1 equilibrium point at <span class="math inline">\(\overline{q}_s\)</span> is <span class="math inline">\(\mathcal{H}(0,0,0_j,0_j,0,0,0_j,0_j) = \epsilon_s\)</span> which is the same as in the system Hamiltonian <a href="#eqn:ham_db" data-reference-type="eqref" data-reference="eqn:ham_db">[eqn:ham_db]</a>.</p>
-<h2 id="method-lagrangian-descriptor">Method: Lagrangian descriptor</h2>
-<p>The Lagrangian descriptor (LD) is the arc length of a trajectory with initial conditions <span class="math inline">\(\mathbf{x}_0\)</span> at time <span class="math inline">\(t_0\)</span> and integrated for a fixed time, <span class="math inline">\(\tau\)</span>, in forward or backward direction <span class="citation" data-cites="madrid2009">(Madrid and Mancho 2009)</span>. Recently, an alternate formulation has been developed <span class="citation" data-cites="lopesino2017">(Lopesino et al. 2017)</span> for continuous time dynamical systems to prove results on detecting invariant phase space structures using singular features in the LD contour map.</p>
-<p>In the general setting of a non-autonomous vector field <span class="math display">\[\frac{d\mathbf{x}}{dt} = \mathbf{v}(\mathbf{x},t), \quad \mathbf{x} \in \mathbb{R}^n \;,\; t \in 
-\mathbb{R}\]</span> where <span class="math inline">\(\mathbf{v}(\mathbf{x},t) \in C^r\)</span> (<span class="math inline">\(r \geq 1\)</span>) in <span class="math inline">\(\mathbf{x}\)</span> and continuous in time. The definition of the LD depends on the initial condition <span class="math inline">\(\mathbf{x}_{0} = \mathbf{x}(t_0)\)</span>, on the initial time <span class="math inline">\(t_0\)</span> (trivial for autonomous systems), the integration time <span class="math inline">\(\tau\)</span>, and the type of norm used in the form below:</p>
-<p><span class="math display">\[M_p(\mathbf{x}_{0},t_0,\tau) = \displaystyle{\int^{t_0+\tau}_{t_0-\tau} \sum_{i=1}^{n} 
-    |\dot{x}_{i}(t;\mathbf{x}_{0})|^p \; dt}
-\label{eqn:M_function}\]</span></p>
-<p>where <span class="math inline">\(p \in (0,1]\)</span> and <span class="math inline">\(\tau \in \mathbb{R}^{+}\)</span> are freely chosen parameters, and the overdot represents the derivative with respect to time. It is to be noted here that there are three formulations of the function <span class="math inline">\(M_p\)</span> in the literature: the arc length of a trajectory in phase space <span class="citation" data-cites="madrid2009">(Madrid and Mancho 2009)</span>, the arc length of a trajectory projected on the configuration space  <span class="citation" data-cites="junginger2016transition junginger2016uncovering junginger2017chemical junginger2017variational">(Junginger, Craven, et al. 2016b; Junginger and Hernandez 2016a; Junginger, Duvenbeck, et al. 2017; Junginger, Main, et al. 2017)</span>, and the sum of the <span class="math inline">\(p\)</span>-norm of the vector field components <span class="citation" data-cites="lopesino_2015 lopesino2017">(Lopesino et al. 2015, 2017)</span>. This latter formulation, indeed does not resemble the arc length of a trajectory, has been shown to identify the NHIM and its stable and unstable manifolds with the singular features and minima (or maxima) in the contour map for benchmark systems in recent work by the authors <span class="citation" data-cites="naik2019afinding naik2019bfinding">(Naik, García-Garrido, and Wiggins 2019; Naik and Wiggins 2019)</span>. Thus, it follows from the numerical verifications and theoretical proof that <span class="math display">\[\begin{aligned}
-\mathcal{W}^s(\mathbf{x}_0, t_0) &amp; = \text{\rm argext} \; \mathcal{L}^{(f)}(\mathbf{x}_0, t_0, 
-\tau) \\
-\mathcal{W}^u(\mathbf{x}_0, t_0) &amp; = \text{\rm argext} \; \mathcal{L}^{(b)}(\mathbf{x}_0, t_0, \tau)\end{aligned}\]</span> where the stable and unstable manifolds (<span class="math inline">\(\mathcal{W}^s(\mathbf{x}_0, t_0)\)</span> and <span class="math inline">\(\mathcal{W}^u(\mathbf{x}_0, t_0)\)</span>) denote the invariant manifolds at intial time <span class="math inline">\(t_0\)</span> and <span class="math inline">\(\text{\rm argext} \; (\cdot)\)</span> denotes the argument that minimizes (or maximizes) the function <span class="math inline">\(\mathcal{L}^{(\cdot)}(\mathbf{x}_0, t_0, \tau)\)</span> in forward and backward time, respectively. In addition, the coordinates on the NHIM, <span class="math inline">\(\mathcal{M}(\mathbf{x}_0, t_0)\)</span>, at time <span class="math inline">\(t_0\)</span> is given by the intersection <span class="math inline">\(\mathcal{W}^s(\mathbf{x}_0, t_0)\)</span> and <span class="math inline">\(\mathcal{W}^u(\mathbf{x}_0, t_0)\)</span> of the stable and unstable manifolds, and thus given by</p>
-<p><span class="math display">\[\begin{aligned}
-\mathcal{M}(\mathbf{x}_0, t_0) &amp; = \text{\rm argext} \; \left( \mathcal{L}^{(f)}(\mathbf{x}_0, t_0, 
-\tau) + \mathcal{L}^{(b)}(\mathbf{x}_0, t_0, \tau) \right) \\
-&amp; = \text{\rm argext} \; 
-\mathcal{L}(\mathbf{x}_0, t_0, \tau) 
-\end{aligned}\]</span></p>
-<p>In applying the LD method to nonlinear systems, one observes multiple singularities and extremal values that can lead to ambiguities with isolating the extremas corresponding to the NHIM and the ones due to the invariant manifolds <span class="citation" data-cites="junginger2017chemical naik2019bfinding">(Junginger, Duvenbeck, et al. 2017; Naik and Wiggins 2019)</span>. This computational issue has been addressed <span class="citation" data-cites="craven2017lagrangian craven2016deconstructing craven2015lagrangian">(Craven, Junginger, and Hernandez 2017; Craven and Hernandez 2016, 2015)</span> to locate transition state trajectory for driven two degrees of freedom and three degrees of freedom chemical reaction models. It has been observed in numerical experiments that computing fixed integration time Lagrangian descriptor (LD) as given by Eqn. <a href="#eqn:M_function" data-reference-type="eqref" data-reference="eqn:M_function">[eqn:M_function]</a> leads to two potential issues:</p>
-<p>1. Bounded trajectories will show global recrossings of the barrier as predicted by Poincaré recurrrence theorem. The recrossings will show multiple minima and singularities in the LD contour map which obscures locating the actual NHIM <span class="citation" data-cites="junginger2017chemical naik2019bfinding">(Junginger, Duvenbeck, et al. 2017; Naik and Wiggins 2019)</span>.</p>
-<p>2. The trajectories that escape the open potential well will leave with ever increasing acceleration, if the potential energy surface opens out to infinity. These trajectories will have large LD values (compared to the bounded trajectories) and will render the contour map flat which again obscures locating the NHIM.</p>
-<p>To circumvent these issues, a heuristic that has been adopted <span class="citation" data-cites="junginger2017chemical bardakcioglu2018 feldmaier_invariant_2019 naik2019bfinding">(Junginger, Duvenbeck, et al. 2017; Bardakcioglu et al. 2018; Feldmaier et al. 2019; Naik and Wiggins 2019)</span> is to calculate LD values only until a trajectory remains inside the <em>preselected</em> barrier region. As a result, the initial conditions on an invariant manifold will show as singularities and maxima in the LD contour map because of being integrated for the full integration time interval, <span class="math inline">\(\tau\)</span>, which others which leave the region will have smaller LD values.</p>
-<p>Thus, the formulation of Eqn. <a href="#eqn:M_function" data-reference-type="eqref" data-reference="eqn:M_function">[eqn:M_function]</a> can be modified as <span class="math display">\[M_p(\mathbf{x}_{0},t_0,\tau^{\pm}) = \displaystyle{\int^{t_0+\tau^+}_{t_0-\tau^-} \sum_{i=1}^{n} 
-    |\dot{x}_{i}(t;\mathbf{x}_{0})|^p \; dt}
-\label{eqn:M_function_var}\]</span> where the integration time interval, <span class="math inline">\(\tau\)</span>, depends on a trajectory and is given by</p>
-<p><span class="math display">\[\tau^{\pm}(\mathbf{x}_0) = \min\left(\tau, t\vert_{|\mathbf{x}(t)| &gt; q_s} \right)
-\label{eqn:var_time_qs}\]</span></p>
-<p>where <span class="math inline">\(q_s\)</span> defines the <em>preselected</em> barrier region in the configuration space around the saddle in the bottleneck. We note here that the only initial condition that gets integrated for the full time interval <span class="math inline">\(\tau\)</span> units in forward and backward time is the one on the NHIM. In addition, the coordinates on the NHIM, <span class="math inline">\(\mathcal{M}(\mathbf{x}_0, t_0)\)</span>, at time <span class="math inline">\(t_0\)</span> is given by <span class="math display">\[\begin{aligned}
-\mathcal{M}(\mathbf{x}_0, t_0) &amp; = \text{\rm argmax} \; \left( \mathcal{L}^{(f)}(\mathbf{x}_0, t_0, 
-\tau) + \mathcal{L}^{(b)}(\mathbf{x}_0, t_0, \tau) \right) \\
-&amp; = \text{\rm argmax} \; \mathcal{L}(\mathbf{x}_0, t_0, \tau) 
-\end{aligned}\]</span> The variable integration time Lagrangian descriptor as given by Eqn. <a href="#eqn:M_function_var" data-reference-type="eqref" data-reference="eqn:M_function_var">[eqn:M_function_var]</a> to locate invariant manifolds is familiar to the dynamical systems community and is related to computing average exit times to locate invariant sets in the phase space of symplectic maps <span class="citation" data-cites="meiss_average_1997">(Meiss 1997)</span>.</p>
-<h1 id="results-and-discussion">Results and discussion</h1>
-<h2 id="system-dynamics">System dynamics</h2>
-<h3 id="direct-numerical-computation-of-reactive-islands">Direct numerical computation of reactive islands</h3>
-<p><img src="./figures/manifolds-fig3B2-2D.png" style="width:45.0%" /> <img src="./figures/manifolds-fig3B2-3D.png" alt="image" style="width:45.0%" /></p>
-<p>Fig. 2. <strong>Tube manifolds</strong> for the coupled system <span class="math inline">\(\zeta = 1.00\)</span> and <span class="math inline">\(\lambda = 1.50\)</span></p>
-<h3 id="connecting-hierarchy-of-reactive-islands-with-committor-probabilities-lagrangian-descriptor">Connecting hierarchy of reactive islands with committor probabilities: Lagrangian descriptor</h3>
-<p>Finding reactive islands in 2 degrees-of-freedom molecular Hamiltonian has been shown using Lagrangian descriptors <span class="citation" data-cites="patra_detecting_2018 naik2019bfinding">(Patra and Keshavamurthy 2018; Naik and Wiggins 2019)</span>.</p>
-<p>First, we will use the following 2D isonergetic slice to compute Lagrangian descriptor contour map so that the reactive islands can be identified.</p>
-<p><span class="math display">\[\begin{aligned}
-U_{xp_x}^- &amp;= \left\{(x,y,p_x,p_y) \; | \; y = y_w, \; p_y(x,y,p_x;E) &lt; 0 \right\} 
-\label{eqn:sos_Uxpx_4d} \end{aligned}\]</span></p>
-<p>for 4 cases of coupling and range parameters, <span class="math inline">\(\zeta\)</span> and <span class="math inline">\(\lambda\)</span>. However, we will choose the system parameters: <span class="math inline">\(\zeta = 1.00, \, \lambda = 1.50\)</span> and <span class="math inline">\(\zeta = 2.30, \, \lambda = 1.95\)</span> as representative of regular and chaotic dynamics of the isomerization in the gas phase.</p>
-<p><img src="./figures/fig3A2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png" style="width:25.0%" />  <img src="./figures/fig3B2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png" style="width:25.0%" />  <img src="./figures/fig3C2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png" style="width:25.0%" /><br />
-<img src="./figures/fig3A2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png" style="width:25.0%" />  <img src="./figures/fig3B2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png" style="width:25.0%" />  <img src="./figures/fig3C2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png" style="width:25.0%" /> </p>
-<p>Fig. 3. <strong>Lagrangian descriptor and reactive islands</strong> for (a,d) <span class="math inline">\(\zeta = 1.00\)</span> and <span class="math inline">\(\lambda = 1.00\)</span>, (b,e) <span class="math inline">\(\zeta = 1.00\)</span> and <span class="math inline">\(\lambda = 1.50\)</span>, (c,f) <span class="math inline">\(\zeta = 2.30\)</span> and <span class="math inline">\(\lambda = 1.95\)</span>. The top row shows the backward LD and the bottom row shows the forward LD. The blue and black curves denote the intersection of stable and unstable manifolds with the surface-of-section, respectively, and integration time <span class="math inline">\(\tau = 30\)</span> and microcanonical ensemble of trajectories are initialized on the surface of section~.</p>
-<p>In transition path sampling, the method to check the efficiency of the sampling procedure is done by computing the committor probability of starting in region A and ending up in region B (A and B are defined in the configuration space) for the configuration <span class="math inline">\(\mathbf{q}_j\)</span> denoted by the <span class="math inline">\(P_B(\mathbf{q}_j, t_c)\)</span> <span class="citation" data-cites="bolhuis_transition_2002 patra_detecting_2018">(Bolhuis et al. 2002; Patra and Keshavamurthy 2018)</span>. This is defined as the fraction of the trajectories that reach the specific product in region B at time <span class="math inline">\(t_c\)</span> before reaching reactant in region A. For the unimolecular conformational isomerization, the region A and B are defined by the isomers A and B, respectively, while the specific reactant and product configuration is defined by the parameter <span class="math inline">\(y_w\)</span>.</p>
-<p><img src="./figures/mc_initconds_xpx_xConstant_fig3C2_DelE0-5.png" style="width:25.0%" /></p>
-<p><img src="./figures/fig3C2/backward_lag_desc_deleonberne_E1-500_x-px_tau30_varLD.png" alt="(b)" style="width:24.0%" /> <img src="./figures/commit_prob_fig3C2_500_30finalt_backward.png" style="width:24.0%" /> <img src="./figures/fig3C2/forward_lag_desc_deleonberne_E1-500_x-px_tau30_varLD.png" style="width:24.0%" /> <img src="./figures/commit_prob_fig3C2_500_30finalt.png" style="width:24.0%" /></p>
-<p><img src="./figures/fig3C2/backward_lag_desc_deleonberne_E1-500_x-px_tau100_varLD.png" style="width:24.0%" /> <img src="./figures/commit_prob_fig3C2_500_100finalt_backward.png" style="width:24.0%" /> <img src="./figures/fig3C2/forward_lag_desc_deleonberne_E1-500_x-px_tau100_varLD.png" style="width:24.0%" /> <img src="./figures/commit_prob_fig3C2_500_100finalt.png" style="width:24.0%" /></p>
-<p>Fig. 4. <strong>Committor probabilities and reactive islands</strong> for the 2 DoF isomerization. (a) Reactive islands obtained using direct computation of the cylindrical manifolds. (b-e) <span class="math inline">\(\tau = 30\)</span>: color maps denote variable integration time LDs and the line plots denote the committor probabilities. (f-i) <span class="math inline">\(\tau = 100\)</span>: color maps denote variable integration time LDs and the line plots denote the committor probabilities. Coupling strength, <span class="math inline">\(\zeta = 2.30\)</span>, and Morse range, <span class="math inline">\(\lambda = 1.95\)</span>.</p>
-<h2 id="system-bath-dynamics">System-bath dynamics</h2>
-<h3 id="detecting-changes-in-reactive-islands-using-lagrangian-descriptors">Detecting changes in reactive islands using Lagrangian descriptors</h3>
-<p>It has been demonstrated that the reactive islands and their hierarchical structure can be used to search for new reactive trajectories using the so-called shooting method <span class="citation" data-cites="patra_detecting_2018">(Patra and Keshavamurthy 2018)</span>. In high dimensional molecular phase space, this can be a non-trivial task due to the available phase space volume and so has been phrased as “harvesting rare trajectories” and computed using transition path sampling methods <span class="citation" data-cites="patra_classical_2015">(Patra and Keshavamurthy 2015)</span>. In this section, we would like to investigate if the LD contour maps can provide a systematic approach to finding reactive trajectories and hence building the high dimensional analogs of reactive islands in a system-bath model.</p>
-<h4 id="n_sn_b-1-dof-n_b-bath-modes-coupled-to-each-of-the-n_s-system-dof" class="unnumbered unnumbered"><span class="math inline">\(N_S(N_B + 1)\)</span>-DoF: <span class="math inline">\(N_B\)</span> bath modes coupled to each of the <span class="math inline">\(N_S\)</span> system DoF</h4>
-<p>To sample the reactive trajectories, we introduce the following isoenergetic two-dimensional slice in the <span class="math inline">\(2N_S(N_B + 1)\)</span>-dimensional phase space of Eqn. <a href="#eqn:Hameq_sys_bath" data-reference-type="eqref" data-reference="eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a>. <span class="math display">\[\begin{aligned}
-U_{xp_x}^- &amp;= \left\{(x,y,x_i,y_i,p_x,p_y,p_{x_i},p_{y_i}) \; | \; y = y_w, x_i = 0, y_i = 0, p_{x_i} = 0, p_{y_i} = 0, p_y(\cdot;E) &lt; 0 \right\} 
-\label{eqn:sos_Uxpx_systembath} \end{aligned}\]</span></p>
-<h4 id="influence-of-number-of-bath-modes.">Influence of number of bath modes.</h4>
-<p>Let us consider the bath parameters <span class="math inline">\(\eta_{x} = \eta_{y} = 0.01\)</span> and <span class="math inline">\(\omega_{c} = 1.0\)</span> and study the effect of increasing the number of bath modes on the reactive islands of the 2 DoF isomerization.</p>
-<p>Changes in reactive islands with increasing number of bath modes for <span class="math inline">\(\tau = 100\)</span> which we considered to be enough integration time for the isomerization given by the system <a href="#eqn:vec_field_db" data-reference-type="eqref" data-reference="eqn:vec_field_db">[eqn:vec_field_db]</a>.</p>
-
-<h4 id="influence-of-friction-in-the-bath-modes.">Influence of friction in the bath modes.</h4>
-
-<h1 id="conclusion-and-outlook">Conclusion and outlook</h1>
-<h1 id="acknowledgements">Acknowledgements</h1>
-<p>We acknowledge the support of EPSRC Grant No. EP/P021123/1 and Office of Naval Research (Grant No. N00014-01-1-0769).</p>
-
-<p><strong>Appendices</strong></p>
-
-<h1 id="deleon-berne-hamiltonianappsectdbpot">DeLeon-Berne Hamiltonian<span id="appsect:dbpot" label="appsect:dbpot">[appsect:dbpot]</span></h1>
-<p>Thus the potential energy function for the system dynamics can be broken down into <span class="math display">\[\begin{aligned}
-V_{\rm DB}(x,y) = &amp;  V_{DW}(x) + V_M(y) + V_{DWM}(x,y) \\
-V_{DW}(y) = &amp; \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y^2(y^2 - 
-2y_w^2) + \epsilon_s \\
-V_M(x) = &amp; D_x\left[ 1 - \exp(-\lambda x) \right]^2 \\
-V_{DWM}(x,y) = &amp; \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y^2(y^2 - 
-2y_w^2)\left[ \exp(-\zeta \lambda x) - 1 \right]
-\end{aligned}
-\label{eqn:pot_energy_db}\]</span></p>
-<p>where the parameters are</p>
-<dl>
-<dt>fix</dt>
-<dd><p><span class="math inline">\(m_s = 8.0:\)</span> mass of the isomers.</p>
-</dd>
-<dt>fix</dt>
-<dd><p><span class="math inline">\(\epsilon_s = 1.0:\)</span> potential energy of the barrier.</p>
-</dd>
-<dt>fix</dt>
-<dd><p><span class="math inline">\(D_x = 10.0:\)</span> dissociation energy of the Morse potential.</p>
-</dd>
-<dt>fix</dt>
-<dd><p><span class="math inline">\(y_w = \pm 1/\sqrt{2}:\)</span> location of the isomerization wells (symmetric about the <span class="math inline">\(y = 0\)</span> axis).</p>
-</dd>
-<dt>vary</dt>
-<dd><p><span class="math inline">\(\zeta:\)</span> coupling strength between the Morse potential and the double well potential.</p>
-</dd>
-<dt>fix</dt>
-<dd><p><span class="math inline">\(\mathcal{V}^{\ddagger} = 1.0:\)</span> potential energy difference between the isomerization barrier and the bottom of the well for <span class="math inline">\(\zeta = 0\)</span>.</p>
-</dd>
-<dt>vary</dt>
-<dd><p><span class="math inline">\(\lambda:\)</span> range of the Morse potential.</p>
-</dd>
-</dl>
-<h4 id="symmetries-of-the-equations-of-motion" class="unnumbered unnumbered">Symmetries of the equations of motion</h4>
-<p>We note the symmetries in the system <a href="#eqn:vec_field_db" data-reference-type="eqref" data-reference="eqn:vec_field_db">[eqn:vec_field_db]</a>, by substituting <span class="math inline">\((-y,-p_y)\)</span> for <span class="math inline">\((y, p_y)\)</span> which implies reflection about the <span class="math inline">\(x-\)</span>axis (<span class="math inline">\(y = 0\)</span> line) and expressed as <span class="math display">\[s_y: (x,y,p_x,p_y,t) \rightarrow (x,-y,p_x,-p_y,t)\]</span> Furthermore, the energy conservative Hamiltonian system <a href="#eqn:vec_field_db" data-reference-type="eqref" data-reference="eqn:vec_field_db">[eqn:vec_field_db]</a> has time-reversal symmetry given by <span class="math display">\[s_t: (x,y,p_x,p_y,t) \rightarrow (x,y,-p_x,-p_y,-t)\]</span> So, if <span class="math inline">\((x(t),y(t),p_x(t),p_y(t))\)</span> is a solution to <a href="#eqn:vec_field_db" data-reference-type="eqref" data-reference="eqn:vec_field_db">[eqn:vec_field_db]</a>, then combining the two symmetries <span class="math inline">\(s_y\)</span> and <span class="math inline">\(s_t\)</span>, we can assert <span class="math inline">\((x(-t),y(-t),-p_x(-t),-p_y(-t))\)</span> is another solution. These symmetries can be used to decrease the number of computations, and to find special solutions. For example, any solution of <a href="#eqn:vec_field_db" data-reference-type="eqref" data-reference="eqn:vec_field_db">[eqn:vec_field_db]</a> will evolve on the energy surface given by <a href="#eqn:ham_db" data-reference-type="eqref" data-reference="eqn:ham_db">[eqn:ham_db]</a>. For fixed energy, <span class="math inline">\(E(x,y,p_x,p_y) = e\)</span>, there will be zero velocity curves corresponding to <span class="math inline">\(V_B(x, y) = e\)</span>, the contours shown in Fig. <a href="#fig:pecontours_db" data-reference-type="ref" data-reference="fig:pecontours_db">[fig:pecontours_db]</a>. Any trajectory which touches the zero velocity curve (boundary in phase space where kinetic energy is zero) at time <span class="math inline">\(t_0\)</span> must retrace its path in configuration space (i.e. <span class="math inline">\(q = (x, y)\)</span> space), <span class="math display">\[q(-t + t_0) = q(t + t_0) \qquad \mathring{q}(-t + t_0) = -\mathring{q}(t + t_0)\]</span> This fact is useful in finding the unstable periodic orbit located in the bottleneck of the Hamiltonian <span class="citation" data-cites="de_leon_intramolecular_1981 de_leon_order_1989">(De Leon and Berne 1981; De Leon and Marston 1989)</span>.</p>
-<h2 id="probability-of-imminent-reaction">Probability of imminent reaction</h2>
-<p>The area enclosed by the stable or unstable manifolds of the unstable periodic orbit associated with the index-1 saddle is used to calculate the reacting population of trajectories at a constant total energy <span class="math inline">\(E\)</span>. This population will be referred to as the microcanonical reaction probability.</p>
-<p>For a systematic detection of the trajectories that lead to reaction by crossing the unstable periodic orbit in the bottleneck, we enforce the sign of momentum of these trajectories. So a positive <span class="math inline">\(\dot{y} = p_y &lt; 0\)</span> on the surface-of-section <span class="math inline">\(y = y_w\)</span> denotes crossing the</p>
-<p>The fraction of trajectories that cross the section at <span class="math inline">\(y = y_w\)</span> in forward and backward time are unstable periodic orbit located in the bottleneck</p>
-
-<p><embed src="reaction-prob-stable-intersect-sosatyw-smallDeltaE-4cases.pdf" title="fig:" style="width:49.0%" /> <embed src="reaction-prob-stable-intersect-sosatyw-largeDeltaE-4cases.pdf" title="fig:" style="width:49.0%" /></p>
-<h1 id="app:discrete">Discretization of the Spectral Density: Derivation of the Parameters of the Bath</h1>
-<p>The coupling of the bath of harmonic oscillators to the configuration space coordinates is described by a spectral density:</p>
-<p><span class="math display">\[\begin{aligned}
-J_x (\omega) &amp; = &amp;  \frac{\pi}{2} \sum_{i=1}^{N_B} \frac{c_{x,i}^2}{\omega_i} \delta (\omega - \omega_i), \label{x-disc_spec} \\
-J_y (\omega) &amp; = &amp;  \frac{\pi}{2} \sum_{i=1}^{N_B}
-\frac{c_{y,i}^2}{\omega_i} \delta (\omega - \omega_i),
-\label{y-disc_spect}\end{aligned}\]</span></p>
-<p>and these result from the discretization of a continuous Ohmic (linear) form with an exponential cutoff:</p>
-<p><span class="math display">\[\begin{aligned}
-\bar{J}_x (\omega) &amp; = &amp; \eta_x \omega e^{-\frac{\omega}{\omega_{c}}}  , \label{z_1-cont_spec} \\
-\bar{J}_y (\omega) &amp; = &amp;  \eta_y \omega e^{-\frac{\omega}{\omega_{c}}} , \label{z_2-cont_spect}\end{aligned}\]</span></p>
-<p>the discretization that gives us the coupling constants <span class="math inline">\(c_{x,j}\)</span>, <span class="math inline">\(c_{y,j}\)</span>, and the frequencies <span class="math inline">\(\omega_j\)</span>, and are given by <span class="math display">\[\omega_j = -\omega_c \log \left(\frac{j-\frac{1}{2}}{N_B} \right),
-\quad j = 1, \ldots, N_B. \label{disc_freq_1}\]</span> and <span class="math display">\[\begin{aligned}
-c_{x,j} &amp; = &amp; \sqrt{\frac{2 \eta_{x} \omega_{c}}{\pi N_B}} \, \omega_j, \label{coupling_x} \\
-c_{y,j}  &amp; = &amp; \sqrt{\frac{2 \eta_{y} \omega_{c}}{\pi N_B}} \, \omega_j, \quad j = 1, \ldots, N_B. \label{coupling_y}\end{aligned}\]</span></p>
-<p>In this appendix we describe a scheme for discretizing the continuous spectral density which was given in <span class="citation" data-cites="craig_chemical_2005">(Craig and Manolopoulos 2005)</span>. In the following we will drop the subscripts <span class="math inline">\(z_1\)</span> and <span class="math inline">\(z_2\)</span> on the various quantities for the sake of a simpler notation since we will follow the same discretization procedure for each spectral density. The subscripts can then be added back afterwards.</p>
-<p>Re-establishing the notation, the discrete spectral density function is given by:</p>
-<p><span class="math display">\[J(\omega) = \frac{\pi}{2} \sum_{i=1}^{n_b} \frac{c_i^2}{\omega_i}
-\delta (\omega - \omega_i), \label{sf_disc}\]</span></p>
-<p>and the continuous spectral density is given by:</p>
-<p><span class="math display">\[\bar{J} (\omega) = \eta \omega e^{-\frac{\omega}{\omega_c}}.
-\label{sf_cont}\]</span></p>
-<p>Discretization is obtained by carrying out the following steps.</p>
-<ol type="1">
-<li><p>Require</p>
-<p><span class="math display">\[\int_{0}^{\infty} J(\omega) F(\omega) d \omega \approx
-    \int_{0}^{\infty} \bar{J} (\omega) F(\omega) d \omega,
-    \label{quad_1}\]</span></p>
-<p>for any integrable function <span class="math inline">\(F(\omega)\)</span></p></li>
-<li><p>Substitute (<a href="#sf_disc" data-reference-type="ref" data-reference="sf_disc">[sf_disc]</a>) into the left-hand side of (<a href="#quad_1" data-reference-type="ref" data-reference="quad_1">[quad_1]</a>) to obtain:</p>
-<p><span class="math display">\[\frac{\pi}{2} \sum_{i=1}^{n_b} \frac{c_i^2}{\omega_i} F(\omega_i).
-    \label{quad_2}\]</span></p></li>
-<li><p>Approximate the right-hand side of (<a href="#quad_1" data-reference-type="ref" data-reference="quad_1">[quad_1]</a>) by an appropriate quadrature. This is the step that we will now carry out in detail.</p></li>
-</ol>
-<p>The quadrature recommended in <span class="citation" data-cites="craig_chemical_2005">(Craig and Manolopoulos 2005)</span> is the midpoint rule, after changing variables in the integral to <span class="math inline">\(x = e^{-\frac{\omega}{\omega_c}}\)</span>. The reason that they give for choosing this quadrature is that it gives a uniform distribution of grid points in the unit interval <span class="math inline">\(0 &lt; x_i &lt; 1\)</span> and therefore a logarithmic distribution of bath frequencies <span class="math inline">\(\omega_i = -\omega_c \log x_i\)</span>. They claim that such a distribution of bath frequencies is appropriate on physical grounds for an exponentially decaying density of bath states.</p>
-<p>The change of variables gives:</p>
-<p><span class="math display">\[\begin{aligned}
-x &amp; = &amp; e^{-\frac{\omega}{\omega_c}}  \Rightarrow  \log x =
--\frac{\omega}{\omega_c}  \Rightarrow \omega =-\omega_c \log x,
-\label{cv_1} \\
-dx &amp; = &amp; -\frac{1}{\omega_c} e^{-\frac{\omega}{\omega_c}} d \omega
-=  -\frac{1}{\omega_c} x d \omega.\label{cv_2}\end{aligned}\]</span></p>
-<p>Then (<a href="#sf_cont" data-reference-type="ref" data-reference="sf_cont">[sf_cont]</a>) becomes</p>
-<p><span class="math display">\[\bar{J} (\omega) = -\eta x \omega_c \log x, \label{sf_cont_cv}\]</span></p>
-<p>and using this expression, and the change of variables given in (<a href="#cv_1" data-reference-type="ref" data-reference="cv_1">[cv_1]</a>) and (<a href="#cv_2" data-reference-type="ref" data-reference="cv_2">[cv_2]</a>), the right-hand side of (<a href="#quad_1" data-reference-type="ref" data-reference="quad_1">[quad_1]</a>) becomes:</p>
-<p><span class="math display">\[-\int_{0}^{1} \eta \omega_c^2 ( \log x)  F(\omega (x)) dx.
-\label{quad_3}\]</span></p>
-<p>We discretize this integral using the midpoint rule. We partition the unit interval into <span class="math inline">\(n_b\)</span> intervals of length <span class="math inline">\(\frac{1}{n_b}\)</span> and evaluate the integrand at the midpoint, <span class="math inline">\(x_i\)</span>, of each sub-interval:</p>
-<p><span class="math display">\[x_i = \frac{i-\frac{1}{2}}{n_b}, \, i=1, \ldots , n_b,
-\label{midpoint}\]</span></p>
-<p>and obtain:</p>
-<p><span class="math display">\[-\int_{0}^{1} \eta \omega_c^2 ( \log x)  F(\omega (x)) dx \approx
--\sum_{i=1}^{n_b} \eta \omega_c^2 \log x_i F(\omega(x_i))
-\frac{i}{n_b}. \label{disc_quad_1}\]</span></p>
-<p>Equating each term in the sum (<a href="#quad_2" data-reference-type="ref" data-reference="quad_2">[quad_2]</a>) to each term in the sum (<a href="#disc_quad_1" data-reference-type="ref" data-reference="disc_quad_1">[disc_quad_1]</a>) gives:</p>
-<p><span class="math display">\[\frac{\pi}{2} \frac{c_i^2}{\omega_i} = -\frac{1}{n_b} \eta
-\omega_c^2 \log x_i = \frac{1}{n_b} \eta \omega_c \omega_i,\]</span></p>
-<p>which gives:</p>
-<p><span class="math display">\[c_i =\sqrt{\frac{2 \eta \omega_c}{\pi n_b}} \, \omega_i, \quad i=1,
-\ldots, n_b. \label{coupling}\]</span></p>
-<p>and from (<a href="#cv_1" data-reference-type="ref" data-reference="cv_1">[cv_1]</a>) and (<a href="#midpoint" data-reference-type="ref" data-reference="midpoint">[midpoint]</a>) we see that:</p>
-<p><span class="math display">\[\omega_i = -\omega_c \log \left(\frac{i-\frac{1}{2}}{n_b} \right),
-\quad i=1, \ldots, n_b. \label{disc_freq_2}\]</span></p>
-<p><span class="citation" data-cites="craig_chemical_2005">(Craig and Manolopoulos 2005)</span> choose <span class="math inline">\(\omega_c = 500 {\rm cm}^{-1}\)</span>.</p>
-<h1 id="linear-stability-analysis-of-the-system-bath-dynamics">Linear stability analysis of the system-bath dynamics</h1>
-<p>As noted in the article, the location of the equilibrium points in the system-bath model are dependent on the frequencies and coupling strength of the bath modes. Hence, we would like to analyze the stability of these equilibrium points. The Jacobian of the system-bath Hamiltonian vector field <a href="#eqn:Hameq_sys_bath" data-reference-type="eqref" data-reference="eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a> is</p>
-<p><span class="math display">\[\begin{aligned}
+\label{eqn:Hameq_sys_bath}
+\end{align}<p>where the bath frequencies $\omega_j$ and
+coupling coefficients $c_{x,j},c_{y,j}$ are given by
+Eqn. <a href="#eqn:disc_freq_1">[eqn:disc_freq_1]</a>{reference-type="eqref"
+reference="eqn:disc_freq_1"} and
+Eqn. <a href="#eqn:coupling_coeff">[eqn:coupling_coeff]</a>{reference-type="eqref"
+reference="eqn:coupling_coeff"}, respectively. The total energy will be
+denoted by
+$\mathcal{H}(x,y,x_j,y_j,p_x,p_y,p_{x_j},p_{y_j}) = E = E_{\rm saddle} + \Delta E$
+where $j=1, 2, \ldots, N_B$ and $\Delta E$ is the excess energy with
+respect to the isomerization barrier energy. In this article, we are
+adopting the contraction $x_j$ to denote $x_1, x_2, \ldots, x_{N_B}$;
+$p_{x_j}$ to denote $p_{x_1}, p_{x_2}, \ldots, p_{x_{N_B}}$, and so
+forth.</p>
+<p>In this form of coupling each bath mode is coupled with all the degrees
+of freedom of the system, the total number of degrees of freedom are
+$N_S N_B + N_S$ and as a result the dimension of phase space is
+$2N_S(N_B + 1)$. Thus, it gives rise to a high dimensional Hamiltonian
+model that allows us to incorporate a high number of degrees of freedom
+by increasing the number of bath modes. In this study, we will first
+focus on varying the number of bath modes, in particular when
+$N_B = 1, 2, 4, 8, 16$ which corresponds to $8, 12, 20, 36, 68$
+dimensional phase space. Even though, the number of bath modes are not
+large enough to capture the effect of a solvent dynamics in the Langevin
+sense, but nonetheless this formulation can be extended as long as
+enough computational time is reserved to obtain trajectories and the
+associated diagnostic method. However, the high dimensionality of the
+system-bath model will be a setting to assess how the method of
+Lagrangian descriptors performs in more realistic chemical systems. This
+also gives a natural way to model the unimolecular conformational
+isomerization in a solvent and allows us to vary the friction of the
+environment from low-density gases to high-density
+liquids [@tucker_reaction_2000].</p>
+<h3 id="Model-verification">Model verification<a class="anchor-link" href="#Model-verification"> </a></h3><p>\centering
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E1-500_x-px_tau100_NB1.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB1.png}}
+\centering
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E1-500_x-px_tau100_NB1.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB1.png}}</p>
+<h2 id="Revealing-Phase-Space-Structures">Revealing Phase Space Structures<a class="anchor-link" href="#Revealing-Phase-Space-Structures"> </a></h2><p>The equilibrium points of the system-bath
+model <a href="#eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a>{reference-type="eqref"
+reference="eqn:Hameq_sys_bath"} are located at
+$\overline{q}_s = (0,0,0_j,0_j,0,0,0_j,0_j)$ and at</p>
+$$\overline{q}_c = (x_{eq},\pm y_w,(c_{x,j}/\omega_j^2)x_{eq},(c_{y,j}/\omega_j^2)y_w,0,0,0_j,0_j)$$<p>where $x_{eq}$ is the $x$-coordinate of the equilibrium point in the
+system model and needs to be obtained using numerical nonlinear root
+solver. This shows the system coordinates $(x,y)$ of the equilibrium
+points do not depend on the bath parameters and thus the isomer wells
+are still at the same location. This lets us use the same surface of
+section to compute Lagrangian descriptor even when increasing the bath
+modes.</p>
+<p>As noted in the article, the location of the equilibrium points in the
+system-bath model are dependent on the frequencies and coupling strength
+of the bath modes. Hence, we would like to analyze the stability of
+these equilibrium points. The Jacobian of the system-bath Hamiltonian
+vector
+field <a href="#eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a>{reference-type="eqref"
+reference="eqn:Hameq_sys_bath"} is</p>
+$$\begin{aligned}
 \mathbb{J} =  \begin{pmatrix}
-\mbox{\normalfont\Large\bfseries 0}&amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \mathbf{M} \\
+\text{\normalfont\Large\bfseries 0}&amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \mathbf{M} \\
 \hline
-\frac{\partial^2 V_{\rm SB}}{\partial  x_i x_j} &amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \mbox{\normalfont\Large\bfseries 0}
+\frac{\partial^2 V_{\rm SB}}{\partial  x_i x_j} &amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \text{\normalfont\Large\bfseries 0}
 \end{pmatrix},
 \quad \text{where} \; i, j = 1, 2, \ldots , N_S(N_B + 1)
-\label{eqn:jacobian_sbham_vecfield}\end{aligned}\]</span></p>
-<p>where each block matrix is of size <span class="math inline">\(N_S(N_B + 1) \times N_S(N_B + 1)\)</span>. The matrix <span class="math inline">\(\mathbf{M}\)</span> is given by:</p>
-<p><span class="math display">\[\begin{aligned}
+\label{eqn:jacobian_sbham_vecfield}\end{aligned}$$<p>where each block matrix is of size $N_S(N_B + 1) \times N_S(N_B + 1)$.
+The matrix $\mathbf{M}$ is given by:</p>
+$$\begin{aligned}
 \mathbf{M} = \begin{pmatrix}
 \frac{1}{m_s} &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; 0 \\
 0 &amp; \frac{1}{m_s} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; 0 \\
@@ -288,10 +1673,11 @@ dx &amp; = &amp; -\frac{1}{\omega_c} e^{-\frac{\omega}{\omega_c}} d \omega
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; \frac{1}{m_1} &amp; 0 &amp; \cdots &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; \frac{1}{m_2} &amp; \cdots &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; \cdots &amp; \cdots &amp; \ddots &amp; 0
-\end{pmatrix}\end{aligned}\]</span></p>
-<p>which is a diagonal matrix with mass of system and bath degrees of freedom along the main diagonal.</p>
-<p>The Hessian of the potential energy function for the system-bath model is given by:</p>
-<p><span class="math display">\[\begin{aligned}
+\end{pmatrix}\end{aligned}$$<p>which is a diagonal matrix with mass of system and bath degrees of
+freedom along the main diagonal.</p>
+<p>The Hessian of the potential energy function for the system-bath model
+is given by:</p>
+$$\begin{aligned}
 \frac{\partial^2 V_{\rm SB}}{\partial  x_i x_j} = \begin{pmatrix}
 - \frac{\partial^2 V_{\rm DB}}{\partial^2  x^2} - \sum\limits_{j} (\frac{c_{x,j}}{\omega_j})^2 &amp; -\frac{\partial^2 V_{\rm DB}}{\partial y \partial x} &amp; c_{x,1} &amp; c_{x,2} &amp; \cdots &amp; c_{x,N_B} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
 -\frac{\partial^2 V_{\rm DB}}{\partial y \partial x} &amp; - \frac{\partial^2 V_{\rm DB}}{\partial^2  y^2} - \sum\limits_{j} (\frac{c_{y,j}}{\omega_j})^2 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; c_{y,1} &amp; c_{y,2} &amp; \cdots &amp; c_{y,N_B} \\
@@ -303,239 +1689,122 @@ c_{x,N_B} &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -\omega_{N_B}^2 &amp; 0 &am
 0 &amp; c_{y,2} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; -\omega_2^2 &amp; \cdots &amp; 0 \\
 0 &amp; \vdots &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; \ddots &amp; 0 \\
 0 &amp; c_{y,N_B} &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -\omega_{N_B}^2 \\
-\end{pmatrix}\end{aligned}\]</span></p>
-<p>The Jacobian evaluated at the equilibrium points <span class="math inline">\(\overline{x}\)</span> is given by</p>
-<p><span class="math display">\[\begin{aligned}
+\end{pmatrix}\end{aligned}$$<p>The Jacobian evaluated at the equilibrium points $\overline{x}$ is given
+by</p>
+$$\begin{aligned}
 \mathbb{J}(\overline{q}) =  \begin{pmatrix}
-\mbox{\normalfont\Large\bfseries 0}&amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \mathbf{M} \\
+\text{\normalfont\Large\bfseries 0}&amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \mathbf{M} \\
 \hline
-\frac{\partial^2 V_{\rm SB}}{\partial  x_i x_j} (\overline{q}) &amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \mbox{\normalfont\Large\bfseries 0}
+\frac{\partial^2 V_{\rm SB}}{\partial  x_i x_j} (\overline{q}) &amp; \hspace*{-\arraycolsep}\vline\hspace*{-\arraycolsep}&amp; \text{\normalfont\Large\bfseries 0}
 \end{pmatrix},
 \quad \text{where} \; i, j = 1, 2, \ldots , N_S(N_B + 1)
-\label{eqn:jacobian_sbham_eqpt}\end{aligned}\]</span></p>
-<p>The eigenvalues are given by the solutions of the characteristic equation:</p>
-<p><span class="math display">\[\rm{det} \left( \mathbb{J}(\overline{q}) - \lambda \mathbb{I} \right) = 0\]</span></p>
-<p>where <span class="math inline">\(\mathbb{J}(\overline{q})\)</span> and <span class="math inline">\(\mathbb{I}\)</span> are <span class="math inline">\(2N_S(N_B + 1) \times 2N_S(N_B + 1)\)</span> matrices.</p>
+\label{eqn:jacobian_sbham_eqpt}\end{aligned}$$<p>The eigenvalues are given by the solutions of the characteristic
+equation:</p>
+$$\rm{det} \left( \mathbb{J}(\overline{q}) - \lambda \mathbb{I} \right) = 0$$<p>where $\mathbb{J}(\overline{q})$ and $\mathbb{I}$ are
+$2N_S(N_B + 1) \times 2N_S(N_B + 1)$ matrices.</p>
+<p>\centering
+<img src="eigenvalues_systembath_NB64.pdf" alt="Eigenvalues of the equilibrium point $\overline{q}_s$ of the
+system-bath
+model [\[eqn:Hameq\_sys\_bath\]](#eqn:Hameq_sys_bath){reference-type=&quot;eqref&quot;
+reference=&quot;eqn:Hameq_sys_bath&quot;} where the real part is shown as red dots
+and imaginary part is shown as blue cross. The pair of purely positive
+and negative eigenvalues verify the equilibrium point is
+index-1.">{width="0.95\linewidth"}</p>
+<p>The linear stability analysis of these
+equilibrium points gives their stability does not change from the system
+model by adding the bath modes in the form of
+Eqn. <a href="#eqn:sb_ham">[eqn:sb_ham]</a>{reference-type="eqref"
+reference="eqn:sb_ham"}. Next, the total energy of the index-1
+equilibrium point at $\overline{q}_s$ is
+$\mathcal{H}(0,0,0_j,0_j,0,0,0_j,0_j) = \epsilon_s$ which is the same as
+in the system
+Hamiltonian <a href="#eqn:ham_db">[eqn:ham_db]</a>{reference-type="eqref"
+reference="eqn:ham_db"}.</p>
+<h2 id="Implications-for-Reaction-Dynamics">Implications for Reaction Dynamics<a class="anchor-link" href="#Implications-for-Reaction-Dynamics"> </a></h2><h3 id="Detecting-changes-in-reactive-islands-using-Lagrangian-descriptors">Detecting changes in reactive islands using Lagrangian descriptors<a class="anchor-link" href="#Detecting-changes-in-reactive-islands-using-Lagrangian-descriptors"> </a></h3><p>It has been demonstrated that the reactive islands and their
+hierarchical structure can be used to search for new reactive
+trajectories using the so-called shooting
+method [@patra_detecting_2018]. In high dimensional molecular phase
+space, this can be a non-trivial task due to the available phase space
+volume and so has been phrased as "harvesting rare trajectories" and
+computed using transition path sampling methods [@patra_classical_2015].
+In this section, we would like to investigate if the LD contour maps can
+provide a systematic approach to finding reactive trajectories and hence
+building the high dimensional analogs of reactive islands in a
+system-bath model.</p>
+<p><strong>$N_S(N_B + 1)$-DoF: $N_B$ bath modes coupled to each of the $N_S$ system DoF</strong></p>
+<p>To sample the reactive trajectories, we introduce the following
+isoenergetic two-dimensional slice in the $2N_S(N_B + 1)$-dimensional
+phase space of
+Eqn. <a href="#eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a>{reference-type="eqref"
+reference="eqn:Hameq_sys<em>bath"}. $$\begin{aligned}
+U</em>{xp_x}^- &amp;= \left{(x,y,x_i,y_i,p_x,p<em>y,p</em>{x<em>i},p</em>{y_i}) \; | \; y = y_w, x_i = 0, y<em>i = 0, p</em>{x<em>i} = 0, p</em>{y_i} = 0, p_y(\cdot;E) &lt; 0 \right} 
+\label{eqn:sos_Uxpx_systembath} \end{aligned}$$</p>
+<h3 id="Influence-of-the-number-of-bath-modes">Influence of the number of bath modes<a class="anchor-link" href="#Influence-of-the-number-of-bath-modes"> </a></h3><p>Let us consider the bath parameters $\eta_{x} = \eta_{y} = 0.01$ and
+$\omega_{c} = 1.0$ and study the effect of increasing the number of bath
+modes on the reactive islands of the 2 DoF isomerization.</p>
+<p>Changes in reactive islands with increasing number of bath modes for
+$\tau = 100$ which we considered to be enough integration time for the
+isomerization given by the
+system <a href="#eqn:vec_field_db">[eqn:vec_field_db]</a>{reference-type="eqref"
+reference="eqn:vec_field_db"}.</p>
+<p>\centering
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E1-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E7-500_x-px_tau100_NB64.png}}
+\centering
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E1-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E7-500_x-px_tau100_NB64.png}}</p>
+<h3 id="Influence-of-friction-in-the-bath-modes">Influence of friction in the bath modes<a class="anchor-link" href="#Influence-of-friction-in-the-bath-modes"> </a></h3><p>\centering
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3B2_eta1e-2_omega1e0/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3B2_eta1e-1_omega1e0/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3B2_eta1e0_omega1e0/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\centering
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-2_omega1e0_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-1_omega1e0_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e0_omega1e0_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}</p>
 
-<figure>
-<embed src="eigenvalues_systembath_NB64.pdf" /><figcaption>Eigenvalues of the equilibrium point <span class="math inline">\(\overline{q}_s\)</span> of the system-bath model <a href="#eqn:Hameq_sys_bath" data-reference-type="eqref" data-reference="eqn:Hameq_sys_bath">[eqn:Hameq_sys_bath]</a> where the real part is shown as red dots and imaginary part is shown as blue cross. The pair of purely positive and negative eigenvalues verify the equilibrium point is index-1.</figcaption>
-</figure>
-<h1 id="system-bath-model-verification">System-bath model verification</h1>
+</div>
+</div>
+</div>
+</div>
 
-<div id="refs" class="references">
-<div id="ref-Allahem_chaotic_2012">
-<p>Allahem, A., and T. Bartsch. 2012. “Chaotic Dynamics in Multidimensional Transition States.” <em>J. Chem. Phys.</em> 137: 214310.</p>
-</div>
-<div id="ref-bardakcioglu2018">
-<p>Bardakcioglu, Robin, Andrej Junginger, Matthias Feldmaier, Jörg Main, and Rigoberto Hernandez. 2018. “Binary Contraction Method for the Construction of Time-Dependent Dividing Surfaces in Driven Chemical Reactions.” <em>Physical Review E</em> 98 (3).</p>
-</div>
-<div id="ref-berezhkovskii_activated_1992">
-<p>Berezhkovskii, A. M., E. Pollak, and V. Y. Zitserman. 1992. “Activated Rate Processes: Generalization of the Kramers-Grote-Hynes and Langer Theories.” <em>J. Chem. Phys.</em> 97 (4): 2422–37.</p>
-</div>
-<div id="ref-bolhuis_transition_2002">
-<p>Bolhuis, Peter G., David Chandler, Christoph Dellago, and Phillip L. Geissler. 2002. “Transition Path Sampling: Throwing Ropes over Rough Mountain Passes, in the Dark.” <em>Annual Review of Physical Chemistry</em> 53 (1): 291–318.</p>
-</div>
-<div id="ref-craig_chemical_2005">
-<p>Craig, I. E., and D. E. Manolopoulos. 2005. “Chemical Reaction Rates from Ring Polymer Molecular Dynamics.” <em>J. Chem. Phys.</em> 122: 084106.</p>
-</div>
-<div id="ref-craven2015lagrangian">
-<p>Craven, Galen T, and Rigoberto Hernandez. 2015. “Lagrangian Descriptors of Thermalized Transition States on Time-Varying Energy Surfaces.” <em>Physical Review Letters</em> 115 (14). APS: 148301.</p>
-</div>
-<div id="ref-craven2016deconstructing">
-<p>———. 2016. “Deconstructing Field-Induced Ketene Isomerization Through Lagrangian Descriptors.” <em>Physical Chemistry Chemical Physics</em> 18 (5). Royal Society of Chemistry: 4008–18.</p>
-</div>
-<div id="ref-craven2017lagrangian">
-<p>Craven, Galen T, Andrej Junginger, and Rigoberto Hernandez. 2017. “Lagrangian Descriptors of Driven Chemical Reaction Manifolds.” <em>Physical Review E</em> 96 (2). APS: 022222.</p>
-</div>
-<div id="ref-davis_bottlenecks_1985">
-<p>Davis, Michael J. 1985. “Bottlenecks to Intramolecular Energy Transfer and the Calculation of Relaxation Rates.” <em>The Journal of Chemical Physics</em> 83 (3): 1016–31. <a href="https://doi.org/10.1063/1.449465" class="uri">https://doi.org/10.1063/1.449465</a>.</p>
-</div>
-<div id="ref-davis_phase_1987">
-<p>———. 1987. “Phase Space Dynamics of Bimolecular Reactions and the Breakdown of Transition State Theory.” <em>The Journal of Chemical Physics</em> 86 (7): 3978–4003. <a href="https://doi.org/10.1063/1.451908" class="uri">https://doi.org/10.1063/1.451908</a>.</p>
-</div>
-<div id="ref-de_leon_1992">
-<p>De Leon, N. 1992. “Cylindrical Manifolds and Reactive Island Kinetic Theory in the Time Domain.” <em>The Journal of Chemical Physics</em> 96 (1): 285–97.</p>
-</div>
-<div id="ref-de_leon_intramolecular_1981">
-<p>De Leon, Nelson, and B. J. Berne. 1981. “Intramolecular Rate Process: Isomerization Dynamics and the Transition to Chaos.” <em>The Journal of Chemical Physics</em> 75 (7): 3495–3510.</p>
-</div>
-<div id="ref-de_leon_order_1989">
-<p>De Leon, N., and C. Clay Marston. 1989. “Order in Chaos and the Dynamics and Kinetics of Unimolecular Conformational Isomerization.” <em>The Journal of Chemical Physics</em> 91 (6): 3405–25. <a href="https://doi.org/10.1063/1.456915" class="uri">https://doi.org/10.1063/1.456915</a>.</p>
-</div>
-<div id="ref-de_leon_1991-1">
-<p>De Leon, N., Manish A. Mehta, and Robert Q. Topper. 1991a. “Cylindrical Manifolds in Phase Space as Mediators of Chemical Reaction Dynamics and Kinetics. II. Numerical Considerations and Applications to Models with Two Degrees of Freedom.” <em>The Journal of Chemical Physics</em> 94 (12): 8329–41.</p>
-</div>
-<div id="ref-de_leon_1991">
-<p>———. 1991b. “Cylindrical Manifolds in Phase Space as Mediators of Chemical Reaction Dynamics and Kinetics. I. Theory.” <em>The Journal of Chemical Physics</em> 94 (12): 8310–28.</p>
-</div>
-<div id="ref-donohoe_ruthenium-catalyzed_2009">
-<p>Donohoe, Timothy J., Timothy J. C. O’Riordan, and Carla P. Rosa. 2009. “Ruthenium-Catalyzed Isomerization of Terminal Olefins: Applications to Synthesis.” <em>Angewandte Chemie International Edition</em> 48 (6): 1014–7.</p>
-</div>
-<div id="ref-duffy_solvent_1992">
-<p>Duffy, Erin M, Daniel L Severance, and William L Jorgensen. 1992. “Solvent Effects on the Barrier to Isomerization for a Tertiary Amide from Ab Initio and Monte Carlo Calculations.” <em>Journal of the American Chemical Society</em> 114 (19). ACS Publications: 7535–42.</p>
-</div>
-<div id="ref-dugave_cistrans_2003">
-<p>Dugave, Christophe, and Luc Demange. 2003. “Cis−Trans Isomerization of Organic Molecules and Biomolecules: Implications and Applications <span class="math inline">\(^{\textrm{†}}\)</span>.” <em>Chemical Reviews</em> 103 (7): 2475–2532.</p>
-</div>
-<div id="ref-eberhardt_solvent_1992">
-<p>Eberhardt, Eric S, Stewart N Loh, Andrew P Hinck, and Ronald T Raines. 1992. “Solvent Effects on the Energetics of Prolyl Peptide Bond Isomerization.” <em>Journal of the American Chemical Society</em> 114 (13). ACS Publications: 5437–9.</p>
-</div>
-<div id="ref-feldmaier_invariant_2019">
-<p>Feldmaier, Matthias, Philippe Schraft, Robin Bardakcioglu, Johannes Reiff, Melissa Lober, Martin Tschöpe, Andrej Junginger, Jörg Main, Thomas Bartsch, and Rigoberto Hernandez. 2019. “Invariant Manifolds and Rate Constants in Driven Chemical Reactions.” <em>The Journal of Physical Chemistry B</em> 123 (9): 2070–86.</p>
-</div>
-<div id="ref-flom_dynamic_1986">
-<p>Flom, Steven R, V Nagarajan, and Paul F Barbara. 1986. “Dynamic Solvent Effects on Large-Amplitude Isomerization Rates. 1. 2-Vinylanthracene.” <em>The Journal of Physical Chemistry</em> 90 (10). ACS Publications: 2085–92.</p>
-</div>
-<div id="ref-Gillilan91">
-<p>Gillilan, R. E., and G. S. Ezra. 1991. “Transport and turnstiles in multidimensional Hamiltonian mappings for unimolecular fragmentation: Application to van der Waals predissociation.” <em>J. Chem. Phys.</em> 94: 2648–68.</p>
-</div>
-<div id="ref-halicioglu_solvent_1969">
-<p>Halicioǧlu, Timur, and Okatay Sinanoǧlu. 1969. “Solvent Effects on Cis-Trans Azobenzene Isomerization: A Detailed Application of a Theory of Solvent Effects on Molecular Association.” <em>Annals of the New York Academy of Sciences</em> 158 (1). Wiley Online Library: 308–17.</p>
-</div>
-<div id="ref-hershkovitz_multidimensional_1997">
-<p>Hershkovitz, E., and E. Pollak. 1997. “Multidimensional Generalization of the Pollak-Grabert-Hanggi Turnover Theory for Activated Rate Processes.” <em>J. Chem. Phys.</em> 106 (18): 7678–99.</p>
-</div>
-<div id="ref-Inarrea_bifurcations_2011">
-<p>Inarrea, M., J. F. Palacian, A. I. Pascual, and J. P. Salas. 2011. “Bifurcations of Dividing Surfaces in Chemical Reactions.” <em>J. Chem. Phys.</em> 135: 014110.</p>
-</div>
-<div id="ref-junginger_transition_2016">
-<p>Junginger, Andrej, Galen T Craven, Thomas Bartsch, F Revuelta, F Borondo, RM Benito, and Rigoberto Hernandez. 2016a. “Transition State Geometry of Driven Chemical Reactions on Time-Dependent Double-Well Potentials.” <em>Physical Chemistry Chemical Physics</em> 18 (44). Royal Society of Chemistry: 30270–81.</p>
-</div>
-<div id="ref-junginger2016transition">
-<p>———. 2016b. “Transition State Geometry of Driven Chemical Reactions on Time-Dependent Double-Well Potentials.” <em>Physical Chemistry Chemical Physics</em> 18 (44). Royal Society of Chemistry: 30270–81.</p>
-</div>
-<div id="ref-junginger2017chemical">
-<p>Junginger, Andrej, Lennart Duvenbeck, Matthias Feldmaier, Jörg Main, Günter Wunner, and Rigoberto Hernandez. 2017. “Chemical Dynamics Between Wells Across a Time-Dependent Barrier: Self-Similarity in the Lagrangian Descriptor and Reactive Basins.” <em>The Journal of Chemical Physics</em> 147 (6). AIP Publishing: 064101.</p>
-</div>
-<div id="ref-junginger2016uncovering">
-<p>Junginger, Andrej, and Rigoberto Hernandez. 2016a. “Uncovering the Geometry of Barrierless Reactions Using Lagrangian Descriptors.” <em>The Journal of Physical Chemistry B</em> 120 (8): 1720–5.</p>
-</div>
-<div id="ref-junginger_uncovering_2016">
-<p>———. 2016b. “Uncovering the Geometry of Barrierless Reactions Using Lagrangian Descriptors.” <em>The Journal of Physical Chemistry B</em> 120 (8): 1720–5. <a href="https://doi.org/10.1021/acs.jpcb.5b09003" class="uri">https://doi.org/10.1021/acs.jpcb.5b09003</a>.</p>
-</div>
-<div id="ref-junginger2017variational">
-<p>Junginger, Andrej, Jörg Main, Günter Wunner, and Rigoberto Hernandez. 2017. “Variational Principle for the Determination of Unstable Periodic Orbits and Instanton Trajectories at Saddle Points.” <em>Physical Review A</em> 95 (3).</p>
-</div>
-<div id="ref-Komatsuzaki00">
-<p>Komatsuzaki, T., and R. S. Berry. 2000. “Local regularity and non-recrossing path in transition state: a new strategy in chemical reaction theories.” <em>J. Mol. Struct. THEOCHEM</em> 506: 55–70.</p>
-</div>
-<div id="ref-Komatsuzaki02a">
-<p>———. 2002. “A dynamical propensity rule for transitions in chemical reactions.” <em>J. Phys. Chem. A</em> 106: 10945–50.</p>
-</div>
-<div id="ref-Komatsuzaki96">
-<p>Komatsuzaki, T., and M. Nagaoka. 1996. “Study on ‘regularity’ of barrier recrossing motion.” <em>J. Chem. Phys.</em> 105: 10838–48.</p>
-</div>
-<div id="ref-Komatsuzaki97">
-<p>Komatsuzaki, T., and M. Nagoaka. 1997. “A dividing surface free from a barrier recrossing motion in many-body systems.” <em>Chem. Phys. Lett.</em> 265: 91–98.</p>
-</div>
-<div id="ref-kramers_brownian_1940">
-<p>Kramers, H.A. 1940. “Brownian Motion in a Field of Force and the Diffusion Model of Chemical Reactions.” <em>Physica</em> 7 (4): 284–304.</p>
-</div>
-<div id="ref-Li_bifurcation_2009">
-<p>Li, C. B., M. Toda, and T. Komatsuzaki. 2009. “Bifurcation of no-return transition states in many-body chemical reactions.” <em>J. Chem. Phys.</em> 130: 124116.</p>
-</div>
-<div id="ref-lopesino_2015">
-<p>Lopesino, Carlos, Francisco Balibrea, Stephen Wiggins, and Ana M. Mancho. 2015. “Lagrangian Descriptors for Two Dimensional, Area Preserving, Autonomous and Nonautonomous Maps.” <em>Communications in Nonlinear Science and Numerical Simulation</em> 27 (1-3): 40–51.</p>
-</div>
-<div id="ref-lopesino2017">
-<p>Lopesino, C., F. Balibrea-Iniesta, V. J. García-Garrido, S. Wiggins, and A. M. Mancho. 2017. “A Theoretical Framework for Lagrangian Descriptors.” <em>International Journal of Bifurcation and Chaos</em> 27 (01): 1730001.</p>
-</div>
-<div id="ref-mackay_bifurcations_2014">
-<p>MacKay, R. S., and D. C. Strub. 2014. “Bifurcations of Transition States: Morse Bifurcations.” <em>Nonlinearity</em> 27 (5). IOP Publishing: 859.</p>
-</div>
-<div id="ref-MacKay_morse_2015">
-<p>MacKay, R. S., and D. C. Strub. 2015. “Morse bifurcations of transition states in bimolecular reactions.” <em>Nonlinearity</em> 28 (12): 4303–29.</p>
-</div>
-<div id="ref-madrid2009">
-<p>Madrid, J. A. J., and A. M. Mancho. 2009. “Distinguished trajectories in time dependent vector fields.” <em>Chaos</em> 19: 013111.</p>
-</div>
-<div id="ref-mancho_2013">
-<p>Mancho, Ana M., Stephen Wiggins, Jezabel Curbelo, and Carolina Mendoza. 2013. “Lagrangian Descriptors: A Method for Revealing Phase Space Structures of General Time Dependent Dynamical Systems.” <em>Communications in Nonlinear Science and Numerical Simulation</em> 18 (12): 3530–57.</p>
-</div>
-<div id="ref-marston_reactive_1989">
-<p>Marston, C. Clay, and N. De Leon. 1989. “Reactive Islands as Essential Mediators of Unimolecular Conformational Isomerization: A Dynamical Study of 3‐phospholene.” <em>The Journal of Chemical Physics</em> 91 (6): 3392–3404. <a href="https://doi.org/10.1063/1.456914" class="uri">https://doi.org/10.1063/1.456914</a>.</p>
-</div>
-<div id="ref-mauguiere_bifurcations_2013">
-<p>Mauguière, F. A. L., P. Collins, G. S. Ezra, and S. Wiggins. 2013. “Bifurcations of Normally Hyperbolic Invariant Manifolds in Analytically Tractable Models and Consequences for Reaction Dynamics.” <em>Int. J. Bifurcat. Chaos</em> 23 (12). World Scientific.</p>
-</div>
-<div id="ref-mciver_structure_1972">
-<p>McIver, James W., and Andrew Komornicki. 1972. “Structure of Transition States in Organic Reactions. General Theory and an Application to the Cyclobutene-Butadiene Isomerization Using a Semiempirical Molecular Orbital Method.” <em>Journal of the American Chemical Society</em> 94 (8): 2625–33. <a href="https://doi.org/10.1021/ja00763a011" class="uri">https://doi.org/10.1021/ja00763a011</a>.</p>
-</div>
-<div id="ref-meiss_average_1997">
-<p>Meiss, J. D. 1997. “Average Exit Time for Volume-Preserving Maps.” <em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em> 7 (1): 139–47.</p>
-</div>
-<div id="ref-naik2019afinding">
-<p>Naik, Shibabrat, Víctor J. García-Garrido, and Stephen Wiggins. 2019. “Finding NHIM: Identifying High Dimensional Phase Space Structures in Reaction Dynamics Using Lagrangian Descriptors.” <em>Communications in Nonlinear Science and Numerical Simulation</em> 79: 104907.</p>
-</div>
-<div id="ref-naik2019bfinding">
-<p>Naik, Shibabrat, and Stephen Wiggins. 2019. “Finding Normally Hyperbolic Invariant Manifolds in Two and Three Degrees of Freedom with Hénon-Heiles-Type Potential.” <em>Phys. Rev. E</em> 100 (2): 022204.</p>
-</div>
-<div id="ref-Almeida1990">
-<p>Ozorio de Almeida, A. M., N. De Leon, Manish A. Mehta, and C. Clay Marston. 1990. “Geometry and Dynamics of Stable and Unstable Cylinders in Hamiltonian Systems.” <em>Physica D: Nonlinear Phenomena</em> 46 (2): 265–85.</p>
-</div>
-<div id="ref-patra_classical_2015">
-<p>Patra, Sarbani, and Srihari Keshavamurthy. 2015. “Classical-Quantum Correspondence in a Model for Conformational Dynamics: Connecting Phase Space Reactive Islands with Rare Events Sampling.” <em>Chemical Physics Letters</em> 634 (August): 1–10.</p>
-</div>
-<div id="ref-patra_detecting_2018">
-<p>———. 2018. “Detecting Reactive Islands Using Lagrangian Descriptors and the Relevance to Transition Path Sampling.” <em>Physical Chemistry Chemical Physics</em> 20 (7): 4970–81.</p>
-</div>
-<div id="ref-Pechukas73">
-<p>Pechukas, P., and F. J. McLafferty. 1973. “On transition state theory and the classical mechanics of collinear collisions.” <em>J. Chem. Phys.</em> 58 (4): 1622–5. <a href="https://doi.org/http://dx.doi.org/10.1063/1.1679404" class="uri">https://doi.org/http://dx.doi.org/10.1063/1.1679404</a>.</p>
-</div>
-<div id="ref-Pechukas77">
-<p>Pechukas, P., and E. Pollak. 1977. “Trapped trajectories at the boundary of reactivity bands in molecular collisions.” <em>J. Chem. Phys.</em> 67 (12): 5976–7. <a href="https://doi.org/http://dx.doi.org/10.1063/1.434777" class="uri">https://doi.org/http://dx.doi.org/10.1063/1.434777</a>.</p>
-</div>
-<div id="ref-Pechukas79">
-<p>———. 1979. “Classical transition state theory is exact if the transition state is unique.” <em>J. Chem. Phys.</em> 71 (5): 2062–8. <a href="https://doi.org/http://dx.doi.org/10.1063/1.438575" class="uri">https://doi.org/http://dx.doi.org/10.1063/1.438575</a>.</p>
-</div>
-<div id="ref-pollak_theory_1989">
-<p>Pollak, Eli, Hermann Grabert, and Peter Hänggi. 1989. “Theory of Activated Rate Processes for Arbitrary Frequency Dependent Friction: Solution of the Turnover Problem.” <em>The Journal of Chemical Physics</em> 91 (7). AIP: 4073–87.</p>
-</div>
-<div id="ref-pollak_transition-state_1995">
-<p>Pollak, Eli, and Peter Talkner. 1995. “Transition-State Recrossing Dynamics in Activated Rate Processes.” <em>Physical Review E</em> 51 (3): 1868–78.</p>
-</div>
-<div id="ref-Pollak78">
-<p>Pollak, E., and P. Pechukas. 1978. “Transition states, trapped trajectories, and bound states embedded in the continuum.” <em>J. Chem. Phys.</em> 69: 1218–26.</p>
-</div>
-<div id="ref-price_solvent_1961">
-<p>Price, Charles C., and William H. Snyder. 1961. “SOLVENT EFFECTS IN THE BASE-CATALYZED ISOMERIZATION OF ALLYL TO PROPENYL ETHERS.” <em>Journal of the American Chemical Society</em> 83 (7): 1773–3.</p>
-</div>
-<div id="ref-reese_curvilinear_1998">
-<p>Reese, S. K., and S. C. Tucker. 1998. “Curvilinear-Path Based Theory of the Energy Transfer Limited Rate of a Two-Dimensional Solute in a Dissipative Bath.” <em>Chemical Physics</em> 235: 171–87.</p>
-</div>
-<div id="ref-tucker_reaction_2000">
-<p>Tucker, Susan C. 2000. “Reaction Rates in Condensed Phases. Perspective on &quot;Brownian Motion in a Field of Force and the Diffusion Model of Chemical Reactions&quot;.” <em>Theoretical Chemistry Accounts: Theory, Computation, and Modeling (Theoretica Chimica Acta)</em> 103 (3-4): 209–11.</p>
-</div>
-<div id="ref-uzer_geometry_2002">
-<p>Uzer, T, Charles Jaffé, Jesús Palacián, Patricia Yanguas, and Stephen Wiggins. 2002. “The Geometry of Reaction Dynamics.” <em>Nonlinearity</em> 15 (4): 957–92.</p>
-</div>
-<div id="ref-waalkens2004direct">
-<p>Waalkens, H, and S Wiggins. 2004. “Direct construction of a dividing surface of minimal flux for multi-degree-of-freedom systems that cannot be recrossed.” <em>J. Phys. A: Math. Gen.</em> 37 (35). IOP Publishing: L435.</p>
-</div>
-<div id="ref-wieder_dissociation_1962">
-<p>Wieder, Grace M., and R. A. Marcus. 1962. “Dissociation and Isomerization of Vibrationally Excited Species. II. Unimolecular Reaction Rate Theory and Its Application.” <em>The Journal of Chemical Physics</em> 37 (8): 1835–52.</p>
-</div>
-<div id="ref-wiggins_geometry_1990">
-<p>Wiggins, S. 1990. “On the Geometry of Transport in Phase Space I. Transport in <span class="math inline">\(k\)</span> Degree-of-Freedom Hamiltonian Systems, <span class="math inline">\(2 \le k &lt; \infty\)</span>.” <em>Physica D</em> 44: 471–501.</p>
-</div>
-<div id="ref-wiggins2013normally">
-<p>———. 2013. <em>Normally Hyperbolic Invariant Manifolds in Dynamical Systems</em>. Vol. 105. Springer Science &amp; Business Media.</p>
-</div>
-<div id="ref-wiggins_role_2016">
-<p>Wiggins, Stephen. 2016. “The Role of Normally Hyperbolic Invariant Manifolds (Nhims) in the Context of the Phase Space Setting for Chemical Reaction Dynamics.” <em>Regular and Chaotic Dynamics</em> 21 (6). Springer: 621–38.</p>
-</div>
-<div id="ref-wiggins_impenetrable_2001">
-<p>Wiggins, S., L. Wiesenfeld, C. Jaffé, and T. Uzer. 2001. “Impenetrable Barriers in Phase-Space.” <em>Physical Review Letters</em> 86 (24): 5478–81. <a href="https://doi.org/10.1103/PhysRevLett.86.5478" class="uri">https://doi.org/10.1103/PhysRevLett.86.5478</a>.</p>
-</div>
-<div id="ref-zwanzig_nonlinear_1973">
-<p>Zwanzig, Robert. 1973. “Nonlinear Generalized Langevin Equations.” <em>Journal of Statistical Physics</em> 9 (3): 215–20.</p>
-</div>
-</div>
-<section class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p><a href="https://www.sciencedirect.com/topics/engineering/isomerization" class="uri">https://www.sciencedirect.com/topics/engineering/isomerization</a><a href="#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
-</section>
-</body>
+ 
+
+
+    </main>
+    
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              
+<nav class="c-page__nav">
+  
+    
+    
+
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/act3/system_bath1/main.html">
+      〈 <span class="u-margin-right-tiny"></span> N-Degree-of-Freedom System-Bath Mo...
+    </a>
+  
+
+  
+    
+
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="">
+       <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

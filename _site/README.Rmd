@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width,minimum-scale=1">
 
   <title>Chemical Reactions: A Journey into Phase Space</title>
-  <meta name="description" content="Welcome to the GitHub repository! ## What this book is about?Chemistry is concerned with the transformation of matter. In more detail, it is concerned with t...">
+  <meta name="description" content="# Chemical Reactions: A Journey into Phase Space**Authors**Makrina Agaoglou, Broncio Aguilar-Sanjuan, Victor Jose García-Garrido, Rafael García-Meseguer, Fra...">
 
   <link rel="canonical" href="http://localhost:4444/README.Rmd">
   <link rel="alternate" type="application/rss+xml" title="CHAMPS Dynamical Systems Book" href="http://localhost:4444/feed.xml">
@@ -14,7 +14,7 @@
   <meta property="og:url"         content="http://localhost:4444/README.Rmd" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Chemical Reactions: A Journey into Phase Space" />
-<meta property="og:description" content="Welcome to the GitHub repository! ## What this book is about?Chemistry is concerned with the transformation of matter. In more detail, it is concerned with t..." />
+<meta property="og:description" content="# Chemical Reactions: A Journey into Phase Space**Authors**Makrina Agaoglou, Broncio Aguilar-Sanjuan, Victor Jose García-Garrido, Rafael García-Meseguer, Fra..." />
 <meta property="og:image"       content="http://localhost:4444/images/logo/champs_logo.jpg" />
 
 <meta name="twitter:card" content="summary">
@@ -26,9 +26,9 @@
   "@type": "NewsArticle",
   "mainEntityOfPage": "http://localhost:4444/README.Rmd",
   "headline": "Chemical Reactions: A Journey into Phase Space",
-  "datePublished": "2019-12-09T16:26:55+00:00",
-  "dateModified": "2019-12-09T16:26:55+00:00",
-  "description": "Welcome to the GitHub repository! ## What this book is about?Chemistry is concerned with the transformation of matter. In more detail, it is concerned with t...",
+  "datePublished": "2019-12-09T16:38:44+00:00",
+  "dateModified": "2019-12-09T16:38:44+00:00",
+  "description": "# Chemical Reactions: A Journey into Phase Space**Authors**Makrina Agaoglou, Broncio Aguilar-Sanjuan, Victor Jose García-Garrido, Rafael García-Meseguer, Fra...",
   "author": {
     "@type": "Person",
     "name": "The CHAMPS group"
@@ -1185,7 +1185,7 @@ initFunction(initPrint)
           
             19.
           
-          N-Degree-of-Freedom System-Bath Model 1
+          N-Degree-of-Freedom System-Bath Model 2
         </a>
       </li>
 
@@ -1274,7 +1274,14 @@ initFunction(initPrint)
 
       <main class="c-textbook__page" tabindex="-1">
             <div class="c-textbook__content" id="textbook_content">
-              Welcome to the GitHub repository! 
+              # Chemical Reactions: A Journey into Phase Space
+
+**Authors**
+
+Makrina Agaoglou, Broncio Aguilar-Sanjuan, Victor Jose García-Garrido, Rafael García-Meseguer, Francisco González-Montoya, Matthaios Katsanikas, Vladimír Krajňák, Shibabrat Naik, Stephen Wiggins
+
+
+Welcome to the GitHub repository! 
 
 ## What this book is about?
 
