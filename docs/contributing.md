@@ -20,13 +20,15 @@ The following is a set of guidelines ([borrowed from the Atom project by Github]
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Contributor Covenant](CODE_OF_CONDUCT.md). 
-By participating, you are expected to uphold this code. Please report unacceptable behavior to [wl16298@bristol.ac.uk](mailto:wl16298@bristol.ac.uk) and or [shiba@vt.edu](mailto:shiba@vt.edu).
+By participating, you are expected to uphold this code. Please report unacceptable behavior to [Prof. Stephen Wiggins](mailto:s.wiggins@bristol.ac.uk).
 
 ## What should I know before I get started?
 
-We recommend familiarity with unstable periodic orbits and their role in Hamiltonian dynamics. Good starting point on these topics are provided in the [README](https://github.com/WyLyu/UPOsHam) for this repository.
+We recommend familiarity with concepts in the prologue chapter of the book and some of the systems presented as case studies.
 
 ## How Can I Contribute?
+
+We recommend using the Jupyter notebook or Markdown template files for contributing to the book. More details on this process will be added later. 
 
 ### Reporting Bugs
 
