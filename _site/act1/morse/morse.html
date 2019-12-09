@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Morse Oscillator</title>
+  <meta name="description" content="        Morse Oscillator    The one Degree-of-Freedom Morse Oscillator Introduction and Development of the Problem The potential energy function derived by P...">
+
+  <link rel="canonical" href="http://localhost:4444/act1/Morse/Morse.html">
+  <link rel="alternate" type="application/rss+xml" title="CHAMPS Dynamical Systems Book" href="http://localhost:4444/feed.xml">
+
+  <meta property="og:url"         content="http://localhost:4444/act1/Morse/Morse.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Morse Oscillator" />
+<meta property="og:description" content="        Morse Oscillator    The one Degree-of-Freedom Morse Oscillator Introduction and Development of the Problem The potential energy function derived by P..." />
+<meta property="og:image"       content="http://localhost:4444/images/logo/champs_logo.jpg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://localhost:4444/act1/Morse/Morse.html",
+  "headline": "Morse Oscillator",
+  "datePublished": "2019-12-09T16:26:55+00:00",
+  "dateModified": "2019-12-09T16:26:55+00:00",
+  "description": "        Morse Oscillator    The one Degree-of-Freedom Morse Oscillator Introduction and Development of the Problem The potential energy function derived by P...",
+  "author": {
+    "@type": "Person",
+    "name": "The CHAMPS group"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4444",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://localhost:4444",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    },
+    
+    // Number LaTeX-style equations
+    "TeX": {
+        equationNumbers: {
+          autoNumber: "all"
+        }
+    }
+    
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'jupyter/jupyter-book',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef",
+        mode: "python"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@latest/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.8.1/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52617120-7');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://localhost:4444") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://champsproject.com"><img src="/images/logo/champs_logo.jpg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">CHAMPS Dynamical Systems Book</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/dedication">
+        <a class="c-sidebar__entry"
+          href="/docs/dedication.html"
+        >
+          
+            1.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/acknowledgements">
+        <a class="c-sidebar__entry"
+          href="/docs/acknowledgements.html"
+        >
+          
+            2.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/preface">
+        <a class="c-sidebar__entry"
+          href="/docs/preface.html"
+        >
+          
+            3.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/prologue">
+        <a class="c-sidebar__entry"
+          href="/prologue/prologue.html"
+        >
+          
+            4.
+          
+          Prologue
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/fundamental_models/fundamental_models">
+        <a class="c-sidebar__entry"
+          href="/fundamental_models/fundamental_models.html"
+        >
+          
+            5.
+          
+          Fundamental Models
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act1/Morse/Morse">
+        <a class="c-sidebar__entry"
+          href="/act1/Morse/Morse.html"
+        >
+          
+            6.
+          
+          Morse Oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/hamiltonian_sn/HSN_victor">
+        <a class="c-sidebar__entry"
+          href="/act2/hamiltonian_sn/HSN_victor.html"
+        >
+          
+            7.
+          
+          Saddle-Node Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/barbanis2D/barbanis2d">
+        <a class="c-sidebar__entry"
+          href="/act2/barbanis2D/barbanis2d.html"
+        >
+          
+            8.
+          
+          Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/caldera/caldera-1">
+        <a class="c-sidebar__entry"
+          href="/act2/caldera/caldera-1.html"
+        >
+          
+            9.
+          
+          Caldera model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/deLeon_Berne/deleon_berne">
+        <a class="c-sidebar__entry"
+          href="/act2/deLeon_Berne/deleon_berne.html"
+        >
+          
+            10.
+          
+          De Leon model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/system_bath1/system_bath1">
+        <a class="c-sidebar__entry"
+          href="/act2/system_bath1/system_bath1.html"
+        >
+          
+            11.
+          
+          System Bath 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/four_well_morse/booksprinttest_makrina">
+        <a class="c-sidebar__entry"
+          href="/act2/four_well_morse/booksprinttest_makrina.html"
+        >
+          
+            12.
+          
+          Four-well potential
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/double_morse/prueba">
+        <a class="c-sidebar__entry"
+          href="/act2/double_morse/prueba.html"
+        >
+          
+            13.
+          
+          Double-Morse oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/1-Ches/roam">
+        <a class="c-sidebar__entry"
+          href="/act2/1-Ches/roam.html"
+        >
+          
+            14.
+          
+          Chesnavich Model Part 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/2-Ches/roam_mass_energy_var">
+        <a class="c-sidebar__entry"
+          href="/act2/2-Ches/roam_mass_energy_var.html"
+        >
+          
+            15.
+          
+          Chesnavich Model Part 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/3-Ches/roamiso">
+        <a class="c-sidebar__entry"
+          href="/act2/3-Ches/roamiso.html"
+        >
+          
+            16.
+          
+          Chesnavich Model Part 3
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/barbanis_3dof/barbanis_3dof">
+        <a class="c-sidebar__entry"
+          href="/act3/barbanis_3dof/barbanis_3dof.html"
+        >
+          
+            17.
+          
+          Three degree-of-freedom Barbanis system
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath1/main">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath1/main.html"
+        >
+          
+            18.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath2/system_bath">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath2/system_bath.html"
+        >
+          
+            19.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="https://github.com/broncio123/champs-booksprint-planning">
+        <a class="c-sidebar__entry"
+          href="https://github.com/broncio123/champs-booksprint-planning"
+        >
+          
+          GitHub repository
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        <a href="/content/act1/Morse/Morse.ipynb" download>
+        <button id="interact-button-download" class="interact-button">.ipynb</button>
+        </a>
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+  <button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+  
+  
+
+
+
+
+
+
+<a href="https://mybinder.org/v2/gh/jupyter/jupyter-book/gh-pages?filepath=content%2Fact1%2FMorse%2FMorse.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+  
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+                  <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Morse Oscillator</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-one-Degree-of-Freedom-Morse-Oscillator">The one Degree-of-Freedom Morse Oscillator<a class="anchor-link" href="#The-one-Degree-of-Freedom-Morse-Oscillator"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction-and-Development-of-the-Problem">Introduction and Development of the Problem<a class="anchor-link" href="#Introduction-and-Development-of-the-Problem"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The potential energy function derived by P. M. Morse is truly a ''workhorse''  potential energy function in theoretical chemistry \cite{morse1929diatomic}.  Originally it was devised to describe the intermolecular force between the two atoms in a diatomic molecule. It has the functional form:</p>
+\begin{equation}
+V(q) =  D \left( 1-e^{-\alpha q} \right)^2,
+\label{eq:mpot}
+\end{equation}<p>where $q$ represents the distance between the two atoms, $D &gt;0$ represents the depth of the potential well (defined relative to the dissociated atoms), and $\alpha &gt;0$ controls the width of the potential well ($\alpha$ small corresponds to a ''wide'' well, $\alpha$ large corresponds to a narrow well).</p>
+<p>The Morse potential defines a one degree-of-freedom Hamiltonian system, i.e. the phase space is two dimensional described by coordinates $(q, p)$, where $p$ is the momentum conjugate to the position variable $q$.  The Hamiltonian has the form of the sum of the  kinetic energy and the potential energy (the Morse potential).  The Hamiltonian system is integrable, and all trajectories lie on the level sets of the Hamiltonian function.  The level sets can be used to derive integrals that give (time) parametrizations of trajectories. Regions of closed (bounded) trajectories can be used to construct special coordinates--<em>action-angle coordinates</em>, where the angle denotes a particular location on the closed level set and the action is the area enclosed by a closed level set (divided by $2 \pi$). The transformation to action-angle coordinates for integrable Hamiltonan systems is a standard topic in good classical mechanics textbooks, see, e.g. \cite{landau1960mechanics, arnold2013mathematical}. The transformation preserves the Hamiltonian nature of the system, i.e. it is a canonical transformation, and therefore the standard approach to constructing such transformations is through the use of generating functions. However, for one degree-of-freedom time-independent Hamiltonian systems (such as the one described by the Morse potential)  there is a simpler approach to generating the action-angle transformation that uses the geometry of the closed level set of the Hamiltonian function and the explicit (time) parametrization of the trajectories that can  be obtained (in principle, if the necessary integrals can be explicitly computed)  for one degree-of-freedom Hamiltonian systems. The approach is inspired by the seminal paper of Melnikov \cite{melnikov1963vk}. This approach was developed in detail in \cite{wiggins1990introduction} (the 1990 edition, <em>not</em> the 2003 edition) and is also described in \cite{mezic1994integrability}. This is the approach that we will follow here.</p>
+<p>Action-angle variables are important in Hamiltonian mechanics for a number of reasons. From the point of view of classical mechanics they are the coordinate system used for the development of the Kolmogorov-Arnold-Moser and Nekhoroshev theorems \cite{dumas2014kam}. They also play a central role in the quantization of classical Hamiltonian systems (in fact, the action and the constant $\hbar$ have the same units) \cite{stone2005einstein, keller1958corrected, keller1960asymptotic, keller1985semiclassical}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dynamical system defined by the Morse potential is Hamiltonian, with Hamiltonian function given by:</p>
+\begin{equation}
+H (q, p) = \frac{p^2}{2m} + D \left( 1-e^{-\alpha q} \right)^2, \qquad (q, p) \in \mathbb{R}^2,
+\label{eq:ham}
+\end{equation}<p>and Hamilton's equations defined by:</p>
+\begin{eqnarray}
+\dot{q}  =  \frac{\partial H}{\partial p} &amp; = &amp;  \frac{p}{m}, \nonumber \\
+\dot{p}  = - \frac{\partial H}{\partial q} %&amp; = &amp;  -2D  \left( 1-e^{-\alpha q} \right) \alpha e^{-\alpha q},  \nonumber \\
+&amp; = &amp; -2D \alpha \left(e^{-\alpha q} - e^{-2\alpha q}  \right). 
+\label{eq:hameq}
+\end{eqnarray}<p>Each level set of the Hamiltonian function (energy surface) has the form:</p>
+\begin{equation}
+\left\{(q, p) \in \mathbb{R}^2 \, | \, H(q, p) = h = \mbox{constant} \right\}.
+\label{eq:levelset}
+\end{equation}<p>For one DoF systems, they are one dimensional curves that are invariant under the Hamiltonian dynamics. Since the trajectories lie on these curves, we can use the form of the level curves to obtain parametrizations of  certain trajectories, as we will demonstrate.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Revealing-the-Phase-Space-Structures">Revealing the Phase Space Structures<a class="anchor-link" href="#Revealing-the-Phase-Space-Structures"> </a></h2><h3 id="Equilibria-and-their-Stability">Equilibria and their Stability<a class="anchor-link" href="#Equilibria-and-their-Stability"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is straightforward to verify the following two points are equilibria for Hamilton's equations:</p>
+\begin{equation}
+(q, p) = (\infty, 0), \, (0, 0).
+\label{eq:equil}
+\end{equation}<p>Next we check their linearized stability properties. The Jacobian matrix, denoted $J$, of Hamilton's equation is given by:</p>
+\begin{equation}
+J = \left(
+\begin{array}{cc}
+0 &amp; \frac{1}{m} \\
+- 2D \alpha^2 \left(- e^{-\alpha q} + 2 e^{-2\alpha q}  \right) &amp; 0
+\end{array}
+\right).
+\label{eq:jac}
+\end{equation}<p>The eigenvalues of $J$ are given by:</p>
+\begin{equation}
+\pm \sqrt{\rm{det}\, J}.
+\label{eq:eivs}
+\end{equation}<p>Hence for the two equilibria we have:</p>
+\begin{equation}
+(q, p) = (0, 0) \Rightarrow \rm{det} \, J = -\frac{2D \alpha ^2}{m},
+\label{eq:eqstab}
+\end{equation}<p>with corresponding eigenvalues:</p>
+\begin{equation}
+\pm i\sqrt{\frac{2D}{m}} \alpha,
+\label{eq:imageivs}
+\end{equation}<p>and</p>
+\begin{equation}
+(q, p) = (\infty, 0) \Rightarrow \rm{det} \, J =0,
+\label{eq:eqsad}
+\end{equation}<p>where both eigenvalues are zero.</p>
+<p>The equilibrium $(q, p) = (0, 0)$ is stable (''elliptic'' in the Hamiltonian dynamics terminology) and the $(q, p) = (\infty, 0)$ is unstable (a ''parabolic'' saddle point  in the Hamiltonian dynamics terminology).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Periodic-Orbits">Periodic Orbits<a class="anchor-link" href="#Periodic-Orbits"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the Hamiltonian \eqref{eq:ham} it is straightforward to verify that the equilibria have the following energies:</p>
+\begin{equation}
+(q, p) = (\infty, 0) \Rightarrow H=D &gt;0.
+\end{equation}<p>and</p>
+\begin{equation}
+(q, p) = (0, 0) \Rightarrow H=0.
+\end{equation}<p>Trajectories with energies larger than $D$  have unbounded motion in $q$. Trajectories having energies $h$ satisfying $0&lt; h &lt; D$ correspond to periodic motions. The level sets of these periodic orbits are given by:</p>
+\begin{equation}
+h= \frac{p^2}{2m} + D \left( 1-e^{-\alpha q} \right)^2, \quad 0&lt; h &lt; D,
+\label{eq:tp1}
+\end{equation}<p>and surround the stable equilibrium point $(q, p) = (0, 0)$ as shown in figure \ref{fig:phase}. The periodic orbits intersect the $q$ axis at two distinct points, $q_+ &gt; 0$ and $q_- &lt;0$,  which are referred to as <em>turning points</em>. These turning points are computed as follows.</p>
+<p>Rewriting \eqref{eq:tp1} gives:</p>
+\begin{equation}
+\frac{p^2}{2m} = h- D \left( 1-e^{-\alpha q} \right)^2.
+\label{eq:tp2}
+\end{equation}<p>The turning points are obtained from \eqref{eq:tp2} by setting $p=0$:</p>
+\begin{equation}
+h=D \left( 1-e^{-\alpha q} \right)^2
+\label{eq:tp3}
+\end{equation}<p>Note that we have:</p>
+\begin{equation}
+0 \le \sqrt{\frac{h}{D}} \le 1,
+\label{eq:tp4}
+\end{equation}<p>from which we obtain the following relations:</p>
+\begin{eqnarray}
+&amp;&amp; 1 \le 1 + \sqrt{\frac{h}{D}} \le 2, \label{eq:tp5} \\
+&amp;&amp; 0 \le 1 -  \sqrt{\frac{h}{D}} \le 1, \label{eq:tp6}
+\end{eqnarray}<p>Taking the positive root of \eqref{eq:tp3} gives:</p>
+\begin{equation}
+1-e^{-\alpha q} =  \sqrt{\frac{h}{D}}.
+\label{eq:tp7}
+\end{equation}<p>from which we obtain the positive turning point:</p>
+\begin{equation}
+q_+ = - \frac{1}{\alpha} \log \left(1-  \sqrt{\frac{h}{D}}  \right) &gt; 0.
+\label{eq:tppos}
+\end{equation}<p>Taking the negative root of \eqref{eq:tp3} gives:</p>
+\begin{equation}
+1-e^{-\alpha q} = -\sqrt{\frac{h}{D}},
+\label{eq:tp8}
+\end{equation}<p>from which we obtain the negative turning point:</p>
+\begin{equation}
+q_- = - \frac{1}{\alpha} \log \left(1 + \sqrt{\frac{h}{D}}  \right) &lt; 0.
+\label{eq:tpneg}
+\end{equation}<p>The  level curve with energy equal to the dissociation energy $h=D$ has the form:</p>
+\begin{equation}
+D= \frac{p^2}{2m} + D \left( 1-e^{-\alpha q} \right)^2,
+\label{eq:homo1}
+\end{equation}<p>and is a separatrix connecting the (parabolic) saddle point. In the terminology of Hamiltonian dynamics it is a homoclinic orbit. It separates bounded from unbounded motion as illustrated in figure \ref{fig:phase}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="560" height="315" src="figures/phase.png">
+\caption{Phase portrait of the Morse oscillator for $D=10$, $\alpha=1$, $m=8$. The equilibrium point at the origin is shown in black, the homoclinic orbit is shown in orange and examples of a periodic orbit and an unbounded trajectory are highlighted with blue and green respectively}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-the-Period-of-a-Periodic-Orbit">Calculation of the Period of a Periodic Orbit<a class="anchor-link" href="#Calculation-of-the-Period-of-a-Periodic-Orbit"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we calculate the period of the periodic orbits. 
+From \eqref{eq:hameq} we have $\dot{q} = \frac{p}{m}$. Using this expression, and the expression for the level set of the Hamiltonian defining a periodic orbit given in \eqref{eq:tp1}, we have</p>
+\begin{equation}
+\frac{dq}{dt} = \pm \sqrt{\frac{2}{m}} \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2},
+\label{eq:po1}
+\end{equation}<p>or</p>
+\begin{equation}
+\frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}} = \pm \sqrt{\frac{2}{m}} dt.
+\label{eq:po2}
+\end{equation}<p>We denote the period of a periodic orbit corresponding to the level set with energy value $h$ by $T(h)$. We can obtain the period by integrating $dt$ around this level set.  Using \eqref{eq:po2}, this becomes:</p>
+\begin{eqnarray}
+T(h) &amp; = &amp; \sqrt{\frac{m}{2}} \int_{q_+}^{q_-} \frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}} -
+\sqrt{\frac{m}{2}} \int_{q_-}^{q_+} \frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}}. \nonumber \\
+&amp; = &amp; \sqrt{2m}  \int_{q_+}^{q_-} \frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}}.
+\label{eq:po3}
+\end{eqnarray}<p>Computation of this integral is facilitated by the substitution:</p>
+\begin{equation}
+u = e^{-\alpha q}.
+\label{eq:subs}
+\end{equation}<p>After computing the integral using integral 2.266 in \cite{gradshteyn1980table} we obtain:</p>
+\begin{equation}
+T(h) = \frac{\pi \sqrt{2m}}{\alpha \sqrt{D-h}}
+\label{eq:period}
+\end{equation}<p>There are two limits in which this expression can be checked with respect to previously obtained results.
+First, we note that for $h=D$ (i.e. the energy of the homoclinic orbit, or ''separatrix'')  $T(D) = \infty$, which is what we expect for the ''period''  of a separatrix.</p>
+<p>Second, we consider $h=0$, which is the energy of the elliptic equilibrium point. In this case we have $T(0) = \frac{\pi \sqrt{2m}}{\alpha \sqrt{D}}$, which is $2 \pi$ divided by the imaginary part of the magnitude of eigenvalue of the Jacobian evaluated at the stable equilibrium point, as we expect.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-position-and-momentum:-$q(t)$-and-$p(t)$,-$0-&lt;-h-&lt;-D$">Calculation of position and momentum: $q(t)$ and $p(t)$, $0 &lt; h &lt; D$<a class="anchor-link" href="#Calculation-of-position-and-momentum:-$q(t)$-and-$p(t)$,-$0-&lt;-h-&lt;-D$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we derive an expression for $q(t)$. Differentiating the expression for $q(t)$ will give the expression for $p(t)$ through the relation $\dot{q} = \frac{p}{m}$. Using \eqref{eq:po2}, we have</p>
+\begin{equation}
+\int_{q_+}^q \frac{dq'}{ \sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2}} =  \sqrt{\frac{2}{m}} t.
+\label{eq:traj1}
+\end{equation}<p>Choosing  the lower limit if the integral to be $q_+$ is arbitrary, but it is equivalent to the  choice of an initial condition. After computing this integral, we obtain:</p>
+\begin{equation}
+q(t) = \frac{1}{\alpha} \log{\frac{\sqrt{Dh} \cos \left(\sqrt{\frac{2(D-h)}{m}} \, \alpha t \right) + D}{D-h}}.
+\label{eq:q(t)}
+\end{equation}<p>It is straightforward to check that the period of \eqref{eq:q(t)} is \eqref{eq:period}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-the-Homoclinic-Orbit:-$q_0(t)$-and-$p_0(t)$,-$0-&lt;-h-&lt;-D$">Calculation of the Homoclinic Orbit: $q_0(t)$ and $p_0(t)$, $0 &lt; h &lt; D$<a class="anchor-link" href="#Calculation-of-the-Homoclinic-Orbit:-$q_0(t)$-and-$p_0(t)$,-$0-&lt;-h-&lt;-D$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As noted earlier, the homoclinic orbit, corresponding to $h=D$, is given by the level set
+\eqref{eq:homo1}. Hence, the integral expression for  the homoclinic orbits is obtained from \eqref{eq:po2} by setting $h=D$.  Computing the integral gives:</p>
+\begin{equation}
+q_0(t) = \frac{1}{\alpha} \log{\frac{1 + \frac{2D}{m} \alpha^2 t^2}{2}}.
+\label{eq:qhom}
+\end{equation}<p>It is a simple matter to check that $\lim_{t \rightarrow \pm \infty} q(t) = \infty$. Subsequently we obtain $p_0(t)$ from $\dot{q}=\frac{p}{m}$ as</p>
+\begin{equation}
+p_0(t) = \frac{4mD\alpha t}{2D\alpha^2 t^2+m}.
+\label{eq:phom}
+\end{equation}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-the-Action-Angle-coordinates:-$I$-and-$\theta(t)$,-$0-&lt;-h-&lt;-D$">Calculation of the Action-Angle coordinates: $I$ and $\theta(t)$, $0 &lt; h &lt; D$<a class="anchor-link" href="#Calculation-of-the-Action-Angle-coordinates:-$I$-and-$\theta(t)$,-$0-&lt;-h-&lt;-D$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we compute the action-angle representation of the orbits in the bounded region following \cite{melnikov1963vk, wiggins1990introduction, mezic1994integrability}.</p>
+<p>We consider a level set defined by the Hamiltonian \eqref{eq:levelset}, for $0 &lt; h &lt; D$. i.e. we consider a periodic orbit with period $T(h)$. Choosing an arbitrary reference point on the periodic orbit, the angular displacement of a trajectory starting from this reference position after time $t$ is given by:</p>
+\begin{equation}
+\theta = \frac{2 \pi}{T(h)} \int{0}^{t}dt' = \frac{2 \pi}{T(h)}  \sqrt{\frac{m}{2}} \int_{q_+}^q \frac{dq'}{ \sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2}}.
+\label{eq:angle1}
+\end{equation}<p>Using the substitution \eqref{eq:subs} and integral 2.266 in \cite{gradshteyn1980table}, we have:</p>
+\begin{equation}
+\theta = \frac{\pi}{T(h)\alpha} \sqrt{\frac{2m}{D-h}} \left(\frac{3\pi}{2} - \sin^{-1}\frac{(h-D)e^{\alpha q}+D}{\sqrt{Dh}} \right).
+\label{eq:angle2}
+\end{equation}<p>The action associated with this periodic orbit is the area that it encloses (in phase space) divided by $2 \pi$:</p>
+\begin{equation}
+I = \frac{1}{2 \pi} \oint_{H=h}  p dq.
+\label{eq:action1}
+\end{equation}<p>Recalling \eqref{eq:po2}</p>
+\begin{equation}
+dq = \pm \sqrt{\frac{2}{m}}\sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2} \, dt,
+\label{eq:action2}
+\end{equation}<p>we obtain:</p>
+\begin{equation}
+pdq = m \dot{q} dq = \pm \sqrt{2m}\sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2} \, \dot{q}dt,
+\label{eq:action3}
+\end{equation}<p>and therefore</p>
+\begin{equation}
+I = \frac{\sqrt{2m}}{\pi} \int_{q_+}^{q_-}\sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2} \, dq'.
+\label{eq:action4}
+\end{equation}<p>Using the substitution \eqref{eq:subs} and integral 2.267 in \cite{gradshteyn1980table}, we have:</p>
+\begin{equation}
+I = \frac{\sqrt{2m}}{\alpha} \left(\sqrt{D}-\sqrt{D-h}\right).
+%checked
+\label{eq:action5}
+\end{equation}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Expressions-for-$q(t)$-and-$p(t)$,-$0-&lt;-D-&lt;-h$">Expressions for $q(t)$ and $p(t)$, $0 &lt; D &lt; h$<a class="anchor-link" href="#Expressions-for-$q(t)$-and-$p(t)$,-$0-&lt;-D-&lt;-h$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Increasing the total energy $h$ to the value of $D$ and beyond results in unbounded motion. Trajectories retain the turning point $q_-$, while $q_+$ becomes infinite. The expression for $q_-$ is identical to low energies and is obtained from \eqref{eq:ham} by setting $p=0$ and solving for $q$. Recall from \eqref{eq:tpneg} that $q_- = - \frac{1}{\alpha} \log \left(1 + \sqrt{\frac{h}{D}}  \right)$.</p>
+<p>For unbounded trajectories it is not possible to define a (finite) period, but we can obtain an expression for $t$ as a function of position. It can be derived by integrating \eqref{eq:po2} from $q_-$ to an arbitrary position $q$ by using the substitution \eqref{eq:subs} as follows:</p>
+\begin{eqnarray}
+t(q) &amp; = &amp; \sqrt{\frac{m}{2}} \int_{q}^{q_-} \frac{dq'}{ \sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2}}=
+       -\frac{1}{\alpha}\sqrt{\frac{m}{2}} \int_{e^{-\alpha q}}^{1+\sqrt{\frac{h}{D}}} \frac{du}{u \sqrt{h-D \left( 1-u \right)^2}},\nonumber \\
+       &amp; = &amp; \frac{1}{\alpha}\sqrt{\frac{m}{2(h-D)}} \log{\left(\frac{h-D+De^{-\alpha q}+\sqrt{(h-D)(h-D(1-e^{-\alpha q})^2)}}{\sqrt{hD}e^{-\alpha q}}\right)}.
+%checked
+\label{eq:tinf}
+\end{eqnarray}<p>We obtain an explicit solution $q=q(t)$ by inverting \eqref{eq:tinf}.</p>
+\begin{equation}
+q(t) = \frac{1}{\alpha} \log{ \frac{\sqrt{hD}e^{2\beta t} -2De^{\beta t} + \sqrt{hD}}{2(h-D)e^{\beta t}} },
+%checked
+\label{eq:qinf}
+\end{equation}<p>where $\beta=\alpha\sqrt{\frac{2(h-D)}{m}}$. Differentiating \eqref{eq:qinf} and using the relation $\dot{q} = \frac{p}{m}$ yields the expression of $p(t)$.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Implications-for-reaction-dynamics">Implications for reaction dynamics<a class="anchor-link" href="#Implications-for-reaction-dynamics"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once explicit solutions are known, it is insightful to consider how they change when the vector field is changed, slightly. This is considered in the field of perturbation theory. The subharmonic and homoclinic Melnikov 
+\cite{wiggins1990introduction} are examples of global perturbation methods that consider the effect of perturbations on the entire unperturbed integrable system, such as the Morse oscillator that we have considered. The type of perturbation that we will consider is a time periodic excitation of the Morse oscillator. The subharmonic and homoclinic Melnikov methods for this system have been previously considered in \cite{guo2003dynamical}, however, with respect to chaotic dynamics, important technical details for this periodically perturbed Morse oscillator were not considered. We will describe these in detail here, as well as consider the nature of the effect of the parameters of the Morse potential, and the periodic excitation, on chaotic dynamics.</p>
+<p>The homoclinic Melnikov function is a well-known and popular method for proving the existence of chaos, in the sense of Smale horseshoes, in time periodically perturbed one degree-of-freedom Hamiltonian systems. The method allows one to prove the existence of transverse homoclinic periodic orbits to a hyperbolic periodic orbit. Such orbits admit a Smale horseshoe construction. There are two issues with the application of the standard homoclinic Melnikov function to the time periodically perturbed Morse oscillator, and  both issues arise from the fact that the saddle point at infinity is parabolic, not hyperbolic. One issue is the fact that the standard derivation of the homoclinic Melnikov function uses hyperbolicity of the fixed point to show that certain terms in the Melnikov function vanish. The other issue involves the construction of the Smale horseshoe map for orbits homoclinic to a parabolic point. Both issue are considered for the perturbed Morse oscillator in \cite{beigie1992dynamics} where it is shown that the growth and decay properties for the parabolic point in the Morse oscillator are sufficient for the standard Melnikov function to be valid as well as the Smale horseshoe map construction to be valid. Hence, the ''Melnikov approach'' is sufficient for determining the existence of chaos for the time-periodically perturbed Morse oscillator.</p>
+<p>We consider the following time-periodic perturbation of the Morse oscillator:</p>
+\begin{eqnarray}
+\dot{q}  =  \frac{\partial H}{\partial p} &amp; = &amp;  \frac{p}{m}, \nonumber \\
+\dot{p}  = - \frac{\partial H}{\partial q} &amp; = &amp; -2D \alpha \left(e^{-\alpha q} - e^{-2\alpha q}  \right) +\varepsilon \cos{\omega t},
+\label{eq:perteq}
+\end{eqnarray}<p>where $\varepsilon&gt;0$ is the magnitude of the perturbation and $\omega&gt;0$ the frequency of the perturbation. The unperturbed system \eqref{eq:hameq} is obtained by setting $\varepsilon=0$. We formulate the homoclinic Melnikov function using expressions \eqref{eq:qhom}, \eqref{eq:phom} for $q_0(t)$, $p_0(t)$, the homoclinic orbit of the equilibrium point $(q,p)=(\infty,0)$, as follows:</p>
+\begin{equation}
+    M(t_0,\phi_0)=\int\limits_{-\infty}^{\infty} DH(q_0(t),p_0(t))\cdot(0, \varepsilon \cos(\omega t+\omega t_0+\phi_0)) dt,
+\label{eq:Melnikovdef}
+\end{equation}<p>where $DH$ is the gradient of the unperturbed Hamiltonian \eqref{eq:ham}, $t_0$ defines the point $(q_0(t_0),p_0(t_0))$ at which the Melnikov funtion $M$ is evaluated and $\phi_0$ is the time at which $M$ is evaluated. We solve \eqref{eq:Melnikovdef} using integral 3.723 in \cite{gradshteyn1980table}.</p>
+\begin{eqnarray}
+    M(t_0,\phi_0)&amp;=&amp;\varepsilon \int\limits_{-\infty}^{\infty} \frac{\partial H}{\partial p}(q_0(t),p_0(t)) \cos(\omega t+\omega t_0+\phi_0) dt,\nonumber \\
+                &amp;=&amp; \varepsilon \int\limits_{-\infty}^{\infty} \frac{p_0(t)}{m} \left( \cos(\omega t)\cos(\omega t_0+\phi_0)-\sin(\omega t)\sin(\omega t_0+\phi_0) \right) dt, \nonumber\\
+                &amp;=&amp; -\varepsilon \frac{2m}{\alpha} \sin(\omega t_0+\phi_0) \int\limits_{-\infty}^{\infty} \frac{t}{t^2+\frac{m}{2D\alpha^2}} \sin(\omega t) dt, \nonumber\\
+                &amp;=&amp; -\varepsilon \frac{2m}{\alpha} \sin(\omega t_0+\phi_0) e^{-\omega\sqrt{\frac{m}{2D\alpha^2}}}.
+\label{eq:Melnikovsol}
+\end{eqnarray}<p>Clearly, this function has ''simple zeros'' indicating the existence of homoclinic orbits, and the associated Smale horseshoe type chaos.</p>
+<p>The magnitude of the Melnikov function is a measure of the intensity of the chaos. 
+Since the exponent in the exponential term is negative, $$e^{-\omega\sqrt{\frac{m}{2D\alpha^2}}}\leq 1.$$ The exponent is decreased by decreasing $\omega$ and $m$, and increasing $\alpha$ and $D$. Note that $M$ is monotonically increasing in dissociation energy $D$, yet the homoclinic orbit ceases to exist for $D=\infty$.</p>
+<p>The dominant term in the Melnikov functions is $$\frac{2m}{\alpha}.$$ To reach the highest intensity of chaos in the system, $m$ has to be large and $\alpha$ small, whereby the mitigating effect of the exponential term can be countered by choosing $D&gt;\frac{m}{\alpha^2}$. Then for any $\omega$ we can find $(t_0,\phi_0)$, such that $\sin(\omega t_0+\phi_0)=1$ and</p>
+\begin{equation}
+    |M(t_0,\phi_0)|=\varepsilon \frac{2m}{\alpha} e^{-\omega\sqrt{\frac{m}{2D\alpha^2}}} &gt; \varepsilon \frac{2m}{\alpha}e^{-\frac{\omega}{\sqrt{2}}}.
+\label{eq:Melnikovmag}
+\end{equation}<p>In figure \ref{fig:ld} we show a comparison of different intensities of chaos using Lagrangian descriptors, a method introduced by \cite{madrid2009ld} and proven to display invariant manifolds in two dimensional area-preserving maps by \cite{lopesino2015cnsns}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="560" height="315" src="figures/om1_120_trim.png">
+<img width="560" height="315" src="figures/om5_120_trim.png">
+\caption{Different intensities of chaos: Poincar{\'e} sections of the system for $t=0$ displaying Lagrangian descriptor values for parameter values $D=10$, $\alpha=1$, $m=8$, $\varepsilon=1$, $\omega=1, 5$. The descriptor is arclength with integration time $\tau=40$. Large chaotic regions (left) for low frequency of perturbation $\omega=1$ and small chaotic regions (right) for high frequency of perturbation $\omega=5$. For sake of clarity, the Lagrangian descriptor values are scaled with arctan.}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An animation showing the effect of varying $\omega$ can be found at <a href="https://youtu.be/6QW7Zjy1poA">https://youtu.be/6QW7Zjy1poA</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              
+<nav class="c-page__nav">
+  
+    
+    
+
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/fundamental_models/fundamental_models.html">
+      〈 <span class="u-margin-right-tiny"></span> Fundamental Models
+    </a>
+  
+
+  
+    
+
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/act2/hamiltonian_sn/HSN_victor.html">
+      Saddle-Node Hamiltonian <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

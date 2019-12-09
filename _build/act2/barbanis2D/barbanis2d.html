@@ -5,11 +5,11 @@ title: |-
   Barbanis model
 pagenum: 7
 prev_page:
-  url: /act2/hamiltonian_sn/HSN_victor_new3.html
+  url: /act2/hamiltonian_sn/HSN_victor.html
 next_page:
-  url: /act2/caldera/caldera-1_new.html
+  url: /act2/caldera/caldera-1.html
 suffix: .md
-search: dimensional reference fig surface eqn space y energy x type phase delta e manifolds ld section nhim hamiltonian invariant unstable py periodic trajectories px potential method also poincar dof escape structures high shown barbanis system left right index ref orbit motion systems eqref using saddle figures png width u such region trajectory lagrangian frac ssect coordinate points contour regions well model label omegay sosuxpx barbanisdofmxe used low where along diagnostic its initial plots not coupled harmonic aligned omegax hamiltonianbarbanis ec positive d integration physics nonlinear dynamics dynamical show methods configuration numerical sections our qquad excess pescontbarbanis hills intersection xpx maps
+search: dimensional reference fig surface eqn space y energy x type phase delta e manifolds ld section nhim hamiltonian invariant unstable py periodic trajectories px potential method also poincar dof escape structures high shown barbanis system left right index ref orbit motion systems eqref using region saddle figures png width u such trajectory lagrangian frac ssect coordinate points contour regions well model label omegay sosuxpx barbanisdofmxe used low where along diagnostic its initial plots not coupled harmonic aligned omegax hamiltonianbarbanis ec positive d integration physics nonlinear dynamics dynamical show methods configuration numerical sections our qquad excess pescontbarbanis hills intersection xpx maps
 title: "Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian"
 author: " "
 csl: ./elsevier-without-titles.csl
@@ -125,69 +125,85 @@ means [@junginger2016transition; @bardakcioglu2018; @ezra_2018]. In this
 chapter, we will present the method's capability to detect the high
 dimensional phase space structures such as the NHIM, their stable, and
 unstable manifolds in the 2 DoF Barbanis system.</p>
-<h2 id="Barbanis-2-DoF-Model">Barbanis 2 DoF Model<a class="anchor-link" href="#Barbanis-2-DoF-Model"> </a></h2><h2 id="[[sec:model_prob_2dof]]{#sec:model_prob_2dof-label=&quot;sec:model_prob_2dof&quot;}Model-system:-coupled-harmonic-2-DoF-Hamiltonian">[[sec:model_prob_2dof]]{#sec:model_prob_2dof label="sec:model_prob_2dof"}Model system: coupled harmonic 2 DoF Hamiltonian<a class="anchor-link" href="#[[sec:model_prob_2dof]]{#sec:model_prob_2dof-label=&quot;sec:model_prob_2dof&quot;}Model-system:-coupled-harmonic-2-DoF-Hamiltonian"> </a></h2><p>As pointed out in the Introduction, our focus is to adopt a
+<h2 id="Barbanis-2-DoF-Model">Barbanis 2 DoF Model<a class="anchor-link" href="#Barbanis-2-DoF-Model"> </a></h2><!-- #region -->
+[\[sec:model\_prob\_2dof\]]{#sec:model_prob_2dof label="sec:model_prob_2dof"}Model system: coupled harmonic 2 DoF Hamiltonian
+-----------------------------------------------------------------------------------------------------------------------------
+
+As pointed out in the Introduction, our focus is to adopt a
 well-understood model system which is a 2 degrees-of-freedom coupled
-harmonic oscillator with the Hamiltonian $$\begin{aligned}
-\mathcal{H}(x,y,p_x,p_y) =&amp; T(p_x, p_y) + V_{\rm B}(x,y) \\ 
-=&amp; \frac{1}{2}p_x^2 + \frac{1}{2}p_y^2 + \frac{1}{2}\omega_x^2 x^2 + \frac{1}{2}\omega_y^2 y^2 +
+harmonic oscillator with the Hamiltonian
+
+$$\begin{aligned}
+\mathcal{H}(x,y,p_x,p_y) =& T(p_x, p_y) + V_{\rm B}(x,y) \\ 
+=& \frac{1}{2}p_x^2 + \frac{1}{2}p_y^2 + \frac{1}{2}\omega_x^2 x^2 + \frac{1}{2}\omega_y^2 y^2 +
 \delta x y^2  
 \end{aligned}
-\label{eqn:Hamiltonian_Barbanis}$$ where $\omega_x, \omega_y, \delta$
-are the harmonic oscillator frequencies of the $x$ and $y$
+\label{eqn:Hamiltonian_Barbanis}$$ 
+
+
+where $\omega_x, \omega_y, \delta$ are the harmonic oscillator frequencies of the $x$ and $y$
 degree-of-freedom, and the coupling strength, respectively. We will fix
 the parameters as $\omega_x 
 = 1.0, \omega_y = 1.1, \delta = -0.11$ in this study. The two
-degrees-of-freedom potential is also referred to as <em>Barbanis</em>
+degrees-of-freedom potential is also referred to as *Barbanis*
 potential, and has been investigated as a model of galactic
 motion ([@contopoulos1970; @barbanis_isolating_1966]), dynamical
 tunneling and molecular spectra in physical
 chemistry ([@heller1980; @davis1981; @martens1987]), structural
-mechanics and ship capsize ([@ThDe1996; @NaRo2017]).</p>
-<p>The equilibria of the Hamiltonian vector field are located at
+mechanics and ship capsize ([@ThDe1996; @NaRo2017]).
+
+The equilibria of the Hamiltonian vector field are located at
+
 $$\left(-\frac{\omega_y^2}{2\delta}, \pm 
 \frac{1}{\sqrt{2}}\frac{\omega_x \omega_y}{\delta}, 0, 0 \right) \qquad \text{and}  \qquad \left(0, 
-0, 0, 0 \right)$$ and are at total energy
-$E_c = \frac{\omega_x^2 \omega_y^4}{8 \delta^2}$ and $0$ respectively.
-The energy of the two index-1 saddles (as defined and shown in
-App. <a href="#ssect:linear">5.2.1</a>{reference-type="ref"
+0, 0, 0 \right)$$
+
+and are at total energy $E_c = \frac{\omega_x^2 \omega_y^4}{8 \delta^2}$ and $0$ respectively. The energy of the two index-1 saddles (as defined and shown in
+App. [5.2.1](#ssect:linear){reference-type="ref"
 reference="ssect:linear"}) located at positive and negative
-y-coordinates and positive x-coordinate for $\delta &lt; 0$ will be
-referred to as <em>critical energy</em>, $E_c$. In our discussion, we will
+y-coordinates and positive x-coordinate for $\delta < 0$ will be
+referred to as *critical energy*, $E_c$. In our discussion, we will
 refer to the total energy of a trajectory or initial condition in terms
 of the excess energy, $\Delta E = E_c - e$, which can be negative or
 positive to denote energy below or above the critical energy. For the
 parameters used in this study, the index-1 saddle equilibrium points are
 located at $\left( 5.5, \pm 7.071, 0, 
-0 \right)$ and have energy, $E_c = 15.125$.</p>
-<p>The contours of the coupled harmonic 2 DoF potential energy function in
- <a href="#eqn:Hamiltonian_Barbanis">[eqn:Hamiltonian_Barbanis]</a>{reference-type="eqref"
+0 \right)$ and have energy, $E_c = 15.125$.
+
+The contours of the coupled harmonic 2 DoF potential energy function in
+ [\[eqn:Hamiltonian\_Barbanis\]](#eqn:Hamiltonian_Barbanis){reference-type="eqref"
 reference="eqn:Hamiltonian_Barbanis"} is shown in
-Fig. <a href="#fig:pes_cont_Barbanis">[fig:pes_cont_Barbanis]</a>{reference-type="ref"
+Fig. [\[fig:pes\_cont\_Barbanis\]](#fig:pes_cont_Barbanis){reference-type="ref"
 reference="fig:pes_cont_Barbanis"} along with the 3D view of the
-surface. We note here that the potential has steep walls for $x &lt; 0$
-when $\delta &lt; 0$ and steep drop-off beyond the bottlenecks around the
+surface. We note here that the potential has steep walls for $x < 0$
+when $\delta < 0$ and steep drop-off beyond the bottlenecks around the
 index-1 saddles. This leads to unphysical motion in the sense of
 trajectories approaching $-\infty$ with ever increasing acceleration
 even for finite values of the configuration space
-coordinates [@brumer_variational_1976].</p>
-<p>In
-Fig. <a href="#fig:hills_region_Barbanis">[fig:hills_region_Barbanis]</a>{reference-type="ref"
-reference="fig:hills_region_Barbanis"} we show the <em>Hill's region</em>, as
-defined in App. <a href="#ssect:coupled_2dof">5</a>{reference-type="ref"
+coordinates [@brumer_variational_1976].
+
+In
+Fig. [\[fig:hills\_region\_Barbanis\]](#fig:hills_region_Barbanis){reference-type="ref"
+reference="fig:hills_region_Barbanis"} we show the *Hill's region*, as
+defined in App. [5](#ssect:coupled_2dof){reference-type="ref"
 reference="ssect:coupled_2dof"}, for the model
-system <a href="#eqn:Hamiltonian_Barbanis">[eqn:Hamiltonian_Barbanis]</a>{reference-type="eqref"
+system [\[eqn:Hamiltonian\_Barbanis\]](#eqn:Hamiltonian_Barbanis){reference-type="eqref"
 reference="eqn:Hamiltonian_Barbanis"}. It is important to note here that
 even though Hill's region is shown on the configuration space, it
-captures the dynamical picture, that is the <em>phase space perspective</em>,
+captures the dynamical picture, that is the *phase space perspective*,
 of the Hamiltonian. This visualization of the energetically accessible
 and forbidden realm is the first step towards introducing
 two-dimensional surfaces to explore trajectory behavior. The complete
 description of the unstable periodic orbit and its invariant manifolds
-is described in App. <a href="#ssect:tube_mani">5.1</a>{reference-type="ref"
+is described in App. [5.1](#ssect:tube_mani){reference-type="ref"
 reference="ssect:tube_mani"} along with the visualization in the 3D
-space.</p>
-<p><img src="./figures/pes_cont_Barbanis.png" alt="">{width="30.00000%"}\ <img src="./figures/pes_cont_Barbanis_3D.png" alt="">{width="25.00000%"}\ <img src="./figures/Hills_region_Barbanis.png" alt="">{width="40.00000%"}</p>
-<p>Fig. 1. (a) Potential energy function underlying the coupled harmonic Hamiltonian~\eqref{eqn:Hamiltonian_Barbanis} as isopotential contour and surface. The index-1 saddles are shown as red crosses in both the plots. (b) Hill's region for energy below and above the energy of the index-1 saddle. Parameters used are $\omega_x = 1.0, \omega_y = 1.1, \delta = -0.11$.</p>
+space.
+
+![](./figures/pes_cont_Barbanis.png){width="30.00000%"}\ ![](./figures/pes_cont_Barbanis_3D.png){width="25.00000%"}\ ![](./figures/Hills_region_Barbanis.png){width="40.00000%"}
+
+Fig. 1. (a) Potential energy function underlying the coupled harmonic Hamiltonian~\eqref{eqn:Hamiltonian_Barbanis} as isopotential contour and surface. The index-1 saddles are shown as red crosses in both the plots. (b) Hill's region for energy below and above the energy of the index-1 saddle. Parameters used are $\omega_x = 1.0, \omega_y = 1.1, \delta = -0.11$.
+<!-- #endregion -->
+
 <p>Since this model system is conservative 2 DoF Hamiltonian, that is the
 phase space is $\mathbb{R}^4$, the energy surface is three dimensional,
 the dividing surface is two dimensional, and the normally hyperbolic
@@ -329,10 +345,7 @@ used to set up starting guess for other numerical procedures which rely
 on good initial guess or can also be used in conjunction with machine
 learning methods for rendering the smooth pieces of
 NHIM [@bardakcioglu2018; @feldmaier_invariant_2019].</p>
-<h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements"> </a></h2><p>We acknowledge the support of EPSRC Grant No.  EP/P021123/1 and ONR
-Grant No. N00014-01-1-0769. We would like to thank Dmitry Zhdanov for
-stimulating discussions.</p>
-<h1 id="References">References<a class="anchor-link" href="#References"> </a></h1>
+
 </div>
 </div>
 </div>

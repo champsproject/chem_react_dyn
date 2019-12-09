@@ -5,9 +5,9 @@ title: |-
   Chesnavich Model Part 3
 pagenum: 15
 prev_page:
-  url: /act2/2-Ches/roam_mass_energy_var_new3.html
+  url: /act2/2-Ches/roam_mass_energy_var.html
 next_page:
-  url: /act3/intro_act3.html
+  url: /act3/barbanis_3dof/barbanis_3dof.html
 suffix: .md
 search: theta fig reference eq r frac type pi partial p q dot u trajectories equation e t roaming label ref periodic ldi model potential invariant phi eqref times manifolds ch begin end orbits ldo left isokinetic energy right orbit lagrangian sec surface hamiltonian pr inner dsa mathcal k tau dynamics c chesnavichs space well intersection dissociation system section using mu escape thermostat d shown initial constant not width descriptors conditions h phase ds values outward region where kinetic dissociating figures thetaescape chesnavich same dt isomerisation annulus descriptor wiu wos structure note defined short jpg outer timetraj due equations eqkham s
 
@@ -38,7 +38,7 @@ has been observed to occur in a number of chemical reactions. Many of
 these reactions are described in several review
 articles[@suits2008; @bowman2011roaming; @Bowman2011Suits; @BowmanRoaming; @mauguiere2017roaming].</p>
 <p>Essentially all of these roaming reactions have been studied at constant
-total energy. The goal of this article is to study analogous roaming
+total energy. The goal of this chapter is to study analogous roaming
 reaction mechanisms at constant kinetic energy. Specifically, we study
 Chesnavich's model for an ion-molecule reaction subjected to a
 Hamiltonian isokinetic thermostat.</p>
@@ -81,8 +81,7 @@ temperature is proprtional to the value of the conserved kinetic energy.</p>
 <p>It is in this sense that the nonholonomic dynamics explored here for the
 Chesnavich model is effectively at constant temperature. We do not claim
 that this dynamics is the same as obtained using a Boltzmann
-distribution for the physical momenta; nevertheless, one point of our
-paper is that the phase space structure of the nonholonomic system can
+distribution for the physical momenta; nevertheless, one point of this chapter is that the phase space structure of the nonholonomic system can
 in this case be analyzed using methods employed for the microcanonical
 case, and an analogous roaming mechanism explored.</p>
 <p>For our purposes the Hamiltonian formulation of the isokinetic
@@ -91,91 +90,76 @@ development in our understanding of phase space structures governing
 chemical reaction dynamics in recent years, see, for example, references.
  This phase space structure approach has been applied to the
 Hamiltonian isokinetic thermostat formalism
-[@ezra2008impenetrable; @collins2010phase]. In this paper we continue
+[@ezra2008impenetrable; @collins2010phase]. In this chapter we continue
 these developments in our study of the Hamiltonian phase space structure
 associated with the roaming mechanism as exhibited in Chesnavich's model
 subjected to a Hamiltonian isokinetic thermostat.</p>
-<h2 id="Development-of-the-Problem-{#sec:-HIK}">Development of the Problem {#sec: HIK}<a class="anchor-link" href="#Development-of-the-Problem-{#sec:-HIK}"> </a></h2><h3 id="Thermostatted-Hamiltonian">Thermostatted Hamiltonian<a class="anchor-link" href="#Thermostatted-Hamiltonian"> </a></h3><p>We consider a Hamiltonian system 
+<h2 id="Development-of-the-Problem-{#sec:-HIK}">Development of the Problem {#sec: HIK}<a class="anchor-link" href="#Development-of-the-Problem-{#sec:-HIK}"> </a></h2><h3 id="Thermostatted-Hamiltonian">Thermostatted Hamiltonian<a class="anchor-link" href="#Thermostatted-Hamiltonian"> </a></h3><p>We consider a Hamiltonian system</p>
 \begin{equation}
 H(q,p) = T(q,p) + \Phi(q),
 \label{eq:Ham}
-\end{equation}
-where the position-dependent kinetic energy $T(q,p)$ is
+\end{equation}<p>where the position-dependent kinetic energy $T(q,p)$ is
 a quadratic form of the momenta and $\Phi(q)$ is a potential energy. The
 aim of the isokinetic thermostat is to constrain $T$ to a constant value
 $T_0^2&gt;0$.</p>
-<p>We define the isokinetic Hamiltonian $\mathcal{K}$ by
-$$\mathcal{K}(q,\pi) = e^{\Phi}T(q,\pi) - e^{-\Phi}T_0^2.$$
-Via the
-non-canonical transformation, 
+<p>We define the isokinetic Hamiltonian $\mathcal{K}$ by</p>
+$$\mathcal{K}(q,\pi) = e^{\Phi}T(q,\pi) - e^{-\Phi}T_0^2.$$<p>Via the
+non-canonical transformation,</p>
 \begin{equation}
 \pi=e^{-\Phi}p
 \label{eq:transf}
-\end{equation}
- the level set $\mathcal{K}=0$ corresponds to
+\end{equation}<p>the level set $\mathcal{K}=0$ corresponds to
 constant kinetic energy $T=T_0^2$ in the system
 <a href="#eq:Ham">[eq:Ham]</a>{reference-type="eqref" reference="eq:Ham"}. Note
 that since $T$ is a quadratic form of the momenta, from
 <a href="#eq:transf">[eq:transf]</a>{reference-type="eqref"
-reference="eq:transf"} we have
-$$T(q,\pi)=T(q,e^{-\Phi}p)=e^{-2\Phi}T(q,p),$$
- and hence
-$$e^{\Phi}T(q,\pi) - e^{-\Phi}T_0^2=e^{-\Phi}\left(T(q,p) - T_0^2\right).$$</p>
-<p>Due to the Hamiltonian structure of the system, $\dot{\mathcal{K}}=0$
-along the solutions of Hamilton's equations
+reference="eq:transf"} we have</p>
+$$T(q,\pi)=T(q,e^{-\Phi}p)=e^{-2\Phi}T(q,p),$$<p>and hence</p>
+$$e^{\Phi}T(q,\pi) - e^{-\Phi}T_0^2=e^{-\Phi}\left(T(q,p) - T_0^2\right).$$<p>Due to the Hamiltonian structure of the system, $\dot{\mathcal{K}}=0$
+along the solutions of Hamilton's equations</p>
 \begin{equation}
 \begin{split}
  \dot{q}&amp;=\frac{\partial \mathcal{K}}{\partial \pi}=e^{\Phi}\frac{\partial T(q,\pi)}{\partial \pi},\\
  \dot{\pi}&amp;=-\frac{\partial \mathcal{K}}{\partial q}= -e^{\Phi}\frac{\partial \Phi}{\partial q}T(q,\pi) -e^{\Phi}\frac{\partial T(q,\pi)}{\partial q} -e^{-\Phi}\frac{\partial \Phi}{\partial q}T_0^2.
  \end{split}
  \label{eq:eqKham}
-\end{equation}</p>
-<h3 id="Time-scaling-{#sec:scaling}">Time scaling {#sec:scaling}<a class="anchor-link" href="#Time-scaling-{#sec:scaling}"> </a></h3><p>In this section, we show that the dynamics defined by equations
+\end{equation}<h3 id="Time-scaling-{#sec:scaling}">Time scaling {#sec:scaling}<a class="anchor-link" href="#Time-scaling-{#sec:scaling}"> </a></h3><p>In this section, we show that the dynamics defined by equations
 <a href="#eq:eqKham">[eq:eqKham]</a>{reference-type="eqref"
 reference="eq:eqKham"} produce equivalent dynamics regardless of the
 value of $T_0^2$. We prove that a suitable scaling of time and momenta
 transforms <a href="#eq:eqKham">[eq:eqKham]</a>{reference-type="eqref"
 reference="eq:eqKham"} into equations with $T_0=1$.</p>
-<p>Consider the scaling of time and momenta by
+<p>Consider the scaling of time and momenta by</p>
 \begin{equation}
 s=T_0t, \quad \Pi=\frac{\pi}{T_0}.
  \label{eq:tpscale}
-\end{equation}
-From
-<a href="#eq:tpscale">[eq:tpscale]</a>{reference-type="eqref"
-reference="eq:tpscale"} and 
+\end{equation}<p>From <a href="#eq:tpscale">[eq:tpscale]</a>{reference-type="eqref"
+reference="eq:tpscale"} and</p>
 \begin{equation}
 ds=T_0dt,
  \label{eq:timescale}
-\end{equation}
-it follows that
+\end{equation}<p>it follows that</p>
 \begin{equation}
 \begin{split}
  \frac{dq}{ds}&amp;=\frac{dt}{ds}\frac{dq}{dt}=\frac{1}{T_0}\dot{q},\\
  \frac{d\Pi}{ds}&amp;=\frac{dt}{ds}\frac{d\Pi}{d\pi}\frac{d\pi}{dt}=\frac{1}{T^2_0}\dot{\pi}.  
  \end{split}
  \label{eq:derivs}
-\end{equation}</p>
-<p>Using <a href="#eq:eqKham">[eq:eqKham]</a>{reference-type="eqref"
+\end{equation}<p>Using <a href="#eq:eqKham">[eq:eqKham]</a>{reference-type="eqref"
 reference="eq:eqKham"},
 <a href="#eq:derivs">[eq:derivs]</a>{reference-type="eqref"
-reference="eq:derivs"} and
+reference="eq:derivs"} and</p>
 \begin{equation}
 T(q,\Pi)=\frac{1}{T^2_0}T(q,\pi),
  \label{eq:Pitopi}
-\end{equation}
-we can write the equations of motion in $s$ and $\Pi$ as 
+\end{equation}<p>we can write the equations of motion in $s$ and $\Pi$ as</p>
 \begin{align*}
  \frac{dq}{ds}&amp;=\frac{1}{T_0}e^{\Phi}\frac{\partial T(q,\pi)}{\partial \pi}={T_0}e^{\Phi}\frac{\partial T(q,\Pi)}{\partial \pi}=e^{\Phi}\frac{\partial T(q,\Pi)}{\partial \Pi},\\
  \frac{d\Pi}{ds}&amp;=-e^{\Phi}\frac{\partial \Phi}{\partial q}\frac{1}{T^2_0}T(q,\pi) -e^{\Phi}\frac{1}{T^2_0}\frac{\partial T(q,\pi)}{\partial q} -e^{-\Phi}\frac{\partial \Phi}{\partial q}\frac{1}{T^2_0}T_0^2,\\
  &amp;= -e^{\Phi}\frac{\partial \Phi}{\partial q}T(q,\Pi) -e^{\Phi}\frac{\partial T(q,\Pi)}{\partial q} -e^{-\Phi}\frac{\partial \Phi}{\partial q}. 
- \end{align*}</p>
-<p>These equations correspond to the isokinetic Hamiltonian with $T_0=1$
-$$\mathcal{K}_1(q,\Pi) = e^{\Phi}T(q,\Pi) - e^{-\Phi},$$
- which is
-related to $\mathcal{K}$ via
-$$\mathcal{K}_1(q,\Pi) = \frac{1}{T^2_0}\mathcal{K}(q,\pi).$$
- Clearly
+ \end{align*}<p>These equations correspond to the isokinetic Hamiltonian with $T_0=1$</p>
+$$\mathcal{K}_1(q,\Pi) = e^{\Phi}T(q,\Pi) - e^{-\Phi},$$<p>which is related to $\mathcal{K}$ via</p>
+$$\mathcal{K}_1(q,\Pi) = \frac{1}{T^2_0}\mathcal{K}(q,\pi).$$<p>Clearly
 the dynamics of $\mathcal{K}$ and $\mathcal{K}_1$ is equivalent and only
 differs by scaling by a constant factor.</p>
 <h3 id="Chesnavich's-Model-and-Roaming-{#sec:CMR}">Chesnavich's Model and Roaming {#sec:CMR}<a class="anchor-link" href="#Chesnavich's-Model-and-Roaming-{#sec:CMR}"> </a></h3><p>In this section we introduce Chesnavich's model for the ion-molecule
@@ -187,12 +171,11 @@ representing CH$_4^+$ to nearly-free rotation in a flat and rotationally
 symmetric region representing the dissociated CH$_3^++$H.</p>
 <h3 id="Chesnavich's-Model-Hamiltonian-{#sec:CMH}">Chesnavich's Model Hamiltonian {#sec:CMH}<a class="anchor-link" href="#Chesnavich's-Model-Hamiltonian-{#sec:CMH}"> </a></h3><p>Chesnavich's CH$_4^+$ model is a Hamiltonian system with 2 degrees of
 freedom, consisting of a rigid CH$_3^+$ molecule and a mobile H atom.
-The system is defined by the Hamiltonian
+The system is defined by the Hamiltonian</p>
 \begin{equation}
 H(r,\theta,p_r, p_\theta) = \frac{1}{2} \frac{p_r^2}{\mu} + \frac{1}{2}p_\theta^2 \left(\frac{1}{\mu r^2}+\frac{1}{I_{CH_3}}\right) + U(r,\theta),
 \label{eq:chesHam}
-\end{equation}</p>
-<p>where $(r, \theta, \phi)$ are polar coordinates
+\end{equation}<p>where $(r, \theta, \phi)$ are polar coordinates
 describing the position of the H-atom in a body-fixed frame attached to
 the CH$_3^+$ core (coordinate $\phi$ is ignorable in this model). The
 reduced mass of the system $\mu=\frac{m_{CH_3}m_{H}}{m_{CH_3}+m_{H}}$,
@@ -200,12 +183,11 @@ where $m_{H}=1.007825$ u and $m_{CH_3}=3m_{H}+12.0$ u, and the moment of
 inertia of the rigid body CH$_3^+$ $I_{CH_3}=2.373409$ uÅ$^2$.</p>
 <p>The potential $U(r,\theta)$ consists of a radial long range potential
 $U_{CH}$ and a short range potential $U_{coup}$ that models the short
-range anisotropy of the rigid CH$_3^+$ body.
+range anisotropy of the rigid CH$_3^+$ body.</p>
 \begin{equation}
 \label{eq:U}
  U(r,\theta ) = U_{CH} (r) + U_{coup} (r,\theta).
-\end{equation}
-It is characterised
+\end{equation}<p>It is characterised
 by two deep wells corresponding to bound CH$_4^+$, two areas of high
 potential and a flat area beyond them as shown in Fig.
 <a href="#fig:pot">[fig:pot]</a>{reference-type="ref" reference="fig:pot"}.</p>
@@ -214,21 +196,19 @@ Dashed lines correspond to $U&lt;0$, solid lines correspond to $U\geq0$.
 Contours correspond to values of potential shown on the colorbar right,
 with some values indicated in the plot.
 []{label=&quot;fig:pot&quot;}">{#fig:pot width="50%"}</p>
-<p>The long range potential is
+<p>The long range potential is</p>
 \begin{equation}
 \label{eq:UCH}
  U_{CH} (r) =  \frac{D_e}{c_1 - 6} \left( 2 (3-c_2) e^{c_1 (1-x)}  - \left( 4 c_2 - c_1 c_2 + c_1 \right) x^{-6} - (c_1 - 6) c_2 x^{-4} \right),
-\end{equation}</p>
-<p>with parameter values as used in the original work
+\end{equation}<p>with parameter values as used in the original work
 [@Chesnavich1986]:$x = \frac{r}{r_e}$, dissociation energy $D_e=47$
 kcal/mol, equilibrium bond length $r_e=1.1$ Å, $c_1=7.37$ and
 $c_2=1.61$. The short range hindered rotor potential $U_{coup}$ is
-defined by
+defined by</p>
 \begin{equation}
 \label{eq:Ucoup}
  U_{coup} (r,\theta) = \frac{U_e e^{-a(r-r_e)^2}}{2} (1 - \cos 2 \theta ),
-\end{equation}
-where $U_e=55$ kcal/mol is the equilibrium barrier height. The distance
+\end{equation}<p>where $U_e=55$ kcal/mol is the equilibrium barrier height. The distance
 at which transition occurs from rotation to vibration is determined by
 the parameter $a$ (in Å$^{-2}$). Various values of $a$ have been
 considered in previous works, namely $a=1$
@@ -239,12 +219,11 @@ $0.7\leq a\leq 8$. [@krajnak2018influence]</p>
 range of coordinate $\theta$ is $0 \leq \theta \leq \pi$, in the planar
 (zero overall angular momentum) version of the model the range of
 $\theta$ is extended to $0 \leq \theta \leq 2 \pi$, and the potential
-has four-fold symmetry
+has four-fold symmetry</p>
 \begin{equation}
 U(r,\theta)=U(r,-\theta)=U(r,\pi-\theta)=U(r,\pi+\theta).
 \label{eq:sym}
-\end{equation}</p>
-<p>The potential admits four pairs of equilibrium points pairwise related
+\end{equation}<p>The potential admits four pairs of equilibrium points pairwise related
 by symmetry <a href="#eq:sym">[eq:sym]</a>{reference-type="eqref"
 reference="eq:sym"}, as listed in Tab.
 <a href="#table:equil">[table:equil]</a>{reference-type="ref"
@@ -390,24 +369,21 @@ immediately, while roaming and dissociating trajectories in the orange
 are dissociate immediately but did not just leave the potential
 wells.[]{label=&quot;fig:DSa&quot;}">{#fig:DSa}</p>
 <h3 id="Hamiltonian-and-periodic-orbits-for-thermostatted-Chesnavich-model">Hamiltonian and periodic orbits for thermostatted Chesnavich model<a class="anchor-link" href="#Hamiltonian-and-periodic-orbits-for-thermostatted-Chesnavich-model"> </a></h3><p>The isokinetic Hamiltonian $\mathcal{K}$ for Chesnavich's model is
-defined as follows:
+defined as follows:</p>
 \begin{equation}
 \mathcal{K}(r,\pi_r,\theta,\pi_\theta) = \frac{1}{2}e^{U}\left(\frac{\pi_r^2}{\mu}+\pi_\theta^2\left(\frac{1}{\mu r^2}+\frac{1}{I_{CH_3}}\right)\right) - \frac{1}{2}e^{-U},
 \label{eq:chesKHam}
-\end{equation}
-where $U=U(r,\theta)$ is Chesnavich's potential energy and 
+\end{equation}<p>where $U=U(r,\theta)$ is Chesnavich's potential energy and</p>
 \begin{equation}
 \pi_r=e^{-U}p_r,\quad \pi_\theta=e^{-U}p_\theta.
  \label{eq:isotransf}
-\end{equation}
-The level set $\mathcal{K}=0$ corresponds to the surface of constant kinetic energy
+\end{equation}<p>The level set $\mathcal{K}=0$ corresponds to the surface of constant kinetic energy</p>
 \begin{equation}
 \frac{1}{2}\frac{p_r^2}{\mu}+\frac{1}{2}p_\theta^2\left(\frac{1}{\mu r^2}+\frac{1}{I_{CH_3}}\right)=\frac{1}{2},
  \label{eq:constantT}
-\end{equation}
-in system <a href="#eq:chesHam">[eq:chesHam]</a>{reference-type="eqref"
+\end{equation}<p>in system <a href="#eq:chesHam">[eq:chesHam]</a>{reference-type="eqref"
 reference="eq:chesHam"}. Equations of motion in the isokinetic system
-are
+are</p>
 \begin{equation}
 \begin{split}
  \dot{r}&amp;=\frac{\partial \mathcal{K}}{\partial {\pi}_r}=e^{U}\frac{\pi_r}{\mu},\\
@@ -420,14 +396,13 @@ are
  -\frac{1}{2}e^{U}\frac{\partial U}{\partial \theta}\left(\frac{\pi_r^2}{\mu}+\pi_\theta^2\left(\frac{1}{\mu r^2}+\frac{1}{I_{CH_3}}\right)\right) -\frac{1}{2}e^{-U}\frac{\partial U}{\partial \theta}.
  \label{eq:chesKHameq}
  \end{split}
-\end{equation}</p>
-<p>To achieve greater numerical precision, it is preferable to integrate
+\end{equation}<p>To achieve greater numerical precision, it is preferable to integrate
 the equations of motion in $(r,p_r,\theta,p_\theta)$ coordinates instead
 of $(r,\pi_r,\theta,\pi_\theta)$. Equations
 <a href="#eq:chesKHameq">[eq:chesKHameq]</a>{reference-type="eqref"
 reference="eq:chesKHameq"} transform using
 <a href="#eq:isotransf">[eq:isotransf]</a>{reference-type="eqref"
-reference="eq:isotransf"} to
+reference="eq:isotransf"} to</p>
 \begin{equation}
 \begin{split}
   \dot{r}&amp;=\frac{p_r}{\mu},\\
@@ -439,8 +414,7 @@ reference="eq:isotransf"} to
  \dot{p}_\theta&amp;= p_\theta\left(\frac{\partial U}{\partial r}\dot{r}+\frac{\partial U}{\partial \theta}\dot{\theta}\right) -\frac{\partial U}{\partial \theta}, 
  \label{eq:chesKHameqreduced}
  \end{split}
-\end{equation}
-where we used the isokinetic constraint <a href="#eq:constantT">[eq:constantT]</a>{reference-type="eqref" reference="eq:constantT"} equivalent to $\mathcal{K}=0$.</p>
+\end{equation}<p>where we used the isokinetic constraint <a href="#eq:constantT">[eq:constantT]</a>{reference-type="eqref" reference="eq:constantT"} equivalent to $\mathcal{K}=0$.</p>
 <p>The potential $- \frac{1}{2}e^{-U}$ has the same critical points and
 characteristics as $U$, but the wells are considerably deeper and have
 steeper walls. In contrast to the microcanonical case, the isokinetic
@@ -460,17 +434,15 @@ centrifugal barrier. It is rotationally symmetric and has a radius
 $r\approx13.43$. Its existence can be proven using a similar argument as
 in the original system [@krajnak2018phase]: suppose $r$ is sufficiently
 large so that $U$ is effectively independent of $\theta$. Denote
-$r_{po}$ the solution of
-$$\frac{1}{\mu r_{po}^3}p_\theta^2 -\frac{\partial U}{\partial r}=0.$$</p>
-<p>Then the equations
+$r_{po}$ the solution of</p>
+$$\frac{1}{\mu r_{po}^3}p_\theta^2 -\frac{\partial U}{\partial r}=0.$$<p>Then the equations
 <a href="#eq:chesKHameqreduced">[eq:chesKHameqreduced]</a>{reference-type="eqref"
 reference="eq:chesKHameqreduced"} admit a rotationally symmetric
-periodic orbit with $\dot{\theta}=const$, provided
+periodic orbit with $\dot{\theta}=const$, provided</p>
 \begin{align*}
   \dot{r}&amp;=0,\\
  \dot{p}_r&amp;=0.
-\end{align*}
-This is satisfied by the initial condition $r=r_{po}$,
+\end{align*}<p>This is satisfied by the initial condition $r=r_{po}$,
 $p_r=0$ and $p_\theta$ given implicitly by $\mathcal{K}=0$ for any
 $\theta$. The existence of $r_{po}$ is guaranteed for the potential $U$
 and any other potential with leading order term $-cr^{-(2+\varepsilon)}$
@@ -503,22 +475,19 @@ width="49%"}</p>
 $\theta=0$, $\dot{\theta}&gt;0$ and (ii) the outward annulus of the inner
 dividing surface (DS). The latter surface of section is constructed as
 follows: let the configuration space projection of the inner periodic
-orbit be parametrised by
+orbit be parametrised by</p>
 \begin{equation}
 r=\bar{r}(\theta).
  \label{eq:disI}
-\end{equation}
-Then all points in phase space satisfying <a href="#eq:disI">[eq:disI]</a>{reference-type="eqref" reference="eq:disI"} form
-a surface with coordinates $\theta$ and the canonically conjugate momentum[@Arnold78] 
-$$p_\sigma=p_\theta+\bar{r}'(\theta)p_r.$$
-We remark that this surface is, similarly to DS$^a$ and DS$^o$ in Sec.
+\end{equation}<p>Then all points in phase space satisfying <a href="#eq:disI">[eq:disI]</a>{reference-type="eqref" reference="eq:disI"} form
+a surface with coordinates $\theta$ and the canonically conjugate momentum[@Arnold78]</p>
+$$p_\sigma=p_\theta+\bar{r}'(\theta)p_r.$$<p>We remark that this surface is, similarly to DS$^a$ and DS$^o$ in Sec.
 <a href="#sec:roamingChes">3.2</a>{reference-type="ref"
 reference="sec:roamingChes"}, a torus. On this torus, the value of
 $p_r^2$ is given implicitly by $\theta$, $p_\sigma$ and
 <a href="#eq:constantT">[eq:constantT]</a>{reference-type="eqref"
-reference="eq:constantT"} and the sign of $p_r$ is chosen so that
-$$\dot{r}&gt;\bar{r}'(\theta),$$
-hence the outward direction on the inner
+reference="eq:constantT"} and the sign of $p_r$ is chosen so that</p>
+$$\dot{r}&gt;\bar{r}'(\theta),$$<p>hence the outward direction on the inner
 DS.</p>
 <p>The escape time is defined as the time a trajectory takes to escape the
 interaction region and reach a dissociated state beyond the outer orbit
@@ -629,21 +598,19 @@ width="49%"}</p>
 Lagrangian descriptors[@madrid2009ld; @lopesino2015cnsns] as shown in
 Fig. <a href="#fig:thetald">[fig:thetald]</a>{reference-type="ref"
 reference="fig:thetald"}. We present the plot for the forward Lagrangian
-descriptor
+descriptor</p>
 \begin{equation}
 \int\limits^{40}_{0} \left(|\dot{r}|^{\frac{1}{2}}+|\dot{p_r}|^{\frac{1}{2}}+|\dot{\theta}|^{\frac{1}{2}}+|\dot{p_\theta}|^{\frac{1}{2}}\right) dt,
  \label{eq:ld05}
-\end{equation}
-with a cut-off at $r=1.1$ for numerical reasons. As opposed to escape times, this Lagrangian descriptor is well defined on
+\end{equation}<p>with a cut-off at $r=1.1$ for numerical reasons. As opposed to escape times, this Lagrangian descriptor is well defined on
 invariant manifolds and attains a local minimum on them. Note that the
 invariant manifolds are visible for an integration time less than six
 times the period of the inner periodic orbit. The invariant manifolds
-are even more pronounced for the radial gain Lagrangian descriptor
+are even more pronounced for the radial gain Lagrangian descriptor</p>
 \begin{equation}
 \int\limits^{40}_{0} |\dot{r}| dt.
  \label{eq:ldr}
-\end{equation}</p>
-<h3 id="Using-Lagrangian-descriptors-to-analyse-the-Roaming-mechanism">Using Lagrangian descriptors to analyse the Roaming mechanism<a class="anchor-link" href="#Using-Lagrangian-descriptors-to-analyse-the-Roaming-mechanism"> </a></h3><p>The goal of this chapter is to extend our previous study of the
+\end{equation}<h3 id="Using-Lagrangian-descriptors-to-analyse-the-Roaming-mechanism">Using Lagrangian descriptors to analyse the Roaming mechanism<a class="anchor-link" href="#Using-Lagrangian-descriptors-to-analyse-the-Roaming-mechanism"> </a></h3><p>The goal of this chapter is to extend our previous study of the
 analogous roaming reaction mechanisms at constant kinetic energy
 [@krajnak2019isokinetic]. We do this by applying a Hamiltonian
 isokinetic thermostat
@@ -679,24 +646,21 @@ $f_1(q_1,p_1,q_2,p_2)=0$ and $f_2(q_1,p_1,q_2,p_2)=0$. For a system with
 zero total angular momentum, these equations can correspond to the
 configuration space projection and parametrisation of one of the
 momenta.</p>
-<p>The integral 
+<p>The integral</p>
 \begin{equation}
 \int\limits^{\infty}_{0} |\dot{f_i}(q_1,p_1,q_2,p_2)| dt,
  \label{eq:LDinfty}
-\end{equation}
- then vanishes along the periodic orbit for
+\end{equation}<p>then vanishes along the periodic orbit for
 $i=1,2$.</p>
 <p>As $t\rightarrow\infty$, $f_1,f_2\rightarrow 0$ along the periodic orbit
 stable invariant manifolds. Consequently of all points on the energy
 surface, <a href="#eq:LDinfty">[eq:LDinfty]</a>{reference-type="eqref"
 reference="eq:LDinfty"} is locally minimised by those that lie on the
 stable invariant manifold of $\Gamma$. Necessarily this statement
-remains true for the finite time integral
-$$\int\limits^{\tau}_{0} |\dot{f_i}(q,p)| dt,\qquad i=1,2,$$
-provided $\tau&gt;0$ is large enough. We can use the same argument for the unstable
-invariant manifold and the Lagrangian descriptor
-$$\int\limits^{0}_{-\tau} |\dot{f_i}(q,p)| dt,\qquad i=1,2.$$</p>
-<p>Depending on the strength of instability of $\Gamma$, small values of
+remains true for the finite time integral</p>
+$$\int\limits^{\tau}_{0} |\dot{f_i}(q,p)| dt,\qquad i=1,2,$$<p>provided $\tau&gt;0$ is large enough. We can use the same argument for the unstable
+invariant manifold and the Lagrangian descriptor</p>
+$$\int\limits^{0}_{-\tau} |\dot{f_i}(q,p)| dt,\qquad i=1,2.$$<p>Depending on the strength of instability of $\Gamma$, small values of
 $\tau$ may suffice to find an approximate location of the invariant
 manifolds and to establish whether or not they intersect, which is a
 crucial characteristic for the presence of roaming.</p>
@@ -725,35 +689,27 @@ trajectories out of the interaction region towards dissociation.</p>
 </ul>
 <p>We now construct the Lagrangian descriptors described in Sec.
 <a href="#sec:newLD">4.2</a>{reference-type="ref" reference="sec:newLD"}. The inner
-periodic orbit is parametrised by
-$$f_1(r, \theta) = r-\bar{r}(\theta)=0,$$
-where
-$$\bar{r}(\theta)=c_0+c_1\cos(2\theta)+c_2\cos(4\theta)+c_3\cos(6\theta)+c_4\cos(8\theta)+c_5\cos(10\theta),$$</p>
-<p>with constants
+periodic orbit is parametrised by</p>
+$$f_1(r, \theta) = r-\bar{r}(\theta)=0,$$<p>where</p>
+$$\bar{r}(\theta)=c_0+c_1\cos(2\theta)+c_2\cos(4\theta)+c_3\cos(6\theta)+c_4\cos(8\theta)+c_5\cos(10\theta),$$<p>with constants</p>
 \begin{align*}
   c_0&amp;=2.78147867,\ c_1=0.98235111,\ c_2=-0.17161848,\\
   c_3&amp;=-0.00486657,\ c_4=0.01628185,\ c_5=-0.00393858,
-\end{align*}
-and
-$$f_2(\theta, p_r) = p_r-\bar{p}_r(\theta)=0,$$
-where $\bar{p}_r(\theta)$ is a function defined for
+\end{align*}<p>and</p>
+$$f_2(\theta, p_r) = p_r-\bar{p}_r(\theta)=0,$$<p>where $\bar{p}_r(\theta)$ is a function defined for
 $\theta\in (-\frac{\pi}{2},\frac{\pi}{2}]$ and periodically extended to
-$\theta\in\mathbb{R}$, given by
-$$\bar{p}_r(\theta)=d_0\theta + d_1\theta^3 + d_2\theta^5 + d_3\theta^7 + d_4\theta^9 + d_5\theta^{11},$$</p>
-<p>with constants
+$\theta\in\mathbb{R}$, given by</p>
+$$\bar{p}_r(\theta)=d_0\theta + d_1\theta^3 + d_2\theta^5 + d_3\theta^7 + d_4\theta^9 + d_5\theta^{11},$$<p>with constants</p>
 \begin{align*}
   d_0&amp;=-1.06278495,\ d_1=-0.42089795,\ d_2=1.38849679,\\
   d_3&amp;= -1.11654771,\ d_4=0.40789372,\ d_5=-0.05122644.
-\end{align*}
-Note that the periodic orbit need only be parametrised for a single value of $\mathcal{K}$, $\mathcal{K}= 0$.</p>
-<p>To identify $W_i^u$, we use the Lagrangian descriptor
+\end{align*}<p>Note that the periodic orbit need only be parametrised for a single value of $\mathcal{K}$, $\mathcal{K}= 0$.</p>
+<p>To identify $W_i^u$, we use the Lagrangian descriptor</p>
 \begin{equation}
 LD_i=\int\limits^{0}_{-\tau} |\dot{r}-\bar{r}^{'}(\theta)\dot{\theta}| dt.
 \label{eq:LDi}
-\end{equation}
-Note that we obtain identical results using
-$$\int\limits^{0}_{-\tau} |\dot{p}_r-\bar{p}_r^{'}(\theta)\dot{\theta}| dt.$$</p>
-<p>We approximate the outer periodic orbit by a constant radius
+\end{equation}<p>Note that we obtain identical results using</p>
+$$\int\limits^{0}_{-\tau} |\dot{p}_r-\bar{p}_r^{'}(\theta)\dot{\theta}| dt.$$<p>We approximate the outer periodic orbit by a constant radius
 $r=13.4309241401910709$ and its stable invariant manifold $W_o^s$
 locally minimises 
 \begin{equation}

@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Double-Morse oscillator</title>
+  <meta name="description" content="        Double-Morse oscillator    Revealing Roaming  on the Double Morse Potential Energy Surface with Lagrangian Descriptors Introduction \label{sec:intro}...">
+
+  <link rel="canonical" href="http://localhost:4444/act2/double_morse/prueba.html">
+  <link rel="alternate" type="application/rss+xml" title="CHAMPS Dynamical Systems Book" href="http://localhost:4444/feed.xml">
+
+  <meta property="og:url"         content="http://localhost:4444/act2/double_morse/prueba.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Double-Morse oscillator" />
+<meta property="og:description" content="        Double-Morse oscillator    Revealing Roaming  on the Double Morse Potential Energy Surface with Lagrangian Descriptors Introduction \label{sec:intro}..." />
+<meta property="og:image"       content="http://localhost:4444/images/logo/champs_logo.jpg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://localhost:4444/act2/double_morse/prueba.html",
+  "headline": "Double-Morse oscillator",
+  "datePublished": "2019-12-09T16:26:55+00:00",
+  "dateModified": "2019-12-09T16:26:55+00:00",
+  "description": "        Double-Morse oscillator    Revealing Roaming  on the Double Morse Potential Energy Surface with Lagrangian Descriptors Introduction \label{sec:intro}...",
+  "author": {
+    "@type": "Person",
+    "name": "The CHAMPS group"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4444",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://localhost:4444",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    },
+    
+    // Number LaTeX-style equations
+    "TeX": {
+        equationNumbers: {
+          autoNumber: "all"
+        }
+    }
+    
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'jupyter/jupyter-book',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef",
+        mode: "python"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@latest/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.8.1/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52617120-7');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://localhost:4444") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://champsproject.com"><img src="/images/logo/champs_logo.jpg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">CHAMPS Dynamical Systems Book</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/dedication">
+        <a class="c-sidebar__entry"
+          href="/docs/dedication.html"
+        >
+          
+            1.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/acknowledgements">
+        <a class="c-sidebar__entry"
+          href="/docs/acknowledgements.html"
+        >
+          
+            2.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/preface">
+        <a class="c-sidebar__entry"
+          href="/docs/preface.html"
+        >
+          
+            3.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/prologue">
+        <a class="c-sidebar__entry"
+          href="/prologue/prologue.html"
+        >
+          
+            4.
+          
+          Prologue
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/fundamental_models/fundamental_models">
+        <a class="c-sidebar__entry"
+          href="/fundamental_models/fundamental_models.html"
+        >
+          
+            5.
+          
+          Fundamental Models
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act1/Morse/Morse">
+        <a class="c-sidebar__entry"
+          href="/act1/Morse/Morse.html"
+        >
+          
+            6.
+          
+          Morse Oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/hamiltonian_sn/HSN_victor">
+        <a class="c-sidebar__entry"
+          href="/act2/hamiltonian_sn/HSN_victor.html"
+        >
+          
+            7.
+          
+          Saddle-Node Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/barbanis2D/barbanis2d">
+        <a class="c-sidebar__entry"
+          href="/act2/barbanis2D/barbanis2d.html"
+        >
+          
+            8.
+          
+          Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/caldera/caldera-1">
+        <a class="c-sidebar__entry"
+          href="/act2/caldera/caldera-1.html"
+        >
+          
+            9.
+          
+          Caldera model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/deLeon_Berne/deleon_berne">
+        <a class="c-sidebar__entry"
+          href="/act2/deLeon_Berne/deleon_berne.html"
+        >
+          
+            10.
+          
+          De Leon model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/system_bath1/system_bath1">
+        <a class="c-sidebar__entry"
+          href="/act2/system_bath1/system_bath1.html"
+        >
+          
+            11.
+          
+          System Bath 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/four_well_morse/booksprinttest_makrina">
+        <a class="c-sidebar__entry"
+          href="/act2/four_well_morse/booksprinttest_makrina.html"
+        >
+          
+            12.
+          
+          Four-well potential
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/double_morse/prueba">
+        <a class="c-sidebar__entry"
+          href="/act2/double_morse/prueba.html"
+        >
+          
+            13.
+          
+          Double-Morse oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/1-Ches/roam">
+        <a class="c-sidebar__entry"
+          href="/act2/1-Ches/roam.html"
+        >
+          
+            14.
+          
+          Chesnavich Model Part 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/2-Ches/roam_mass_energy_var">
+        <a class="c-sidebar__entry"
+          href="/act2/2-Ches/roam_mass_energy_var.html"
+        >
+          
+            15.
+          
+          Chesnavich Model Part 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/3-Ches/roamiso">
+        <a class="c-sidebar__entry"
+          href="/act2/3-Ches/roamiso.html"
+        >
+          
+            16.
+          
+          Chesnavich Model Part 3
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/barbanis_3dof/barbanis_3dof">
+        <a class="c-sidebar__entry"
+          href="/act3/barbanis_3dof/barbanis_3dof.html"
+        >
+          
+            17.
+          
+          Three degree-of-freedom Barbanis system
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath1/main">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath1/main.html"
+        >
+          
+            18.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath2/system_bath">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath2/system_bath.html"
+        >
+          
+            19.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="https://github.com/broncio123/champs-booksprint-planning">
+        <a class="c-sidebar__entry"
+          href="https://github.com/broncio123/champs-booksprint-planning"
+        >
+          
+          GitHub repository
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        <a href="/content/act2/double_morse/prueba.ipynb" download>
+        <button id="interact-button-download" class="interact-button">.ipynb</button>
+        </a>
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+  <button id="interact-button-thebelab" class="interact-button">Thebelab</button>
+
+  
+  
+
+
+
+
+
+
+<a href="https://mybinder.org/v2/gh/jupyter/jupyter-book/gh-pages?filepath=content%2Fact2%2Fdouble_morse%2Fprueba.ipynb"><button class="interact-button" id="interact-button-binder"><img class="interact-button-logo" src="/assets/images/logo_binder.svg" alt="Interact" />Interact</button></a>
+  
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+                  <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Double-Morse oscillator</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Revealing-Roaming--on-the-Double-Morse-Potential-Energy-Surface-with-Lagrangian-Descriptors">Revealing Roaming  on the Double Morse Potential Energy Surface with Lagrangian Descriptors<a class="anchor-link" href="#Revealing-Roaming--on-the-Double-Morse-Potential-Energy-Surface-with-Lagrangian-Descriptors"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h2><p>\label{sec:intro}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this chapter, we analyse the phase space structure of the roaming dynamics in a two degree of freedom potential energy surface consisting of two identical planar Morse potentials separated by a distance. This potential energy surface was previously studied in \cite{carpenter2018dynamics}, and it has two potential wells surrounded by an unbounded flat region containing no critical points. We study the phase space mechanism for the transference between the wells using the method of Lagrangian descriptors.</p>
+<p>The roaming mechanism for chemical reactions was reported in \cite{townsend2004roaming}. This paper inspired and motivated further work on the topic that is continuing. Some recent reviews of the topic are  \cite{Bowman2011Suits, Bowman2011roaming, BowmanRoaming, suits2008, Mauguiere2017}.</p>
+<p>Following \cite{carpenter2018dynamics}, a concise description of the roaming mechanism that seems to capture all such reactive phenomena attributed to roaming to date is the following. An energised molecule, which appears on the verge of dissociating into two fragments, instead exhibits behaviour where one fragment begins to rotate about the other in the flat region of the potential energy surface, culminating in the two fragments re-encountering each other in a reactive event. This reactive event may be constitutionally identical to one for which a familiar transition state associated with an index one saddle can be identified, but the roaming reaction path is observed to avoid the intrinsic reaction path.</p>
+<p>The double Morse potential energy surface allows us to analyse key feature of the reaction dynamics which appear to underlay roaming mechanism. In particular, the double Morse has a flat roaming region where it can be rigorously proven that there are no saddle points. For explaining reaction mechanisms in the context of the potential energy surface index one saddles have been a fundamental building block. This has motivated efforts to locate index one saddle points that can be attributed as the mechanism for roaming (roaming saddles).</p>
+<p>However, the work in \cite{carpenter2018dynamics} showed that roaming mechanism in the double Morse potential occurs without the influence of saddle points. In particular, it was demonstrated that roaming was governed by phase space structures governing dynamics in the flat region of the potential energy surface. These phase space structures are normally hyperbolic invariant manifolds (NHIMs) \cite{wiggins_book1994,Wiggins2001,Uzer2002, Wiggins08,Wiggins2016}, which in the case of 2 DoF Hamiltonian systems are unstable periodic orbits \cite{Mauguiere2015}.</p>
+<p>The main issue of interest in \cite{carpenter2018dynamics} was the motion of trajectories between the two wells and the intermediary dynamics in the flat region. It was conjectured that three types of unstable periodic orbits mediated the dynamics. The description of roaming given in \cite{carpenter2018dynamics} was based on the behaviour of trajectories initiated on periodic orbit dividing surfaces associated with the three types of periodic orbits. The trajectory behaviour confirmed the conjecture. However, this work did not examine the phase space structures that determine the different types of trajectory behaviour. Such an analysis would involve an understanding of the geometry of the stable and unstable manifolds of the periodic orbits in phase space, similar in spirit to the analysis that has been carried out in \cite{krajvnak2018phase, krajvnak2018influence}.</p>
+<p>In this chapter, we will determine the phase space pathways for the roaming mechanism in the double Morse oscillator using the method of Lagrangian descriptors. Lagrangian descriptors are a trajectory diagnostic that has proven useful for revealing phase space structures in dynamical systems.  The method was originally developed to reveal fluid flow structures in Lagrangian transport problems (hence the name Lagrangian descriptors) \cite{chaos}.  However, in recent years, the ease of implementation and interpretation of the method has applied in fields far beyond fluid mechanics. In particular, in theoretical chemistry the method has seen a diverse collection of applications to problems in chemical reaction dynamics in recent years, see, e.g., \cite{patra2018detecting, craven2016deconstructing, craven2017lagrangian, craven2015lagrangian, junginger2016transition, revuelta2017transition, junginger2017chemical, feldmaier2017obtaining, JH2015}.</p>
+<p>The method facilitates a high-resolution approach for exploring high dimensional phase space with low dimensional sets.  It can also be applied to both Hamiltonian and non-Hamiltonian systems \cite{lopesino2017} as well as to systems with arbitrary, even stochastic, time-dependence \cite{balibrea2016lagrangian}. Moreover, Lagrangian descriptors can be applied directly to trajectory data sets, without the need for an explicit dynamical system \cite{mmw14}.</p>
+<p>The classical Lagrangian descriptor field is computed by selecting a region of phase space and then choosing a grid of initial conditions for trajectories in this set. Points in the set are assigned a value according to the arc length of the trajectory starting at that initial condition after integration for a fixed, finite time, both backward and forward in time (all initial conditions in the grid are integrated for the same time). The idea underlying Lagrangian descriptors is that the influence of phase space structures on trajectories will result in differences in arc length of nearby trajectories. This has been verified and quantified in terms of the notion of singular structures in the Lagrangian descriptor fields, which are easy to recognise visually \cite{ cnsns, lopesino2017}.</p>
+<p>Trajectories are the elementary objects that are used to explore phase space.  In fact, phase space structure is built from trajectories and their behaviour. For high dimensional phase space this approach is problematic and prone to issues of interpretation since a tightly grouped set of initial conditions may result in trajectories that become far with respect to each other in high dimensional phase space. The method of Lagrangian descriptors takes a new and different approach by encoding the phase space structure in the initial conditions of trajectories, rather than the precise location of their futures and pasts (after a specified amount of time). Hence, a low dimensional set of phase space can be selected and sampled with a grid of initial conditions of high resolution. Since the phase space structure is encoded in the initial conditions of the trajectories, no resolution in the chosen slice of phase space is lost as the trajectories evolve in time.</p>
+<p>This chapter is outlined as follows. In section \ref{sec:DMPES}, we recall the main features of the double Morse potential energy surface and resulting Hamiltonian system as described in \cite{carpenter2018dynamics} that are relevant to our analysis.  In section \ref{sec:config}, we define the features of the double Morse potential energy surface that are relevant to our analysis.  In Section \ref{sec:LD} we describe Lagrangian descriptors. In section \ref{sec:PO}, we show how Lagrangian descriptors can be used to compute periodic orbits and their stable and unstable manifolds. In section \ref{sec:roaming}, we describe the phase space pathways for roaming using the stable and unstable manifolds of the periodic orbits.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Development-of-the-Problem">Development of the Problem<a class="anchor-link" href="#Development-of-the-Problem"> </a></h2><p>\label{sec:DMPES}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The two degrees of freedom Hamiltonian system that we consider is the sum of two identical planar Morse potentials \cite{Morse29} separated by a distance $2b$:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{eqnarray}
+V (x, y) &amp; = &amp; D_e \left(1 - \exp\left(-\sqrt{\frac{k}{D_e}}  (\sqrt{(x-b)^2 + y^2} - r_e)\right)  \right)^2 \nonumber \\
+&amp;  + &amp; 
+D_e \left(1 - \exp\left(-\sqrt{\frac{k}{D_e}}  (\sqrt{(x+b)^2 + y^2} - r_e)\right)  \right)^2 -D_e.
+\label{eq:2Morse_pot}
+\end{eqnarray}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and kinetic energy of the form:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation}
+T(p_x, p_y) = \frac{p_x^2}{2m} + \frac{p_y^2}{2m}.
+\label{eq:KE}
+\end{equation}<p></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Therefore the Hamiltonian is:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation}
+H(x, y, p_x, p_y) = \frac{p_x^2}{2m} + \frac{p_y^2}{2m} + V (x, y).
+\label{eq:Ham}
+\end{equation}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Following \cite{carpenter2018dynamics}, the parameters for the Hamiltonian are chosen as follows:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{equation}
+D_e = 100, \, \, r_e =1, \, \, k=200, m=1, b=3.
+\label{eq:params}
+\end{equation}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Features-of-the-Double-Morse-Potential-Energy-Surface">Features of the Double Morse Potential Energy Surface<a class="anchor-link" href="#Features-of-the-Double-Morse-Potential-Energy-Surface"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/V_c.jpg" width="400" height="400" /></p>
+<p>\caption{Double Morse potential energy in colour scale. The contour lines black on the figure are the equipotential lines for different values of the potential energy. The potential has two wells and two forbidden regions, each one in the centre of each well. The potential energy converges to a constant value in the asymptotic region. 
+}\label{fig:V_c}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/V.jpg"   width="600" height="600" /></p>
+<p>\caption{Double Morse potential energy surface in colour scale. The potential has a saddle point between the two wells.}
+\label{fig:V}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Figs. \ref{fig:V<em>c}, and \ref{fig:V} show plots of the potential energy in colour scale and equipotential lines. At the origin, $(x=0, y=0)$ the potential energy has an index one saddle. The potential energy evaluated in the saddle point is $V(0,0) = E</em>{s}$. This index one saddle point exists for all values of $b$, and $E_{s}$ is below $D_e$ in this example, see figure \ref{fig:V_c}.</p>
+<p>The double Morse potential energy function goes exponentially fast to zero in the asymptotic flat region. This almost flat region plays an essential role in the roaming phenomenon, and it is called the roaming region.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lagrangian-Descriptors-and-two-degree-of-freedom-Hamiltonians">Lagrangian Descriptors and two degree of freedom Hamiltonians<a class="anchor-link" href="#Lagrangian-Descriptors-and-two-degree-of-freedom-Hamiltonians"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\label{sec:LD}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The classical Lagrangian descriptor is the arc length of a trajectory.  In the present article, we are going to use a variant, the integral of the square of the infinitesimal arc length proposed in \cite{lopesino2017}. Let us consider the autonomous ordinary differential equations</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{eqnarray}
+\frac{d \mathbf{x}}{dt} = \mathbf{v}(\mathbf{x}), \quad \mathbf{x} \in \mathbb{R}^n \;,\; t \in \mathbb{R}
+\end{eqnarray}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where $\mathbf{v}(\mathbf{x},t) \in C^r$ ($r \geq 1$) in $\mathbf{x}$ and continuous in time. The definition of Lagrangian descriptor depends on the initial condition $\mathbf{x}_{0} = \mathbf{x}(t_0)$, on the time interval $[t_0+\tau_{-},t_0+\tau_{+}]$, and takes the form,</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+\begin{eqnarray}
+M(\mathbf{x}_{0},t_{0},\tau_{+},\tau_{-}) &amp; = &amp; M_{+}(\mathbf{x}_{0},t_{0},\tau_{+}) - M_{-}(\mathbf{x}_{0},t_{0},\tau_{-}) \nonumber  \\
+&amp; = &amp; 
+\displaystyle{ \int^{t_{0}+\tau_{+}}_{t_{0}} \sum_{i=1}^{n} |\dot{x}_{i}(t;\mathbf{x}_{0})|^2 \; dt - \int^{t_{0}}_{t_{0}+\tau_{-}} \sum_{i=1}^{n} |\dot{x}_{i}(t;\mathbf{x}_{0})|^2 \; dt ,} \label{eq:LD}
+\end{eqnarray}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where $\tau_{+} \geqslant 0$ and $ \tau_{-} \leqslant 0 $  are freely chosen parameters and the overdot symbol represents the derivative with respect to the time $t$.</p>
+<p>The phase space of a Hamiltonian system with two degrees of freedom has 4 dimensions, considering the conservation of the energy, it is possible to represent the dynamics of the system in the 3-dimensional constant energy manifold. In the constant energy manifold, it is possible to visualise the dynamics and identify the essential structures to understand the dynamics.</p>
+<p>The periodic orbits are essential structures to understand the dynamics of the system in the constant energy manifold. Around a stable periodic orbit, the KAM-tori confine the trajectories in the region defined by the tori. In contrast, the dynamics in a neighbourhood of an unstable hyperbolic periodic orbit has a different nature. Its stable and unstable manifolds intersect in the hyperbolic periodic orbit and direct the trajectories in the neighbourhood. The definition of the stable and unstable manifolds $W^{s/u} (\Gamma)$ of the periodic unstable orbit $\Gamma$ is the following,</p>
+\begin{equation}
+ W^{s/u} (\Gamma) = \lbrace  \mathbf{x}  \vert \mathbf{x}(t)  \rightarrow  \Gamma, t \rightarrow \pm \infty \rbrace.
+\end{equation}<p>In the Hamiltonian system with 2 degrees of freedom, $W^{s/u} (\Gamma)$ has 2 dimensions and form impenetrable barriers in the constant energy manifold. The segments of the stable and unstable manifolds direct the transport between different regions \cite{Kovacks2001}.</p>
+<p>Another important property of the stable and unstable manifolds related to the chaotic dynamics is that, if a stable manifold and an unstable manifold intersect transversally at one point, then an infinite number of transversal intersections between them exist. The structure generated by the union of the stable and unstable manifolds is called tangle and defines a set of tubes that direct the dynamics in the phase space. The trajectories in a tube never cross the boundaries of a tube. This fact is a consequence of the uniqueness of the solution of the ordinary differential equations.</p>
+<p>The Lagrangian descriptors are convenient tools to explore the phase space structure, in particular, to find stable and unstable manifolds of periodic orbits. To understand the basic idea that underpins the detection, let us consider the behaviour of the trajectories in a neighbourhood of stable manifold $W^{s}(\Gamma)$. The trajectories in $W^{s} (\Gamma)$ converge to the periodic orbit $\Gamma$, and the nearby trajectories in the neighbourhood of $W^{s} (\Gamma)$ having similar behaviour for a finite interval of time. After this interval of time, the trajectories move away from the stable hyperbolic periodic orbit $\Gamma$ following the unstable manifold $W^u(\Gamma)$. This different behaviour generates the singularities in the Lagrangian descriptors \cite{lopesino2017}.</p>
+<p>The variant of Lagrangian descriptor in the equation \eqref{eq:LD} has negative sing between the two integrals. This sign allows differentiating between the stable and unstable manifolds on the Lagrangian descriptor plots. The set of singularities on integral with $\tau_+$ shows the stable manifolds and the set of singularities on integral with $\tau_-$ the unstable manifolds. The superposition of the two paters of singularities revels the tangle between the stable and unstable manifolds.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Periodic-orbits-and-their-Stable-and-Unstable-Manifolds">Periodic orbits and their Stable and Unstable Manifolds<a class="anchor-link" href="#Periodic-orbits-and-their-Stable-and-Unstable-Manifolds"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\label{sec:PO}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to show the dynamics of this two degree of freedom Hamiltonian system in the regime of dissociation and roaming, let us consider a fixed value of the total energy above the dissociation energy threshold, $E = 101 &gt; D_e $. In this case, the trajectories close to the wells can cross the interaction region and escape to infinity. The trajectories that start in the interaction region are sensitive to initial conditions. That means that two trajectories that start arbitrary close can finish in a different direction in the asymptotic region. This phenomenon is called chaotic scattering and is a kind of transient chaos \cite{Tel_book, Tel2015}.</p>
+<p>The chaotic scattering is a common phenomenon in the open Hamiltonian system. Detailed studies of chaotic scattering in Hamiltonian systems with two and three degrees of freedom are in the recent literature \cite{Sanjuan2013, Zapfe2010, Drotos2014, Gonzalez2012}. The tangle between the stable and unstable manifolds generates rich dynamics in the interaction region. However, the dynamics is simple in the asymptotic region, where the trajectories converge to straight lines.</p>
+<p>The double Morse potential energy $V$ satisfies the asymptotic condition $Vr^2 \rightarrow 0$ when $r\rightarrow \infty$, then the linear momenta of the trajectories that reach the asymptotic region converge to a constant value \cite{Newton_book}.</p>
+<p>The trajectories associated with dissociation reactions start in one well and finish in the asymptotic region. The trajectories associated with roaming reactions start in one well, travel outside the well in the roaming region where the potential energy is almost flat, and reach the other potential well.</p>
+<p>In order to define the transport between the two potential wells and the asymptotic region, the configuration space is divided into three regions, see figure \ref{fig:transport}. Two circumferences around each potential well, define the regions $A$ and $B$, and another external circumference around the two wells defines the asymptotic region $C$ where the trajectories are close to straight lines and escape to infinity.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/trajectories_roaming_disociation.jpg"   width="400" height="400" /></p>
+<p>\caption{ Roaming and dissociation trajectories. The trajectories in the figure start in the region $A$ until intersecting the region $B$ or go to the asymptotic region $C$ defined by an outer circle. The trajectories that travel from one well to the other well are the roaming trajectories, and the trajectories that do not reach the other well are the dissociation trajectories.} 
+\label{fig:transport}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In a previous work \cite{carpenter2018dynamics}, it has been found that the roaming and dissociation trajectories in the system are related to three types of periodic orbits. Let be $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ periodic orbits representatives of each type. The projection of the three periodic orbits in configuration space is shown in Fig. \ref{fig:orbits_2D}. The projection of periodic orbit $\Gamma_1$ encircles the interaction region and the two potential wells. The projection of $\Gamma_2$ also encircles the two wells, but self intersects at the origin. The projection of $\Gamma_3$ encircles just one well.</p>
+<p>In the configuration space, the projection of periodic orbits $\Gamma_2$, $\Gamma_3$ are close, but it is clear that the orbits are separated in the constant energy manifold, see Fig. \ref{fig:orbits_3D}. The three orbits are very close to each other's in a neighbourhood of the point $(x=8.45,y=0,p_x=0)$.</p>
+<p>As a consequence of the symmetries $x\rightarrow -x$ and $y \rightarrow -y$ of the potential energy $V(x,y)$, there are 4 orbits type I, 2 orbits type II, and 4 orbits type III in the phase space. It is necessary to consider only one element of every type for the numerical calculations.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/orbits_2D.jpg"   width="400" height="400" /></p>
+<p>\caption{Projection of the periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ in the configuration space.}
+\label{fig:orbits_2D}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/orbits_3D.jpg"   width="500" height="500" /></p>
+<p>\caption{ Periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ in the constant energy parameterise by coordinates $(x,y,p_x)$.} 
+\label{fig:orbits_3D}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A common method to find the periodic orbits is based on the Poincar\'e map defined on a 2-dimensional Poincar\'e surface. The Poincar\'e map is a function from the Poincar\'e surface to itself obtained by following trajectories from one intersection of the Poincar\'e surface to the next. The fixed points of the Poincar\'e map are the intersections between the periodic orbits and the Poincar\'e surface. In this system, a natural choice of Poincar\'e surface is the canonical plane $x$-$p_x$ with $y=0$ due to the symmetry $y\rightarrow -y$ of the potential energy. The three periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ are hyperbolic and considerably unstable. In order to calculate the eigenvalues and eigenvectors of the linear approximation to the Poincar\'e map around the fixed points associated with the three types of periodic orbits is necessary to use multi-precision integrators. These calculations are done with the Taylor integrator method implemented in Julia \cite{Perez2019}. The periods of the periodic orbits and their associated eigenvalues are in Table I. The product between the eigenvalues is close to 1, then the calculations agree with the Hamiltonian properties of the system.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>|$\Gamma_1$ | $T_{1} =  30.3774  $ | $\lambda_{1,Max}\simeq 2.0314 \times 10^7$ | $\lambda_{1,min}\simeq 4.9224 \times 10^{-8}$ | $\lambda_{1,Max} \lambda_{1,min} \simeq 0.99999$ |</p>
+<p>|$\Gamma_2$ | $T_{2} = 29.1727$    | $\lambda_{2,Max}\simeq 3.4627 \times 10^{12}$ | $\lambda_{2,min}\simeq 2.8965 \times  10^{-13}$ | $\lambda_{2,Max} \lambda_{2,min} \simeq 1.00299$ |</p>
+<p>|$\Gamma_3$ | $T_{3} =  14.5671  $ | $\lambda_{3,Max}\simeq 1.8019 \times 10^6$ | $\lambda_{3,min} \simeq 5.5382 \times 10^{-7}$ |  $\lambda_{3,Max} \lambda_{3,min} \simeq 0.99794$ |</p>
+<p>\caption{Periods and eigenvalues of the periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$.}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the eigenvalues and their corresponding eigenvectors is possible to construct the stable and unstable manifolds of the three periodic orbits. However, the construction and visualisation of the stable and unstable manifolds are not simple tasks because of the size of the eigenvalues, $\lambda_{Max} &gt;&gt; 1$ and $\lambda_{min} \cong 0$, and because the Poincar\'e map requires that the trajectories intersect the Poincar\'e section again. For example, the trajectories in the unstable manifold of the periodic orbit $\Gamma_1$ that go directly to the asymptotic region intersect the Poincar\'e section only for a finite number of iterations before to converge to straight lines. In general, it is not possible to obtain a global visualisation of the tangles between the stable and unstable manifolds using the Poincar\'e map.</p>
+<p>An appropriate approach that allows an easier visualisation of the stable and unstable manifolds even in this situations is the use of indicators for chaotic regions, like fast Lyapunov indicators (FLI) \cite{Lega2016}, mean exponential growth factor of nearby orbits (MEGNO) \cite{Cicotta2016}, the smaller (SALI) and the generalized (GALI) alignment indices \cite{Skokos2016}, delay time functions, scattering functions \cite{Gonzalez2012}, and Lagrangian descriptors. The Lagrangian descriptors contain information of the stable and unstable manifolds that intersect the set of initial conditions and do not require that the trajectories intersect any particular predefined set again, as mentioned in section \ref{sec:LD}. It is important to notice that the trajectories should be integrated long enough time to reach a neighbourhood of the geometric structures that generate different abrupt behaviour. In the other case, the chaotic indicator does not show the structure clearly, even if the set of initial conditions intersect the structure.</p>
+<p>The calculations of the Lagrangian descriptors are done with the classical ninth order Vernet integrator implemented in Julia \cite{Rackauckas2017}. In this system, the Lagrangian descriptors require standard double-precision to reveal segments of the invariant manifolds. The computational cost necessary to see a signature of the stable and unstable manifolds in the Lagrangian descriptor plots is a fraction of computational cost necessary using the Poincar\'e map. The reason for this difference is related to the computational cost of the integration with the multi-precision libraries and the fact that the calculation of the Lagrangian descriptor does not require that the trajectories cross the set of initial conditions again.</p>
+<p>The Fig. \ref{fig:orbits_2D} shows that  $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ intersect the $x$ axis in a neibourhood of the point $(x= 8.5,y=0)$ and their momentun at the intersection are $(p_{y} &lt; 0, p_x = 0)$. To find these periodic orbits, using the Lagrangian descriptors, is natural to consider initial conditions on the canonical conjugate plane $p_{x_0}$--$x_0$ with $y_0 = 0$ and initial momentum $ p_{y_0} &lt; 0$. The Lagrangian descriptor evaluated in this set of initial conditions for different times is shown in Fig.\ref{fig:LD<em>time}. When the size of the interval of integration $[\tau</em>-,\tau_+]$ is increased, the Lagrangian descriptor reveals intersection of the the stable and unstable manifolds with the set of inital conditions. The intersections between the stable and unstable manifolds is the invariant chaotic set. The periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ are contained in this invariant chaotic set.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_time.jpg"   width="700" height="700" /></p>
+<p>\caption{Lagrangian descriptor $M$ evaluated on the plane $p_{x_0}$-$x_0$ with initial $y_0 = 0$ and initial momentum $(p_{y_0} &lt; 0, p_x = 0)$ for different values of $\tau_+$ and $\tau_-$. To show the symmetry of $M$ and the invariant manifolds for this initial conditions, $\tau_+ = - \tau_-$ is selected. When the value of $\tau_+$ is increased, the structure of the tangle between the stable and unstable manifolds is reveled by the abrupt jumps in the value of the Lagrangian descriptor where it converge to a non-differentiable function. The intense blue and yellow lines correspond to segments of the unstable manifolds and stable manifolds respectively.} 
+\label{fig:LD_time}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to show clearly the picks generated by invariant stable and unstable manifolds of one of the three hyperbolic periodic orbits in the Lagrangian descriptor plots and find the periodic orbits, let us consider the symmetry line $y_0 = 0$ in an interval that contain $\Gamma_2$. The Lagrangian descriptor in Fig. \ref{fig:LD<em>time} with $\tau</em>{-} = -\tau<em>+$ evaluated on this line is identically zero due to the symmetries of the system. For this reason, is convenient to consider the Lagrangian descriptor with $\tau</em>{-} = 0$ and $\tau_+ &gt; 0$, the results are in the Fig. \ref{fig:LD_line_x0}. When the integration time $\tau_+$ is increased enough, the peak generated for the different behaviour of the trajectories reveals the intersections of the stable manifold of the periodic orbit with the $x_0$ axis. Due to the symmetry of the stable and unstable manifolds respect to the $x_0$ axis, this intersection coincides with the intersection with the unstable manifold of the periodic orbit. Finally, the intersection point between the stable and unstable manifolds is the intersection with the periodic orbit with the $x_0$ axis. It is important to notice that the integration time to generate the peak is different from the period of the orbit.</p>
+<p>Another simple way to find the intersections between the stable and unstable manifolds is to change the negative sing in the definition \eqref{eq:LD}, then $M_+ + M_- &gt; 0 $ and the points where is this quantity is maximal are the intersections between the stable and unstable manifolds.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/ld_linea_medium_c.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\caption{ Lagrangian descriptors evaluated on an interval of the line 𝑥0. The integration times are 𝜏−=0 and 𝜏+&gt;0. The different colour lines in the plots correspond to different values of 𝜏+. The peaks indicate the intersection of the periodic orbit $\Gamma_2$ with the line 𝑥0.
+\label{fig:LD_line_x0}}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The structure of the tangle is very rich in the interaction region. To see this structure let us consider the Lagrangian descriptor evaluated on large area of the canonical conjugate plane $p_{x_0}$-$x_0$ at $y_0=0$ with initial $p_{y_0}&lt;0$. The Lagrangian descriptors on the Fig. \ref{fig:LD_plane<em>y=0} shows the symmetries of the tangles and their complicated structure characteristic of the open chaotic Hamiltonian systems with two degrees of freedom. In the figure, some lines converge directly to constant values of the momentum in the asymptotic region. These lines correspond to the branches of stable and unstable manifolds that go directly to the asymptotic region, close to these branches there are the lobules where the particles escape or enter to the interaction region. Examples of the lobule dynamics in open Hamiltonian systems and chaotic scattering are in \cite{Gonzalez2012,Zapfe2010}. There are three disconnected regions: two unbounded regions on the extremes and one bounded region in the middle surrounded by a white region. The white region corresponds to points where the momentum $p</em>{x_0}$ is not defined for this value of the energy.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_plane_y=0.jpg" alt="" title="" width="600" height="600" /></p>
+<p>\caption{Lagrangian descriptor $M$ evaluated on the plane $p_{x_0}$-$x_0$ at $y_0=0$ with initial $p_{y_0}&lt;0$.}
+\label{fig:LD_plane_y=0}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Phase-Space-Pathways-for-Roaming">Phase Space Pathways for Roaming<a class="anchor-link" href="#Phase-Space-Pathways-for-Roaming"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\label{sec:roaming}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An important set in the phase space to analyse the transport in the system is the dividing surface of a periodic orbit\cite{Pechukas1979,carpenter2018dynamics}. The projection of the periodic orbit in the configuration space defines a closed curve and a region inside the curve. The dividing surface is a natural surface to analyse all the trajectories of the system that cross the boundary of this region in the configuration space. The algorithm to construct the dividing surface of the periodic orbit $\Gamma$ consists of three steps:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li><p>Project the periodic orbit $\Gamma$ on the configuration space.</p>
+</li>
+<li><p>Construct the circumference on momentum plane using the equation</p>
+</li>
+</ol>
+$$  p^2_x + p^2_y = 2m( E - V(x,y) )$$<p>for every point $(x,y)$ on the projection of the orbit $\Gamma$ in the configuration space.</p>
+<ol>
+<li>Take the union of all these circumferences in the phase space to construct the dividing surface.    </li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dividing surface constructed in this way has three relevant properties for analysis of the transport: The first one, the periodic orbit $\Gamma$ and
+the orbit with the same projection in configuration space but opposite momentum are contained in the same dividing surface. This fact is a consequence of the time-reversal invariance of the system. The second property is that the periodic orbits used to construct the dividing surface are the boundaries between the regions where the trajectories enter into the phase space region contained by the dividing surface and trajectories that left the same region. The third property, the flux through the dividing surface is minimal. That means, if the dividing surface is deformed, the flux through it increases. The demonstrations of these properties of the dividing surfaces of periodic orbits are in \cite{Pechukas1979}, and for NHIMs with more dimensions in \cite{Waalkens_2004}.</p>
+<p>In the system, the periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ are not generated by any saddle in the potential energy. Their projection in the configuration space are curves that enclose an area. In the case of unstable periodic orbits associated with saddles points, the projection on the configuration space is a line that does not enclose any area. The extremes of the projection are the returning points where the periodic orbit has zero momentum. The dividing surface, in this case, is a surface genus 0 (topologically equivalent to a sphere). An example of this kind of periodic orbits and their respective dividing surface is in \cite{Rafa2019}.</p>
+<p>The projection in configuration space of the orbits $\Gamma_1$, $\Gamma_3$ do not have self-intersections; for this reason, the corresponding dividing surfaces are genus 1, (a torus). Another example of this kind of dividing surface is in \cite{Collins_2015}. The projection of the periodic orbit $\Gamma_2$ has an intersection at the origin, the dividing surface, in this case, is a surface genus 2.</p>
+<p>A natural parametrization of the dividing surface is given by the arc length $l_0$ of the respective periodic orbit in the phase space and the angle between the initial momentum and the $x_0$ axis, $\phi_0 = \displaystyle{ \arctan{p_{y_0}/p_{x_0}}}$. The next calculation use this parametrisation to analyse the trajectories that cross each of the three dividing surfaces.</p>
+<p>The fate map is an appropriate tool to classify the trajectories associated with rooming and dissociation in phase space. A fate map shows the origin and destiny of the trajectories, considering the evolution for an interval of time. In this case, the origin and destiny of the trajectories are the regions $A$, $B$, and $C$ defined in the previous section. The procedure to calculate the fate map on a dividing surface is the following: consider a point on the dividing surface, integrate forward and backwards the trajectory that crosses this point on the dividing surface until each extreme of the trajectory reaches one of the three regions, and label this point with the corresponding fate. The left side of Fig. \ref{fig:FM_LD} show the fate map for each dividing surface. Each different colour in the fate map indicates different transport between regions $A$, $B$, and $C$. The fate maps evaluated on the dividing surfaces of the periodic orbits $\Gamma_1$ and $\Gamma_2$ have all nine possibilities of transport between the regions $A$, $B$, and $C$. In the case for the dividing surface of the periodic orbit $\Gamma_3$, the fate map has only five possibilities.</p>
+<p>In the three fate maps, exist red regions ($ C \rightarrow A $), and light blue regions ($ A \rightarrow C$). The light blue regions represent the trajectories that dissociate. The green and orange regions, ($ A \rightarrow B $) and ($ B \rightarrow A $),  are the roaming regions. There are similarities between both of the fate maps for $\Gamma_2$ and $\Gamma_3$. The similarity between the fate maps is a consequence of the proximity between the orbits $\Gamma_3$ and $\Gamma_2$, see Fig. \ref{fig:orbits_3D}.</p>
+<p>In the configuration space, all the trajectories that travel from one well to the other well should cross the projection of the periodic orbits $\Gamma_3$ and $\Gamma_2$. For this reason, the trajectories associated with roaming cross the dividing surface of $\Gamma_3$ and $\Gamma_2$ in the phase space.</p>
+<p>The trajectories that start in one well and escape to the asymptotic region need to cross the projection of $\Gamma_1$ in the configuration space as well. These trajectories are associated with dissociation. The fate map of the dividing surface of $\Gamma_1$ shows which trajectories escape to the asymptotic region and which trajectories enter the interaction region.</p>
+<p>In order to show the relation between the different trajectories fates and the stable and unstable manifolds of the unstable periodic orbits $\Gamma_1$, $\Gamma_2$, and $\Gamma_3$ we calculate the Lagrangian descriptors on the dividing surfaces for the three hyperbolic periodic orbits. The same segments of the trajectories are used to calculate the Lagrangian descriptors and the fate maps. Like in the calculation of the fate maps, the values of $\tau_-$ and $\tau_+$ for each trajectory are the times necessary to reach one of the three regions. Once a trajectory reaches one of the three regions, its integration stops. The results for the Lagrangian descriptors are on the right side of Fig \ref{fig:FM_LD}.</p>
+<p>The abrupt jumps in the values of the Lagrangian descriptors are related to the different behaviour of the trajectories in a neighbourhood the stable and unstable manifolds of the unstable periodic orbits in the phase space. The stable and unstable manifolds are surfaces of dimension 2, and their intersections with a dividing surface are lines. There is a complete match between the boundaries of regions in the fate maps and the abrupt changes in the Lagrangian descriptors plots for each dividing surface. This agreement is a manifestation of the division of the phase space into the roaming and dissociation regions by the stable and unstable manifolds.</p>
+<p>There are three different types of regions in the plots of the Lagrangian descriptor evaluated on the dividing surface: blue, yellow, and mixed regions. The colours in the Lagrangian descriptor evaluated in the dividing surfaces are related to the fates. The blue regions in the Lagrangian descriptors plots correspond to trajectories that start in one potential well, cross the dividing surface, and finally escape to infinity. These are trajectories associated with dissociation. The yellow regions correspond to trajectories that start in the asymptotic region, cross the dividing surfaces, and finally reach a potential well. The regions with mixed colours in the Lagrangian descriptor plot without abrupt changes are associated with the trajectories that connect the two wells. The mixed colours are related to other segments of the stable and unstable manifolds contained in the same set of initial conditions, and more integration time is necessary to visualise them.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/FM_DS_Gamma1.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:FM_DS_Gamma1}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_DS_Gamma1.jpg" alt="" title="" width="350" height="400" /></p>
+<p>\label{fig:LD_DS_Gamma1}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/FM_DS_Gamma2.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:FM_DS_Gamma2}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_DS_Gamma2.jpg" alt="" title="" width="350" height="400" /></p>
+<p>\label{fig:LD_DS_Gamma2}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/FM_DS_Gamma3.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:FM_DS_Gamma3}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_DS_Gamma3.jpg" alt="" title="" width="350" height="400" /></p>
+<p>\label{fig:LD_DS_Gamma3}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\caption{ Fate map and Lagrangian descriptor evaluated on the dividing surfaces for $\Gamma_1$, $\Gamma_2$, and  $\Gamma_3$.
+In order to improve visibility in the Lagrangian descriptor figures, the value $\arctan{0.005M}$ is plotted instead of $M$. The intersection between the dividing surface and stable manifolds and unstable manifolds are the curves with a change in the gradient. The yellow and blue curves, where the gradient change rapidly, are the intersections with the stable and unstable manifolds. There are four large regions in the plot, two regions for dissociation indicated by $D_{+}$ and, the other two regions for the inverse process  $D_{-}$. The roaming regions are indicated by a letter $R$.
+\label{fig:FM_LD}}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The procedure to identify the stable and unstable manifolds associated with the transport from the Lagrangian descriptor and fate map plots is the following. For illustration, consider magnifications of the plots around the point $(l_2=25,\phi_2 = 2.565)$, close to the periodic orbit $\Gamma_2$, see Fig. \ref{fig:FM_LD_zoom}. There are fine strips close to $\Gamma_2$ on both magnifications. Then, consider the vertical line of initial conditions in Figs. \ref{fig:LD_DS_Gamma_zoom} and \ref{fig:FM_DS_Gamma2_zoom}, and their trajectories used to calculate the fate map and the Lagrangian descriptor. The projection of these orbits in the configuration space is in Fig. \ref{fig:orbits}. For example, the trajectory on the boundary between the green region ($A \rightarrow B$) and blue region ($A \rightarrow C$) converges to the invariant manifold $W^s(\Gamma_2)$, see the Figs. \ref{fig:FM_DS_Gamma2_zoom} and \ref{fig:orbits_AB_AC}. Continuing with the same procedure for the other boundaries is possible to identify the invariant manifolds associated with the boundaries between regions, see Figs. \ref{fig:orbits_AC_BC}, \ref{fig:orbits_BC_CC}, and \ref{fig:orbits_CC_CA}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/FM_DS_Gamma2_zoom.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:FM_DS_Gamma2_zoom}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_DS_Gamma_zoom.jpg" alt="" title="" width="350" height="400" /></p>
+<p>\label{fig:LD_DS_Gamma_zoom}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\caption{ Fate map and Lagrangian descriptor evaluated on dividing surface of orbit $\Gamma_2$ around the point $(l_2=25,\phi_2 = 2.565)$. To improve visibility in the Lagrangian descriptor figure, the value $\arctan{0.005M}$ is ploted instead $M$ in \ref{fig:LD_DS_Gamma_zoom}.
+\label{fig:FM_LD_zoom}}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/LD_DS_Gamma2_line.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\caption{ Lagrangian descriptor evaluated on the black vertical line on the figure \ref{fig:LD_DS_Gamma_zoom}. Panel \ref{fig:LD_DS_Gamma2_zoom_zoom_line} is a magnification of panel \ref{fig:LD_DS_Gamma2_zoom_line} aroun the periodic orbit $\Gamma_2$. 
+\label{fig:LD_line}}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/orbits_AB_AC.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:orbits_AB_AC}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/orbits_AC_BC.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:orbits_AC_BC}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/orbits_BC_CC.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:orbits_BC_CC}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="figures/orbits_CC_CA.jpg" alt="" title="" width="400" height="400" /></p>
+<p>\label{fig:orbits_CC_CA}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\caption{ Projection of the trajectories that cross the black line in Fig. \ref{fig:FM_DS_Gamma2_zoom} on the dividing surface of $\Gamma_2$. The stable and unstable manifolds are the boundary between two sets of trajectories with a different fate.
+\label{fig:orbits}}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bibliography">Bibliography<a class="anchor-link" href="#Bibliography"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\bibliography{article}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              
+<nav class="c-page__nav">
+  
+    
+    
+
+    <a id="js-page__nav__prev" class="c-page__nav__prev" href="/act2/four_well_morse/booksprinttest_makrina.html">
+      〈 <span class="u-margin-right-tiny"></span> Four-well potential
+    </a>
+  
+
+  
+    
+
+    
+    <a id="js-page__nav__next" class="c-page__nav__next" href="/act2/1-Ches/roam.html">
+      Chesnavich Model Part 1 <span class="u-margin-right-tiny"></span> 〉
+    </a>
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
