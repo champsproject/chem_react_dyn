@@ -16,6 +16,9 @@
 # - divider: true  # Will insert a divider in the sidebar
 # - header: My Header  # Will insert a header with no link in the sidebar
 
+
+- url: ./front-page
+  title: " " 
 - url: ../docs/dedication
   title: Dedication
 - url: ../docs/acknowledgements
@@ -57,7 +60,7 @@
 - url: /act3/system_bath2/system_bath
   title: N-Degree-of-Freedom System-Bath Model 2
   
-- url: https://github.com/broncio123/champs-booksprint-planning
+- url: https://github.com/champsproject/chem_react_dyn
   title: GitHub repository
   external: true
   not_numbered: true
