@@ -1,6 +1,7 @@
 
 _site/
 
+.ipynb_checkpoints/
 
 content/fundamental_models/.ipynb_checkpoints/
 
