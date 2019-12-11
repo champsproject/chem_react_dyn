@@ -14,7 +14,7 @@ help:
 install:
 	# Check to see whether bundler is already installed. If not, install it.
 	if [ hash bundler 2>/dev/null ]; then \
-	gem install bundler;\
+	gem install jekyll bundler;\
 	fi
 	bundle install
 
