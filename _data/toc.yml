@@ -28,40 +28,70 @@
     url: /acknowledgements
   - title: Preface
     url: /preface
-- url: /prologue/prologue
-  title: Prologue
-- url: /prologue/LDs/LDs_victor
-  title: Lagrangian Descriptors 
-- url: /fundamental_models/fundamental_models-jekyll
-  title: Fundamental Models
-- url: /act1/Morse/Morse
-  title: Morse Oscillator
-- url: /act2/hamiltonian_sn/HSN_victor
-  title: Saddle-Node Hamiltonian
-- url: /act2/barbanis2D/barbanis2d
-  title: Barbanis model
-- url: /act2/caldera/caldera-1
-  title: Caldera model
-- url: /act2/deLeon_Berne/deleon_berne
-  title: De Leon model
-- url: /act2/system_bath1/system_bath1
-  title: System Bath 1
-- url: /act2/four_well_morse/booksprinttest_makrina
-  title: Four-well potential
-- url: /act2/double_morse/prueba
-  title: Double-Morse oscillator
-- url: /act2/1-Ches/roam
-  title: Chesnavich Model Part 1
-- url: /act2/2-Ches/roam_mass_energy_var
-  title: Chesnavich Model Part 2
-- url: /act2/3-Ches/roamiso
-  title: Chesnavich Model Part 3
-- url: /act3/barbanis_3dof/barbanis_3dof
-  title: Three degree-of-freedom Barbanis system
-- url: /act3/system_bath1/main
-  title: N-Degree-of-Freedom System-Bath Model 1
-- url: /act3/system_bath2/system_bath
-  title: N-Degree-of-Freedom System-Bath Model 2
+    
+- title: Prologue
+  url: /prologue/prologue_0
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Introduction and Background
+    url: /prologue/introduction_and_background
+  - title: Transition State Theory
+    url: /prologue/tst
+  - title: The Index of a Saddle Point
+    url: /prologue/index_of_a_saddle_point
+  - title: The Method of Lagrangian Descriptors
+    url: /prologue/LDs/LDs_victor
+  - title: Fundamental Models
+    url: /fundamental_models/fundamental_models-jekyll
+
+- title: Act 1
+  url: /act1/act1
+  not_numbered: true
+  expand_sections: true
+  sections:
+    - title: Morse Oscillator
+      url: /act1/Morse/Morse
+    - title: Hamiltonian Bifurcations
+      url: /act1/hamiltonian_bifurcation/ham_bif
+
+- title: Act 2
+  url: /act2/act2
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Saddle-Node Hamiltonian
+    url: /act2/hamiltonian_sn/HSN_victor
+  - url: /act2/barbanis2D/barbanis2d
+    title: Barbanis Model
+  - url: /act2/caldera/caldera-1
+    title: Caldera Model
+  - url: /act2/deLeon_Berne/deleon_berne
+    title: De Leon Model
+  - url: /act2/system_bath1/system_bath1
+    title: System Bath 1
+  - url: /act2/four_well_morse/booksprinttest_makrina
+    title: Four-well Potential
+  - url: /act2/double_morse/prueba
+    title: Double-Morse Oscillator
+  - url: /act2/1-Ches/roam
+    title: Chesnavich Model Part 1
+  - url: /act2/2-Ches/roam_mass_energy_var
+    title: Chesnavich Model Part 2
+  - url: /act2/3-Ches/roamiso
+    title: Chesnavich Model Part 3
+
+- title: Act 3
+  url: /act3/act3
+  not_numbered: true
+  expand_sections: true
+  sections:
+    - url: /act3/barbanis_3dof/barbanis_3dof
+      title: Three-DoF Barbanis system
+    - url: /act3/system_bath2/system_bath
+      title: N-DoF System-Bath Model 2
+    - url: /act3/system_bath1/main
+      title: N-DoF System-Bath Model 1
   
 - url: https://github.com/champsproject/chem_react_dyn
   title: GitHub repository
