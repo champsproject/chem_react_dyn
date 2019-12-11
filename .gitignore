@@ -1,10 +1,5 @@
-
-_site/
-
-docs/
+_buiild/
 
 content/fundamental_models/.ipynb_checkpoints/
 
-_data/
-
-_build/*/*
+_site/
