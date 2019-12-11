@@ -25,12 +25,11 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
 url: "https://jupyterbook.org" # the base hostname & protocol for your site, e.g. http://example.com
 
-
 #######################################################################################
 # Jupyter Book settings
 
 # Main page settings
-footer_text               : This page was created by <a href="https://github.com/orgs/champsproject/people">The CHAMPS group</a>
+footer_text               : This online-book was created by <a href="https://github.com/orgs/champsproject/people">The CHAMPS group</a>
 
 # Sidebar settings
 show_sidebar              : true  # Show the sidebar. Only set to false if your only wish to host a single page.

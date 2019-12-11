@@ -17,14 +17,17 @@
 # - header: My Header  # Will insert a header with no link in the sidebar
 
 
-- url: ./front-page
-  title: " " 
-- url: ../docs/dedication
-  title: Dedication
-- url: ../docs/acknowledgements
-  title: Acknowledgements
-- url: ../docs/preface
-  title: Preface
+- title: " "
+  url: /front-page
+  not_numbered: true
+  expand_sections: true
+  sections:
+  - title: Dedication
+    url: /dedication
+  - title: Acknowledgements
+    url: /acknowledgements
+  - title: Preface
+    url: /preface
 - url: /prologue/prologue
   title: Prologue
 - url: /prologue/LDs/LDs_victor
