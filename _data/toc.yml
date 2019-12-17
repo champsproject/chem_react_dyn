@@ -16,7 +16,6 @@
 # - divider: true  # Will insert a divider in the sidebar
 # - header: My Header  # Will insert a header with no link in the sidebar
 
-
 - title: " "
   url: /front-page
   not_numbered: true
@@ -44,17 +43,17 @@
     url: /prologue/LDs/LDs_victor-jekyll
   - title: Fundamental Models
     url: /fundamental_models/fundamental_models-jekyll
-
+    
 - title: Act 1
   url: /act1/act1
   not_numbered: true
   expand_sections: true
   sections:
-    - title: Morse Oscillator
-      url: /act1/Morse/Morse
-    - title: Hamiltonian Bifurcations
-      url: /act1/hamiltonian_bifurcation/ham_bif
-
+  - title: Morse Oscillator
+    url: /act1/Morse/Morse
+  - title: Hamiltonian Bifurcations
+    url: /act1/hamiltonian_bifurcation/ham_bif
+    
 - title: Act 2
   url: /act2/act2
   not_numbered: true
@@ -62,39 +61,38 @@
   sections:
   - title: Saddle-Node Hamiltonian
     url: /act2/hamiltonian_sn/HSN_victor
-  - url: /act2/barbanis2D/barbanis2d
-    title: Barbanis Model
-  - url: /act2/caldera/caldera-1
-    title: Caldera Model
-  - url: /act2/deLeon_Berne/deleon_berne
-    title: De Leon Model
-  - url: /act2/system_bath1/system_bath1
-    title: System Bath 1
-  - url: /act2/four_well_morse/booksprinttest_makrina
-    title: Four-well Potential
-  - url: /act2/double_morse/prueba
-    title: Double-Morse Oscillator
-  - url: /act2/1-Ches/roam
-    title: Chesnavich Model Part 1
-  - url: /act2/2-Ches/roam_mass_energy_var
-    title: Chesnavich Model Part 2
-  - url: /act2/3-Ches/roamiso
-    title: Chesnavich Model Part 3
+  - title: Barbanis Model
+    url: /act2/barbanis2D/barbanis2d
+  - title: Caldera Model
+    url: /act2/caldera/caldera-1
+  - title: De Leon Model
+    url: /act2/deLeon_Berne/deleon_berne
+  - title: System Bath 1
+    url: /act2/system_bath1/system_bath1
+  - title: Four-well Potential
+    url: /act2/four_well_morse/booksprinttest_makrina
+  - title: Double-Morse Oscillator
+    url: /act2/double_morse/prueba
+  - title: Chesnavich Model Part 1
+    url: /act2/1-Ches/roam
+  - title: Chesnavich Model Part 2
+    url: /act2/2-Ches/roam_mass_energy_var
+  - title: Chesnavich Model Part 3
+    url: /act2/3-Ches/roamiso
 
 - title: Act 3
   url: /act3/act3
   not_numbered: true
   expand_sections: true
   sections:
-    - url: /act3/barbanis_3dof/barbanis_3dof
-      title: Three-DoF Barbanis system
-    - url: /act3/system_bath2/system_bath
-      title: N-DoF System-Bath Model 2
-    - url: /act3/system_bath1/main
-      title: N-DoF System-Bath Model 1
+  - title: Three-DoF Barbanis system
+    url: /act3/barbanis_3dof/barbanis_3dof
+  - title: N-DoF System-Bath Model 2
+    url: /act3/system_bath2/system_bath
+  - title: N-DoF System-Bath Model 1
+    url: /act3/system_bath1/main
   
-- url: https://github.com/champsproject/chem_react_dyn
-  title: GitHub repository
+- title: GitHub repository
+  url: https://github.com/champsproject/chem_react_dyn
   external: true
   not_numbered: true
-
