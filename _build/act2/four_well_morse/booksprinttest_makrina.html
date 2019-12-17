@@ -12,7 +12,7 @@ prev_page:
 next_page:
   url: /act2/double_morse/prueba.html
 suffix: .ipynb
-search: x y right energy h left index equation space phase delta well py wells px saddle fig begin frac end pes sqrt system points trajectory potential dfrac quad uncoupled img width height src figures upper label trajectories dynamics dof alpha case symmetric saddles sign ref lower jpg mathcal inside critical since xs hamiltonian isomerization surface v p s mathbb r structures reaction point pm cylinder different initial eq partial three between separatrix where asymmetric below bottleneck d b plane spherical deltac equilibrium energies trapped change lds condition move region c e moreover through bigg corresponding mu four configuration w given
+search: x y right energy h left index equation space delta phase well py wells px saddle fig begin frac end pes sqrt system points trajectory potential dfrac quad uncoupled img width height src figures upper label trajectories dynamics dof alpha case symmetric saddles sign lower jpg mathcal ref inside critical since xs hamiltonian isomerization surface v p s mathbb r structures reaction point pm cylinder different initial eq partial three between separatrix where asymmetric below bottleneck d b plane spherical equilibrium c energies trapped change lds deltac condition move region e moreover through bigg corresponding mu four configuration eqref w
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -308,13 +308,10 @@ W(z) = z^4 - z^2
 \begin{equation}
     \mu = \sqrt{-\frac{1}{3}f^{\prime}(\gamma)} \quad,\quad \phi = \arccos\left(-\dfrac{f(\gamma)}{\mu^3}\right)
     \label{cubic_rules}
-    \end{equation}
-<pre><code>then for this cubic polynomial we have that $\gamma = 0$ and therefore:
+\end{equation}<p>then for this cubic polynomial we have that $\gamma = 0$ and therefore:</p>
 \begin{equation}
-\mu = \sqrt{\dfrac{2\alpha}{3}} \quad,\quad \phi = \arccos \left( \left(\dfrac{3}{2\alpha} \right)^{3/2} \delta \right)
-</code></pre>
-<p>\end{equation}</p>
-<p>The roots of the cubic polynomial have the form:</p>
+    \mu = \sqrt{\dfrac{2\alpha}{3}} \quad,\quad \phi = \arccos \left( \left(\dfrac{3}{2\alpha} \right)^{3/2} \delta \right)
+\end{equation}<p>The roots of the cubic polynomial have the form:</p>
 \begin{equation}
     \begin{cases}
     x_1 = \gamma + \mu \cos\left(\dfrac{\phi}{3}\right) = \mu \cos\left(\dfrac{\phi}{3}\right) \\[.3cm]
@@ -329,13 +326,10 @@ W(z) = z^4 - z^2
 \begin{eqnarray}
     (x_k,0) \quad ,&amp; \quad  &amp;V(x_k,0) = -\dfrac{x_k}{2} \left(\alpha x_k + \dfrac{3\delta}{2}\right) \;,\quad k \in \lbrace 1,2,3 \rbrace \\[.2cm]
     \left(x_k,\pm \sqrt{2}/2\right) \quad ,&amp; \quad &amp;V(x_k,\pm \sqrt{2}/2) = -\dfrac{x_k}{2} \left(\alpha x_k + \dfrac{3}{2}\delta \right) - \frac{1}{4} \;,\quad k \in \lbrace 1,2,3 \rbrace
-    \end{eqnarray}
-<pre><code>In particular, the energies of the critical points where the bifurcations take place is:
+\end{eqnarray}<p>In particular, the energies of the critical points where the bifurcations take place is:</p>
 \begin{equation}\label{energyeq}
-V(-\sqrt{\alpha/6},0) = \frac{\alpha^2}{12} \quad.\quad V(-\sqrt{\alpha/6},\pm \sqrt{2}/2) = \frac{\alpha^2-3}{12}
-</code></pre>
-<p>\end{equation}</p>
-
+    V(-\sqrt{\alpha/6},0) = \frac{\alpha^2}{12} \quad.\quad V(-\sqrt{\alpha/6},\pm \sqrt{2}/2) = \frac{\alpha^2-3}{12}
+\end{equation}
 </div>
 </div>
 </div>
@@ -366,8 +360,8 @@ V(-\sqrt{\alpha/6},0) = \frac{\alpha^2}{12} \quad.\quad V(-\sqrt{\alpha/6},\pm \
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In Fig. \ref{fig:LD_delta_02} we calculate LDs for the fixed value of the asymmetric parameter $\delta = 0.2$ and for different energies. In particular in this figure we have calculated LDs for an integration time of $\tau = 5$ in the phase space slice $y = -1/\sqrt{2}$. We discuss the phase space structures for different energy values. For instance, in Fig. \ref{fig:LD_delta_02} A) we use an energy value of $H = -0.2$ which is below the energy of the left index-1 saddle and below the energy of the index-2 saddle. Hence, the bottleneck that connects the lower-left and upper-right wells is still closed. The only option for trajectories that start on the lower-left well is to be trapped in that well or to evolve to the lower-right well by crossing the bottom index-1 saddle. In panel B) we use an energy of $H=-0.1$ which is above the energy of the left index-1 and still below the energy of index-2 saddle. In this case trajectories starting on the lower-left well have three different types of motion. They can be trapped in the well forever, or they can move to the lower-right or upper-left wells, since the phase space bottleneck connecting the wells is now open. Therefore,       trajectories can move between the wells and the system would show  sequential isomerization.</p>
-<p>In Fig. \ref{fig:LD_delta_crit} we illustrate the systems' behavior using LDs for $p = 1/2$ integration time $\tau = 10$ for the asymmetric and uncoupled case $\delta = \delta_c$ and for three different energies based on the equations (\ref{energyeq}) at the three bifurcations points, in particular we choose one energy $H = \alpha^{2}-3/12 =-1/6$ and one energy between $\alpha^{2}-3/12&lt;H&lt;\alpha^{2}/12$ that is $H = -1/12$. The magenta curve represents the energy boundary. For this value of $\delta$, that is the critical value, the three simultaneous saddle-node bifurcations have just occur and there are four wells and two index-1 saddles left. A) The energy of the system is $H = -1/6$ and corresponds to the phase space slice $y = -1/\sqrt{2}$. In this case we have two regions. One inside the spherical cylinder of the index-1 in the right and one outside of this cylinder, where is the trapping area. We choose an initial condition in each of these regions and in panel B we show their time evolution projected onto configuration space. The trajectory of any initial condition inside the spherical cylinder of index-1 (red) will remain inside the cylinder and move between the lower and upper wells in comparison to any trajectory starting outside of the cylinder will remain trapped in the well (blue), the coordinates don't change sign. C) The energy of the system is $H = -1/12$ and corresponds to the phase space slice $y = -1/\sqrt{2}$. In this case there are three regions. One inside the spherical cylinder of index-1, one area in the spherical cylinder of the parabolic point that is in the line of $x = x_{c}$ and one area outside of this. D) The phase space slide $p_y = 0$. Here we can see how the initial conditions from panel C evolve. The trajectory inside the parabolic spherical cylinder (cyan) will remain inside the cylinder, horizontal trapped motion. The initial condition (red) is trapping in the well. Finally the blue initial condition we move up and down between the two wells (sequential isomerization).</p>
+<p>In Fig. \ref{fig:LD_delta_02} we calculate LDs for the fixed value of the asymmetric parameter $\delta = 0.2$ and for different energies. In particular in this figure we have calculated LDs for an integration time of $\tau = 5$ in the phase space slice $y = -1/\sqrt{2}$. We discuss the phase space structures for different energy values. For instance, in Fig. \ref{fig:LD_delta_02} A) we use an energy value of $H = -0.2$ which is below the energy of the left index-1 saddle and below the energy of the index-2 saddle. Hence, the bottleneck that connects the lower-left and upper-left wells is still closed. The only option for trajectories that start on the lower-left well is to be trapped in that well or to evolve to the lower-right well by crossing the bottom index-1 saddle. In panel B) we use an energy of $H=-0.1$ which is above the energy of the left index-1 and still below the energy of index-2 saddle. In this case trajectories starting on the lower-left well have three different types of motion. They can be trapped in the well forever, or they can move to the lower-right or upper-left wells, since the phase space bottleneck connecting the wells is now open. Therefore,       trajectories can move between the wells and the system would show  sequential isomerization.</p>
+<p>In Fig. \ref{fig:LD_delta<em>crit} we illustrate the systems' behavior using LDs for $p = 1/2$ integration time $\tau = 10$ for the asymmetric and uncoupled case $\delta = \delta</em>{c}$ and for three different energies based on the equations (\eqref{energyeq}) at the three bifurcations points, in particular we choose one energy $H = \alpha^{2}-3/12 =-1/6$ and one energy between $\alpha^{2}-3/12&lt;H&lt;\alpha^{2}/12$ that is $H = -1/12$. The magenta curve represents the energy boundary. For this value of $\delta$, that is the critical value, the three simultaneous saddle-node bifurcations have just occur and there are four wells and two index-1 saddles left. A) The energy of the system is $H = -1/6$ and corresponds to the phase space slice $y = -1/\sqrt{2}$. In this case we have two regions. One inside the spherical cylinder of the index-1 in the right and one outside of this cylinder, where is the trapping area. We choose an initial condition in each of these regions and in panel B we show their time evolution projected onto configuration space. The trajectory of any initial condition inside the spherical cylinder of index-1 (red) will remain inside the cylinder and move between the lower and upper wells in comparison to any trajectory starting outside of the cylinder will remain trapped in the well (blue), the coordinates don't change sign. C) The energy of the system is $H = -1/12$ and corresponds to the phase space slice $y = -1/\sqrt{2}$. In this case there are three regions. One inside the spherical cylinder of index-1, one area in the spherical cylinder of the parabolic point that is in the line of $x = x_{c}$ and one area outside of this. D) The phase space slide $p_y = 0$. Here we can see how the initial conditions from panel C evolve. The trajectory inside the parabolic spherical cylinder (cyan) will remain inside the cylinder, horizontal trapped motion. The initial condition (red) is trapping in the well. Finally the blue initial condition we move up and down between the two wells (sequential isomerization).</p>
 
 </div>
 </div>
