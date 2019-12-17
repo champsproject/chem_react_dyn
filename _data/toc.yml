@@ -35,7 +35,7 @@
   expand_sections: true
   sections:
   - title: Introduction and Background
-    url: /prologue/introduction_and_background
+    url: /prologue/introduction_and_background-jekyll
   - title: Transition State Theory
     url: /prologue/tst
   - title: The Index of a Saddle Point
