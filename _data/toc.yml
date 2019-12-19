@@ -62,7 +62,7 @@
   - title: Saddle-Node Hamiltonian
     url: /act2/hamiltonian_sn/HSN_victor
   - title: Barbanis Model
-    url: /act2/barbanis2D/barbanis2d
+    url: /act2/barbanis2d/barbanis2d
   - title: Caldera Model
     url: /act2/caldera/caldera-1
   - title: De Leon Model
@@ -74,11 +74,11 @@
   - title: Double-Morse Oscillator
     url: /act2/double_morse/prueba
   - title: Chesnavich Model Part 1
-    url: /act2/1-Ches/roam
+    url: /act2/ches1/roam
   - title: Chesnavich Model Part 2
-    url: /act2/2-Ches/roam_mass_energy_var
+    url: /act2/ches2/roam_mass_energy_var
   - title: Chesnavich Model Part 3
-    url: /act2/3-Ches/roamiso
+    url: /act2/ches3/roamiso
 
 - title: Act 3
   url: /act3/act3
