@@ -1,0 +1,86 @@
+---
+redirect_from:
+  - "/prologue/introduction-and-background-jekyll"
+interact_link: content/prologue/introduction_and_background-jekyll.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Introduction and Background
+pagenum: 5
+prev_page:
+  url: /prologue/prologue_0.html
+next_page:
+  url: /prologue/tst-jekyll.html
+suffix: .ipynb
+search: energy surface coordinates reaction space ds hamiltonian n configuration bond coordinate recrossing phase described referred dimension concepts system locally property dynamical theory into describe bonds breaking molecule s function momentum systems such invariant manifolds chemical dynamics literature example file booksprintbib references book arise field common definition molecules collection atoms following description set dof independent particular total scalar valued dimensional flux dividing codimension regions reactants products point only any trajectory crosses globally our introduction background arising nonlinear periodic orbits normally hyperbolic nhims stable unstable introduced study perspective fairly substantial developed topic recent years cite wigginsrole waalkensgeometrical waalkenswigner wigginsnormally therein fair say
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Introduction and Background</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction-&amp;-Background">Introduction &amp; Background<a class="anchor-link" href="#Introduction-&amp;-Background"> </a></h2><p>Concepts arising in nonlinear dynamical systems theory, such as periodic orbits, normally hyperbolic invariant manifolds (NHIMs), and stable and unstable manifolds have been introduced into the study of chemical reaction dynamics from the phase space perspective. A fairly substantial literature has been developed on this topic in recent years (see, for example {% cite wiggins2016role waalkens2010geometrical waalkens2007wigner wiggins2013normally --file book_sprint_bib1 %}, and references therein), but it is fair to say that it has a more mathematical flavour, which is not surprising since these concepts originated in the dynamical systems literature. In this book we will  describe how these dynamical notions arise  in a variety of physically motivated settings with the hope of providing a more gentle entry into the field for both applied mathematicians and chemists.</p>
+<p>An obstacle in interdiscipliary work is the lack of a common language for describing concepts that are common to different fields. We begin with a list of commonly used terms that will arise repeatedly throughout this book and provide a working definition.</p>
+<p>Molecules are made up of a collection of atoms that are connected by chemical bonds and a reaction is concerned with the breaking, and creation, of these bonds. Hence, the following concepts are fundamental to the description of this phenomena.</p>
+<ul>
+<li><strong>Coordinates.</strong> The locations of the atoms in a molecule are described by a set of coordinates. The space (that is, all possible values) described by these coordinates is referred to as <em>configuration space</em>.</li>
+</ul>
+<ul>
+<li><strong>Degrees-of-Freedom (DoF).</strong> The number of  DoF is the number of independent coordinates required to describe the configuration of the molecule, that is the dimension of the configuration space.</li>
+</ul>
+<ul>
+<li><strong>Reaction.</strong> The breaking of a bond can be described by one or more coordinates characterizing the bond becoming unbounded as the it evolves in  time. </li>
+</ul>
+<ul>
+<li><strong>Reaction coordinate(s).</strong>  The particular coordinate(s) that describe the breaking of the bond are referred to as the <em>reaction coordinate(s)</em>.</li>
+</ul>
+<ul>
+<li><strong>Energy.</strong> The  ability of a bond to break can be characterised by its energy. A bond can be ''energized'' by transferring energy from other bonds in the molecule to a particular bond of interest, or from some external energy source, such as electromagnetic radiation, collision with other molecules, for example. </li>
+</ul>
+<ul>
+<li><strong>Total Energy, Hamiltonian, momenta.</strong> The total energy (that is, the sum of kinetic energy and potential energy) can be described by a scalar valued function called the <em>Hamiltonian</em>. The Hamiltonian is a function of the configuration space coordinates <em>and</em> their corresponding canonically conjugate coordinates, which are referred to as <em>momentum coordinates</em>.</li>
+</ul>
+<ul>
+<li><strong>Phase Space.</strong> The collection of all the configuration and momentum coordinates is referred to as the phase space of the system. The dynamics of the system (that is, how it changes in time) is described by Hamilton's (differential) equations of motion defined on phase space. </li>
+</ul>
+<ul>
+<li><p><strong>Dimension count.</strong> If the system has <em>n</em> configuration space coordinates, it has <em>n</em> momentum coordinates and then the phase space dimension is <em>2n</em>. The Hamiltonian is a scalar valued function of these  <em>2n</em> coordinates. The level set of the Hamiltonian, that is the energy surface, is <em>2n-1</em> dimensional. For a time-independent (autonomous) Hamiltonian, the system <em>conserves energy</em> and the energy surface is invariant.</p>
+</li>
+<li><p><strong>Transition State Theory (TST).</strong> An approach in reaction rate calculations that is based on the flux across a dividing surface. We give a brief description of the theory in the next section.</p>
+</li>
+<li><p><strong>Dividing Surface (DS).</strong> A DS on the energy surface is of dimension <em>2n-2</em>, that is, 1 dimension less (codimension 1) than the <em>2n-1</em> dimensional energy surface. While a codimension one surface has the dimensionality necessary to divide the energy surface into two distinct regions and forms the boundary between them. If properly chosen, the two regions are referred to as <em>reactants</em> and <em>products</em>, and reaction occurs when trajectories evolve from reactants to products through the DS. A DS has the ''locally no-recrossing'' property, which is equivalent to the Hamiltonian vector field being everywhere transverse to a DS, that is at no point is it tangent to the DS.</p>
+</li>
+<li><p><strong>Locally no-recrossing.</strong> Computation of the flux is accurate only if the DS has the ''locally no-recrossing'' property. A surface has the ''locally no-recrossing'' property if any trajectory that crosses the surface leaves a neighbourhood of the surface before it can return.</p>
+</li>
+<li><p><strong>Globally no-recrossing.</strong> A surface has the ''globally no-recrossing'' property if any trajectory that crosses the surface does so only once.</p>
+</li>
+<li><p><strong>The DS and the Reaction Coordinate.</strong> Following our definitions of reaction, reaction coordinate, and DS it follows that the reaction coordinate should play a role in the definition of the DS. This will be an important point in our discussions that follow.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="References">References<a class="anchor-link" href="#References"> </a></h1><p>{% bibliography --file book_sprint_bib1 --cited %}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
