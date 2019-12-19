@@ -50,7 +50,7 @@
   expand_sections: true
   sections:
   - title: Morse Oscillator
-    url: /act1/Morse/Morse
+    url: /act1/Morse/Morse-jekyll
   - title: Hamiltonian Bifurcations
     url: /act1/hamiltonian_bifurcation/ham_bif
     
