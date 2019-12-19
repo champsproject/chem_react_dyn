@@ -1,0 +1,490 @@
+---
+interact_link: content/act1/mymorse-jekyll.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Morse Oscillator
+pagenum: 11
+prev_page:
+  url: /act1/act1.html
+next_page:
+  url: /act1/hamiltonian_bifurcation/ham_bif.html
+suffix: .ipynb
+search: q frac equation d alpha eq t h m sqrt p begin end e label left right eqref omega hamiltonian file actionangle cite point infty periodic homoclinic morse function orbit level action melnikov tp int energy eqnarray using dq phi pi obtain varepsilon oscillator potential system trajectories dot partial orbits period expression dt integral angle set where phase nonumber fig po consider perturbation well given dynamics pm log sin chaos systems approach obtained j equilibrium turning le cos degree freedom form coordinates position standard such following points rightarrow parabolic unbounded limits considered perturbed smale defined width closed transformation not ham
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Morse Oscillator</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-one-Degree-of-Freedom-Morse-Oscillator">The one Degree-of-Freedom Morse Oscillator<a class="anchor-link" href="#The-one-Degree-of-Freedom-Morse-Oscillator"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction-and-Development-of-the-Problem">Introduction and Development of the Problem<a class="anchor-link" href="#Introduction-and-Development-of-the-Problem"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The potential energy function derived by P. M. Morse is truly a ''workhorse''  potential energy function in theoretical chemistry {% cite morse1929diatomic --file action_angle %}.  Originally it was devised to describe the intermolecular force between the two atoms in a diatomic molecule. It has the functional form:</p>
+\begin{equation}
+V(q) =  D \left( 1-e^{-\alpha q} \right)^2,
+\label{eq:mpot}
+\end{equation}<p>where $q$ represents the distance between the two atoms, $D &gt;0$ represents the depth of the potential well (defined relative to the dissociated atoms), and $\alpha &gt;0$ controls the width of the potential well ($\alpha$ small corresponds to a ''wide'' well, $\alpha$ large corresponds to a narrow well).</p>
+<p>The Morse potential defines a one degree-of-freedom Hamiltonian system, i.e. the phase space is two dimensional described by coordinates $(q, p)$, where $p$ is the momentum conjugate to the position variable $q$.  The Hamiltonian has the form of the sum of the  kinetic energy and the potential energy (the Morse potential).  The Hamiltonian system is integrable, and all trajectories lie on the level sets of the Hamiltonian function.  The level sets can be used to derive integrals that give (time) parametrizations of trajectories. Regions of closed (bounded) trajectories can be used to construct special coordinates--<em>action-angle coordinates</em>, where the angle denotes a particular location on the closed level set and the action is the area enclosed by a closed level set (divided by $2 \pi$). The transformation to action-angle coordinates for integrable Hamiltonan systems is a standard topic in good classical mechanics textbooks, see, e.g. {% cite landau1960mechanics arnold2013mathematical --file action_angle %}. The transformation preserves the Hamiltonian nature of the system, i.e. it is a canonical transformation, and therefore the standard approach to constructing such transformations is through the use of generating functions. However, for one degree-of-freedom time-independent Hamiltonian systems (such as the one described by the Morse potential)  there is a simpler approach to generating the action-angle transformation that uses the geometry of the closed level set of the Hamiltonian function and the explicit (time) parametrization of the trajectories that can  be obtained (in principle, if the necessary integrals can be explicitly computed)  for one degree-of-freedom Hamiltonian systems. The approach is inspired by the seminal paper of Melnikov {% cite melnikov1963vk --file action_angle %}. This approach was developed in detail in {% cite wiggins1990introduction --file action_angle %} (the 1990 edition, <em>not</em> the 2003 edition) and is also described in {% cite mezic1994integrability --file action_angle %}. This is the approach that we will follow here.</p>
+<p>Action-angle variables are important in Hamiltonian mechanics for a number of reasons. From the point of view of classical mechanics they are the coordinate system used for the development of the Kolmogorov-Arnold-Moser and Nekhoroshev theorems {% cite dumas2014kam --file action_angle %}. They also play a central role in the quantization of classical Hamiltonian systems (in fact, the action and the constant $\hbar$ have the same units) {% cite stone2005einstein keller1958corrected keller1960asymptotic keller1985semiclassical --file action_angle %}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The dynamical system defined by the Morse potential is Hamiltonian, with Hamiltonian function given by:</p>
+\begin{equation}
+H (q, p) = \frac{p^2}{2m} + D \left( 1-e^{-\alpha q} \right)^2, \qquad (q, p) \in \mathbb{R}^2,
+\label{eq:ham}
+\end{equation}<p>and Hamilton's equations defined by:</p>
+\begin{eqnarray}
+\dot{q}  =  \frac{\partial H}{\partial p} &amp; = &amp;  \frac{p}{m}, \nonumber \\
+\dot{p}  = - \frac{\partial H}{\partial q} %&amp; = &amp;  -2D  \left( 1-e^{-\alpha q} \right) \alpha e^{-\alpha q},  \nonumber \\
+&amp; = &amp; -2D \alpha \left(e^{-\alpha q} - e^{-2\alpha q}  \right). 
+\label{eq:hameq}
+\end{eqnarray}<p>Each level set of the Hamiltonian function (energy surface) has the form:</p>
+\begin{equation}
+\left\{(q, p) \in \mathbb{R}^2 \, | \, H(q, p) = h = \mbox{constant} \right\}.
+\label{eq:levelset}
+\end{equation}<p>For one DoF systems, they are one dimensional curves that are invariant under the Hamiltonian dynamics. Since the trajectories lie on these curves, we can use the form of the level curves to obtain parametrizations of  certain trajectories, as we will demonstrate.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Revealing-the-Phase-Space-Structures">Revealing the Phase Space Structures<a class="anchor-link" href="#Revealing-the-Phase-Space-Structures"> </a></h2><h3 id="Equilibria-and-their-Stability">Equilibria and their Stability<a class="anchor-link" href="#Equilibria-and-their-Stability"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is straightforward to verify the following two points are equilibria for Hamilton's equations:</p>
+\begin{equation}
+(q, p) = (\infty, 0), \, (0, 0).
+\label{eq:equil}
+\end{equation}<p>Next we check their linearized stability properties. The Jacobian matrix, denoted $J$, of Hamilton's equation is given by:</p>
+\begin{equation}
+J = \left(
+\begin{array}{cc}
+0 &amp; \frac{1}{m} \\
+- 2D \alpha^2 \left(- e^{-\alpha q} + 2 e^{-2\alpha q}  \right) &amp; 0
+\end{array}
+\right).
+\label{eq:jac}
+\end{equation}<p>The eigenvalues of $J$ are given by:</p>
+\begin{equation}
+\pm \sqrt{\rm{det}\, J}.
+\label{eq:eivs}
+\end{equation}<p>Hence for the two equilibria we have:</p>
+\begin{equation}
+(q, p) = (0, 0) \Rightarrow \rm{det} \, J = -\frac{2D \alpha ^2}{m},
+\label{eq:eqstab}
+\end{equation}<p>with corresponding eigenvalues:</p>
+\begin{equation}
+\pm i\sqrt{\frac{2D}{m}} \alpha,
+\label{eq:imageivs}
+\end{equation}<p>and</p>
+\begin{equation}
+(q, p) = (\infty, 0) \Rightarrow \rm{det} \, J =0,
+\label{eq:eqsad}
+\end{equation}<p>where both eigenvalues are zero.</p>
+<p>The equilibrium $(q, p) = (0, 0)$ is stable (''elliptic'' in the Hamiltonian dynamics terminology) and the $(q, p) = (\infty, 0)$ is unstable (a ''parabolic'' saddle point  in the Hamiltonian dynamics terminology).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Periodic-Orbits">Periodic Orbits<a class="anchor-link" href="#Periodic-Orbits"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the Hamiltonian \eqref{eq:ham} it is straightforward to verify that the equilibria have the following energies:</p>
+\begin{equation}
+(q, p) = (\infty, 0) \Rightarrow H=D &gt;0.
+\end{equation}<p>and</p>
+\begin{equation}
+(q, p) = (0, 0) \Rightarrow H=0.
+\end{equation}<p>Trajectories with energies larger than $D$  have unbounded motion in $q$. Trajectories having energies $h$ satisfying $0&lt; h &lt; D$ correspond to periodic motions. The level sets of these periodic orbits are given by:</p>
+\begin{equation}
+h= \frac{p^2}{2m} + D \left( 1-e^{-\alpha q} \right)^2, \quad 0&lt; h &lt; D,
+\label{eq:tp1}
+\end{equation}<p>and surround the stable equilibrium point $(q, p) = (0, 0)$ as shown in figure <a href="#fig:phase">fig:1</a>. The periodic orbits intersect the $q$ axis at two distinct points, $q_+ &gt; 0$ and $q_- &lt;0$,  which are referred to as <em>turning points</em>. These turning points are computed as follows.</p>
+<p>Rewriting \eqref{eq:tp1} gives:</p>
+\begin{equation}
+\frac{p^2}{2m} = h- D \left( 1-e^{-\alpha q} \right)^2.
+\label{eq:tp2}
+\end{equation}<p>The turning points are obtained from \eqref{eq:tp2} by setting $p=0$:</p>
+\begin{equation}
+h=D \left( 1-e^{-\alpha q} \right)^2
+\label{eq:tp3}
+\end{equation}<p>Note that we have:</p>
+\begin{equation}
+0 \le \sqrt{\frac{h}{D}} \le 1,
+\label{eq:tp4}
+\end{equation}<p>from which we obtain the following relations:</p>
+\begin{eqnarray}
+&amp;&amp; 1 \le 1 + \sqrt{\frac{h}{D}} \le 2, \label{eq:tp5} \\
+&amp;&amp; 0 \le 1 -  \sqrt{\frac{h}{D}} \le 1, \label{eq:tp6}
+\end{eqnarray}<p>Taking the positive root of \eqref{eq:tp3} gives:</p>
+\begin{equation}
+1-e^{-\alpha q} =  \sqrt{\frac{h}{D}}.
+\label{eq:tp7}
+\end{equation}<p>from which we obtain the positive turning point:</p>
+\begin{equation}
+q_+ = - \frac{1}{\alpha} \log \left(1-  \sqrt{\frac{h}{D}}  \right) &gt; 0.
+\label{eq:tppos}
+\end{equation}<p>Taking the negative root of \eqref{eq:tp3} gives:</p>
+\begin{equation}
+1-e^{-\alpha q} = -\sqrt{\frac{h}{D}},
+\label{eq:tp8}
+\end{equation}<p>from which we obtain the negative turning point:</p>
+\begin{equation}
+q_- = - \frac{1}{\alpha} \log \left(1 + \sqrt{\frac{h}{D}}  \right) &lt; 0.
+\label{eq:tpneg}
+\end{equation}<p>The  level curve with energy equal to the dissociation energy $h=D$ has the form:</p>
+\begin{equation}
+D= \frac{p^2}{2m} + D \left( 1-e^{-\alpha q} \right)^2,
+\label{eq:homo1}
+\end{equation}<p>and is a separatrix connecting the (parabolic) saddle point. In the terminology of Hamiltonian dynamics it is a homoclinic orbit. It separates bounded from unbounded motion as illustrated in figure <a href="#fig:phase">fig:1</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="560" height="315" src="figures/phase.png"></p>
+<p><a id="fig:phase"></a></p>
+<p><figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em> Phase portrait of the Morse oscillator for $D=10$, $\alpha=1$, $m=8$. The equilibrium point at the origin is shown in black, the homoclinic orbit is shown in orange and examples of a periodic orbit and an unbounded trajectory are highlighted with blue and green respectively</em></figcaption><hr></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-the-Period-of-a-Periodic-Orbit">Calculation of the Period of a Periodic Orbit<a class="anchor-link" href="#Calculation-of-the-Period-of-a-Periodic-Orbit"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we calculate the period of the periodic orbits. 
+From \eqref{eq:hameq} we have $\dot{q} = \frac{p}{m}$. Using this expression, and the expression for the level set of the Hamiltonian defining a periodic orbit given in \eqref{eq:tp1}, we have</p>
+\begin{equation}
+\frac{dq}{dt} = \pm \sqrt{\frac{2}{m}} \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2},
+\label{eq:po1}
+\end{equation}<p>or</p>
+\begin{equation}
+\frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}} = \pm \sqrt{\frac{2}{m}} dt.
+\label{eq:po2}
+\end{equation}<p>We denote the period of a periodic orbit corresponding to the level set with energy value $h$ by $T(h)$. We can obtain the period by integrating $dt$ around this level set.  Using \eqref{eq:po2}, this becomes:</p>
+\begin{eqnarray}
+T(h) &amp; = &amp; \sqrt{\frac{m}{2}} \int_{q_+}^{q_-} \frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}} -
+\sqrt{\frac{m}{2}} \int_{q_-}^{q_+} \frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}}. \nonumber \\
+&amp; = &amp; \sqrt{2m}  \int_{q_+}^{q_-} \frac{dq}{ \sqrt{h-D \left( 1-e^{-\alpha q} \right)^2}}.
+\label{eq:po3}
+\end{eqnarray}<p>Computation of this integral is facilitated by the substitution:</p>
+\begin{equation}
+u = e^{-\alpha q}.
+\label{eq:subs}
+\end{equation}<p>After computing the integral using integral 2.266 in {% cite gradshteyn1980table --file action_angle %} we obtain:</p>
+\begin{equation}
+T(h) = \frac{\pi \sqrt{2m}}{\alpha \sqrt{D-h}}
+\label{eq:period}
+\end{equation}<p>There are two limits in which this expression can be checked with respect to previously obtained results.
+First, we note that for $h=D$ (i.e. the energy of the homoclinic orbit, or ''separatrix'')  $T(D) = \infty$, which is what we expect for the ''period''  of a separatrix.</p>
+<p>Second, we consider $h=0$, which is the energy of the elliptic equilibrium point. In this case we have $T(0) = \frac{\pi \sqrt{2m}}{\alpha \sqrt{D}}$, which is $2 \pi$ divided by the imaginary part of the magnitude of eigenvalue of the Jacobian evaluated at the stable equilibrium point, as we expect.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-position-and-momentum:-$q(t)$-and-$p(t)$,-$0-&lt;-h-&lt;-D$">Calculation of position and momentum: $q(t)$ and $p(t)$, $0 &lt; h &lt; D$<a class="anchor-link" href="#Calculation-of-position-and-momentum:-$q(t)$-and-$p(t)$,-$0-&lt;-h-&lt;-D$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we derive an expression for $q(t)$. Differentiating the expression for $q(t)$ will give the expression for $p(t)$ through the relation $\dot{q} = \frac{p}{m}$. Using \eqref{eq:po2}, we have</p>
+\begin{equation}
+\int_{q_+}^q \frac{dq'}{ \sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2}} =  \sqrt{\frac{2}{m}} t.
+\label{eq:traj1}
+\end{equation}<p>Choosing  the lower limit if the integral to be $q_+$ is arbitrary, but it is equivalent to the  choice of an initial condition. After computing this integral, we obtain:</p>
+\begin{equation}
+q(t) = \frac{1}{\alpha} \log{\frac{\sqrt{Dh} \cos \left(\sqrt{\frac{2(D-h)}{m}} \, \alpha t \right) + D}{D-h}}.
+\label{eq:q(t)}
+\end{equation}<p>It is straightforward to check that the period of \eqref{eq:q(t)} is \eqref{eq:period}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-the-Homoclinic-Orbit:-$q_0(t)$-and-$p_0(t)$,-$0-&lt;-h-&lt;-D$">Calculation of the Homoclinic Orbit: $q_0(t)$ and $p_0(t)$, $0 &lt; h &lt; D$<a class="anchor-link" href="#Calculation-of-the-Homoclinic-Orbit:-$q_0(t)$-and-$p_0(t)$,-$0-&lt;-h-&lt;-D$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As noted earlier, the homoclinic orbit, corresponding to $h=D$, is given by the level set
+\eqref{eq:homo1}. Hence, the integral expression for  the homoclinic orbits is obtained from \eqref{eq:po2} by setting $h=D$.  Computing the integral gives:</p>
+\begin{equation}
+q_0(t) = \frac{1}{\alpha} \log{\frac{1 + \frac{2D}{m} \alpha^2 t^2}{2}}.
+\label{eq:qhom}
+\end{equation}<p>It is a simple matter to check that $\lim_{t \rightarrow \pm \infty} q(t) = \infty$. Subsequently we obtain $p_0(t)$ from $\dot{q}=\frac{p}{m}$ as</p>
+\begin{equation}
+p_0(t) = \frac{4mD\alpha t}{2D\alpha^2 t^2+m}.
+\label{eq:phom}
+\end{equation}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calculation-of-the-Action-Angle-coordinates:-$I$-and-$\theta(t)$,-$0-&lt;-h-&lt;-D$">Calculation of the Action-Angle coordinates: $I$ and $\theta(t)$, $0 &lt; h &lt; D$<a class="anchor-link" href="#Calculation-of-the-Action-Angle-coordinates:-$I$-and-$\theta(t)$,-$0-&lt;-h-&lt;-D$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section we compute the action-angle representation of the orbits in the bounded region following {% cite melnikov1963vk wiggins1990introduction mezic1994integrability --file action_angle %}.</p>
+<p>We consider a level set defined by the Hamiltonian \eqref{eq:levelset}, for $0 &lt; h &lt; D$. i.e. we consider a periodic orbit with period $T(h)$. Choosing an arbitrary reference point on the periodic orbit, the angular displacement of a trajectory starting from this reference position after time $t$ is given by:</p>
+\begin{equation}
+\theta = \frac{2 \pi}{T(h)} \int{0}^{t}dt' = \frac{2 \pi}{T(h)}  \sqrt{\frac{m}{2}} \int_{q_+}^q \frac{dq'}{ \sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2}}.
+\label{eq:angle1}
+\end{equation}<p>Using the substitution \eqref{eq:subs} and integral 2.266 in {% cite gradshteyn1980table --file action_angle %}, we have:</p>
+\begin{equation}
+\theta = \frac{\pi}{T(h)\alpha} \sqrt{\frac{2m}{D-h}} \left(\frac{3\pi}{2} - \sin^{-1}\frac{(h-D)e^{\alpha q}+D}{\sqrt{Dh}} \right).
+\label{eq:angle2}
+\end{equation}<p>The action associated with this periodic orbit is the area that it encloses (in phase space) divided by $2 \pi$:</p>
+\begin{equation}
+I = \frac{1}{2 \pi} \oint_{H=h}  p dq.
+\label{eq:action1}
+\end{equation}<p>Recalling \eqref{eq:po2}</p>
+\begin{equation}
+dq = \pm \sqrt{\frac{2}{m}}\sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2} \, dt,
+\label{eq:action2}
+\end{equation}<p>we obtain:</p>
+\begin{equation}
+pdq = m \dot{q} dq = \pm \sqrt{2m}\sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2} \, \dot{q}dt,
+\label{eq:action3}
+\end{equation}<p>and therefore</p>
+\begin{equation}
+I = \frac{\sqrt{2m}}{\pi} \int_{q_+}^{q_-}\sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2} \, dq'.
+\label{eq:action4}
+\end{equation}<p>Using the substitution \eqref{eq:subs} and integral 2.267 in {% cite gradshteyn1980table --file action_angle %}, we have:</p>
+\begin{equation}
+I = \frac{\sqrt{2m}}{\alpha} \left(\sqrt{D}-\sqrt{D-h}\right).
+%checked
+\label{eq:action5}
+\end{equation}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Expressions-for-$q(t)$-and-$p(t)$,-$0-&lt;-D-&lt;-h$">Expressions for $q(t)$ and $p(t)$, $0 &lt; D &lt; h$<a class="anchor-link" href="#Expressions-for-$q(t)$-and-$p(t)$,-$0-&lt;-D-&lt;-h$"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Increasing the total energy $h$ to the value of $D$ and beyond results in unbounded motion. Trajectories retain the turning point $q_-$, while $q_+$ becomes infinite. The expression for $q_-$ is identical to low energies and is obtained from \eqref{eq:ham} by setting $p=0$ and solving for $q$. Recall from \eqref{eq:tpneg} that $q_- = - \frac{1}{\alpha} \log \left(1 + \sqrt{\frac{h}{D}}  \right)$.</p>
+<p>For unbounded trajectories it is not possible to define a (finite) period, but we can obtain an expression for $t$ as a function of position. It can be derived by integrating \eqref{eq:po2} from $q_-$ to an arbitrary position $q$ by using the substitution \eqref{eq:subs} as follows:</p>
+\begin{eqnarray}
+t(q) &amp; = &amp; \sqrt{\frac{m}{2}} \int_{q}^{q_-} \frac{dq'}{ \sqrt{h-D \left( 1-e^{-\alpha q'} \right)^2}}=
+       -\frac{1}{\alpha}\sqrt{\frac{m}{2}} \int_{e^{-\alpha q}}^{1+\sqrt{\frac{h}{D}}} \frac{du}{u \sqrt{h-D \left( 1-u \right)^2}},\nonumber \\
+       &amp; = &amp; \frac{1}{\alpha}\sqrt{\frac{m}{2(h-D)}} \log{\left(\frac{h-D+De^{-\alpha q}+\sqrt{(h-D)(h-D(1-e^{-\alpha q})^2)}}{\sqrt{hD}e^{-\alpha q}}\right)}.
+%checked
+\label{eq:tinf}
+\end{eqnarray}<p>We obtain an explicit solution $q=q(t)$ by inverting \eqref{eq:tinf}.</p>
+\begin{equation}
+q(t) = \frac{1}{\alpha} \log{ \frac{\sqrt{hD}e^{2\beta t} -2De^{\beta t} + \sqrt{hD}}{2(h-D)e^{\beta t}} },
+%checked
+\label{eq:qinf}
+\end{equation}<p>where $\beta=\alpha\sqrt{\frac{2(h-D)}{m}}$. Differentiating \eqref{eq:qinf} and using the relation $\dot{q} = \frac{p}{m}$ yields the expression of $p(t)$.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Implications-for-reaction-dynamics">Implications for reaction dynamics<a class="anchor-link" href="#Implications-for-reaction-dynamics"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once explicit solutions are known, it is insightful to consider how they change when the vector field is changed, slightly. This is considered in the field of perturbation theory. The subharmonic and homoclinic Melnikov 
+{% cite wiggins1990introduction --file action_angle %} are examples of global perturbation methods that consider the effect of perturbations on the entire unperturbed integrable system, such as the Morse oscillator that we have considered. The type of perturbation that we will consider is a time periodic excitation of the Morse oscillator. The subharmonic and homoclinic Melnikov methods for this system have been previously considered in {% cite guo2003dynamical --file action_angle %}, however, with respect to chaotic dynamics, important technical details for this periodically perturbed Morse oscillator were not considered. We will describe these in detail here, as well as consider the nature of the effect of the parameters of the Morse potential, and the periodic excitation, on chaotic dynamics.</p>
+<p>The homoclinic Melnikov function is a well-known and popular method for proving the existence of chaos, in the sense of Smale horseshoes, in time periodically perturbed one degree-of-freedom Hamiltonian systems. The method allows one to prove the existence of transverse homoclinic periodic orbits to a hyperbolic periodic orbit. Such orbits admit a Smale horseshoe construction. There are two issues with the application of the standard homoclinic Melnikov function to the time periodically perturbed Morse oscillator, and  both issues arise from the fact that the saddle point at infinity is parabolic, not hyperbolic. One issue is the fact that the standard derivation of the homoclinic Melnikov function uses hyperbolicity of the fixed point to show that certain terms in the Melnikov function vanish. The other issue involves the construction of the Smale horseshoe map for orbits homoclinic to a parabolic point. Both issue are considered for the perturbed Morse oscillator in {% cite beigie1992dynamics --file action_angle %} where it is shown that the growth and decay properties for the parabolic point in the Morse oscillator are sufficient for the standard Melnikov function to be valid as well as the Smale horseshoe map construction to be valid. Hence, the ''Melnikov approach'' is sufficient for determining the existence of chaos for the time-periodically perturbed Morse oscillator.</p>
+<p>We consider the following time-periodic perturbation of the Morse oscillator:</p>
+\begin{eqnarray}
+\dot{q}  =  \frac{\partial H}{\partial p} &amp; = &amp;  \frac{p}{m}, \nonumber \\
+\dot{p}  = - \frac{\partial H}{\partial q} &amp; = &amp; -2D \alpha \left(e^{-\alpha q} - e^{-2\alpha q}  \right) +\varepsilon \cos{\omega t},
+\label{eq:perteq}
+\end{eqnarray}<p>where $\varepsilon&gt;0$ is the magnitude of the perturbation and $\omega&gt;0$ the frequency of the perturbation. The unperturbed system \eqref{eq:hameq} is obtained by setting $\varepsilon=0$. We formulate the homoclinic Melnikov function using expressions \eqref{eq:qhom}, \eqref{eq:phom} for $q_0(t)$, $p_0(t)$, the homoclinic orbit of the equilibrium point $(q,p)=(\infty,0)$, as follows:</p>
+\begin{equation}
+    M(t_0,\phi_0)=\int\limits_{-\infty}^{\infty} DH(q_0(t),p_0(t))\cdot(0, \varepsilon \cos(\omega t+\omega t_0+\phi_0)) dt,
+\label{eq:Melnikovdef}
+\end{equation}<p>where $DH$ is the gradient of the unperturbed Hamiltonian \eqref{eq:ham}, $t_0$ defines the point $(q_0(t_0),p_0(t_0))$ at which the Melnikov funtion $M$ is evaluated and $\phi_0$ is the time at which $M$ is evaluated. We solve \eqref{eq:Melnikovdef} using integral 3.723 in {% cite gradshteyn1980table --file action_angle %}.</p>
+\begin{eqnarray}
+    M(t_0,\phi_0)&amp;=&amp;\varepsilon \int\limits_{-\infty}^{\infty} \frac{\partial H}{\partial p}(q_0(t),p_0(t)) \cos(\omega t+\omega t_0+\phi_0) dt,\nonumber \\
+                &amp;=&amp; \varepsilon \int\limits_{-\infty}^{\infty} \frac{p_0(t)}{m} \left( \cos(\omega t)\cos(\omega t_0+\phi_0)-\sin(\omega t)\sin(\omega t_0+\phi_0) \right) dt, \nonumber\\
+                &amp;=&amp; -\varepsilon \frac{2m}{\alpha} \sin(\omega t_0+\phi_0) \int\limits_{-\infty}^{\infty} \frac{t}{t^2+\frac{m}{2D\alpha^2}} \sin(\omega t) dt, \nonumber\\
+                &amp;=&amp; -\varepsilon \frac{2m}{\alpha} \sin(\omega t_0+\phi_0) e^{-\omega\sqrt{\frac{m}{2D\alpha^2}}}.
+\label{eq:Melnikovsol}
+\end{eqnarray}<p>Clearly, this function has ''simple zeros'' indicating the existence of homoclinic orbits, and the associated Smale horseshoe type chaos.</p>
+<p>The magnitude of the Melnikov function is a measure of the intensity of the chaos. 
+Since the exponent in the exponential term is negative, $$e^{-\omega\sqrt{\frac{m}{2D\alpha^2}}}\leq 1.$$ The exponent is decreased by decreasing $\omega$ and $m$, and increasing $\alpha$ and $D$. Note that $M$ is monotonically increasing in dissociation energy $D$, yet the homoclinic orbit ceases to exist for $D=\infty$.</p>
+<p>The dominant term in the Melnikov functions is $$\frac{2m}{\alpha}.$$ To reach the highest intensity of chaos in the system, $m$ has to be large and $\alpha$ small, whereby the mitigating effect of the exponential term can be countered by choosing $D&gt;\frac{m}{\alpha^2}$. Then for any $\omega$ we can find $(t_0,\phi_0)$, such that $\sin(\omega t_0+\phi_0)=1$ and</p>
+\begin{equation}
+    |M(t_0,\phi_0)|=\varepsilon \frac{2m}{\alpha} e^{-\omega\sqrt{\frac{m}{2D\alpha^2}}} &gt; \varepsilon \frac{2m}{\alpha}e^{-\frac{\omega}{\sqrt{2}}}.
+\label{eq:Melnikovmag}
+\end{equation}<p>In figure <a href="#fig:ld">fig:2</a> we show a comparison of different intensities of chaos using Lagrangian descriptors, a method introduced by {% cite madrid2009ld --file action_angle %} and proven to display invariant manifolds in two dimensional area-preserving maps by {% cite lopesino2015cnsns --file action_angle %}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="560" height="315" src="figures/om1_120_trim.png">
+<img width="560" height="315" src="figures/om5_120_trim.png"></p>
+<p><a id="fig:ld"></a></p>
+<p><figcaption style="text-align:center;font-size:14px"><b>fig:2 </b><em> Different intensities of chaos: Poincar{\'e} sections of the system for $t=0$ displaying Lagrangian descriptor values for parameter values $D=10$, $\alpha=1$, $m=8$, $\varepsilon=1$, $\omega=1, 5$. The descriptor is arclength with integration time $\tau=40$. Large chaotic regions (left) for low frequency of perturbation $\omega=1$ and small chaotic regions (right) for high frequency of perturbation $\omega=5$. For sake of clarity, the Lagrangian descriptor values are scaled with arctan.</em></figcaption><hr></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An animation showing the effect of varying $\omega$ can be found <a href="https://youtu.be/6QW7Zjy1poA">here</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="References">References<a class="anchor-link" href="#References"> </a></h1><p>{% bibliography --file action_angle --cited %}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
