@@ -1,0 +1,205 @@
+---
+redirect_from:
+  - "/act1/hamiltonian-bifurcation/ham-bif"
+interact_link: content/act1/hamiltonian_bifurcation/ham_bif.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Hamiltonian Bifurcations
+pagenum: 12
+prev_page:
+  url: /act1/morse/morse-jekyll.html
+next_page:
+  url: /act2/act2.html
+suffix: .ipynb
+search: q lambda p equation hamiltonian begin end eq hamapp fixed frac bifurcation partial points sqrt saddle h label phase node pitchfork eqnarray dot eqref pm array eigenvalues portraits fig consider equilibria where considered parameter varied derive hamiltons equations nonumber revealing space structures implications reaction dynamics follows point scenario next examine stability jacobian given j left cc right matrix hence center zero shown ref appcfig img width height src figures png caption degree freedom dof add introductory language problem development examples dimensional system particular bifurcations quad mathbb r hamsn leq three centers hampitch
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Hamiltonian Bifurcations</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="One-Degree-of-Freedom-(DoF)-Hamiltonian-Bifurcation-of-Equilibria">One Degree-of-Freedom (DoF) Hamiltonian Bifurcation of Equilibria<a class="anchor-link" href="#One-Degree-of-Freedom-(DoF)-Hamiltonian-Bifurcation-of-Equilibria"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(ADD INTRODUCTORY LANGUAGE ABOUT PROBLEM DEVELOPMENT)
+We will now consider two examples of bifurcation of equilibria in two dimensional Hamiltonian system; in particular, the Hamiltonian saddle-node and Hamiltonian pitchfork bifurcations.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hamiltonian-saddle-node-bifurcation">Hamiltonian saddle-node bifurcation<a class="anchor-link" href="#Hamiltonian-saddle-node-bifurcation"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We consider the Hamiltonian:</p>
+\begin{equation}
+H (q, p) = \frac{p^2}{2} - \lambda q + \frac{q^3}{3}, \quad (q, p) \in \mathbb{R}^2.
+\label{eq:hamApp13}
+\end{equation}<p>where $\lambda$ is considered to be a parameter that can be varied. From this Hamiltonian, we derive Hamilton's equations:</p>
+\begin{eqnarray}
+\dot{q} &amp; = &amp; \frac{\partial H}{\partial p} = p, \nonumber \\
+\dot{p} &amp; = &amp; -\frac{\partial H}{\partial q} =\lambda - q^2.
+\label{eq:hamApp14}
+\end{eqnarray}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Revealing-the-Phase-Space-Structures-and-their-implications-for-Reaction-Dynamics">Revealing the Phase Space Structures and their implications for Reaction Dynamics<a class="anchor-link" href="#Revealing-the-Phase-Space-Structures-and-their-implications-for-Reaction-Dynamics"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The fixed points for \eqref{eq:hamApp14} are:</p>
+\begin{equation}
+(q, p) = (\pm\sqrt{\lambda}, 0),
+\end{equation}<p>from which it follows that there are no fixed points for $\lambda &lt;0$, one fixed point for $\lambda =0$, and  two fixed points for $\lambda &gt;0$. This is the scenario for a saddle-node bifurcation.</p>
+<p>Next we examine the stability of the fixed points. The Jacobian of \eqref{eq:hamApp14} is given by:</p>
+\begin{equation}
+J =\left(
+\begin{array}{cc} 
+0 &amp; 1\\
+-2 q &amp; 0
+\end{array}
+\right).
+\label{eq:hamApp15}
+\end{equation}<p>The eigenvalues of this matrix are:</p>
+\begin{equation}
+\Lambda_{1, 2} = \pm \sqrt{-2q}.
+\end{equation}<p>Hence $(q, p) = (-\sqrt{\lambda}, 0)$ is a saddle, $(q, p) = (\sqrt{\lambda}, 0)$ is a center, and $(q, p) = (0, 0)$  has two zero eigenvalues. The phase portraits are shown in Fig. \ref{fig:appC_fig3}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="560" height="315" src="figures/ham_sn.png">
+\caption{The phase portraits for the Hamiltonian saddle-node bifurcation.}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hamiltonian-pitchfork-bifurcation">Hamiltonian pitchfork bifurcation<a class="anchor-link" href="#Hamiltonian-pitchfork-bifurcation"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We consider the Hamiltonian:</p>
+\begin{equation}
+H (q, p) = \frac{p^2}{2} - \lambda \frac{q^2}{2} + \frac{q^4}{4},
+\label{eq:hamApp16}
+\end{equation}<p>where $\lambda$ is considered to be a parameter that can be varied. From this Hamiltonian, we derive Hamilton's equations:</p>
+\begin{eqnarray}
+\dot{q} &amp; = &amp; \frac{\partial H}{\partial p} = p, \nonumber \\
+\dot{p} &amp; = &amp; -\frac{\partial H}{\partial q} =\lambda q  -  q^3.
+\label{eq:hamApp17}
+\end{eqnarray}
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Revealing-the-Phase-Space-Structures-and-their-implications-for-Reaction-Dynamics">Revealing the Phase Space Structures and their implications for Reaction Dynamics<a class="anchor-link" href="#Revealing-the-Phase-Space-Structures-and-their-implications-for-Reaction-Dynamics"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The fixed points for \eqref{eq:hamApp17} are:</p>
+\begin{equation}
+(q, p) = (0, 0), \, (\pm\sqrt{\lambda}, 0),
+\end{equation}<p>from which it follows that there is one fixed point  for $\lambda \leq 0$, and  three fixed points for $\lambda &gt;0$. This is the scenario for a pitchfork  bifurcation.</p>
+<p>Next we examine the stability of the fixed points. The Jacobian of \eqref{eq:hamApp17} is given by:</p>
+\begin{equation}
+J = \left(
+\begin{array}{cc} 
+0 &amp; 1\\
+\lambda-3q^2 &amp; 0
+\end{array}
+\right).
+\label{eq:hamApp18}
+\end{equation}<p>The eigenvalues of this matrix are:</p>
+\begin{equation}
+\Lambda_{1, 2} = \pm \sqrt{\lambda - 3q^2 }.
+\end{equation}<p>Hence $(q, p) = (0, 0)$ is a center for $\lambda &lt;0$, a saddle for $\lambda &gt;0$ and  has two zero eigenvalues for $\lambda =0$. The fixed points $(q, p) = (\sqrt{\lambda}, 0)$ are centers for $\lambda &gt;0$. The phase portraits are shown in Fig. \ref{fig:appC_fig4}.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img width="560" height="315" src="figures/ham_pitch.png">
+\caption{The phase portraits for the Hamiltonian pitchfork bifurcation.}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

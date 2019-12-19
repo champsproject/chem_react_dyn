@@ -1,0 +1,110 @@
+---
+redirect_from:
+  - "/prologue/index-of-a-saddle-point-jekyll"
+interact_link: content/prologue/index_of_a_saddle_point-jekyll.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  The Index of a Saddle Point
+pagenum: 7
+prev_page:
+  url: /prologue/tst-jekyll.html
+next_page:
+  url: /prologue/LDs/LDs_victor-jekyll.html
+suffix: .ipynb
+search: n q partial equation times eqref point bar eigenvalues begin end ldots rm hessian lambda frac v equations saddle mathbb r qi matrix id following p quad hamiltons dot hameqint k right m label critical potential energy qj equilibrium index where denote function given stability left array denoted center hamiltonian form evaluated hence sigmak e jacobian det points negative positive pi space variables corresponding gives rise differential eqnarray want second derivative referred symmetric eivhess hand linearized calculation file reactiondynamics cc eivm pairs lambdak kn must eigenvalue terms rest zero cdots consider degree freedom h sum hamint configuration conjugate momentum just
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">The Index of a Saddle Point</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-index-of-a-saddle-point">The index of a saddle point<a class="anchor-link" href="#The-index-of-a-saddle-point"> </a></h2><p>We consider a  <em>n</em> degree-of-freedom Hamiltonian of the following form:</p>
+\begin{equation}
+H(q, p) = \sum_{i=1}^{n} \frac{p_i^2}{2} + V(q), \quad (q,p) \in \mathbb{R}^n \times \mathbb{R}^n,
+\label{ham_int}
+\end{equation}<p>where $q \in \mathbb{R}^n$ denote the configuration space variables and $p \in \mathbb{R}^n$ denote the corresponding conjugate momentum variables.  This Hamiltonian function gives rise to the corresponding Hamilton's differential equations (or just ''Hamilton's equations'') having the following form:</p>
+\begin{eqnarray}
+\dot{q}_i &amp; = &amp; p_i, \nonumber \\
+\dot{p}_i &amp; = &amp; -\frac{\partial V}{\partial q_i} (q), \quad i=1. \ldots , n.
+\label{hameq_int}
+\end{eqnarray}<p>These are a set of <em>2n</em> first order differential equations defined on the phase space 
+$\mathbb{R}^n \times \mathbb{R}^n$.</p>
+<p>A critical point of the potential energy function is a point $\bar{q} \in \mathbb{R}^n$ satisfying the following equations:</p>
+\begin{equation}
+\frac{\partial V}{\partial q_i} (\bar{q}) =0, \quad i=1, \ldots n.
+\end{equation}<p>Once a critical point of the potential energy function is located, we want to ''classify'' it. This is done by examining the second derivative of the potential energy function evaluated at the critical point. The second derivative matrix  is referred to as the <em>Hessian matrix</em>, and it is given by:</p>
+\begin{equation}
+\frac{\partial^2 V}{\partial q_i \partial q_j} (\bar{q}) =0, \quad i,j=1, \ldots n,
+\label{hessian}
+\end{equation}<p>which is a $n \times n$ symmetric matrix. Hence \eqref{hessian} has <em>n</em> real eigenvalues, which we denote by:</p>
+\begin{equation}
+\sigma_k, \quad k=1, \ldots, n.
+\label{eiv_Hess}
+\end{equation}<p>However, returning to dynamics as  given by Hamilton's equations \eqref{hameq_int}, the point $(\bar{q}, 0)$ is an equilibrium point of Hamilton's equations, i.e. when this point is substituted into the right-hand-side of \eqref{hameq_int} we obtain $(\dot{q}_1, \ldots, \dot{q}_n, \dot{p}_1, \ldots, \dot{p}_n) = (0, \ldots, 0, 0, \ldots, 0)$, i.e. the point $(\bar{q}, 0)$ does not change in time.</p>
+<p>Next, we want to determine the nature of the stability of this equilibrium point. Linearized stability is determined by computing the Jacobian of the right hand side of  \eqref{hameq_int}, which we will denote by $M$, evaluating it at the equilibrium point $(\bar{q}, 0)$, and determining its eigenvalues.  The following calculation  is from {% cite ezra2004impenetrable --file reaction_dynamics %}. 
+The Jacobian of the Hamiltonian vector field  \eqref{hameq_int} evaluated at $(\bar{q}, 0)$ is given by:</p>
+\begin{equation}
+M = 
+\left(
+\begin{array}{cc}
+0_{n\times n} &amp;  \rm{id}_{n \times n} \\
+-\frac{\partial^2 V}{\partial q_i \partial q_j} (\bar{q}) &amp; 0_{n\times n} 
+\end{array}
+\right),
+\end{equation}<p>which is a $2n \times 2n$ matrix.  The eigenvalues of $M$, denoted by $\lambda$,  are given by the solutions of the following characteristic equation:</p>
+\begin{equation}
+{\rm det} \, \left( M - \lambda \, {\rm id}_{2n \times 2n} \right) =0,
+\label{eivM}
+\end{equation}<p>where ${\rm id}_{2n \times 2n}$ denoted the $2n \times 2n$ identity matrix. Writing \eqref{eivM} in detail (i.e. using the explicit expression for the Jacobian of \eqref{hameq_int}) gives:</p>
+\begin{equation}
+{\rm det} \, 
+\left(
+\begin{array}{cc}
+-\lambda \, \rm{id}_{n \times n} &amp; \rm{id}_{n \times n} \\
+ -\frac{\partial^2 V}{\partial q_i \partial q_j} (\bar{q}) &amp; -\lambda \rm{id}_{n \times n}
+ \end{array}
+ \right) =  {\rm det} \,  \left(\lambda^2 \, \rm{id}_{n \times n}  + \frac{\partial^2 V}{\partial q_i \partial q_j} (\bar{q})  \right) =0.
+ \end{equation}<p>We can conclude from this calculation that the eigenvalues of the $n \times n$ symmetric matrix $\frac{\partial^2 V}{\partial q_i \partial q_j} (\bar{q})$ are $-\lambda^2$, where $\lambda$ are the eigenvalues of  the $n \times n$ matrix $M$. Hence, the eigenvalues of $M$ occur in pairs,  denoted by
+ $\lambda_k, \, \lambda_{k+n}, \, k=1, \ldots n$, which have the form:</p>
+\begin{equation}
+\lambda_k, \, \lambda_{k+n} = \pm \sqrt{-\sigma_k},  \quad k=1, \ldots, n,
+\end{equation}<p>where $\sigma_k$ are the eigenvalues of the Hessian of the potential energy evaluated at the critical point $\bar{q}$ as denoted in \eqref{eiv_Hess}.  Hence,
+we see that  the existence of equilibrium points of Hamilton's equations of ''saddle-like stability''  implies that there must be <em>at least</em> one negative eigenvalue of \eqref{hessian}. In fact, we have the following classification of the linearized stability of saddle-type equilibrium points of Hamilton's equations in terms of  the  critical points of the  potential energy surface.</p>
+<ul>
+<li><p><strong>Index 1 saddle.</strong> One eigenvalue of \eqref{hessian} is positive, the rest are  negative. We will assume that none of the eigenvalues of \eqref{hessian} are zero. Zero eigenvalues  give rise to special cases that must be dealt with separately. In the mathematics literature, these are often referred to as <em>saddle-center-$\cdots$-center equilibria</em>, with the number of center-$\cdots$-center terms equal to the number of pairs of pure imaginary eigenvalues.</p>
+</li>
+<li><p><strong>Index 2 saddle.</strong>  Two eigenvalues of \eqref{hessian} are positive, the rest are  negative</p>
+</li>
+</ul>
+<p>and in general,</p>
+<ul>
+<li><strong>Index k saddle.</strong>  <em>k</em> eigenvalues of \eqref{hessian} are positive,thevrestvare negativev($k \le n$).</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References"> </a></h2><p>{% bibliography --file reaction_dynamics --cited %}</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
