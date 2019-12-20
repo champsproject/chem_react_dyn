@@ -1,5 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fa9243f0-0a10-408a-8cdc-284bb6271f40/deploy-status)](https://app.netlify.com/sites/youthful-bell-134f82/deploys)
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/champsproject/chem_react_dyn/release)
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3568210.svg)](https://doi.org/10.5281/zenodo.3568210)
 
 # Chemical Reactions: A Journey into Phase Space
