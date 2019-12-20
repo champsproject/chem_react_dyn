@@ -52,7 +52,7 @@
   - title: Morse Oscillator
     url: /act1/morse/morse-jekyll
   - title: Hamiltonian Bifurcations
-    url: /act1/hamiltonian_bifurcation/ham_bif
+    url: /act1/hamiltonian_bifurcation/ham_bif-jekyll
     
 - title: Act 2
   url: /act2/act2
@@ -60,17 +60,17 @@
   expand_sections: true
   sections:
   - title: Saddle-Node Hamiltonian
-    url: /act2/hamiltonian_sn/HSN_victor
+    url: /act2/hamiltonian_sn/HSN_victor-jekyll
   - title: Barbanis Model
     url: /act2/barbanis2d/barbanis2d
   - title: Caldera Model
-    url: /act2/caldera/caldera-1
+    url: /act2/caldera/caldera-1-jekyll
   - title: De Leon Model
     url: /act2/deLeon_Berne/deleon_berne
   - title: System Bath 1
     url: /act2/system_bath1/system_bath1
   - title: Four-well Potential
-    url: /act2/four_well_morse/booksprinttest_makrina
+    url: /act2/four_well_morse/four_well_morse-jekyll
   - title: Double-Morse Oscillator
     url: /act2/double_morse/prueba
   - title: Chesnavich Model Part 1
