@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Search the site</title>
+  <meta name="description" content="        ">
+
+  <link rel="canonical" href="http://localhost:4444/search">
+  <link rel="alternate" type="application/rss+xml" title="CHAMPS Dynamical Systems Book" href="http://localhost:4444/feed.xml">
+
+  <meta property="og:url"         content="http://localhost:4444/search" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Search the site" />
+<meta property="og:description" content="        " />
+<meta property="og:image"       content="http://localhost:4444/images/logo/champs_logo.jpg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://localhost:4444/search",
+  "headline": "Search the site",
+  "datePublished": "2019-12-09T16:49:13+00:00",
+  "dateModified": "2019-12-09T16:49:13+00:00",
+  "description": "        ",
+  "author": {
+    "@type": "Person",
+    "name": "The CHAMPS group"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4444",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://localhost:4444",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    },
+    
+    // Number LaTeX-style equations
+    "TeX": {
+        equationNumbers: {
+          autoNumber: "all"
+        }
+    }
+    
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'jupyter/jupyter-book',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef",
+        mode: "python"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@latest/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.8.1/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52617120-7');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://localhost:4444") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://champsproject.com"><img src="/images/logo/champs_logo.jpg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">CHAMPS Dynamical Systems Book</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/dedication">
+        <a class="c-sidebar__entry"
+          href="/docs/dedication.html"
+        >
+          
+            1.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/acknowledgements">
+        <a class="c-sidebar__entry"
+          href="/docs/acknowledgements.html"
+        >
+          
+            2.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/preface">
+        <a class="c-sidebar__entry"
+          href="/docs/preface.html"
+        >
+          
+            3.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/prologue">
+        <a class="c-sidebar__entry"
+          href="/prologue/prologue.html"
+        >
+          
+            4.
+          
+          Prologue
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/LDs/LDs_victor">
+        <a class="c-sidebar__entry"
+          href="/prologue/LDs/LDs_victor.html"
+        >
+          
+            5.
+          
+          Lagrangian Descriptors
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/fundamental_models/fundamental_models">
+        <a class="c-sidebar__entry"
+          href="/fundamental_models/fundamental_models.html"
+        >
+          
+            6.
+          
+          Fundamental Models
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act1/Morse/Morse">
+        <a class="c-sidebar__entry"
+          href="/act1/Morse/Morse.html"
+        >
+          
+            7.
+          
+          Morse Oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/hamiltonian_sn/HSN_victor">
+        <a class="c-sidebar__entry"
+          href="/act2/hamiltonian_sn/HSN_victor.html"
+        >
+          
+            8.
+          
+          Saddle-Node Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/barbanis2D/barbanis2d">
+        <a class="c-sidebar__entry"
+          href="/act2/barbanis2D/barbanis2d.html"
+        >
+          
+            9.
+          
+          Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/caldera/caldera-1">
+        <a class="c-sidebar__entry"
+          href="/act2/caldera/caldera-1.html"
+        >
+          
+            10.
+          
+          Caldera model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/deLeon_Berne/deleon_berne">
+        <a class="c-sidebar__entry"
+          href="/act2/deLeon_Berne/deleon_berne.html"
+        >
+          
+            11.
+          
+          De Leon model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/system_bath1/system_bath1">
+        <a class="c-sidebar__entry"
+          href="/act2/system_bath1/system_bath1.html"
+        >
+          
+            12.
+          
+          System Bath 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/four_well_morse/booksprinttest_makrina">
+        <a class="c-sidebar__entry"
+          href="/act2/four_well_morse/booksprinttest_makrina.html"
+        >
+          
+            13.
+          
+          Four-well potential
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/double_morse/prueba">
+        <a class="c-sidebar__entry"
+          href="/act2/double_morse/prueba.html"
+        >
+          
+            14.
+          
+          Double-Morse oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/1-Ches/roam">
+        <a class="c-sidebar__entry"
+          href="/act2/1-Ches/roam.html"
+        >
+          
+            15.
+          
+          Chesnavich Model Part 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/2-Ches/roam_mass_energy_var">
+        <a class="c-sidebar__entry"
+          href="/act2/2-Ches/roam_mass_energy_var.html"
+        >
+          
+            16.
+          
+          Chesnavich Model Part 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/3-Ches/roamiso">
+        <a class="c-sidebar__entry"
+          href="/act2/3-Ches/roamiso.html"
+        >
+          
+            17.
+          
+          Chesnavich Model Part 3
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/barbanis_3dof/barbanis_3dof">
+        <a class="c-sidebar__entry"
+          href="/act3/barbanis_3dof/barbanis_3dof.html"
+        >
+          
+            18.
+          
+          Three degree-of-freedom Barbanis system
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath1/main">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath1/main.html"
+        >
+          
+            19.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath2/system_bath">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath2/system_bath.html"
+        >
+          
+            20.
+          
+          N-Degree-of-Freedom System-Bath Model 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="https://github.com/broncio123/champs-booksprint-planning">
+        <a class="c-sidebar__entry"
+          href="https://github.com/broncio123/champs-booksprint-planning"
+        >
+          
+          GitHub repository
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+              <div class="search-content__inner-wrap">
+    <input type="text" id="lunr_search" class="search-input" tabindex="-1" placeholder="'Enter your search term...''" />
+    <div id="results" class="results"></div>
+</div>
+
+<script>
+    // Add the lunr store since we will now search it
+    var store = [{
+        "title": "Morse Oscillator",
+        
+        "excerpt": "q frac equation d alpha eq t h m sqrt p begin end e label left right eqref omega hamiltonian cite point infty periodic homoclinic morse function orbit level action melnikov tp int energy eqnarray using dq phi pi obtain varepsilon oscillator potential system trajectories dot partial orbits period expression dt integral angle set where nonumber po consider perturbation well phase given dynamics pm log sin chaos systems approach obtained j equilibrium turning le cos degree freedom form coordinates position standard such following points rightarrow parabolic unbounded limits considered perturbed smale defined width closed transformation not ham equilibria energies shown",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act1/Morse/Morse.html",
+        "teaser":null},{
+        "title": "Chesnavich Model Part 1",
+        
+        "excerpt": "u w theta fig r ds gammao e reference orbits gammai p surface energy s invariant periodic roaming gammaa gamma manifolds trajectories type ref subsec pm section inner not b frac dissociation sec potential transition energies middle ch h m lambda pr where o residence system space times between annulus dynamics points left right width initial outer outward orbit family unstable region also conditions roaminit due rotation therefore note contained gammab through associated above because slow corresponding state well red c trajectory study dividing intersection t figure blue hill black bifurcations rot transport potentialcontour return molecule into surfaces such intersections",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/1-Ches/roam.html",
+        "teaser":null},{
+        "title": "Chesnavich Model Part 2",
+        
+        "excerpt": "u r fig theta reference m gamma potential roaming p frac ref e s w type sec trajectories dsa o gammai energy gammao eq q annulus outward label po surface orbits pr figures ch space jpg setminus phase width values not well mu region wells intersection figure system outer gammaa mass masses periodic points therefore mum dot h inner correspond dissociation section between manifolds pi critical table interaction right configuration due isomerisation pm indicated corrroam dynamics into where invariant small area note poconfig mh such cross middlesec wiincr atom freedom introduced unstable hamm thpi also dso must orange blue parameter",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/2-Ches/roam_mass_energy_var.html",
+        "teaser":null},{
+        "title": "Chesnavich Model Part 3",
+        
+        "excerpt": "theta fig reference eq r frac type pi partial p q dot u trajectories equation e t roaming label ref periodic ldi model potential invariant phi eqref times manifolds ch begin end orbits ldo left isokinetic energy right orbit lagrangian sec surface hamiltonian pr inner dsa mathcal k tau dynamics c chesnavichs space well intersection dissociation system section using mu escape thermostat d shown initial constant not width descriptors conditions h phase ds values outward region where kinetic dissociating figures thetaescape chesnavich same dt isomerisation annulus descriptor wiu wos structure note defined short jpg outer timetraj due equations eqkham s",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/3-Ches/roamiso.html",
+        "teaser":null},{
+        "title": "Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian",
+        
+        "excerpt": "dimensional reference fig surface eqn space y energy x type phase delta e manifolds ld section nhim hamiltonian invariant unstable py periodic trajectories px potential method also poincar dof escape structures high shown barbanis system left right index ref orbit motion systems eqref using region saddle figures png width u such trajectory lagrangian frac ssect coordinate points contour regions well model label omegay sosuxpx barbanisdofmxe used low where along diagnostic its initial plots not coupled harmonic aligned omegax hamiltonianbarbanis ec positive d integration physics nonlinear dynamics dynamical show methods configuration numerical sections our qquad excess pescontbarbanis hills intersection xpx maps",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/barbanis2D/barbanis2d.html",
+        "teaser":null},{
+        "title": "Caldera model",
+        
+        "excerpt": "caldera upper lambda index dynamical saddle region central y matching x potential manifold minimum ref left right space energy phase heteroclinic unstable cite trajectories stable structures fig upo pes label saddles c panel periodic lower figpanel connection values equation eq partial parameter trajectory mechanism px py stretching model between critical surface equi dfrac row phenomenon points describe section chapter orbit begin end h dot e rh lh forward chemical shallow center dof work hamiltonian show existence described equilibrium point referred hand mx respectively caption orbits manifolds towards formation middle value inside backward second organic reactions doubleday its walls symmetry exit",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/caldera/caldera-1.html",
+        "teaser":null},{
+        "title": "De Leon model",
+        
+        "excerpt": "x y mathbf t lambda aligned width figures rm energy bar png partial mathcal delta periodic begin frac end eqn e v yw eq orbit subfigure includegraphics textwidth unstable zeta equilibrium h pxtau py point px figc reference exp fig correction db initial backwardlagdescdeleonbernee phi forwardlagdescdeleonbernee q u label dx manifolds epsilon p where ddagger overline small guess g stable saddle s using procedure epsilons total numerical transition right dot pm mu trajectories differential hamiltonian given potential left sqrt denote omega reactive islands condition figa b isomerization type vector c d reaction matrix ms obtained section space orbits manifold order",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/deLeon_Berne/deleon_berne.html",
+        "teaser":null},{
+        "title": "Double-Morse oscillator",
+        
+        "excerpt": "gamma fig trajectories periodic lagrangian unstable surface space orbits manifolds x stable region cite dividing label energy ref potential phase between regions roaming orbit y descriptor descriptors tau initial figures three t img src jpg width height different fate e system m projection map dynamics well set conditions asymptotic mathbf morse hamiltonian configuration alt title where associated poincar lambda double caption point evaluated manifold rightarrow structure consider b p sec wells points behaviour trajectory not v lines cross dissociation structures surfaces transport equation px plots chaotic intersection carpenterdynamics method saddle value section constant intersections close simeq times freedom flat using",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/double_morse/prueba.html",
+        "teaser":null},{
+        "title": "Four-well potential",
+        
+        "excerpt": "x y right energy h left index equation space phase delta well py wells px saddle fig begin frac end pes sqrt system points trajectory potential dfrac quad uncoupled img width height src figures upper label trajectories dynamics dof alpha case symmetric saddles sign ref lower jpg mathcal inside critical since xs hamiltonian isomerization surface v p s mathbb r structures reaction point pm cylinder different initial eq partial three between separatrix where asymmetric below bottleneck d b plane spherical deltac equilibrium energies trapped change lds condition move region c e moreover through bigg corresponding mu four configuration w given",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/four_well_morse/booksprinttest_makrina.html",
+        "teaser":null},{
+        "title": "Saddle-Node Hamiltonian",
+        
+        "excerpt": "varepsilon space energy q fig phase x omega equation h manifolds surface saddle mathcal reaction system begin left p right end dynamics px sqrt cite mu eq e trajectories potential unstable well invariant lds label hamiltonian ds dof ref stable section lambda u point barrier index coupling alpha region dfrac frac geometry nhim given where c strength bottleneck dimensional equilibrium using reactive quad pm mathbb poincar ld b origin d r regions structures pes configuration chemical motion cm mathbf node between products therefore model systems shown total curve map its reactants upo uncoupled tau dynamical boundary high escape img src",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/hamiltonian_sn/HSN_victor.html",
+        "teaser":null},{
+        "title": "System Bath 1",
+        
+        "excerpt": "r ds p fig point space v dividing surface potential system trajectories recrossing po transit saddle energy equation configuration phase pes pods mu product points xi yi dsclosefig line times bath model reaction reactive ts not solvent projection well c where location approximate minimum mass x frac e px reactions locally non however only because solute between family j reduced reactant circles perp rate solution transition different tst criterion our hynes shown unstable periodic above its structure oscillator figures png width h momenta max py parameter coordinate irc blue increases transitfig state theory wigner eyring through chapter take defined definition",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act2/system_bath1/system_bath1.html",
+        "teaser":null},{
+        "title": "Three degree-of-freedom Barbanis system",
+        
+        "excerpt": "dimensional space phase eqn energy z structures x hamiltonian manifolds dof y fig nhim reference potential surface systems invariant px frac type py omegay omegaz e pz rm system such method lagrangian label omegax epsilon eta eqref eq three escape high its left right using surfaces region trajectory points u well physics present diagnostic configuration initial conditions total equilibrium coordinates figures png width mathbb freedom barbanis used rates ionization transport motion low nonlinear trajectories methods also saddle stable descriptor ld section align hamiltonianbcdof point barbaniscontopoulosdof excess delta r four isoenergetic barbanisdofuxpx n chemical mechanics applied article dynamics underlying hnon heiles",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act3/barbanis_3dof/barbanis_3dof.html",
+        "teaser":null},{
+        "title": "N-Degree-of-Freedom System-Bath Model 1",
+        
+        "excerpt": "system r fig t point ld space tau ds reactive dof initial plots bath mathbf not x v method value left right obtained model phase our potential conditions trajectories saddle equation where energy problem figures mu c position momenta minimum chemical however pods shown location also png width p values those configurational ldfirst line systems po mass begin frac sum reduced between int full dt trajectory different methodology close surface calculations reaction using described its represents j label end second action n case following rc coordinates length very ldproject both eyring required above general only mentioned modelfig oscillator study hamiltonian",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act3/system_bath1/main.html",
+        "teaser":null},{
+        "title": "N-Degree-of-Freedom System-Bath Model 2",
+        
+        "excerpt": "x frac j bath nb eqn y reference c omega cdots system space partial omegaj phase label type p quad reaction model omegac xj reactive begin aligned trajectories modes end width dynamics ldots subfigure includegraphics textwidth figures slicedbackwardlagdescsystembathe pxtaunb png dimensional energy given right where sum h yj left eta xi freedom coupled surface coupling omegai isomerization using ds equilibrium high eqref text rm ns omegae solvent v hamiltonian degrees log ref cv tau coordinates systems points nhim dof pi e reactions mathcal chemical configuration gives density hameqsysbath overline well dividing db py dot q pmatrix hspace arraycolsep m thus",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/act3/system_bath2/system_bath.html",
+        "teaser":null},{
+        "title": "Fundamental Models",
+        
+        "excerpt": "q p h frac right left omega space lambda equation saddle phase fig end energy begin surface dot toc dof dimensional partial reaction mathcal dynamics index align qp u span label class eqref nhim structures ref ds sqrt degree freedom development implications t revealing given nonumber href data modified id item system hamiltonian quad trajectories stable unstable problem ldsqhdofqp manifolds mbox points cap potential point figures png dividing intersection eqn num nbspnbsp lagrangian underbrace corresponding origin coordinates dfrac lbrace rbrace m vert three coordinate eqnarray lines caption isoenergetic backward form s w lilispana sign b equations hameq total img width",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/fundamental_models/fundamental_models.html",
+        "teaser":null},{
+        "title": "Lagrangian Descriptors",
+        
+        "excerpt": "x t tau lds mathbf phase space p eq manifolds equation y system unstable fig stable h begin m dynamical initial end px points integration structures cite label where method mathcal trajectories dfrac eqref right field b left invariant conditions py e r energy dot dynamics also given hamiltonian value scalar definition lagrangian using saddle region origin potential quad c nhim fixed ld mp variable ref descriptors v non arclength moreover values norm geometrical forward backward along function therefore minimum lambda systems nonlinear since dt point local differentiable w u order omega cases portrait its analysis tool behavior means vector",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/prologue/LDs/LDs_victor.html",
+        "teaser":null},{
+        "title": "Prologue",
+        
+        "excerpt": "n surface energy q partial point equation times reaction space dividing equilibrium eqref ds begin coordinates bar eigenvalues state end phase hamiltonian ldots rm tst equations saddle hessian lambda theory following configuration rate recrossing frac v transition potential referred coordinate function hamiltons mathbb r qi matrix id ts bond p quad dot hameqint k right m described dimension flux any trajectory where label critical qj reactive concepts into dynamics literature not hence momentum system give through locally property crosses truhlarvtst product second constant form index denote given stability left array denoted center periodic invariant dynamical book describe field commonly terms",
+        "categories": [],
+        "tags": [],
+        "url": "http://localhost:4444/prologue/prologue.html",
+        "teaser":null},]
+</script>
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              
+<nav class="c-page__nav">
+  
+
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

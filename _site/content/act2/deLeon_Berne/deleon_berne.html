@@ -1,0 +1,1963 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+  <title>Two Degree-of-freedom de Leon-Berne Model</title>
+  <meta name="description" content="# Two Degree-of-freedom de Leon-Berne Model## Introduction## Development of the ProblemWe will consider the two degrees-of-freedom Hamiltonian for aunimolecu...">
+
+  <link rel="canonical" href="http://localhost:4444/content/act2/deLeon_Berne/deleon_berne.html">
+  <link rel="alternate" type="application/rss+xml" title="CHAMPS Dynamical Systems Book" href="http://localhost:4444/feed.xml">
+
+  <meta property="og:url"         content="http://localhost:4444/content/act2/deLeon_Berne/deleon_berne.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Two Degree-of-freedom de Leon-Berne Model" />
+<meta property="og:description" content="# Two Degree-of-freedom de Leon-Berne Model## Introduction## Development of the ProblemWe will consider the two degrees-of-freedom Hamiltonian for aunimolecu..." />
+<meta property="og:image"       content="http://localhost:4444/images/logo/champs_logo.jpg" />
+
+<meta name="twitter:card" content="summary">
+
+
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": "http://localhost:4444/content/act2/deLeon_Berne/deleon_berne.html",
+  "headline": "Two Degree-of-freedom de Leon-Berne Model",
+  "datePublished": "2019-12-09T16:49:13+00:00",
+  "dateModified": "2019-12-09T16:49:13+00:00",
+  "description": "# Two Degree-of-freedom de Leon-Berne Model## Introduction## Development of the ProblemWe will consider the two degrees-of-freedom Hamiltonian for aunimolecu...",
+  "author": {
+    "@type": "Person",
+    "name": "The CHAMPS group"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Data 100 at UC Berkeley",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:4444",
+      "width": 60,
+      "height": 60
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "http://localhost:4444",
+    "height": 60,
+    "width": 60
+  }
+}
+
+  </script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <!-- <link rel="manifest" href="/manifest.json"> -->
+  <!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#efae0a"> -->
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#233947">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favicon.ico">
+
+  <!-- MathJax Config -->
+  <!-- Allow inline math using $ and automatically break long math lines -->
+<!-- (mostly) copied from nbconvert configuration -->
+<!-- https://github.com/jupyter/nbconvert/blob/master/nbconvert/templates/html/mathjax.tpl -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    // Center justify equations in code and markdown cells. Elsewhere
+    // we use CSS to left justify single line equations in code cells.
+    displayAlign: 'center',
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}},
+        linebreaks: { automatic: true },
+    },
+    
+    // Number LaTeX-style equations
+    "TeX": {
+        equationNumbers: {
+          autoNumber: "all"
+        }
+    }
+    
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML' async></script>
+
+
+  <!-- DOM updating function -->
+  <script src="/assets/js/page/dom-update.js"></script>
+
+  <!-- Selectors for elements on the page -->
+  <script src="/assets/js/page/documentSelectors.js"></script>
+
+  <!-- Define some javascript variables that will be useful in other javascript -->
+  <script>
+    const site_basename = '';
+  </script>
+
+  <!-- Add AnchorJS to let headers be linked -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js" async></script>
+  <script src="/assets/js/page/anchors.js" async></script>
+
+  <!-- Include Turbolinks to make page loads fast -->
+  <!-- https://github.com/turbolinks/turbolinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" async></script>
+  <meta name="turbolinks-cache-control" content="no-cache">
+
+  <!-- Load nbinteract for widgets -->
+  
+
+  <!-- Load Thebelab for interactive widgets -->
+  <!-- Include Thebelab for interactive code if it's enabled -->
+
+
+<!-- Display Thebelab button in each code cell -->
+<script>
+/**
+ * Set up thebelab button for code blocks
+ */
+
+const thebelabCellButton = id =>
+  `<a id="thebelab-cell-button-${id}" class="btn thebebtn o-tooltip--left" data-tooltip="Interactive Mode">
+    <img src="/assets/images/edit-button.svg" alt="Start thebelab interactive mode">
+  </a>`
+
+
+const addThebelabButtonToCodeCells =  () => {
+
+  const codeCells = document.querySelectorAll('div.input_area > div.highlight:not(.output) pre')
+  codeCells.forEach((codeCell, index) => {
+    const id = codeCellId(index)
+    codeCell.setAttribute('id', id)
+    if (document.getElementById("thebelab-cell-button-" + id) == null) {
+      codeCell.insertAdjacentHTML('afterend', thebelabCellButton(id));
+    }
+  })
+}
+
+initFunction(addThebelabButtonToCodeCells);
+</script>
+
+
+
+<script type="text/x-thebe-config">
+    
+    {
+      requestKernel: true,
+      binderOptions: {
+        repo: 'jupyter/jupyter-book',
+        ref: 'gh-pages',
+      },
+      codeMirrorConfig: {
+        theme: "abcdef",
+        mode: "python"
+      },
+      kernelOptions: {
+        name: 'python3',
+      }
+    }
+</script>
+<script src="https://unpkg.com/thebelab@latest/lib/index.js" async></script>
+<script>
+    /**
+     * Add attributes to Thebelab blocks
+     */
+
+    const initThebelab = () => {
+        const addThebelabToCodeCells = () => {
+            console.log("Adding thebelab to code cells...");
+            // If Thebelab hasn't loaded, wait a bit and try again. This
+            // happens because we load ClipboardJS asynchronously.
+            if (window.thebelab === undefined) {
+                setTimeout(addThebelabToCodeCells, 250)
+            return
+            }
+
+            // If we already detect a Thebelab cell, don't re-run
+            if (document.querySelectorAll('div.thebelab-cell').length > 0) {
+                return;
+            }
+
+            // Find all code cells, replace with Thebelab interactive code cells
+            const codeCells = document.querySelectorAll('.input_area pre')
+            codeCells.forEach((codeCell, index) => {
+                const id = codeCellId(index)
+                codeCell.setAttribute('data-executable', 'true')
+
+                // Figure out the language it uses and add this too
+                var parentDiv = codeCell.parentElement.parentElement;
+                var arrayLength = parentDiv.classList.length;
+                for (var ii = 0; ii < arrayLength; ii++) {
+                    var parts = parentDiv.classList[ii].split('language-');
+                    if (parts.length === 2) {
+                        // If found, assign dataLanguage and break the loop
+                        var dataLanguage = parts[1];
+                        break;
+                    }
+                }
+                codeCell.setAttribute('data-language', dataLanguage)
+
+                // If the code cell is hidden, show it
+                var inputCheckbox = document.querySelector(`input#hidebtn${codeCell.id}`);
+                if (inputCheckbox !== null) {
+                    setCodeCellVisibility(inputCheckbox, 'visible');
+                }
+            });
+
+            // Remove the event listener from the page so keyboard press doesn't
+            // Change page
+            document.removeEventListener('keydown', initPageNav)
+            keyboardListener = false;
+
+            // Init thebelab
+            thebelab.bootstrap();
+
+            // Remove copy buttons since they won't work anymore
+            const copyAndThebeButtons = document.querySelectorAll('.copybtn, .thebebtn')
+            copyAndThebeButtons.forEach((button, index) => {
+                button.remove();
+            });
+
+            // Remove outputs since they'll be stale
+            const outputs = document.querySelectorAll('.output *, .output')
+            outputs.forEach((output, index) => {
+                output.remove();
+            });
+
+            // Find any cells with an initialization tag and ask ThebeLab to run them when ready
+            var thebeInitCells = document.querySelectorAll('div.tag_thebelab-init');
+            thebeInitCells.forEach((cell) => {
+                console.log("Initializing ThebeLab with cell: " + cell.id);
+                cell.querySelector('.thebelab-run-button').click();
+            });
+        }
+
+        // Add event listener for the function to modify code cells
+        const thebelabButtons = document.querySelectorAll('[id^=thebelab], [id$=thebelab]')
+        thebelabButtons.forEach((thebelabButton,index) => {
+            if (thebelabButton === null) {
+                setTimeout(initThebelab, 250)
+                return
+            };
+            thebelabButton.addEventListener('click', addThebelabToCodeCells);
+        });
+    }
+
+    // Initialize Thebelab
+    initFunction(initThebelab);
+</script>
+
+
+
+  <!-- Load the auto-generating TOC (non-async otherwise the TOC won't load w/ turbolinks) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.8.1/tocbot.min.js" async></script>
+  <script src="/assets/js/page/tocbot.js"></script>
+
+  <!-- Google analytics -->
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52617120-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52617120-7');
+</script>
+
+
+
+  <!-- Clipboard copy button -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script>
+
+  <!-- Load custom website scripts -->
+  <script src="/assets/js/scripts.js" async></script>
+
+  <!-- Load custom user CSS and JS  -->
+  <script src="/assets/custom/custom.js" async></script>
+  <link rel="stylesheet" href="/assets/custom/custom.css">
+
+  <!-- Update interact links w/ REST param, is defined in includes so we can use templates -->
+  
+<script>
+/**
+  * To auto-embed hub URLs in interact links if given in a RESTful fashion
+ */
+
+function getJsonFromUrl(url) {
+  var query = url.split('?');
+  if (query.length < 2) {
+    // No queries so just return false
+    return false;
+  }
+  query = query[1];
+  // Collect REST params into a dictionary
+  var result = {};
+  query.split("&").forEach(function(part) {
+    var item = part.split("=");
+    result[item[0]] = decodeURIComponent(item[1]);
+  });
+  return result;
+}
+    
+function dict2param(dict) {
+    params = Object.keys(dict).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(dict[k])
+    });
+    return params.join('&')
+}
+
+// Parse a Binder URL, converting it to the string needed for JupyterHub
+function binder2Jupyterhub(url) {
+  newUrl = {};
+  parts = url.split('v2/gh/')[1];
+  // Grab the base repo information
+  repoinfo = parts.split('?')[0];
+  var [org, repo, ref] = repoinfo.split('/');
+  newUrl['repo'] = ['https://github.com', org, repo].join('/');
+  newUrl['branch'] = ref
+  // Grab extra parameters passed
+  params = getJsonFromUrl(url);
+  if (params['filepath'] !== undefined) {
+    newUrl['subPath'] = params['filepath']
+  }
+  return dict2param(newUrl);
+}
+
+// Filter out potentially unsafe characters to prevent xss
+function safeUrl(url)
+{
+   return String(encodeURIComponent(url))
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+}
+
+function addParamToInternalLinks(hub) {
+  var links = document.querySelectorAll("a").forEach(function(link) {
+    var href = link.href;
+    // If the link is an internal link...
+    if (href.search("http://localhost:4444") !== -1 || href.startsWith('/') || href.search("127.0.0.1:") !== -1) {
+      // Assume we're an internal link, add the hub param to it
+      var params = getJsonFromUrl(href);
+      if (params !== false) {
+        // We have REST params, so append a new one
+        params['jupyterhub'] = hub;
+      } else {
+        // Create the REST params
+        params = {'jupyterhub': hub};
+      }
+      // Update the link
+      var newHref = href.split('?')[0] + '?' + dict2param(params);
+      link.setAttribute('href', decodeURIComponent(newHref));
+    }
+  });
+  return false;
+}
+
+
+// Update interact links
+function updateInteractLink() {
+    // hack to make this work since it expects a ? in the URL
+    rest = getJsonFromUrl("?" + location.search.substr(1));
+    jupyterHubUrl = rest['jupyterhub'];
+    var hubType = null;
+    var hubUrl = null;
+    if (jupyterHubUrl !== undefined) {
+      hubType = 'jupyterhub';
+      hubUrl = jupyterHubUrl;
+    }
+
+    if (hubType !== null) {
+      // Sanitize the hubUrl
+      hubUrl = safeUrl(hubUrl);
+
+      // Add HTTP text if omitted
+      if (hubUrl.indexOf('http') < 0) {hubUrl = 'http://' + hubUrl;}
+      var interactButtons = document.querySelectorAll("button.interact-button")
+      var lastButton = interactButtons[interactButtons.length-1];
+      var link = lastButton.parentElement;
+
+      // If we've already run this, skip the link updating
+      if (link.nextElementSibling !== null) {
+        return;
+      }
+
+      // Update the link and add context div
+      var href = link.getAttribute('href');
+      if (lastButton.id === 'interact-button-binder') {
+        // If binder links exist, we need to re-work them for jupyterhub
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // If localhost, assume we're working from a local Jupyter server and remove `/hub`
+          first = [hubUrl, 'git-sync'].join('/')
+        } else {
+          first = [hubUrl, 'hub', 'user-redirect', 'git-sync'].join('/')
+        }
+        href = first + '?' + binder2Jupyterhub(href);
+      } else {
+        // If interact button isn't binderhub, assume it's jupyterhub
+        // If JupyterHub links, we only need to replace the hub url
+        href = href.replace("", hubUrl);
+        if (hubUrl.indexOf('http%3A%2F%2Flocalhost') > -1) {
+          // Assume we're working from a local Jupyter server and remove `/hub`
+          href = href.replace("/hub/user-redirect", "");
+        }
+      }
+      link.setAttribute('href', decodeURIComponent(href));
+
+      // Add text after interact link saying where we're launching
+      hubUrlNoHttp = decodeURIComponent(hubUrl).replace('http://', '').replace('https://', '');
+      link.insertAdjacentHTML('afterend', '<div class="interact-context">on ' + hubUrlNoHttp + '</div>');
+
+      // Update internal links so we retain the hub url
+      addParamToInternalLinks(hubUrl);
+    }
+}
+
+runWhenDOMLoaded(updateInteractLink)
+document.addEventListener('turbolinks:load', updateInteractLink)
+</script>
+
+
+  <!-- Lunr search code - will only be executed on the /search page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js" async></script>
+  <script>var initQuery = function() {
+  // See if we have a search box
+  var searchInput = document.querySelector('input#lunr_search');
+  if (searchInput === null) {
+    return;
+  }
+
+  // Function to parse our lunr cache
+  var idx = lunr(function () {
+    this.field('title')
+    this.field('excerpt')
+    this.field('categories')
+    this.field('tags')
+    this.ref('id')
+
+    this.pipeline.remove(lunr.trimmer)
+
+    for (var item in store) {
+      this.add({
+        title: store[item].title,
+        excerpt: store[item].excerpt,
+        categories: store[item].categories,
+        tags: store[item].tags,
+        id: item
+      })
+    }
+  });
+
+  // Run search upon keyup
+  searchInput.addEventListener('keyup', function () {
+    var resultdiv = document.querySelector('#results');
+    var query = document.querySelector("input#lunr_search").value.toLowerCase();
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
+
+      // Empty the results div
+      while (resultdiv.firstChild) {
+        resultdiv.removeChild(resultdiv.firstChild);
+      }
+
+    resultdiv.insertAdjacentHTML('afterbegin', '<p class="results__found">'+result.length+' Result(s) found</p>');
+    for (var item in result) {
+      var ref = result[item].ref;
+      if(store[ref].teaser){
+        var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<div class="archive__item-teaser">'+
+                '<img src="'+store[ref].teaser+'" alt="">'+
+              '</div>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      else{
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
+          '</div>';
+      }
+      resultdiv.insertAdjacentHTML('beforeend', searchitem);
+    }
+  });
+};
+
+initFunction(initQuery);
+</script>
+
+  <!-- Load JS that depends on site variables -->
+  <script src="/assets/js/page/copy-button.js" async></script>
+
+  <!-- Hide cell code -->
+  <script src="/assets/js/page/hide-cell.js" async></script>
+
+  <!-- Printing the screen -->
+  <!-- Include nbinteract for interactive widgets -->
+<script src="https://printjs-4de6.kxcdn.com/print.min.js" async></script>
+<script>
+printContent = () => {
+    // MathJax displays a second version of any math for assistive devices etc.
+    // This prevents double-rendering in the PDF output.
+    var ignoreAssistList = [];
+    assistives = document.querySelectorAll('.MathJax_Display span.MJX_Assistive_MathML').forEach((element, index) => {
+        var thisId = 'MathJax-assistive-' + index.toString();
+        element.setAttribute('id', thisId);
+        ignoreAssistList.push(thisId)
+    });
+
+    // Print the actual content object
+    printJS({
+        printable: 'textbook_content',
+        type: 'html',
+        css: "/assets/css/styles.css",
+        style: "#textbook_content {padding-top: 40px};",
+        scanStyles: false,
+        targetStyles: ["*"],
+        ignoreElements: ignoreAssistList,
+        documentTitle: "Made with Jupyter Book"
+    })
+};
+
+initPrint = () => {
+    document.querySelector('#interact-button-print').addEventListener('click', printContent)
+}
+
+initFunction(initPrint)
+</script>
+
+</head>
+
+  <body>
+    <!-- .js-show-sidebar shows sidebar by default -->
+    <div id="js-textbook" class="c-textbook js-show-sidebar">
+      
+
+
+
+<nav id="js-sidebar" class="c-textbook__sidebar">
+  <a href="https://champsproject.com"><img src="/images/logo/champs_logo.jpg" class="textbook_logo" id="sidebar-logo" alt="textbook logo" data-turbolinks-permanent/></a>
+  <h2 class="c-sidebar__title">CHAMPS Dynamical Systems Book</h2>
+  <ul class="c-sidebar__chapters">
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/dedication">
+        <a class="c-sidebar__entry"
+          href="/docs/dedication.html"
+        >
+          
+            1.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/acknowledgements">
+        <a class="c-sidebar__entry"
+          href="/docs/acknowledgements.html"
+        >
+          
+            2.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="../docs/preface">
+        <a class="c-sidebar__entry"
+          href="/docs/preface.html"
+        >
+          
+            3.
+          
+          
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/prologue">
+        <a class="c-sidebar__entry"
+          href="/prologue/prologue.html"
+        >
+          
+            4.
+          
+          Prologue
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/prologue/LDs/LDs_victor">
+        <a class="c-sidebar__entry"
+          href="/prologue/LDs/LDs_victor.html"
+        >
+          
+            5.
+          
+          Lagrangian Descriptors
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/fundamental_models/fundamental_models">
+        <a class="c-sidebar__entry"
+          href="/fundamental_models/fundamental_models.html"
+        >
+          
+            6.
+          
+          Fundamental Models
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act1/Morse/Morse">
+        <a class="c-sidebar__entry"
+          href="/act1/Morse/Morse.html"
+        >
+          
+            7.
+          
+          Morse Oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/hamiltonian_sn/HSN_victor">
+        <a class="c-sidebar__entry"
+          href="/act2/hamiltonian_sn/HSN_victor.html"
+        >
+          
+            8.
+          
+          Saddle-Node Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/barbanis2D/barbanis2d">
+        <a class="c-sidebar__entry"
+          href="/act2/barbanis2D/barbanis2d.html"
+        >
+          
+            9.
+          
+          Finding NHIM using LD: 2 and 3 DoF nonlinear Hamiltonian
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/caldera/caldera-1">
+        <a class="c-sidebar__entry"
+          href="/act2/caldera/caldera-1.html"
+        >
+          
+            10.
+          
+          Caldera model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/deLeon_Berne/deleon_berne">
+        <a class="c-sidebar__entry"
+          href="/act2/deLeon_Berne/deleon_berne.html"
+        >
+          
+            11.
+          
+          De Leon model
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/system_bath1/system_bath1">
+        <a class="c-sidebar__entry"
+          href="/act2/system_bath1/system_bath1.html"
+        >
+          
+            12.
+          
+          System Bath 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/four_well_morse/booksprinttest_makrina">
+        <a class="c-sidebar__entry"
+          href="/act2/four_well_morse/booksprinttest_makrina.html"
+        >
+          
+            13.
+          
+          Four-well potential
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/double_morse/prueba">
+        <a class="c-sidebar__entry"
+          href="/act2/double_morse/prueba.html"
+        >
+          
+            14.
+          
+          Double-Morse oscillator
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/1-Ches/roam">
+        <a class="c-sidebar__entry"
+          href="/act2/1-Ches/roam.html"
+        >
+          
+            15.
+          
+          Chesnavich Model Part 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/2-Ches/roam_mass_energy_var">
+        <a class="c-sidebar__entry"
+          href="/act2/2-Ches/roam_mass_energy_var.html"
+        >
+          
+            16.
+          
+          Chesnavich Model Part 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act2/3-Ches/roamiso">
+        <a class="c-sidebar__entry"
+          href="/act2/3-Ches/roamiso.html"
+        >
+          
+            17.
+          
+          Chesnavich Model Part 3
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/barbanis_3dof/barbanis_3dof">
+        <a class="c-sidebar__entry"
+          href="/act3/barbanis_3dof/barbanis_3dof.html"
+        >
+          
+            18.
+          
+          Three degree-of-freedom Barbanis system
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath1/main">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath1/main.html"
+        >
+          
+            19.
+          
+          N-Degree-of-Freedom System-Bath Model 1
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="/act3/system_bath2/system_bath">
+        <a class="c-sidebar__entry"
+          href="/act3/system_bath2/system_bath.html"
+        >
+          
+            20.
+          
+          N-Degree-of-Freedom System-Bath Model 2
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+      
+      
+
+      
+      
+      
+      
+
+      
+      
+      <li class="c-sidebar__chapter" data-url="https://github.com/broncio123/champs-booksprint-planning">
+        <a class="c-sidebar__entry"
+          href="https://github.com/broncio123/champs-booksprint-planning"
+        >
+          
+          GitHub repository
+        </a>
+      </li>
+
+      
+      
+
+      
+
+      
+      
+
+      
+
+      
+    
+  </ul>
+  <p class="sidebar_footer">Powered by <a href="https://jupyterbook.org">Jupyter Book</a></p>
+</nav>
+
+      
+      <div class="c-topbar" id="top-navbar">
+  <!-- We show the sidebar by default so we use .is-active -->
+  <div class="c-topbar__buttons">
+    <button
+      id="js-sidebar-toggle"
+      class="hamburger hamburger--arrowalt is-active"
+    >
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+    <div class="buttons">
+<div class="download-buttons-dropdown">
+    <button id="dropdown-button-trigger" class="interact-button"><img src="/assets/images/download-solid.svg" alt="Download" /></button>
+    <div class="download-buttons">
+        
+        <a id="interact-button-print"><button id="interact-button-download" class="interact-button">.pdf</button></a>
+    </div>
+</div>
+
+
+</div>
+
+  </div>
+  <!-- Empty sidebar placeholder that we'll auto-fill with javascript -->
+  <aside class="sidebar__right">
+    <header><h4 class="nav__title"><img src="/assets/images/list-solid.svg" alt="Search" />   On this page</h4></header>
+    <nav class="onthispage">
+    </nav>
+  </aside>
+  <a href="/search.html" class="topbar-right-button" id="search-button">
+    <img src="/assets/images/search-solid.svg" alt="Search" />
+  </a>
+</div>
+
+      <main class="c-textbook__page" tabindex="-1">
+            <div class="c-textbook__content" id="textbook_content">
+              <h1 id="two-degree-of-freedom-de-leon-berne-model">Two Degree-of-freedom de Leon-Berne Model</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<h2 id="development-of-the-problem">Development of the Problem</h2>
+
+<p>We will consider the two degrees-of-freedom Hamiltonian for a
+unimolecular conformational isomerization introduced and studied
+extensively by De Leon and
+co-authors [@de_leon_intramolecular_1981; @de_leon_order_1989; @Almeida1990; @de_leon_1991; @de_leon_1992].
+This 2 degrees-of-freedom Hamiltonian is given by <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\mathcal{H}(x,y,p_x,p_y) =& T(p_x, p_y) + V_{\rm DB}(x,y)  \\
+=& \frac{p_x^2}{2m_s} + \frac{p_y^2}{2m_s} + V_{\rm DB}(x,y)
+\end{aligned}
+\label{eqn:ham_db} %]]></script> where the potential energy function
+$V_{\rm DB}(x,y)$ is (a detailed description is in the
+Appendix: <a href="#appsect:dbpot">[appsect:dbpot]</a>{reference-type=”ref”
+reference=”appsect:dbpot”})
+<script type="math/tex">V_{\rm DB}(x,y) = D_x\left[ 1 - \exp(-\lambda x) \right]^2 + \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y^2(y^2 - 
+2y_w^2)\exp(-\zeta \lambda x) + \epsilon_s   
+\label{eqn:sys_pot}</script></p>
+
+<p>and we will focus on varying $\lambda$ and $\zeta$.</p>
+
+<p>The underlying Hamiltonian vector field is given by <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\dot{x} = \frac{\partial \mathcal{H}}{\partial p_x} &= \frac{p_x}{m_s} \\
+\dot{y} = \frac{\partial \mathcal{H}}{\partial p_y} &=  \frac{p_y}{m_s}  \\
+\dot{p_x} = - \frac{\partial \mathcal{H}}{\partial x}  &= 2 D_x \lambda \exp(-\lambda x) 
+(\exp(-\lambda x) - 1) + \\ & \qquad \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}\zeta 
+\lambda y^2(y^2 - 2y_w^2)\exp(-\zeta \lambda x)\\
+\dot{p_y} = -\frac{\partial \mathcal{H}}{\partial y} &=  -4 
+\dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y(y^2 - y_w^2)\exp(- \zeta \lambda x)
+\end{aligned}
+\label{eqn:vec_field_db} %]]></script></p>
+
+<p>The total energy will be denoted by
+$\mathcal{H}(x,y,p_x,p_y) = E = E_{\rm saddle} + \Delta E$ where
+$\Delta E$ is the excess energy above the isomerization barrier energy.</p>
+
+<p>The equilibrium points are located at $\overline{q}<em>s = (0,0,0,0)$ and
+at $\overline{q}_c =(x</em>{eq},\pm y_w,0,0)$ where the $x$-coordinate,
+$x_{eq}$, needs to be obtained using numerical root solver.</p>
+
+<p>The total energy of the equilibrium point $\overline{q}_s$ is
+$\mathcal{H}(\overline{q}_s) = \epsilon_s$ for all parameter values, and
+will be referred to as the <em>critical energy</em>. The total energy of the
+equilibrium point $\overline{q}_c$ is given by</p>
+
+<script type="math/tex; mode=display">\mathcal{H}(\overline{q}_c) = D_x(1 - \exp(-\lambda x_{eq}))^2 - \mathcal{V}^{\ddagger} \exp(-\zeta \lambda x_{eq}) + \epsilon_s</script>
+
+<p>When $\zeta = 0$, the equilibrium point $\overline{q}_c$ is at
+$(0,\pm y_w,0,0)$, and has total energy
+$\epsilon_s - \mathcal{V}^{\ddagger}$ (see Supplemental material for
+details).</p>
+
+<p>Potential energy function</p>
+
+<script type="math/tex; mode=display">V_{\rm DB}(x,y) = D_x\left[ 1 - \exp(-\lambda x) \right]^2 + \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y^2(y^2 - 
+2y_w^2)\exp(-\zeta \lambda x) + \epsilon_s</script>
+
+<p>In this study, we fix $\mu = 8, D_x = 10, y_w = 1/\sqrt{2}, 
+\mathcal{V}^{\ddagger} = 1, \epsilon_s = 1$, and vary the parameters
+$\zeta, \lambda$.</p>
+
+<p>The equilibrium point is at $(0,0,0,0)$ for all parameter values and the
+two equilibrium points are at $(x_{\rm eq},\pm y_w,0,0)$ which needs to
+be calculated using a numerical root solver and depends on $D_x, 
+y_w, \mathcal{V}^{\ddagger}, \zeta, \lambda$. The equilibrium point at
+$(0,0,0,0)$ has energy $E(0,0,0,0) = 
+\epsilon_s$. While the equilibrium point at $(x_{\rm eq},\pm y_w,0,0)$
+has total energy</p>
+
+<p>The total energy of the equilibrium points at $(x_{\rm eq},\pm y_w,0,0)$
+is <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\mathcal{H}(x_{\rm eq},\pm y_w,0,0) =& E(x_{\rm eq},\pm y_w,0,0) = V_{DB}(x_{\rm eq},\pm y_w,0,0) \notag \\ 
+= & D_x[ 1 - \exp(-\lambda 
+x_{\rm eq}) ]^2 - \mathcal{V}^{\ddagger}\exp(-\zeta \lambda x_{\rm eq}) + \epsilon_s \label{eqn:te_bottom_eqpt}\end{aligned} %]]></script></p>
+
+<p>\centering
+\subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/pe_contour_param_fig3-A1}}
+\subfigure[]{\includegraphics[width=0.31\textwidth]{./figures/pe_contour_param_fig3-A2}}
+\</p>
+
+<p>[[fig:pecontours_fig3db1981]]{#fig:pecontours_fig3db1981
+label=”fig:pecontours_fig3db1981”}</p>
+
+<p><strong>REPEATED SECTION</strong></p>
+
+<h3 id="two-dof-de-leon-berne-system">Two DoF de Leon-Berne system</h3>
+
+<p>We will consider the two degrees-of-freedom Hamiltonian for a
+unimolecular conformational isomerization introduced and studied
+extensively by De Leon and
+co-authors [@de_leon_intramolecular_1981; @de_leon_order_1989; @Almeida1990; @de_leon_1991; @de_leon_1992].
+This 2 degrees-of-freedom Hamiltonian is given by <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\mathcal{H}(x,y,p_x,p_y) =& T(p_x, p_y) + V_{\rm DB}(x,y)  \\
+=& \frac{p_x^2}{2m_s} + \frac{p_y^2}{2m_s} + V_{\rm DB}(x,y)
+\end{aligned}
+\label{eqn:ham_db} %]]></script> where the potential energy function
+$V_{\rm DB}(x,y)$ is (a detailed description is in the
+Appendix: <a href="#appsect:dbpot">[appsect:dbpot]</a>{reference-type=”ref”
+reference=”appsect:dbpot”})
+<script type="math/tex">V_{\rm DB}(x,y) = D_x\left[ 1 - \exp(-\lambda x) \right]^2 + \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y^2(y^2 - 
+2y_w^2)\exp(-\zeta \lambda x) + \epsilon_s   
+\label{eqn:sys_pot}</script></p>
+
+<p>and we will focus on varying $\lambda$ and $\zeta$.</p>
+
+<p>The underlying Hamiltonian vector field is given by <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\dot{x} = \frac{\partial \mathcal{H}}{\partial p_x} &= \frac{p_x}{m_s} \\
+\dot{y} = \frac{\partial \mathcal{H}}{\partial p_y} &=  \frac{p_y}{m_s}  \\
+\dot{p_x} = - \frac{\partial \mathcal{H}}{\partial x}  &= 2 D_x \lambda \exp(-\lambda x) 
+(\exp(-\lambda x) - 1) + \\ & \qquad \dfrac{\mathcal{V}^{\ddagger}}{y_w^4}\zeta 
+\lambda y^2(y^2 - 2y_w^2)\exp(-\zeta \lambda x)\\
+\dot{p_y} = -\frac{\partial \mathcal{H}}{\partial y} &=  -4 
+\dfrac{\mathcal{V}^{\ddagger}}{y_w^4}y(y^2 - y_w^2)\exp(- \zeta \lambda x)
+\end{aligned}
+\label{eqn:vec_field_db} %]]></script></p>
+
+<p>The total energy will be denoted by
+$\mathcal{H}(x,y,p_x,p_y) = E = E_{\rm saddle} + \Delta E$ where
+$\Delta E$ is the excess energy above the isomerization barrier energy.</p>
+
+<p>The equilibrium points are located at $\overline{q}<em>s = (0,0,0,0)$ and
+at $\overline{q}_c =(x</em>{eq},\pm y_w,0,0)$ where the $x$-coordinate,
+$x_{eq}$, needs to be obtained using numerical root solver.</p>
+
+<p>The total energy of the equilibrium point $\overline{q}_s$ is
+$\mathcal{H}(\overline{q}_s) = \epsilon_s$ for all parameter values, and
+will be referred to as the <em>critical energy</em>. The total energy of the
+equilibrium point $\overline{q}_c$ is given by</p>
+
+<script type="math/tex; mode=display">\mathcal{H}(\overline{q}_c) = D_x(1 - \exp(-\lambda x_{eq}))^2 - \mathcal{V}^{\ddagger} \exp(-\zeta \lambda x_{eq}) + \epsilon_s</script>
+
+<p>When $\zeta = 0$, the equilibrium point $\overline{q}_c$ is at
+$(0,\pm y_w,0,0)$, and has total energy
+$\epsilon_s - \mathcal{V}^{\ddagger}$ (see Supplemental material for
+details).</p>
+
+<p><img src="/content/act2/deLeon_Berne/figures/pe_contour_param_fig3-A1xy.pdf" alt="" />{width=”33.0000%”}\ <img src="/content/act2/deLeon_Berne/figures/pe_contour_param_fig3-B2x.pdf" alt="" />{width=”33.0000%”}\ <img src="/content/act2/deLeon_Berne/figures/pe_contour_param_fig3-C2x.pdf" alt="" />{width=”33.0000%”} [[fig:pecontours_db]]{#fig:pecontours_db label=”fig:pecontours_db”}</p>
+
+<p>Fig. 1. <strong>Potential energy function</strong> for the De Leon-Berne model of unimolecular isomerization for 3 different sets of 
+coupling and range parameters used in~\citeauthor{de_leon_intramolecular_1981}~\cite{de_leon_intramolecular_1981}. It 
+is to be noted that the potential energy surface is ``mostly’’ flat and then becomes steep for large $x &lt; 0$. The 
+coordinates of the saddle equilibrium point are also independent of the parameters and located at the origin.</p>
+
+<p><strong>REPEATED SECTION</strong></p>
+
+<h2 id="revealing-the-phase-space-structure">Revealing the phase space structure</h2>
+
+<h3 id="sect:tubes_transition">Invariant manifolds and unstable periodic orbits</h3>
+
+<p>We consider the dynamics of conservative system by determining the phase
+space “skeleton” that governs transition between potential well (or,
+equivalently escape from a well). In the simplest case of only two
+degrees of freedom, the phase space is of 4 dimensional and the boundary
+between potential wells is defined using unstable periodic orbit that
+lie in the bottleneck connecting the wells. The set of all states
+leading to escape from a potential well can be understood as residing
+within an invariant manifold of geometry
+$\mathbb{R}^1 \times \mathbb{S}^1$, that is a cylinder or tube. The
+interior of this tube defines the set of all states which will
+transition to the adjacent well.</p>
+
+<h2 id="linearization-near-the-rank-1-saddle">Linearization near the rank-1 saddle</h2>
+
+<p>It is to be noted that the linearization of the behavior of trajectories
+near the saddle-center equilibrium points appears in the leading order
+expression of the transition fraction. We are interested in trajectories
+which have an energy just above that of the critical value. The region
+of possible motion for $E &gt; E_c$ contains a neck around each saddle
+equilibrium point. The geometry of trajectories close to the neck region
+is studied by considering the linearized equations of motion near the
+equilibrium point.</p>
+
+<p>In this section, let $\mathbf{x}<em>{\rm eq}$ denote the equilibrium point
+connecting the top and bottom wells. Furthermore, for a fixed energy
+$E$, we consider a neighborhood of $\mathbf{x}</em>{\rm eq}$ on the energy
+surface, whose configuration space projections are the bottleneck
+regions. We refer to this neighborhood as the <em>equilibrium region</em> and
+denote it by $\mathcal{R}$ on the energy surface. We perform a
+coordinate transformation with
+$\mathbf{x}<em>{\rm eq} = (x</em>{\rm eq},y_{\rm eq}, 0, 0)$ as the new origin,
+and keep the first order terms, we obtain <script type="math/tex">\begin{aligned}
+\dot{\mathbf{x}} = 
+\mathbb{J}({\mathbf{x}_{\rm eq}}) \mathbf{x}  \qquad 
+\text{where,} \qquad \mathbf{x} = [x,y,p_x,p_y]^T \label{eqn:lin_sys_eqpt}\end{aligned}</script>
+where $\mathbb{J}({\mathbf{x}_{\rm e, 1}})$ is the Jacobian of the
+Hamiltonian vector
+field <a href="#eqn:vec_field_db">[eqn:vec_field_db]</a>{reference-type=”eqref”
+reference=”eqn:vec_field_db”} evaluated at the equilibrium point. The
+Jacobian involves derivatives of
+Eqns. <a href="#eqn:pot_energy_db">[eqn:pot_energy_db]</a>{reference-type=”eqref”
+reference=”eqn:pot_energy_db”} and the kinetic energy does not depend on
+the position coordinates, we can write compactly <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\mathbb{J}(\mathbf{x}) = D\mathbf{f}(\mathbf{x}) = 
+\begin{pmatrix}
+0 & 0 & 1/\mu & 0 \\
+0 & 0 & 0 & 1/\mu \\
+-\frac{\partial^2\mathcal{H}}{\partial x^2} & -\frac{\partial^2\mathcal{H}}{\partial y \partial x} & 0 & 
+0 \\
+-\frac{\partial^2\mathcal{H}}{\partial x \partial y} & -\frac{\partial^2\mathcal{H}}{\partial y^2} & 0 & 
+0 
+\end{pmatrix} = \\
+\begin{pmatrix}
+0 & 0 & 1/\mu & 0 \\
+0 & 0 & 0 & 1/\mu \\
+-\frac{\partial^2 V_{DB}}{\partial x^2} & -\frac{\partial^2 V_{DB}}{\partial y \partial x} & 0 & 
+0 \\
+-\frac{\partial^2 V_{DB}}{\partial x \partial y} & -\frac{\partial^2 V_{DB}}{\partial y^2} & 0 & 
+0 
+\end{pmatrix}
+\label{eqn:jacobian}\end{aligned} %]]></script></p>
+
+<p>Thus, the linearized vector field at the equilibrium point becomes
+<script type="math/tex">% <![CDATA[
+\begin{aligned}
+\dot{\mathbf{x}} = 
+\mathbb{J}({\mathbf{x}_{\rm eq}}) \mathbf{x} = D\mathbf{f}(\mathbf{x}_{\rm eq}) = 
+\begin{pmatrix}
+0 & 0 & 1/\mu & 0 \\
+0 & 0 & 0 & 1/\mu \\
+-2D_x\lambda^2 & 0 & 0 & 0 \\
+0 & 8 & 0 & 0 
+\end{pmatrix} \mathbf{x} \end{aligned} %]]></script></p>
+
+<p>where $\mathbf{f}$ denotes the Hamiltonian vector field. which has
+eigenvalues of the form $\lambda, -\lambda, i \omega, - i \omega$ given
+by
+<script type="math/tex">-\sqrt{\frac{2\epsilon}{\mu}}A, \; \sqrt{\frac{2\epsilon}{\mu}}A, \; i \sqrt{\frac{2D_x}{m}}\lambda, \; -i 
+    \sqrt{\frac{2D_x}{m}}\lambda,</script> and $\lambda &gt; 0, \; \omega &gt; 0$,
+and corresponding eigenvectors given by <script type="math/tex">% <![CDATA[
+\begin{aligned}
+u_{\lambda} = & \begin{bmatrix}
+0, & 1, & 0, & A\sqrt{2 \epsilon \mu}
+\end{bmatrix} \\
+u_{-\lambda} = & \begin{bmatrix}
+0, & 1, & 0, & -A\sqrt{2 \epsilon \mu}
+\end{bmatrix} \\
+u_{i \omega} = & \begin{bmatrix}
+1, & 0, & i \lambda \sqrt{2 D_x m}, & 0
+\end{bmatrix} \\
+u_{-i \omega} = & \begin{bmatrix}
+1, & 0, & -i \lambda \sqrt{2 D_x m}, & 0
+\end{bmatrix}
+\end{aligned} %]]></script> Thus, the general (real) solution
+of <a href="#eqn:lin_sys_eqpt">[eqn:lin_sys_eqpt]</a>{reference-type=”eqref”
+reference=”eqn:lin_sys_eqpt”} has the form <script type="math/tex">\begin{aligned}
+\mathbf{x}(t) = (x(t),y(t),p_x(t),p_y(t)) = \alpha_1e^{\lambda t}u_{\lambda} + \alpha_2e^{-\lambda 
+t}u_{-\lambda}  + 
+2{\rm Re}(\beta e^{i\omega t}u_{i \omega}) \label{eqn:linearSol}\end{aligned}</script>
+where, $\alpha_1$, $\alpha_2$ are real and $\beta = 
+\beta_1 + i \beta_2$ is complex.</p>
+
+<h2 id="numerical-method-for-computing-reactive-islands">Numerical method for computing reactive islands</h2>
+
+<p><strong>Step 1: Select appropriate energy above the critical value</strong>  For
+computing the unstable periodic orbits and its invariant manifolds that
+are phase space conduits for transition between the two isomers, we have
+to specify a total energy, $E$, that is above the energy of the index-1
+saddle (this is referred to as critical energy or reference energy or
+isomerization energy, $E_c$, in the chemical reaction dynamics
+literature) and so the excess energy $\Delta E = E - E_c &gt; 0$. This
+excess energy can be arbitrarily large as long as the unstable periodic
+orbit does not bifurcate.</p>
+
+<p><strong>Step 2: Compute the unstable periodic orbit associated with the rank-1
+saddle  </strong>We consider a procedure which computes unstable periodic
+orbits associated with rank-1 saddle in a straightforward fashion. This
+procedure begins with small “seed” initial conditions obtained from the
+linearized equations of motion near $\mathbf{x}_{\rm eq}$, and uses
+differential correction and numerical continuation to generate the
+desired periodic orbit corresponding to the chosen energy
+$E$ [@Koon2011]. The result is a periodic orbit of the desired energy
+$E$ of some period $T$, which will be close to $2\pi/\omega$ where
+$\pm \omega$ is the imaginary pair of eigenvalues of the linearization
+around the saddle point.</p>
+
+<p><em>Guess for initial condition of a periodic orbit  </em> The general solution
+of linearized equations of motion
+(Eqn. <a href="#eqn:linearSol">[eqn:linearSol]</a>{reference-type=”eqref”
+reference=”eqn:linearSol”}) at the equilibrium point
+$\mathbf{x}_{\rm eq}$ can be used to initialize a guess for an iterative
+correction procedure called <em>differential correction</em>. The linearization
+yields an eigenvalue problem $Av = \gamma v$, where $A$ is the Jacobian
+matrix evaluated at the equilibrium point, $\gamma$ is the eigenvalue,
+and $v = [k_1, k_2, k_3, k_4]^T$ is the corresponding eigenvector. We
+initialize the guess for the periodic orbit for a small amplitude,
+$A_x « 1$. Let $\beta = - A_x/2$ and using the eigenvector spanning the
+center subspace, we can guess the initial condition to be
+<script type="math/tex">% <![CDATA[
+\begin{aligned}
+\bar{\mathbf{x}}(0) =& \bar{\mathbf{x}}_{\rm 0,g} = (x_{0,g}, y_{0,g}, p_{x_{0,g}}, p_{y_{0,g}})^T \\
+= & (x_{\rm eq},y_{\rm eq},0,0)^T + 2Re(\beta u_{i \omega}) = 
+(x_{\rm eq} - A_x, y_{\rm eq}, 0, 0)^T\end{aligned} %]]></script></p>
+
+<p><em>Differential correction of the initial condition </em> In this <em>iterative
+correction</em> procedure, we introduce small change in the guess for the
+initial condition such that coordinates at the final and initial time of
+the periodic orbit <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\left\| \bar{\mathbf{x}}_{\rm po}(T) - 
+\bar{\mathbf{x}}_{\rm po}(0) \right\| < \epsilon\end{aligned} %]]></script> for some
+tolerance $\epsilon « 1$. In this approach, we hold $x-$coordinate
+constant, while applying correction to the initial guess of the
+$y-$coordinate, use $p_x-$coordinate for terminating event-based
+integration, and $p_y-$coordinate to test convergence of the periodic
+orbit. It is to be noted that a specific combination of the phase space
+coordinates is only suitable for potential, and in general will require
+some permutation of the coordinates to achieve a stable algorithm.</p>
+
+<p>Let us denote the flow map of a differential equation
+$\mathring{\mathbf{x}} = \mathbf{f}(\mathbf{x})$ with an initial
+condition $\mathbf{x}(t_0) = \mathbf{x}<em>0$ by $\phi(t;\mathbf{x}_0)$.
+Thus, the displacement of the final state under a perturbation
+$\delta t$ becomes <script type="math/tex">\begin{aligned}
+\delta \bar{\mathbf{x}}(t + \delta t) = \phi(t + \delta 
+t;\bar{\mathbf{x}}_0 + \delta \bar{\mathbf{x}}_0) - 
+\phi(t ;\bar{\mathbf{x}}_0)\end{aligned}</script> with respect to the reference
+orbit $\bar{\mathbf{x}}(t)$. Thus, measuring the displacement at
+$t_1 + \delta t_1$ and expanding into Taylor series gives
+<script type="math/tex">\begin{aligned}
+\delta \bar{\mathbf{x}}(t_1 + \delta t_1) = 
+\frac{\partial \phi(t_1;\bar{\mathbf{x}}_0)}{\partial 
+    \mathbf{x}_0}\delta \bar{\mathbf{x}}_0 + \frac{\partial 
+    \phi(t_1;\bar{\mathbf{x}}_0)}{\partial t_1}\delta t_1 + 
+h.o.t\end{aligned}</script> where the first term on the right hand side is the
+state transition matrix, $\boldsymbol{\Phi}(t_1,t_0)$, when $\delta 
+t_1 = 0$. Thus, it can be obtained as numerical solution to the
+variational equations as discussed in [@Parker1989]. Let us suppose we
+want to reach the desired point $\mathbf{x}</em>{\rm d}$, we have
+<script type="math/tex">\begin{aligned}
+\bar{\mathbf{x}}(t_1) = \phi(t_1;\bar{\mathbf{x}}_0) 
+= \bar{\mathbf{x}}_1 = \mathbf{x}_d - \delta 
+\bar{\mathbf{x}}_1\end{aligned}</script> which has an error
+$\delta \bar{\mathbf{x}}<em>1$ and needs correction. This correction to the
+first order can be obtained from the state transition matrix at $t_1$
+and an iterative procedure of this small correction based on first order
+yields convergence in few steps. For the equilibrium point under
+consideration, we initialize the guess as <script type="math/tex">\begin{aligned}
+\bar{\mathbf{x}}(0) = (x_{0,g}, y_{0,g}, p_{x_{0,g}}, p_{y_{0,g}})^T = (-A_x,0,0,0)^T\end{aligned}</script>
+and using numerical integrator we continue until next $p_x = 0$ event
+crossing with a high specified tolerance (typically $10^{-14}$). So, we
+obtain $\bar{\mathbf{x}}(t_1)$ which for the guess periodic orbit
+denotes the half-period point, $t_1 = T</em>{0,g}/2$ and compute the state
+transition matrix $\boldsymbol{\Phi}(t_1,0)$. This can be used to
+correct the initial value of $y_{0,g}$ to approximate the periodic orbit
+while keeping $x_{0,g}$ constant. Thus, correction to the first order is
+given by <script type="math/tex">\begin{aligned}
+\delta p_{x_1} = \Phi_{32}\delta y_0 + \mathring{p}_{x_1}\delta t_1 + h.o.t \\
+\delta p_{y_1} = \Phi_{42}\delta y_0 + \mathring{p}_{y_1}\delta t_1 + h.o.t\end{aligned}</script>
+where $\Phi_{ij}$ is the $(i,j)^{th}$ entry of
+$\boldsymbol{\Phi}(t_1,0)$ and the acceleration terms come from the
+equations of motion evaluated at the crossing $t = t_1$ when
+$p_{x_1} = \delta p_{x_1} = 0$. Thus, we obtain the first order
+correction $\delta y_0$ as <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\delta y_0 &\approx \left(\Phi_{42} - \Phi_{32}\frac{\mathring{p}_{y_1}}{\mathring{p}_{x_1}} 
+\right)^{-1} \delta p_{y_1} \\
+y_0 &\rightarrow y_0 - \delta y_0\end{aligned} %]]></script> which is iterated until
+$|p_{y_1}| = |\delta p_{y_1}| &lt; \epsilon$ for some tolerance $\epsilon$,
+since we want the final periodic orbit to be of the form
+<script type="math/tex">\begin{aligned}
+\bar{\mathbf{x}}_{t_1} = (x_1,y_1,0,0)^T\end{aligned}</script></p>
+
+<p>This procedure
+yields an accurate initial condition for a periodic orbit of small
+amplitude $A_x « 1$, since our initial guess is based on the linear
+approximation near the equilibrium point. It is also to be noted that
+differential correction assumes the guess periodic orbit has a small
+error (for example in this system, of the order of $10^{-2}$) and can be
+corrected using first order form of the correction terms. If, however,
+larger steps in correction are applied this can lead to unstable
+convergence as the half-orbit overshoots between successive steps. Even
+though there are other algorithms for detecting unstable periodic
+orbits, differential correction is easy to implement and shows reliable
+convergence for generating a dense family of periodic orbits (UPOs)
+associated with the rank-1 saddle at arbitrary high excess energy (as
+long as UPOs don’t bifurcate). These unstable perioidic orbit at high
+excess energy are required for constructing codimension$-1$ invariant
+manifolds.</p>
+
+<p><em>Numerical continuation to periodic orbit at arbitrary energy </em> The
+above procedure yields an accurate initial condition for a unstable
+periodic orbit from a single initial guess. If our initial guess came
+from the linear approximation near the equilibrium point, from
+Eqn. <a href="#eqn:linearSol">[eqn:linearSol]</a>{reference-type=”eqref”
+reference=”eqn:linearSol”}, it has been observed in the numerics that we
+can only use the differential correction procedure for small amplitude
+($\sim 10^{-4}$) periodic orbit around $\mathbf{x}_{e}$. This small
+amplitude corresponds to small excess energy, typically $\sim 10^{-2}$,
+and to find an unstable periodic orbit of arbitrarily large amplitude,
+we resort to the procedure of <em>numerical continuation</em> to generate a
+family which reaches the appropriate energy $E$. Numerical continuation
+uses the two small amplitude periodic orbits obtained from the
+differential correction procedure and proceeds as follows.</p>
+
+<p>Suppose we find two small nearby periodic orbit initial conditions,
+$\bar{\mathbf{x}}<em>0^{(1)}$ and $\bar{\mathbf{x}}_0^{(2)}$, correct to
+within the tolerance $d$, using the differential correction procedure
+described above. We can then generate a family of periodic orbits with
+successively increasing amplitudes associated with the rank-1 saddle
+$\bar{\mathbf{x}}</em>{\rm e}$ in the following way. Let <script type="math/tex">\begin{aligned}
+\Delta = \bar{\mathbf{x}}_0^{(2)} - \bar{\mathbf{x}}_0^{(1)} = [\Delta x_0, \Delta y_0, 0, 0]^T     \end{aligned}</script>
+A linear extrapolation to an initial guess of slightly larger amplitude,
+$\bar{\mathbf{x}}<em>0^{(3)}$ is given by <script type="math/tex">% <![CDATA[
+\begin{aligned}
+\bar{\mathbf{x}}_{0,g}^{(3)} =&~\bar{\mathbf{x}}_0^{(2)} + \Delta \\
+=& \left[(\mathbf{x}_0^{(2)} + \Delta x_0), (y_0^{(2)} + \Delta y_0), 0, 0  
+\right] ^T \\
+=& \left[x_0^{(3)}, y_0^{(3)}, 0, 0  \right] ^T\end{aligned} %]]></script> Now, we
+can use differential correction to refine the guess initial condition
+$\bar{\mathbf{x}}</em>{\rm 0,g}^{(3)}$ until a specified tolerance is
+satisfied. Then, we repeat using $\bar{\mathbf{x}}<em>0^{(3)}$ and
+$\bar{\mathbf{x}}_0^{(2)}$ to obtain the next
+$\bar{\mathbf{x}}_0^{(4)}$, so on and so forth until we have a family of
+solutions. We can keep track of the energy of each periodic orbit and
+when we have two solutions, $\bar{\mathbf{x}}_0^{\rm (k)}$ and
+$\bar{\mathbf{x}}_0^{\rm (k+1)}$, whose energy bisects the desired
+target energy, $E</em>{\rm target}$, we halt the numerical continuation of
+the family. Next, we resort to combining bisection and differential
+correction to the last two periodic orbits until we converge to the
+unstable periodic orbit at $E_{\rm target}$ to within a specified
+tolerance. Thus, the result is a periodic orbit at $E_{\rm target}$ and
+of some period $T_{\rm po}$ with an initial condition
+$\mathbf{\bar{x}}_0$.</p>
+
+<p><strong>Step 3: Computation of invariant manifolds.</strong> First, we find the local
+approximation to the unstable and stable manifolds of the periodic orbit
+from the eigenvectors of the monodromy matrix. Next, the local linear
+approximation of the unstable (or stable) manifold in the form of a
+state vector is integrated in the nonlinear equations of motion to
+produce the approximation of the unstable (or stable) manifolds. This
+procedure is known as <em>globalization of the manifolds</em> and we proceed as
+follows</p>
+
+<p>First, the state transition matrix $\Phi(t)$ along the periodic orbit
+with initial condition $\mathbf{\bar{x}}<em>0$ can be obtained numerically
+by integrating the variational equations along with the equations of
+motion from $t = 0$ to $t = T$. This is known as the monodromy matrix
+$M = \Phi(T)$ and the eigenvalues can be computed numerically. The
+theory for Hamiltonian systems (see Ref. [@Meyer2009] for details) tells
+us that the four eigenvalues of $M$ are of the form <script type="math/tex">\begin{aligned}
+\lambda_1 > 1, \qquad \lambda_2 = \frac{1}{\lambda_1}, \qquad \lambda_3 = 
+\lambda_4 = 1\end{aligned}</script> The eigenvector associated with eigenvalue
+$\lambda_1$ is in the unstable direction, the eigenvector associated
+with eigenvalue $\lambda_2$ is in the stable direction. Let
+$e^{s}(\mathbf{\bar{x}}_0)$ denote the normalized (to 1) stable
+eigenvector, and $e^{u}(\mathbf{\bar{x}}_0)$ denote the normalized
+unstable eigenvector. We can compute the stable manifold and unstable
+manifold at $\mathbf{\bar{x}}_0$ by initializing along the eigenvectors
+<script type="math/tex">X^{s/u}(\mathbf{\bar{x}}_0) = \mathbf{\bar{x}}_0 + \epsilon e^{s/u}(\mathbf{\bar{x}}_0).</script>
+Here the small displacement from $\mathbf{\bar{x}}_0$ is denoted by
+$\epsilon$ and its magnitude should be small enough to be within the
+validity of the linear estimate, yet not so small that the time of
+flight becomes too large due to asymptotic nature of the stable and
+unstable manifolds. Ref. [@Koon2011] suggests typical values of
+$\epsilon &gt; 0$ corresponding to nondimensional position displacements of
+magnitude around $10^{-6}$. By numerically integrating the unstable
+vector forwards in time, using both $\epsilon$ and $-\epsilon$, for the
+two branches emanating from the NHIM, respectively, we generate
+trajectories shadowing the two branches, $W^u</em>{+}$ and $W^u_{-}$, of the
+unstable manifold of the NHIM. Similarly, by integrating the stable
+vector backwards in time, using both $\epsilon$ and $-\epsilon$, for
+forward and backward branch respectively, we generate trajectories
+shadowing the stable manifold, $W^{s}_{+,-}$. For the manifold at
+$X(t)$, one can simply use the state transition matrix to transport the
+eigenvectors from $X_0$ to $X(t)$: 
+$X^{s/u}(X(t)) = \Phi(t,0)X^{s/u}(\mathbf{\bar{x}}_0)$ It is to be
+noted that since the state transition matrix does not preserve the norm
+and so the resulting vector must be normalized. The globalized invariant
+manifolds associated with rank-1 saddles are known as Conley-McGehee
+tubes and these spherical cylinders form the impenetrable barriers and
+phase space conduits for transition between potential
+wells [@Marsden2006; @wiggins_2001].</p>
+
+<p><strong>Step 4: Reactive islands and committor probabilities</strong> In
+Ref. [@patra_2015], the authors discussed the role of reactive islands
+(RI) in sampling a rare trajectory and the sensitivity of the committor
+probability to the geometry of the RI structure.</p>
+
+<h2 id="implications-for-reaction-dynamics">Implications for Reaction Dynamics</h2>
+
+<h3 id="direct-numerical-computation-of-reactive-islands">Direct numerical computation of reactive islands</h3>
+
+<p><img src="/content/act2/deLeon_Berne/figures/manifolds-fig3B2-2D.png" alt="" />{width=”45%”}\ <img src="/content/act2/deLeon_Berne/figures/manifolds-fig3B2-3D.png" alt="image" />{width=”45%”}</p>
+
+<p>Fig. 2. <strong>Tube manifolds</strong> for the coupled system $\zeta = 1.00$ and $\lambda = 1.50$</p>
+
+<h3 id="connecting-hierarchy-of-reactive-islands-with-committor-probabilities-lagrangian-descriptor">Connecting hierarchy of reactive islands with committor probabilities: Lagrangian descriptor</h3>
+
+<p>Finding reactive islands in 2 degrees-of-freedom molecular Hamiltonian
+has been shown using Lagrangian
+descriptors [@patra_detecting_2018; @naik2019bfinding].</p>
+
+<p>First, we will use the following 2D isonergetic slice to compute
+Lagrangian descriptor contour map so that the reactive islands can be
+identified.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+U_{xp_x}^- &= \left\{(x,y,p_x,p_y) \; | \; y = y_w, \; p_y(x,y,p_x;E) < 0 \right\} 
+\label{eqn:sos_Uxpx_4d} \end{aligned} %]]></script>
+
+<p>for 4 cases of coupling and range parameters, $\zeta$ and $\lambda$.
+However, we will choose the system parameters:
+$\zeta = 1.00, \, \lambda = 1.50$ and $\zeta = 2.30, \, \lambda = 1.95$
+as representative of regular and chaotic dynamics of the isomerization
+in the gas phase.</p>
+
+<p><img src="/content/act2/deLeon_Berne/figures/fig3A2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png" alt="" />{width=”25%”}\ 
+<img src="/content/act2/deLeon_Berne/figures/fig3B2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png" alt="" />{width=”25%”}\ 
+<img src="/content/act2/deLeon_Berne/figures/fig3C2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png" alt="" />{width=”25%”}\
+<img src="/content/act2/deLeon_Berne/figures/fig3A2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png" alt="" />{width=”25%”}\ 
+<img src="/content/act2/deLeon_Berne/figures/fig3B2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png" alt="" />{width=”25%”}\ 
+<img src="/content/act2/deLeon_Berne/figures/fig3C2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png" alt="" />{width=”25%”}\</p>
+
+<p>Fig. 3. <strong>Lagrangian descriptor and reactive islands</strong> for (a,d) $\zeta = 1.00$ and $\lambda = 1.00$, 
+(b,e) $\zeta = 1.00$ and $\lambda = 1.50$, (c,f) $\zeta = 2.30$ and $\lambda = 1.95$. The top row shows the 
+backward LD and the bottom row shows the forward LD. The blue and black curves denote the intersection of 
+stable and unstable manifolds with the surface-of-section, respectively, and integration time $\tau = 30$ 
+and microcanonical ensemble of trajectories are initialized on the surface of section~\eqref{eqn:sos_Uxpx_4d}.</p>
+
+<p>In transition path sampling, the method to check the efficiency of the
+sampling procedure is done by computing the committor probability of
+starting in region A and ending up in region B (A and B are defined in
+the configuration space) for the configuration $\mathbf{q}_j$ denoted by
+the
+$P_B(\mathbf{q}_j, t_c)$ [@bolhuis_transition_2002; @patra_detecting_2018].
+This is defined as the fraction of the trajectories that reach the
+specific product in region B at time $t_c$ before reaching reactant in
+region A. For the unimolecular conformational isomerization, the region
+A and B are defined by the isomers A and B, respectively, while the
+specific reactant and product configuration is defined by the parameter
+$y_w$.</p>
+
+<p><img src="/content/act2/deLeon_Berne/figures/mc_initconds_xpx_xConstant_fig3C2_DelE0-5.png" alt="" />{width=”25%”}</p>
+
+<p><img src="/content/act2/deLeon_Berne/figures/fig3C2/backward_lag_desc_deleonberne_E1-500_x-px_tau30_varLD.png" alt="(b)" />{width=”24%”}\ <img src="/content/act2/deLeon_Berne/figures/commit_prob_fig3C2_500_30finalt_backward.png" alt="" />{width=”24%”}\ <img src="/content/act2/deLeon_Berne/figures/fig3C2/forward_lag_desc_deleonberne_E1-500_x-px_tau30_varLD.png" alt="" />{width=”24%”}\ <img src="/content/act2/deLeon_Berne/figures/commit_prob_fig3C2_500_30finalt.png" alt="" />{width=”24%”}</p>
+
+<p><img src="/content/act2/deLeon_Berne/figures/fig3C2/backward_lag_desc_deleonberne_E1-500_x-px_tau100_varLD.png" alt="" />{width=”24%”}\ <img src="/content/act2/deLeon_Berne/figures/commit_prob_fig3C2_500_100finalt_backward.png" alt="" />{width=”24%”}\ <img src="/content/act2/deLeon_Berne/figures/fig3C2/forward_lag_desc_deleonberne_E1-500_x-px_tau100_varLD.png" alt="" />{width=”24%”}\ <img src="/content/act2/deLeon_Berne/figures/commit_prob_fig3C2_500_100finalt.png" alt="" />{width=”24%”}</p>
+
+<p>Fig. 4. <strong>Committor probabilities and reactive islands</strong> for the 2 DoF isomerization. (a) Reactive islands 
+obtained using direct computation of the cylindrical manifolds. (b-e) $\tau = 30$: color maps denote variable 
+integration time LDs and the line plots denote the committor probabilities. (f-i) $\tau = 100$: color maps 
+denote variable integration time LDs and the line plots denote the committor probabilities.  Coupling 
+strength, $\zeta = 2.30$, and Morse range, $\lambda = 1.95$.</p>
+
+<h3 id="probability-of-imminent-reaction">Probability of imminent reaction</h3>
+
+<p>The area enclosed by the stable or unstable manifolds of the unstable
+periodic orbit associated with the index-1 saddle is used to calculate
+the reacting population of trajectories at a constant total energy $E$.
+This population will be referred to as the microcanonical reaction
+probability.</p>
+
+<p>For a systematic detection of the trajectories that lead to reaction by
+crossing the unstable periodic orbit in the bottleneck, we enforce the
+sign of momentum of these trajectories. So a positive
+$\dot{y} = p_y &lt; 0$ on the surface-of-section $y = y_w$ denotes crossing
+the</p>
+
+<p>The fraction of trajectories that cross the section at $y = y_w$ in
+forward and backward time are unstable periodic orbit located in the
+bottleneck</p>
+
+<p>\centering
+<img src="reaction-prob-stable-intersect-sosatyw-smallDeltaE-4cases.pdf" alt="**Reaction probabilities** for imminent conformational change from the
+isomer A to isomer B and for the parameter values in
+Fig. [[fig:pecontours_db]](#fig:pecontours_db){reference-type=&quot;ref&quot;
+reference=&quot;fig:pecontours_db&quot;}." title="fig:" />{width=”49%”}
+<img src="reaction-prob-stable-intersect-sosatyw-largeDeltaE-4cases.pdf" alt="**Reaction probabilities** for imminent conformational change from the
+isomer A to isomer B and for the parameter values in
+Fig. [[fig:pecontours_db]](#fig:pecontours_db){reference-type=&quot;ref&quot;
+reference=&quot;fig:pecontours_db&quot;}." title="fig:" />{width=”49%”}</p>
+
+<h1 id="additional-slices-of-lagrangian-descriptor">Additional slices of Lagrangian descriptor</h1>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+U_{xp_x}^+ &= \left\{(x,y,p_x,p_y) \; | \; y = 1/\sqrt{2}, \; p_y(x,y,p_x;e) < 0 \right\} 
+\label{eqn:sos_Uxpx} \end{aligned} %]]></script>
+
+<p>\centering
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/backward_lag_desc_deleonberne_E3-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/backward_lag_desc_deleonberne_E4-500_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/backward_lag_desc_deleonberne_E6-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/forward_lag_desc_deleonberne_E3-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/forward_lag_desc_deleonberne_E4-500_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3A2/forward_lag_desc_deleonberne_E6-000_x-px_tau30.png}}
+\centering
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3B2/backward_lag_desc_deleonberne_E3-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3B2/backward_lag_desc_deleonberne_E4-500_x-px_tau30.png}}
+\</p>
+
+<p>\centering
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E1-510_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E3-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E4-500_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E7-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E1-510_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E3-000_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E4-500_x-px_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E7-000_x-px_tau30.png}}
+Observation: within the $\tau = 20$ time interval unstable manifold for
+the second case has not fully intersected the surface-of-section.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+U_{yp_y}^- &= \left\{(x,y,p_x,p_y) \; | \; x = 0, \; p_x(x,y,p_y;E) < 0 \right\} 
+\label{eqn:sos_Uypy_4d} \end{aligned} %]]></script>
+
+<p>\centering
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E1-500_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E3-000_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E4-500_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/backward_lag_desc_deleonberne_E6-000_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E1-500_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E3-000_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E4-500_y-py_tau30.png}}
+\subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3C2/forward_lag_desc_deleonberne_E6-000_y-py_tau30.png}}</p>
+
+<p>\begingroup
+\bibliographystyle{rsc}
+\endgroup</p>
+
+            </div>
+            <div class="c-textbook__footer" id="textbook_footer">
+              
+<nav class="c-page__nav">
+  
+
+  
+</nav>
+
+              <footer>
+  <p class="footer">This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a></p>
+</footer>
+
+            </div>
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
