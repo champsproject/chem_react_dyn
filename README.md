@@ -24,7 +24,7 @@ Guidelines on how to contribute to this package can be found  [here](https://git
 
 ## Reporting bugs and issues
 
-Issues should either be reported using the issue page or brought to the attention using the Gitter chatroom. 
+Issues should either be reported using the issue page or brought to the attention of the authors using the Gitter chatroom. When raising an issue, keep the explanation concise and address one specific bug (please initiate separate issues for multiple unrelated bugs). To assist us with the debugging, please consider using a screenshot or the steps to reproduce the bug.
 
 ## Copyright and License
 
