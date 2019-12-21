@@ -33,5 +33,3 @@ Copyright 2019 Makrina Agaoglou, Broncio Aguilar-Sanjuan, Victor Jose García-Ga
 All content is under Creative Commons Attribution [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.txt) and all the python scripts are under [BSD-3 clause](https://github.com/champsproject/chem_react_dyn/blob/docs/docs/LICENSE).
 
 
-
-
