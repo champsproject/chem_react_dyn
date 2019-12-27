@@ -26,7 +26,7 @@
   title: Prologue
 - url: /prologue/LDs/LDs_victor
   title: Lagrangian Descriptors 
-- url: /fundamental_models/fundamental_models
+- url: /fundamental_models/fundamental_models-jekyll
   title: Fundamental Models
 - url: /act1/Morse/Morse
   title: Morse Oscillator
@@ -61,3 +61,4 @@
   title: GitHub repository
   external: true
   not_numbered: true
+
