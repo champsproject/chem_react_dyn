@@ -12,7 +12,7 @@ prev_page:
 next_page:
   url: /act1/act1.html
 suffix: .ipynb
-search: q p h frac right fig left omega lambda equation surface energy begin end dot dimensional align partial space phase mathcal dof saddle eqref qp u nhim reaction label sqrt ds t hamiltonian given nonumber index system quad trajectories stable unstable dynamics eqn ldsqhdofqp size em manifolds mbox points cap potential point figures png id figcaption style text centerfont pxbfig bem figcaptionhr isoenergetic dividing intersection underbrace hameq corresponding origin coordinates quadratic dfrac lbrace rbrace m vert plot coordinate eqnarray lines backward form s w lagrangian sign dofsaddle b equations total img width height src structures fixed constant forward reactive big
+search: q p h frac left right fig omega lambda equation energy surface begin end dimensional dot partial align space mathcal phase dof saddle u eqref qp nhim label reaction sqrt given ds t hamiltonian index stable unstable manifolds system quad trajectories dynamics eqnarray nonumber ldsqhdofqp size em mbox points cap m vert potential point figures png id figcaption style text centerfont pxbfig bem figcaptionhr isoenergetic dividing intersection s w underbrace hameq lines corresponding origin coordinates quadratic dfrac lbrace rbrace plot coordinate fixed backward form lagrangian sign dofsaddle b equations total img width height src structures constant forward reactive big parametrized
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -366,8 +366,8 @@ As in the previous examples, $H_1$ corresponds to the ''reactive mode''  (trajec
 \label{2DoFES}
 \end{equation}<p>The intersection of $q_1=0$ with this energy surface is given by:</p>
 \begin{equation}
-\frac{\lambda}{2} \, p_1^2  + \frac{\omega_2}{2} \left(p_2^2 + q_2^2 \right) + \frac{\omega_3}{2} \left(p_3^2 + q_3^2 \right)= H_1 + H_2 + H_3= H &gt; 0, \quad H_1 &gt; 0, \, H_2, \, H_3 \ge 0.
-\label{2DoDS}
+\frac{\lambda}{2} p_1^2  + \frac{\omega_2}{2} \left(p_2^2 + q_2^2 \right) + \frac{\omega_3}{2} \left(p_3^2 + q_3^2 \right)= H_1 + H_2 + H_3 = H &gt; 0, \quad H_1 &gt; 0, \, H_2, H_3 \ge 0. 
+\label{2DoFDS}
 \end{equation}<p>This is the isoenergetic DS. It has the form of a 3-sphere in the four dimensional $(q_1, p_1, q_2, p_2, q_3, p_3)$ space. It has two ''halves'' corresponding to the forward and backward reactions, respectively:</p>
 \begin{equation}
 p_1 = + \sqrt{\frac{2}{\lambda}} \sqrt{H_1 + H_2 + H_3  - \frac{\omega}{2} \left(p_2^2 + q_2^2 \right) - \frac{\omega}{2} \left(p_3^2 + q_3^2 \right) }, \quad \mbox{forward DS},
@@ -378,6 +378,13 @@ p_1 = - \sqrt{\frac{2}{\lambda}} \sqrt{H_1 + H_2 + H_3  - \frac{\omega}{2} \left
  \frac{\omega_2}{2} \left(p_2^2 + q_2^2 \right) + \frac{\omega_3}{2} \left(p_3^2 + q_3^2 \right)= H_2 + H_3 \ge  0,   \mbox{NHIM},
  \label{NHIM3D}
 \end{equation}<p>which is a normally hyperbolic invariant 3 sphere. It is {\em invariant} because on this set $q_1 = p_1 =0$ and, from \eqref{hameq3}, if $q_1 = p_1 =0$ the $\dot{q}_1 = \dot{p}_1 =0$. Hence, $q_1$ and $p_1$ always remain zero, and therefore   trajectories with these initial conditions always remain on \eqref{NHIM3D}. In other words, it is invariant. It is normally hyperbolic for the same reasons as for our 2 DoF example. The directions normal to \eqref{NHIM3D}, i.e. $q_1-p_1$, are linearized saddle like dynamics.</p>
+<p>The stable and unstable manifolds of the NHIM are given by:</p>
+\begin{eqnarray}
+\mathcal{W}^u\left( \mathcal{M}(h) \right) &amp; = &amp; \left \{ (q_1, p_1, q_2, p_2, q_3, p_3) \, \vert \, q_1=p_1, \, \frac{\omega_2}{2} \left(p_2^2 + q_2^2 \right) + \frac{\omega_3}{2} \left(p_3^2 + q_3^2 \right) 
+= H_2 + H_3 &gt; 0 \right \}, \label{quad_ham3dof_umani} \\
+\mathcal{W}^s\left( \mathcal{M}(h) \right) &amp; = &amp; \left \{ (q_1, p_1, q_2, p_2, q_3, p_3) \, \vert q_1= -p_1, \, \frac{\omega_2}{2} \left(p_2^2 + q_2^2 \right) + \frac{\omega_3}{2} \left(p_3^2 + q_3^2 \right) 
+= H_2 + H_3 &gt; 0  \right \}, \label{quad_ham3dof_smani} 
+\end{eqnarray}<p>and they are four dimensional on a fixed five dimensional energy surface. The topology of the manifolds is the product of a line ($q_1 = p_1$ or $q_1 = -p_1$) with a 3 sphere ($\frac{\omega_2}{2} \left(p_2^2 + q_2^2 \right) + \frac{\omega_3}{2} \left(p_3^2 + q_3^2 \right) = H_2 + H_3 &gt;0$), that is $\mathbb{R} \times \mathbb{S}^3$ and sometimes such geometry is referred to as <em>spherical cylinders</em>. Since the lines $q_1 = p_1$ and $q_1 = -p_1$ correspond to the contour $H_1 = 0$, in the six dimensional phase space, these manifolds have energy $H = H_1 + H_2 + H_3 = 0 + H_2  + H_3 &gt; 0$.</p>
 
 </div>
 </div>
@@ -404,35 +411,43 @@ p_1 = - \sqrt{\frac{2}{\lambda}} \sqrt{H_1 + H_2 + H_3  - \frac{\omega}{2} \left
 On the constant energy surface, $H(q_1, p_1, q_2, p_2, q_3, p_3) = h$, we compute Lagrangian descriptor on a two-dimensional surface parametrized by $(q_1, p_1)$ coordinates by defining </li>
 </ul>
 \begin{align}
-U_{q_1p_1}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; | \; \right. &amp; \left. \kern - \nulldelimiterspace q_2 = 0,  p_2 = 0, q_3 = 0, \dot{q}_3 &gt; 0 : \right. \nonumber \\
-&amp; \left. \kern - \nulldelimiterspace p_3(q_1, p_1, q_2, p_2, q_3; h) &gt; 0 \right\}
+U_{q_1p_1}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; | \; q_2 = 0,  p_2 = 0, q_3 = 0, \dot{q}_3 &gt; 0 : p_3(q_1, p_1, q_2, p_2, q_3; h) &gt; 0 \right\}
 \end{align}<p>where</p>
 \begin{align}
 p_3(q_1, p_1, q_2 = 0, p_2 = 0, q_3 = 0; h) = \sqrt{\frac{2}{\omega_3}\left( h - \frac{\lambda}{2}\left( p_1^2 - q_1^2 \right) \right)} 
-\end{align}<p>The intersection of the two-dimensional surface $U_{q_1p_1}^+$ with the NHIM \eqref{eqn:sep_quad_ham3dof_nhim} becomes</p>
+\end{align}<p>The intersection of the two-dimensional surface $U_{q_1p_1}^+$ with the NHIM \eqref{NHIM3D} becomes</p>
 \begin{align}
 \mathcal{M}(h) \cap U_{q_1p_1}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = 0, p_1 = 0, q_2 = 0,  p_2 = 0, q_3 = 0, \dot{q}_3 &gt; 0 : p_3(q_1, p_1, q_2, p_2, q_3; h) &gt; 0 \right\}.
 \end{align}<p>Thus, the NHIM is located at the origin $(0,0)$ and marked by a red cross in the LD plot (Fig. <a href="#fig:LD_SQH_3dof_q1p1">fig:6</a>).</p>
-<p>Next, the intersection of the two-dimensional surface with the unstable \eqref{eqn:quad_ham3dof_umani} and stable manifolds \eqref{eqn:quad_ham3dof_smani} is given by</p>
-\begin{align}
-\mathcal{W}^u(\mathcal{M}(h)) \cap U_{q_1p_1}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = p_1, q_2 = 0, p_2 = 0, q_3 = 0, \dot{q_3} &gt; 0 : \right. p_3(q_1, p_1, q_2, p_2, q_3; h) &gt; 0 \right\}, \\
-\mathcal{W}^s(\mathcal{M}(h)) \cap U_{q_1p_1}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = -p_1, q_2 = 0, p_2 = 0, q_3 = 0,\dot{q_3} &gt; 0 : \right. p_3(q_1, p_1, q_2, p_2, q_3;h) &gt; 0 \right\},
-\end{align}<p>which are one-dimensional for a fixed energy, and represent lines passing through the origin shown as dashed red (unstable) and white (stable) lines, respectively, in Fig. <a href="#fig:LD_SQH_3dof_q1p1">fig:6</a>. The only points of local minima in the LD plot (Fig. <a href="#fig:LD_SQH_3dof_q1p1">fig:6</a>) also lie along the lines passing through the origin and correspond to the manifolds of the NHIM.</p>
+<p>Next, the intersection of the two-dimensional surface with the unstable \eqref{quad_ham3dof_umani} and stable manifolds \eqref{quad_ham3dof_smani} is given by</p>
+\begin{eqnarray}
+\mathcal{W}^u(\mathcal{M}(h)) \cap U_{q_1p_1}^+ &amp; = &amp; \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = p_1, q_2 = 0, p_2 = 0, q_3 = 0, \dot{q_3} &gt; 0 : p_3(q_1, p_1, q_2, p_2, q_3; h) &gt; 0 \right\}, \\
+\mathcal{W}^s(\mathcal{M}(h)) \cap U_{q_1p_1}^+ &amp; = &amp; \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = -p_1, q_2 = 0, p_2 = 0, q_3 = 0,\dot{q_3} &gt; 0 : p_3(q_1, p_1, q_2, p_2, q_3;h) &gt; 0 \right\},
+\end{eqnarray}<p>which are one-dimensional for a fixed energy, and represent lines passing through the origin shown as dashed red (unstable) and white (stable) lines, respectively, in Fig. <a href="#fig:LD_SQH_3dof_q1p1">fig:6</a>. The only points of local minima in the LD plot (Fig. <a href="#fig:LD_SQH_3dof_q1p1">fig:6</a>) also lie along the lines passing through the origin and correspond to the manifolds of the NHIM.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><strong>Isoenergetic two-dimensional surface parametrized by $(q_2, p_2)$</strong> 
 On the constant energy surface, $H(q_1, p_1, q_2, p_2, q_3, p_3) = h$, we compute Lagrangian descriptor on a two-dimensional surface parametrized by $(q_2, p_2)$ coordinates by defining </li>
 </ul>
 \begin{align}
-U_{q_2p_2}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; | \; \right. &amp; \left. \kern - \nulldelimiterspace q_1 = 0, q_3 = 0, p_3 = 0, \dot{q}_1 &gt; 0 : \right. \nonumber \\
-&amp; \left. \kern - \nulldelimiterspace p_1(q_1, q_2, p_2, q_3, p_3; h) &gt; 0 \right\}
+U_{q_2p_2}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; | \; q_1 = 0, q_3 = 0, p_3 = 0, \dot{q}_1 &gt; 0 : p_1(q_1, q_2, p_2, q_3, p_3; h) &gt; 0 \right\}
 \end{align}<p>where</p>
 \begin{align}
 p_1(q_1 = 0, q_2, p_2, q_3 = 0, p_3 = 0; h) = \sqrt{\frac{2}{\lambda}\left( h - \frac{\omega_2}{2}\left( p_2^2 + q_2^2 \right) \right)} 
-\end{align}<p>The intersection of the two-dimensional surface $U_{q_2p_2}^+$ with the NHIM \eqref{eqn:sep_quad_ham3dof_nhim} becomes</p>
+\end{align}<p>The intersection of the two-dimensional surface $U_{q_2p_2}^+$ with the NHIM \eqref{NHIM3D} becomes</p>
 \begin{align}
 \mathcal{M}(h) \cap U_{q_2p_2}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = 0, p_1 = 0, p_3 = 0, q_3 = 0, \dot{q}_3 &gt; 0 : \frac{\omega_2}{2}\left( p_2^2 + q_2^2  \right) = h \right\}.
 \end{align}<p>Thus, the NHIM is the circle of radius $\sqrt{2h/\omega_2}$ and marked by a dashed line in the LD plot (Fig. <a href="#fig:LD_SQH_3dof_q2p2">fig:7</a>).</p>
-<p>Next, the intersection of the two-dimensional surface with the unstable \eqref{eqn:quad_ham3dof_umani} and stable manifolds \eqref{eqn:quad_ham3dof_smani} is given by</p>
+<p>Next, the intersection of the two-dimensional surface with the unstable \eqref{quad_ham3dof_umani} and stable manifolds \eqref{quad_ham3dof_smani} is given by</p>
 \begin{align}
 \mathcal{W}^u(\mathcal{M}(h)) \cap U_{q_2p_2}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = p_1, q_1 = 0, q_3 = 0, p_3 = 0, \dot{q_3} &gt; 0 : \frac{\omega_2}{2}\left( p_2^2 + q_2^2  \right) = h \right\}, \\
 \mathcal{W}^s(\mathcal{M}(h)) \cap U_{q_2p_2}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = -p_1, q_1 = 0, q_3 = 0, p_3 = 0,\dot{q_3} &gt; 0 : \frac{\omega_2}{2}\left( p_2^2 + q_2^2  \right) = h \right\},
@@ -491,16 +506,15 @@ p_1(q_1 = 0, q_2, p_2, q_3 = 0, p_3 = 0; h) = \sqrt{\frac{2}{\lambda}\left( h - 
 </ul>
 <p>On the constant energy surface, $H(q_1, p_1, q_2, p_2, q_3, p_3) = h$, we compute Lagrangian descriptor on a two-dimensional surface parametrized by $(q_3, p_3)$ coordinates by defining</p>
 \begin{align}
-U_{q_3p_3}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; | \; \right. &amp; \left. \kern - \nulldelimiterspace p_1 = 0, q_2 = 0, p_2 = 0, \dot{p_1} &gt; 0 : \right. \nonumber \\
-&amp; \left. \kern - \nulldelimiterspace q_1(p_1, q_2, p_2, q_3, p_3; h) &gt; 0 \right\}
+U_{q_3p_3}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; | \; p_1 = 0, q_2 = 0, p_2 = 0, \dot{p_1} &gt; 0 : q_1(p_1, q_2, p_2, q_3, p_3; h) &gt; 0 \right\}
 \end{align}<p>where</p>
 \begin{align}
 q_1(p_1 = 0, q_2 = 0, p_2 = 0, q_3, p_3; h) = \sqrt{\frac{2}{\lambda}\left( \frac{\omega_3}{2}\left( p_3^2 + q_3^2 \right) - h \right)} 
-\end{align}<p>The intersection of the two-dimensional surface $U_{q_3p_3}^+$ with the NHIM \eqref{eqn:sep_quad_ham3dof_nhim} becomes</p>
+\end{align}<p>The intersection of the two-dimensional surface $U_{q_3p_3}^+$ with the NHIM \eqref{NHIM3D} becomes</p>
 \begin{align}
 \mathcal{M}(h) \cap U_{q_3p_3}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = 0, p_1 = 0, p_2 = 0, q_2 = 0, \dot{p_1} &gt; 0 : \frac{\omega_3}{2}\left( p_3^2 + q_3^2  \right) = h \right\}.
 \end{align}<p>Thus, the NHIM is the circle of radius $\sqrt{2h/\omega_3}$ and marked by a dashed line in the LD plot (Fig.<a href="#fig:LD_SQH_3dof_q3p3">fig:8</a>).</p>
-<p>Next, the intersection of the two-dimensional surface with the unstable \eqref{eqn:quad_ham3dof_umani} and stable manifolds \eqref{eqn:quad_ham3dof_smani} is given by</p>
+<p>Next, the intersection of the two-dimensional surface with the unstable \eqref{quad_ham3dof_umani} and stable manifolds \eqref{quad_ham3dof_smani} is given by</p>
 \begin{align}
 \mathcal{W}^u(\mathcal{M}(h)) \cap U_{q_3p_3}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = p_1, p_1 = 0, q_2 = 0, p_2 = 0, \dot{p_1} &gt; 0 : \frac{\omega_3}{2}\left( p_3^2 + q_3^2  \right) = h \right\}, \\
 \mathcal{W}^s(\mathcal{M}(h)) \cap U_{q_3p_3}^+ = \left\{ (q_1, p_1, q_2, p_2, q_3, p_3) \; \vert \; q_1 = -p_1, p_1 = 0, q_2 = 0, p_2 = 0,\dot{p_1} &gt; 0 : \frac{\omega_3}{2}\left( p_3^2 + q_3^2  \right) = h \right\},
