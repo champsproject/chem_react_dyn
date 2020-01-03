@@ -1,15 +1,15 @@
 ---
 redirect_from:
-  - "/act3/system-bath2/system-bath"
+  - "/act3/system-bath2/system-bath-jekyll-bib"
 title: |-
   N-DoF System-Bath Model 2
 pagenum: 26
 prev_page:
-  url: /act3/barbanis_3dof/barbanis_3dof.html
+  url: /act3/barbanis_3dof/barbanis_3dof-jekyll-bib.html
 next_page:
-  url: /act3/system_bath1/main.html
+  url: /act3/system_bath1/main-jekyll-bib.html
 suffix: .md
-search: x frac j bath nb eqn y reference c omega cdots system space partial omegaj phase label type p quad reaction model omegac xj reactive begin aligned trajectories modes end width dynamics ldots subfigure includegraphics textwidth figures slicedbackwardlagdescsystembathe pxtaunb png dimensional energy given right where sum h yj left eta xi freedom coupled surface coupling omegai isomerization using ds equilibrium high eqref text rm ns omegae solvent v hamiltonian degrees log ref cv tau coordinates systems points nhim dof pi e reactions mathcal chemical configuration gives density hameqsysbath overline well dividing db py dot q pmatrix hspace arraycolsep m thus
+search: x frac j bath nb eqn y reference c omega cdots system file systembathldreactdyn cite space partial omegaj phase label type p quad reaction model omegac xj reactive begin aligned trajectories modes end width dynamics ldots subfigure includegraphics textwidth figures slicedbackwardlagdescsystembathe pxtaunb png dimensional energy given right where sum h yj left eta xi freedom coupled surface coupling omegai isomerization using ds equilibrium high eqref text rm ns omegae solvent v hamiltonian degrees log ref cv tau coordinates systems points nhim dof pi e reactions mathcal chemical configuration gives density hameqsysbath overline well dividing db py dot q pmatrix hspace
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
@@ -25,25 +25,25 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <p>Isomerization is one of the most prevalent reaction when studying
 atmospheric, medical, and industrial chemistry [^1], and thus have
 garnered interest from both theoretical and applied
-chemistry [@wieder_dissociation_1962; @mciver_structure_1972; @dugave_cistrans_2003; @donohoe_ruthenium-catalyzed_2009].
+chemistry {% cite wieder_dissociation_1962 mciver_structure_1972 dugave_cistrans_2003 donohoe_ruthenium-catalyzed_2009 --file systembathldreactdyn %}.
 From an applied perspective, the influence of various solvents on the
 rate constant of conformational isomerization has been pursued for
 specific
-molecules [@price_solvent_1961; @halicioglu_solvent_1969; @flom_dynamic_1986; @eberhardt_solvent_1992; @duffy_solvent_1992].
+molecules {% cite price_solvent_1961 halicioglu_solvent_1969 flom_dynamic_1986 eberhardt_solvent_1992 duffy_solvent_1992 --file systembathldreactdyn %}.
 From a theoretical perspective, as is adopted in this chapter, it is
 instructive to formulate a systematic approach for identifying reactive
 trajectories in the spirit of transition path
-sampling [@bolhuis_transition_2002] and reactive
-islands [@davis_bottlenecks_1985; @davis_phase_1987; @marston_reactive_1989; @de_leon_order_1989].</p>
+sampling {% cite bolhuis_transition_2002 --file systembathldreactdyn %} and reactive
+islands {% cite davis_bottlenecks_1985 davis_phase_1987 marston_reactive_1989 de_leon_order_1989 --file systembathldreactdyn %}.</p>
 <p><strong>Modeling reaction in solvents</strong></p>
 <p>Following the derivation of the Langevin
-equations [@kramers_brownian_1940] and its generalized system dynamics
-in a heat bath [@zwanzig_nonlinear_1973], the Kramers turnover of
+equations {% cite kramers_brownian_1940 --file systembathldreactdyn %} and its generalized system dynamics
+in a heat bath {% cite zwanzig_nonlinear_1973 --file systembathldreactdyn %}, the Kramers turnover of
 reaction rates (escape rates from a potential well) with increasing
 viscosity of the solvent (intensity of noise) has been used to obtain
 reaction rate expressions in gas and condensed phase reactions by Grote,
 Hynes, Pollak, Grabert,
-Hänggi [@pollak_theory_1989; @pollak_transition-state_1995]. The
+Hänggi {% cite pollak_theory_1989 pollak_transition-state_1995 --file systembathldreactdyn %}. The
 generalized Langevin equation of motion for a particle trapped in a
 one-dimensional well with a barrier height $\mathcal{V}^{\ddagger}$ and
 coupled to a medium such as gas or liquid is modeled by a bath with a
@@ -62,7 +62,7 @@ modes can be coupled to represent the reaction in a condensed phase. In
 this work, we will adopt the two degrees of freedom isomerization model
 of De Leon and Berne who have studied the chemical reaction dynamics
 extensively using a dynamical systems
-perspective [@de_leon_intramolecular_1981; @de_leon_order_1989; @de_leon_1991; @de_leon_1991-1; @de_leon_1992].
+perspective {% cite de_leon_intramolecular_1981 de_leon_order_1989 de_leon_1991 de_leon_1991-1 de_leon_1992 --file systembathldreactdyn %}.
 This model of isomerization describes the conformational change by the
 motion of an internal angle where the isomers are represented by the
 well in a double potential well separated by a barrier. The two degrees
@@ -75,24 +75,24 @@ imparted by molecular collisions or photoexcitation.</p>
 <p>Traditionally, the construction of a dividing surface (DS) was focused
 on critical points of the potential energy surface (PES), that is, in
 the configuration space describing the molecular
-system [@Komatsuzaki97; @Komatsuzaki00]. Critical points on the PES do
+system {% cite Komatsuzaki97 Komatsuzaki00 --file systembathldreactdyn %}. Critical points on the PES do
 have significance in phase space; they are the equilibrium points for
 zero momentum. But they continue to have influence for nonzero momentum
 for a range of energies above the energy of the equilibrium point. The
 construction of a DS separating the phase space into two parts,
 reactants and products, has been a focus from the dynamical systems
 point of view in recent
-years [@wiggins_impenetrable_2001; @uzer_geometry_2002; @waalkens2004direct].
+years {% cite wiggins_impenetrable_2001 uzer_geometry_2002 waalkens2004direct --file systembathldreactdyn %}.
 In phase space, that is for nonzero momentum, the role of the <em>saddle
 point</em> is played by an <em>invariant manifold</em> of saddle stability type,
 the normally hyperbolic invariant manifold
-(NHIM) [@wiggins_geometry_1990; @wiggins2013normally]. In order to fully
+(NHIM) {% cite wiggins_geometry_1990 wiggins2013normally --file systembathldreactdyn %}. In order to fully
 appreciate the NHIM and its role in reaction rate theory, it is useful
 to begin with a precursor concept the <em>periodic orbit dividing surface</em>
 or PODS. For systems with two DoF described by a natural Hamiltonian,
 kinetic plus potential energy, the problem of constructing the DS in
 phase space was solved during the 1970s by McLafferty, Pechukas and
-Pollak [@Pechukas73; @Pechukas77; @Pollak78; @Pechukas79]. They
+Pollak {% cite Pechukas73 Pechukas77 Pollak78 Pechukas79 --file systembathldreactdyn %}. They
 demonstrated that the DS at a specific energy is related to an invariant
 phase space structure, an unstable periodic orbit (UPO) which defines
 (it is the boundary of) the bottleneck in phase space through which the
@@ -105,55 +105,55 @@ sphere for which the UPO is the equator. Generalisation of this
 construction of DS to high dimensional systems has been a central
 question in reaction dynamics and has only received a satisfactory
 answer in recent years
-[@wiggins_impenetrable_2001; @uzer_geometry_2002; @waalkens2004direct].
+{% cite wiggins_impenetrable_2001 uzer_geometry_2002 waalkens2004direct --file systembathldreactdyn %}.
 The key difficulty being the high dimensional analogue of the UPO used
 in the two DoF system for the construction of the DS and which is
 resolved by considering the NHIM, which has the appropriate
 dimensionality for anchoring the dividing surface in high dimensional
-phase space [@wiggins_geometry_1990]. Normal hyperbolicity of these
+phase space {% cite wiggins_geometry_1990 --file systembathldreactdyn %}. Normal hyperbolicity of these
 invariant manifolds means that their stability, in a precise sense, is
 of saddle type in the transverse direction, which implies that they
 possess stable and unstable invariant manifolds that are impenetrable
 barriers and mediate reactive trajectories in phase space. These
 invariant manifolds of the NHIM are structurally stable, that is, stable
-under perturbation [@wiggins2013normally]. For two DoF systems, the NHIM
+under perturbation {% cite wiggins2013normally --file systembathldreactdyn %}. For two DoF systems, the NHIM
 is an unstable PO, and for an $N &gt; 2$ DoF system at a fixed energy, the
 NHIM has the topology of a $(2N-3)$-dimensional sphere and is the
 equator of a $(2N-2)$-dimensional sphere which is the DS. This DS can
 then be used to divide the $(2N-1)$-dimensional energy surface into two
 parts, reactants and
-products [@Gillilan91; @Komatsuzaki96; @Komatsuzaki97; @Komatsuzaki00; @Komatsuzaki02a].
+products {% cite Gillilan91 Komatsuzaki96 Komatsuzaki97 Komatsuzaki00 Komatsuzaki02a --file systembathldreactdyn %}.
 An elementary description of the role of the NHIM in reaction dynamics
-is given in [@wiggins_role_2016] along with description of their
+is given in {% cite wiggins_role_2016 --file systembathldreactdyn %} along with description of their
 geometry using quadratic normal form Hamiltonians. Fundamental theorems
 assure the existence of the phase space structures  NHIM and its
 invariant manifolds for a range of energies above that of the saddle
-[@wiggins2013normally]. However, the precise extent of this range, as
+{% cite wiggins2013normally --file systembathldreactdyn %}. However, the precise extent of this range, as
 well as the nature and consequences of any bifurcations of the phase
 space structures that might occur as energy is increased, is not known
 and is a topic of continuing
-research[@Li_bifurcation_2009; @Inarrea_bifurcations_2011; @Allahem_chaotic_2012; @mauguiere_bifurcations_2013; @mackay_bifurcations_2014; @MacKay_morse_2015].</p>
+research{% cite Li_bifurcation_2009 Inarrea_bifurcations_2011 Allahem_chaotic_2012 mauguiere_bifurcations_2013 mackay_bifurcations_2014 MacKay_morse_2015 --file systembathldreactdyn %}.</p>
 <p>Thus, calculation of reaction rate (or flux) based on the geometry of
 phase space structures requires identifying trajectories that start in
 the <em>reactant</em> well, cross the dividing surface constructed from the
 NHIM, and reach the <em>product</em> well. This dividing surface has been shown
 to be the appropriate (locally no-recrossing) surface that reactive
 trajectories must cross since the calculated reaction rates do not need
-correction due to recrossings [@waalkens2004direct]. This construction
+correction due to recrossings {% cite waalkens2004direct --file systembathldreactdyn %}. This construction
 is in contrast to the "standard" transition-state-theory (TST) for
 constructing the dividing surface which is only exact in gas phase
 unimolecular reactions and when ergodicity of trajectories in the phase
-space holds [@pollak_transition-state_1995]. As is now established, the
+space holds {% cite pollak_transition-state_1995 --file systembathldreactdyn %}. As is now established, the
 no recrossing (locally) property of a dividing surface is a contribution
 of the phase space perspective of chemical
-reactions [@uzer_geometry_2002]. While the standard TST relies on
+reactions {% cite uzer_geometry_2002 --file systembathldreactdyn %}. While the standard TST relies on
 recrossing free surface for calculating reaction flux, a dividing
 surface constructed in the configuration space violates this condition
 in the case of solvent, and the TST based reaction rate is not exact.
 This violation of the recrossing property when DS is constructed in the
 configuration space of a reaction in a high viscosity solvent also
 follows from the Kramers' diffusion model, Langevin equation, of
-chemical reactions [@pollak_transition-state_1995]. Thus, finding the
+chemical reactions {% cite pollak_transition-state_1995 --file systembathldreactdyn %}. Thus, finding the
 reactive trajectories, and the changes in the DS and NHIM due to a
 solvent presents a worthwhile step towards development of the role of
 phase space structures in reaction dynamics.</p>
@@ -163,12 +163,12 @@ intermolecular bonds. As a natural step in studying unimolecular
 reaction dynamics in solvents, we adopt a model where the reaction
 coordinates (modeled as a system Hamiltonian) are coupled with a set of
 harmonic bath modes (modeled as a bath
-Hamiltonian) [@berezhkovskii_activated_1992; @hershkovitz_multidimensional_1997; @reese_curvilinear_1998; @craig_chemical_2005].
+Hamiltonian) {% cite berezhkovskii_activated_1992 hershkovitz_multidimensional_1997 reese_curvilinear_1998 craig_chemical_2005 --file systembathldreactdyn %}.
 This is with the intention of parametrizing the effects of a bath (or
 solvent) on the system dynamics. This formulation of coupling harmonic
 bath modes with system dynamics also serves as a preliminary step in
 assessing the capabilities of a trajectory diagnostic called Lagrangian
-descriptors (LDs) [@mancho_2013] in <em>realistic</em> (high dimensional)
+descriptors (LDs) {% cite mancho_2013 --file systembathldreactdyn %} in <em>realistic</em> (high dimensional)
 chemical systems. This system-bath model will also serve as a test bed
 for illustrating the use of LDs in directly computing the chemical
 observables. But before doing that, we would like to identify the
@@ -181,14 +181,14 @@ solvent's viscosity, and the number of bath modes on the reactive
 trajectories. We will answer this using LDs which have been shown
 recently to be of use in detecting phase space structures that mediate
 reactive trajectories in dissipative, time-dependent models of chemical
-reactions [@junginger_uncovering_2016; @junginger_transition_2016], and
+reactions {% cite junginger_uncovering_2016 junginger_transition_2016 --file systembathldreactdyn %}, and
 for transition path sampling in two degrees of freedom models of
-chemical reactions [@patra_detecting_2018]. In this article, we will
+chemical reactions {% cite patra_detecting_2018 --file systembathldreactdyn %}. In this article, we will
 present an approach for sampling reactive trajectories and identifying
 reactive islands in high dimensional phase space of an isomerization
 reaction (system) in a solvent (bath coupled to each of the system
 configuration coordinates) which is following our work on quadratic
-normal form Hamiltonian systems [@naik2019afinding].</p>
+normal form Hamiltonian systems {% cite naik2019afinding --file systembathldreactdyn %}.</p>
 <h3 id="Two-DoF-de-Leon-Berne-system-coupled-with-bath-modes">Two DoF de Leon-Berne system coupled with bath modes<a class="anchor-link" href="#Two-DoF-de-Leon-Berne-system-coupled-with-bath-modes"> </a></h3><p>In this section we describe the system-bath model for a system with two
 degrees-of-freedom (DoF). While system-bath models have received a great
 deal of attention in the chemistry and physics community, models with
@@ -197,7 +197,7 @@ systems having more than 1 DoF have received much less attention.</p>
 Hamiltonian <a href="#eqn:ham_db">[eqn:ham_db]</a>{reference-type="eqref"
 reference="eqn:ham_db"} coupled with harmonic oscillators for a
 system-bath model of the
-form [@berezhkovskii_activated_1992; @hershkovitz_multidimensional_1997; @reese_curvilinear_1998]:</p>
+form {% cite berezhkovskii_activated_1992 hershkovitz_multidimensional_1997 reese_curvilinear_1998 --file systembathldreactdyn %}:</p>
 \begin{align}
 \mathcal{H}(x,y,x_j,y_j,p_x,p_y,p_{x_j},p_{y_j})  =  \underbrace{\frac{p_x^2}{2 m_s} +  \frac{p_y^2}{2 m_s} + V_{DB}(x,y)}_{\text{System Hamiltonian}} + &amp; \underbrace{\sum_{j=1}^{N_B} \frac{1}{2} \left[ \frac{p_{x_j}^2}{m_j} + \left(\omega_j x_j -\frac{c_{x,j} x}{\omega_j} \right)^2 \right]}_{\text{Coupling of the bath to $x$}} \\
 &amp; + \underbrace{\sum_{j=1}^{N_B} \frac{1}{2} \left[ \frac{p_{y_j}^2}{m_j} + \left(\omega_j y_j - \frac{c_{y,j} y}{\omega_j} \right)^2 \right]}_{\text{Coupling of the bath to $y$}} \\
@@ -231,7 +231,7 @@ $$\omega_j = -\omega_c \log \left(\frac{j-\frac{1}{2}}{N_B} \right),
 c_{x,j} = \sqrt{\frac{2 \eta_{x} \omega_{c}}{\pi N_B}} \, \omega_j, \label{coupling_x} \\
 c_{y,j} = \sqrt{\frac{2 \eta_{y} \omega_{c}}{\pi N_B}} \, \omega_j, \quad j = 1, \ldots, N_B. \label{coupling_y}\end{aligned}$$</p>
 <p>In this appendix we describe a scheme for discretizing the continuous
-spectral density which was given in [@craig_chemical_2005]. In the
+spectral density which was given in {% cite craig_chemical_2005 --file systembathldreactdyn %}. In the
 following we will drop the subscripts $z_1$ and $z_2$ on the various
 quantities for the sake of a simpler notation since we will follow the
 same discretization procedure for each spectral density. The subscripts
@@ -266,7 +266,7 @@ an appropriate quadrature. This is the step that we will now carry
 out in detail.</p>
 </li>
 </ol>
-<p>The quadrature recommended in [@craig_chemical_2005] is the midpoint
+<p>The quadrature recommended in {% cite craig_chemical_2005 --file systembathldreactdyn %} is the midpoint
 rule, after changing variables in the integral to $x =
 e^{-\frac{\omega}{\omega_c}}$. The reason that they give for choosing
 this quadrature is that it gives a uniform distribution of grid points
@@ -308,7 +308,7 @@ $$c_i =\sqrt{\frac{2 \eta \omega_c}{\pi n_b}} \, \omega_i, \quad i=1,
 (<a href="#midpoint">[midpoint]</a>{reference-type="ref" reference="midpoint"})
 we see that:</p>
 $$\omega_i = -\omega_c \log \left(\frac{i-\frac{1}{2}}{n_b} \right),
-\quad i=1, \ldots, n_b. \label{disc_freq_2}$$<p>[@craig_chemical_2005] choose $\omega_c = 500 {\rm cm}^{-1}$.</p>
+\quad i=1, \ldots, n_b. \label{disc_freq_2}$$<p>{% cite craig_chemical_2005 --file systembathldreactdyn %} choose $\omega_c = 500 {\rm cm}^{-1}$.</p>
 <p>Thus, these quantities are given by</p>
 \begin{equation}
 \omega_j = -\omega_c \log \left(\frac{j-\frac{1}{2}}{N_B} \right),
@@ -369,7 +369,7 @@ Lagrangian descriptors performs in more realistic chemical systems. This
 also gives a natural way to model the unimolecular conformational
 isomerization in a solvent and allows us to vary the friction of the
 environment from low-density gases to high-density
-liquids [@tucker_reaction_2000].</p>
+liquids {% cite tucker_reaction_2000 --file systembathldreactdyn %}.</p>
 <h3 id="Model-verification">Model verification<a class="anchor-link" href="#Model-verification"> </a></h3><p>\centering
 \subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E1-500_x-px_tau100_NB1.png}}
 \subfigure[]{\includegraphics[width=0.24\textwidth]{./figures/fig3B2_eta1e-1_omega2236e-3_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB1.png}}
@@ -463,10 +463,10 @@ reference="eqn:ham_db"}.</p>
 <h2 id="Implications-for-Reaction-Dynamics">Implications for Reaction Dynamics<a class="anchor-link" href="#Implications-for-Reaction-Dynamics"> </a></h2><h3 id="Detecting-changes-in-reactive-islands-using-Lagrangian-descriptors">Detecting changes in reactive islands using Lagrangian descriptors<a class="anchor-link" href="#Detecting-changes-in-reactive-islands-using-Lagrangian-descriptors"> </a></h3><p>It has been demonstrated that the reactive islands and their
 hierarchical structure can be used to search for new reactive
 trajectories using the so-called shooting
-method [@patra_detecting_2018]. In high dimensional molecular phase
+method {% cite patra_detecting_2018 --file systembathldreactdyn %}. In high dimensional molecular phase
 space, this can be a non-trivial task due to the available phase space
 volume and so has been phrased as "harvesting rare trajectories" and
-computed using transition path sampling methods [@patra_classical_2015].
+computed using transition path sampling methods {% cite patra_classical_2015 --file systembathldreactdyn %}.
 In this section, we would like to investigate if the LD contour maps can
 provide a systematic approach to finding reactive trajectories and hence
 building the high dimensional analogs of reactive islands in a
@@ -503,6 +503,7 @@ reference="eqn:vec_field_db"}.</p>
 \subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-2_omega1e0_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
 \subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e-1_omega1e0_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}
 \subfigure[]{\includegraphics[width=0.32\textwidth]{./figures/fig3C2_eta1e0_omega1e0_tau100/slice1d_backward_lag_desc_systembath_E4-500_x-px_tau100_NB64.png}}</p>
+<h1 id="References">References<a class="anchor-link" href="#References"> </a></h1><p>{% bibliography --file systembathldreactdyn --cited %}</p>
 
 </div>
 </div>

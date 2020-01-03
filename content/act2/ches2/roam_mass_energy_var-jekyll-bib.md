@@ -4,14 +4,14 @@
 
 Following recent developments in the understanding of the roaming
 mechanism in molecular dynamics
-[@Townsend2004; @Bowman2011; @Bowman2014; @Mauguiere2014; @Mauguiere2014b; @Mauguiere2015; @Mauguiere2016; @Bowman2017; @Krajnak2018],
-the results of Heazlewood et al. [@Heazlewood08] on roaming being the
+{% cite Townsend2004 Bowman2011 Bowman2014 Mauguiere2014 Mauguiere2014b Mauguiere2015 Mauguiere2016 Bowman2017 Krajnak2018 --file roam_mass_energy_var %},
+the results of Heazlewood et al. {% cite Heazlewood08 --file roam_mass_energy_var %} on roaming being the
 dominant mechanism for acetaldehyde photodissociation triggered the
 following question: Can some of the standard parameter values in
-Chesnavich's CH$_4^+$ model [@Chesnavich1986] be altered so that it
+Chesnavich's CH$_4^+$ model {% cite Chesnavich1986 --file roam_mass_energy_var %} be altered so that it
 admits roaming as the dominant form of dissociation? It is well known
 that roaming plays a minor role in the dissociation of
-Formaldehyde[@Townsend2004]. Since acetaldehyde dissociates into
+Formaldehyde{% cite Townsend2004 --file roam_mass_energy_var %}. Since acetaldehyde dissociates into
 CH$_4+$CO, one of the obvious differences in the dissociation of
 Formaldehyde into H$_2+$CO is the mass ratio of the products. Therefore
 we investigate the influence of various masses of the free atom on
@@ -23,7 +23,7 @@ short range anisotropy of the CH$_3^+$ molecule and its precise role in
 the potential is discussed in Section
 [2](#sec:potential){reference-type="ref" reference="sec:potential"}.
 
-Chesnavich's CH$_4^+$ model [@Chesnavich1986] is a phenomenological $2$
+Chesnavich's CH$_4^+$ model {% cite Chesnavich1986 --file roam_mass_energy_var %} is a phenomenological $2$
 degree of freedom model introduced that was introduced to study the
 transition from vibrational reactants to rotational products in the
 presence of multiple transition states. We use it to study the first
@@ -39,10 +39,10 @@ degrees of freedom have been developed.
 ### Roaming {#sec:roam}
 
 Roaming was discovered in the study of photodissociation of formaldehyde
-[@Townsend2004] (H$_2$CO) and explained the unusual energy distribution
-between H$_2$ and CO experimentally observed previously [@vanZee1993].
+{% cite Townsend2004 --file roam_mass_energy_var %} (H$_2$CO) and explained the unusual energy distribution
+between H$_2$ and CO experimentally observed previously {% cite vanZee1993 --file roam_mass_energy_var %}.
 Since then roaming was reported in a number of other molecules
-[@Bowman2017]. Initial states of roaming resemble radical dissociation,
+{% cite Bowman2017 --file roam_mass_energy_var %}. Initial states of roaming resemble radical dissociation,
 when a single H atom escapes from HCO by breaking a single covalent bond
 and immediately dissociates. Instead of dissociating, the free hydrogen
 'roams' around a flat monotonic region of the potential near HCO and
@@ -51,25 +51,25 @@ the products of this dissociation are identical to the products of
 molecular dissociation. While molecular dissociation requires the system
 to pass over a potential saddle, no saddle is involved in roaming.
 Consequently the distribution of energy between the products can differ
-significantly. Following a study [@Bowman2011] of H$_2$CO and CH$_3$CHO
+significantly. Following a study {% cite Bowman2011 --file roam_mass_energy_var %} of H$_2$CO and CH$_3$CHO
 it was established that regardless of similarity of products, roaming is
 actually closer to radical dissociation than to molecular dissociation
-and further evidence was published subsequently [@Huston2016].
+and further evidence was published subsequently {% cite Huston2016 --file roam_mass_energy_var %}.
 
 In light of developments following a phase space approach to chemical
-reaction dynamics [@Wigginsetal01; @Uzeretal02; @Waalkens04], we employ
+reaction dynamics {% cite Wigginsetal01 Uzeretal02 Waalkens04 --file roam_mass_energy_var %}, we employ
 the definition of roaming introduced in Ref. . This definition considers
 the number of intersections of a trajectory with a dynamically justified
 dividing surface and thereby accounts for the influence of various phase
 space structures. The dividing surface is constructed using an unstable
 periodic orbit that is not associated with any potential saddle. It was
-shown [@Mauguiere2015] how invariant manifolds of unstable periodic
+shown {% cite Mauguiere2015 --file roam_mass_energy_var %} how invariant manifolds of unstable periodic
 orbits convey trajectories between two potential wells in what is called
 a 'shepherding mechanism'. The exact phase space structure, an
 intersection of invariant manifolds of unstable periodic orbits,
-responsible for roaming was since identified [@Krajnak2018]. The key to
+responsible for roaming was since identified {% cite Krajnak2018 --file roam_mass_energy_var %}. The key to
 understanding roaming follows from the use of toric surfaces of section
-[@MacKay2014; @MacKay2015; @Mauguiere2016] to study invariant manifolds.
+{% cite MacKay2014 MacKay2015 Mauguiere2016 --file roam_mass_energy_var %} to study invariant manifolds.
 
 ## Development of the Problem
 
@@ -96,10 +96,10 @@ Chesnavich's potential $U(r,\theta)$ has the form
 and it is the sum
 of radial long range potential $U_{CH}$ and short range "hindered rotor"
 potential $U_{coup}$, that represents the anisotropy
-[@Chesnavich1986; @Jordan1991] of the rigid molecule CH$_3^+$. We use
+{% cite Chesnavich1986 Jordan1991 --file roam_mass_energy_var %} of the rigid molecule CH$_3^+$. We use
 the standard definition of $U_{CH}$ and $U_{coup}$ and standard
-parameter values as suggested by Chesnavich [@Chesnavich1986] and used
-in recent publications [@Mauguiere2014; @Mauguiere2014b; @Krajnak2018],
+parameter values as suggested by Chesnavich {% cite Chesnavich1986 --file roam_mass_energy_var %} and used
+in recent publications {% cite Mauguiere2014 Mauguiere2014b Krajnak2018 --file roam_mass_energy_var %},
 namely 
 
 \begin{equation}
@@ -118,8 +118,8 @@ and $c_2=1.61$, and
 where $U_e=55$ kcal/mol. The parameter $a$ (in Å$^{-2}$) influences the
 value of $r$ at which the transition from vibration to rotation occurs,
 for example $a=1$ represents a late transition
-[@Mauguiere2014b; @Mauguiere2014; @Krajnak2018] and $a=4$ an early
-transition [@Mauguiere2014b]. In this chapter we shall explore all values
+{% cite Mauguiere2014b Mauguiere2014 Krajnak2018 --file roam_mass_energy_var %} and $a=4$ an early
+transition {% cite Mauguiere2014b --file roam_mass_energy_var %}. In this chapter we shall explore all values
 of $a$ that may be relevant to roaming.
 
 The total energy $H(r,\theta,p_r, p_\theta)=E$ is given in kcal/mol with
@@ -266,7 +266,7 @@ as described above.
 ## Revealing the Phase Space Structures {#sec:phase transport}
 
 There are three important families of periodic orbits
-[@Mauguiere2014; @Mauguiere2014b; @Krajnak2018] in Chesnavich's CH$_4^+$
+{% cite Mauguiere2014 Mauguiere2014b Krajnak2018 --file roam_mass_energy_var %} in Chesnavich's CH$_4^+$
 model. By family of periodic orbits we mean a continuum of periodic
 orbits parametrised by energy, so that each family contains two orbits
 related by (reflectional) symmetry for a given $E$. We will refer to
@@ -315,12 +315,12 @@ are also
 indicated.[]{label="fig:poconfig"} ](figures/figure3d.jpg "fig:"){#fig:poconfig
 width="50%"}
 
-The family of outer periodic orbits $\Gamma^o$ is proven [@Krajnak2018]
+The family of outer periodic orbits $\Gamma^o$ is proven {% cite Krajnak2018 --file roam_mass_energy_var %}
 to exist due to a centrifugal barrier for a class of systems including
 the one considered here. It was also shown that the orbits in this
 family are unstable. States of the system beyond the outer orbits
 correspond to dissociated states CH$_3^++$H. Orbits of this family are
-therefore the outer boundary of the roaming region [@Mauguiere2014]. We
+therefore the outer boundary of the roaming region {% cite Mauguiere2014 --file roam_mass_energy_var %}. We
 prefer to use the more general term interaction region as the phase
 space structures responsible for roaming and isomerisation among
 trajectories that leave the well, also arbitrate whether incoming
@@ -337,7 +337,7 @@ Inside the interaction region lies the family of middle orbits, which
 are crucial in the definition of roaming. These orbits are unstable for
 small positive energies ($E<2.72$ for $a=1$ and $m=m_H$) and stable
 after a period doubling bifurcation involving a family denoted sometimes
-by FR$12$ [@Mauguiere2014; @Mauguiere2014b] or $\Gamma^b$ [@Krajnak2018]
+by FR$12$ {% cite Mauguiere2014 Mauguiere2014b --file roam_mass_energy_var %} or $\Gamma^b$ [@Krajnak2018]
 that is of no further importance. The exact energy of the period
 doubling bifurcation varies with $m$ and $a$, but for $m=m_H$ and $a=1$
 is at approximately $E=2.72$. The family is also subject to bifurcations
@@ -352,8 +352,8 @@ $H_m(r,\theta,p_r, p_\theta)=E$, such that $(r,\theta)$ is a point on
 the configuration space projection of $\Gamma^a$.
 
 It is known that a spherical dividing surface may in the neighbourhood
-of an index-1 saddle bifurcate into a torus [@MacKay2014; @MacKay2015]
-and it was recognised [@Mauguiere2016] that dividing surfaces
+of an index-1 saddle bifurcate into a torus {% cite MacKay2014 MacKay2015 --file roam_mass_energy_var %}
+and it was recognised {% cite Mauguiere2016 --file roam_mass_energy_var %} that dividing surfaces
 constructed using periodic orbits that rotate such as DS$^a$, as opposed
 to vibrate, are tori. In addition, if $\Gamma^a$ is unstable, then
 DS$^a$ does not admit local recrossings.
@@ -374,7 +374,7 @@ dissociating. If a trajectory crosses DS$^a$ an even number of times and
 enters either one of the potential wells, it is an isomerisation
 trajectory.
 
-Roaming can be reformulated as a transport problem [@Krajnak2018] in the
+Roaming can be reformulated as a transport problem {% cite Krajnak2018 --file roam_mass_energy_var %} in the
 following manner. Let DS$^i$ and DS$^o$ be defined using $\Gamma^i$ and
 $\Gamma^o$ analogously to DS$^a$. It is well known that a dividing
 surface associated with a periodic orbit that reaches two
@@ -434,9 +434,9 @@ well and cross the inward annulus of DS$^a$ before dissociating are
 roaming trajectories.
 
 The role of phase space structures in reaction dynamics has been
-explained on many occasions [@Wigginsetal01; @Uzeretal02; @Waalkens04].
+explained on many occasions {% cite Wigginsetal01 Uzeretal02 Waalkens04 --file roam_mass_energy_var %}.
 Dividing surfaces as defined above can be shown to be the surfaces of
-minimal flux [@Waalkens04] and therefore sit in the narrowest part of
+minimal flux {% cite Waalkens04 --file roam_mass_energy_var %} and therefore sit in the narrowest part of
 the bottleneck, be it a sphere such as DS$^i$ or a torus such as DS$^a$
 and DS$^o$. Structures that convey trajectories across such a bottleneck
 were identified to be stable and unstable invariant manifolds of the
@@ -547,7 +547,7 @@ of the wells, these correspond to isomerisation.
 If $\gamma^{u+}_{i}$ and $\gamma^{s-}_{o}$ do not intersect, that is,
 all of $W_{\Gamma^i}^{u+}$ is contained in $W_{\Gamma^o}^{s-}$, roaming
 is not present in the system for the given parameter values. For this
-reason the system does not admit [@Krajnak2018] roaming for $E\geq2.5$,
+reason the system does not admit {% cite Krajnak2018 --file roam_mass_energy_var %} roaming for $E\geq2.5$,
 $m=m_H$ and $a=1$.
 
 While it is true that $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ contains
@@ -869,7 +869,7 @@ back into the interaction region.
 
 
 The parameter $a$ influences the strength of coupling of the degrees of
-freedom via the potential and thereby it influences [@Chesnavich1986]
+freedom via the potential and thereby it influences {% cite Chesnavich1986 --file roam_mass_energy_var %}
 how early (e.g. $a=4$) or late (e.g. $a=1$) the transition from
 vibration to rotation occurs. An investigation of the differences in
 dynamics for $a=1$ and $a=4$ can be found in Ref. . In physical terms,
@@ -1038,7 +1038,7 @@ motion to radial motion to prevent isomerisation.
 
 We conclude that it is not possible to choose realistic values of $m$
 and $a$, such that roaming becomes the dominant form of dissociation
-such as found in acetaldehyde [@Heazlewood08]. Therefore the dominance
+such as found in acetaldehyde {% cite Heazlewood08 --file roam_mass_energy_var %}. Therefore the dominance
 of roaming must be due to other properties of the system than only mass
 of the free atom and strength of potential coupling of the degrees of
 freedom. Our investigation shows that roaming is prone to being
@@ -1048,4 +1048,7 @@ easily accessible by being 'open' in the angular direction to discourage
 nonreactivity, yet are separated by a sufficiently high isomerisation
 barrier.
 
+
+
 # References
+{% bibliography --file roam_mass_energy_var --cited %}

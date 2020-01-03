@@ -62,23 +62,23 @@
   - title: Saddle-Node Hamiltonian
     url: /act2/hamiltonian_sn/HSN_victor-jekyll
   - title: Barbanis Model
-    url: /act2/barbanis2d/barbanis2d
+    url: /act2/barbanis2d/barbanis2d-jekyll-bib
   - title: Caldera Model
     url: /act2/caldera/caldera-1-jekyll
   - title: De Leon Model
-    url: /act2/deLeon_Berne/deleon_berne
+    url: /act2/deLeon_Berne/deleon_berne-jekyll-bib
   - title: System Bath 1
-    url: /act2/system_bath1/system_bath1
+    url: /act2/system_bath1/system_bath1-jekyll-bib
   - title: Four-well Potential
     url: /act2/four_well_morse/four_well_morse-jekyll
   - title: Double-Morse Oscillator
     url: /act2/double_morse/prueba
   - title: Chesnavich Model Part 1
-    url: /act2/ches1/roam
+    url: /act2/ches1/roam-jekyll-bib
   - title: Chesnavich Model Part 2
-    url: /act2/ches2/roam_mass_energy_var
+    url: /act2/ches2/roam_mass_energy_var-jekyll-bib
   - title: Chesnavich Model Part 3
-    url: /act2/ches3/roamiso
+    url: /act2/ches3/roamiso-jekyll-bib
 
 - title: Act 3
   url: /act3/act3
@@ -86,11 +86,11 @@
   expand_sections: true
   sections:
   - title: Three-DoF Barbanis system
-    url: /act3/barbanis_3dof/barbanis_3dof
+    url: /act3/barbanis_3dof/barbanis_3dof-jekyll-bib
   - title: N-DoF System-Bath Model 2
-    url: /act3/system_bath2/system_bath
+    url: /act3/system_bath2/system_bath-jekyll-bib
   - title: N-DoF System-Bath Model 1
-    url: /act3/system_bath1/main
+    url: /act3/system_bath1/main-jekyll-bib
   
 - title: GitHub repository
   url: https://github.com/champsproject/chem_react_dyn

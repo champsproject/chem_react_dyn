@@ -11,11 +11,11 @@ existing bonds and form new ones. Quantitative results on dissociation
 rates (or reaction rates in general) can be obtained via transition
 state theory. Alternatively an individual atom, called free radical, can
 escape from a molecule without forming new bonds and thus without
-passing over a potential barrier [@Bowman2014]. This is sometimes
+passing over a potential barrier {% cite Bowman2014 --file refs %}. This is sometimes
 referred to as dissociation via the radical channel. Dissociation via
 both channels is well understood.
 
-Recently, however, van Zee et al. [@vanZee1993] reported having
+Recently, however, van Zee et al. {% cite vanZee1993 --file refs %} reported having
 experimentally observed dissociation of formaldehyde (H$_2$CO) with CO
 in low rotational levels at an energy where dissociation through the
 molecular channel should have rather resulted in high rotational states
@@ -23,7 +23,7 @@ of CO. The two proposed explanations for this behaviour are that either
 at least one of the vibrational modes of the transition state is quite
 anharmonic or there have to be two distinct molecular channels.
 
-Townsend et al. [@Townsend2004] discovered in their study of
+Townsend et al. {% cite Townsend2004 --file refs %} discovered in their study of
 formaldehyde (H$_2$CO) a new form of dissociation that appears not to be
 associated with the molecular or the radical channel. In the process, an
 H atom separates from the molecule following the radical channel, but
@@ -36,9 +36,9 @@ roaming.
 
 The discovery of roaming stimulated extensive studies of formaldehyde
 photodissociation and roaming has since been accepted as the cause for
-the phenomenon observed by van Zee et al. [@vanZee1993].
+the phenomenon observed by van Zee et al. {% cite vanZee1993 --file refs %}.
 
-Bowman and Shelper [@Bowman2011] have studied the dynamics of H$_2$CO
+Bowman and Shelper {% cite Bowman2011 --file refs %} have studied the dynamics of H$_2$CO
 and CH$_3$CHO to find evidence that roaming is more connected to the
 radical rather than the molecular channel. At the same time, roaming was
 observed at energies below the radical threshold.
@@ -46,13 +46,13 @@ observed at energies below the radical threshold.
 In recent years dynamical systems theory has made an impact in chemistry
 by providing the means to understand the classical phase space
 structures that underlie reaction type dynamics
-[@Wigginsetal01; @Uzeretal02; @Waalkens04]. This concerns the phase
+{% cite Wigginsetal01 Uzeretal02 Waalkens04 --file refs %}. This concerns the phase
 space geometry that governs transport across a saddle equilibrium point
 referred to as the molecular channel above. These ideas make precise the
 notion of a *transition state* which forms the basis of computing
 reaction rates from *Transition State Theory* which can be considered to
 be the most important approach to compute reaction rates in chemistry
-[@Wigner37].
+{% cite Wigner37 --file refs %}.
 
 It is shown that surfaces of constant energy contain for energies above
 the saddle an invariant manifold with the topology of a sphere. This
@@ -81,30 +81,30 @@ the stable and unstable manifolds separate the reactive trajectories
 from the non-reactive ones. The geometry of the stable and unstable
 manifolds and their location and intersections in the reactants and
 products regions carry the full information about the transition process
-including, e.g., state specific reactivity [@EzraWaalkensWiggins2009].
+including, e.g., state specific reactivity {% cite EzraWaalkensWiggins2009 --file refs %}.
 In the case of two degrees of freedom the NHIM is the Lyapunov periodic
 orbit associated with the saddle equilibrium point and the approach
 reduces the *periodic orbit dividing surface* (PODS) introduced earlier
 by Pechukas and Pollak and others
-[@PechukasMcLafferty73; @PechukasPollak78].
+{% cite PechukasMcLafferty73 PechukasPollak78 --file refs %}.
 
 Explaining the roaming phenomenon poses a new challenge to dynamical
 systems theory. The first attempts to use methods from dynamical systems
 theory related to ones underlying transition state theory to explain
-roaming can be found in the work of Mauguière et al. [@Mauguiere2014] in
+roaming can be found in the work of Mauguière et al. {% cite Mauguiere2014 --file refs %} in
 which they identified the region of the classical phase space where
 roaming occurs with the aid of numerous invariant phase space structures
-for Chesnavich's CH$_4^+$ dissociation model [@Chesnavich1986]. They
+for Chesnavich's CH$_4^+$ dissociation model {% cite Chesnavich1986 --file refs %}. They
 also introduced a classification of trajectories present in the system
 and matched them with the experimentally observed behaviour. The
 definition of roaming was formulated using the number of turning points
 in the radial direction in the roaming region. In light of a gap time
-analysis of Mauguière et al. in [@Mauguiere2014b], the definition was
+analysis of Mauguière et al. in {% cite Mauguiere2014b --file refs %}, the definition was
 refined by means of the number of crossings of a dividing surface
 constructed in the roaming region. This refined definition is the best
 dynamical description of roaming to date.
 
-In [@Mauguiere2015], Mauguière et al. studied the model of formaldehyde
+In {% cite Mauguiere2015 --file refs %}, Mauguière et al. studied the model of formaldehyde
 to find unstable periodic orbits in the roaming region. The homoclinic
 tangle of one such orbit was shown to be responsible for transport
 between two potential wells in a process that is closely linked to
@@ -113,16 +113,16 @@ periodic orbits associated with a saddle equilibrium points and the
 situation is hence different from the usual setting of transition state
 theory built on a potential saddle. Yet a recrossing free dividing
 surface can be constructed from such a periodic orbit. Such dividing
-surfaces may be other than spherical. It was shown in [@MacKay2014] and
-[@MacKay2015] that a spherical dividing surface near an index-$1$
-critical point may bifurcate into a torus. In [@Mauguiere2013] a toric
+surfaces may be other than spherical. It was shown in {% cite MacKay2014 --file refs %} and
+{% cite MacKay2015 --file refs %} that a spherical dividing surface near an index-$1$
+critical point may bifurcate into a torus. In {% cite Mauguiere2013 --file refs %} a toric
 dividing surface was constructed near an index-$2$ critical point.
 
-The authors of [@Mauguiere2016] found that the local geometry of the
+The authors of {% cite Mauguiere2016 --file refs %} found that the local geometry of the
 energy surface in an O$_3$ model may be toric and constructed a toric
 dividing surface using two unstable periodic orbits.
 
-Even more recently, Huston et al. [@Huston2016] report that they have
+Even more recently, Huston et al. {% cite Huston2016 --file refs %} report that they have
 found a correlation between the distribution of internal energies of CO
 and H$_2$ with the molecular channel and roaming. Particularly at lower
 energies, roaming trajectories have significantly more energy in H$_2$.
@@ -138,7 +138,7 @@ there is a clear need for a deeper understanding of the mechanisms
 behind dissociations.
 
 In this work we present a detailed study of dissociation in the CH$_4^+$
-model by [@Chesnavich1986]. We discuss all types of dynamics present in this model and explain their connection to the underlying phase space
+model by {% cite Chesnavich1986 --file refs %}. We discuss all types of dynamics present in this model and explain their connection to the underlying phase space
 geometry and invariant structures. We construct various surfaces of
 section and from the dynamics on these surfaces we deduce the role of
 invariant manifolds in slow dissociation and ultimately show a certain
@@ -152,12 +152,12 @@ Secondly, we study the role of the local energy surface geometry in
 interactions of multiple transition states.
 
 In the study we employ surfaces of section, all of which satisfy the
-Birkhoff condition [@Birkhoff27] of being bounded by invariant
+Birkhoff condition {% cite Birkhoff27 --file refs %} of being bounded by invariant
 manifolds. Using the surfaces of section we can observe dynamical
 behaviour such as roaming, but to understand the role of the local
 energy surface geometry and its implications to roaming, we generalise
 the Conley-McGehee representation
-[@Conley1968; @McGehee1969; @MacKay1990] and study the dynamics on the
+{% cite Conley1968 McGehee1969 MacKay1990 --file refs %} and study the dynamics on the
 energy surface in full $3$ dimensions.
 
 The chapter is organized as follows. In
@@ -180,9 +180,9 @@ reference="sec:conclusions"}
 
 # Development of the Problem: Chesnavich's CH$_4^+$ dissociation model{#sec:setup}
 
-Like [@Mauguiere2014] and [@Mauguiere2014b], we use the model for the
+Like {% cite Mauguiere2014 --file refs %} and [@Mauguiere2014b], we use the model for the
 $\text{CH}_4^+ \rightarrow \text{CH}_3^+ + \text{H}$ dissociation
-introduced by Chesnavich [@Chesnavich1986]. The system is a
+introduced by Chesnavich {% cite Chesnavich1986 --file refs %}. The system is a
 $2$-degree-of-freedom "phenomenological model" that is intended for the
 study of multiple transition states. In this model, only one H atom is
 free and the CH$_3^+$ molecule is considered to be a rigid complex.
@@ -218,18 +218,18 @@ $$\begin{aligned}
   \end{aligned}$$ 
   
 where $U(r,\theta)$ is the potential energy from
-[@Chesnavich1986] that we will discuss later in Section
+{% cite Chesnavich1986 --file refs %} that we will discuss later in Section
 [\[subsec:ch4potential\]](#subsec:ch4potential){reference-type="ref"
 reference="subsec:ch4potential"}. In the last expression the term
 $\frac{\lambda}{m r^2} p_\theta$ gives rise to a Coriolis force in the
 equations of motion.
 
-As explained by [@Bowman2014], systems exhibiting roaming have a
+As explained by {% cite Bowman2014 --file refs %}, systems exhibiting roaming have a
 potential well for a small radius, representing the stable molecule, and
 with increasing distance between the dissociated components converges
 monotonously to a certain base energy, which we can assume to be $0$.
 This is unlike the traditional bimolecular reactions that involve flux
-over a potential saddle. As shown in [@Mauguiere2016], under certain
+over a potential saddle. As shown in {% cite Mauguiere2016 --file refs %}, under certain
 conditions the potential $U$ admits two unstable periodic orbits that
 are not associated with any potential which, however, form the
 transition state to dissociation. We will find these orbits and use them
@@ -286,13 +286,13 @@ In the full system, the relative equilibrium is manifested as the
 unstable periodic orbits $r=r_{p_\theta}$, $p_r=0$ and $p^\pm_\theta$
 such that $(p^+_\theta - \lambda )^2=(p^-_\theta - \lambda )^2$.
 Following general results on the persistence of normally hyperbolic
-invariant manifolds [@Fenichel71], these periodic orbit persist if the
+invariant manifolds {% cite Fenichel71 --file refs %}, these periodic orbit persist if the
 rotational symmetry is broken, provided the perturbation is not too big.
 Note that according to our assumptions these periodic orbits are not
 associated with a local maximum of $U$.
 
 The condition $U\in o(r^{-2})$ as $r\rightarrow\infty$ is reminiscent of
-the assumption made by the authors of [@Chesnavich1980]. However, they
+the assumption made by the authors of {% cite Chesnavich1980 --file refs %}. However, they
 consider a growth restriction near the origin, namely that for all
 $\theta$
 
@@ -303,14 +303,14 @@ one maximum for each $\theta$. We do not impose restrictions on $U$ near $r=0$ a
 
 ### Potential energy {#subsec:ch4potential}
 
-The potential as suggested by Chesnavich [@Chesnavich1986] is the sum
+The potential as suggested by Chesnavich {% cite Chesnavich1986 --file refs %} is the sum
 
 $$U(r,\theta ) = U_{CH} (r) + U_{*} (r,\theta),$$
 
 where $U_{CH}$ is a
 radial long range potential and $U_{*}$ a short range "hindered rotor"
 potential that represents the anisotropy of the rigid molecule CH$_3^+$
-([@Jordan1991], [@Chesnavich1980]).
+({% cite Jordan1991 --file refs %}, [@Chesnavich1980]).
 
 The long range potential is defined by
 
@@ -391,7 +391,7 @@ corresponds to the
 reflection about the $y$ axis.
 
 
-We follow [@Mauguiere2014] and set $a = 1$ for a slow transition from
+We follow {% cite Mauguiere2014 --file refs %} and set $a = 1$ for a slow transition from
 vibration to rotation. In what follows we also assume $\lambda=0$,
 unless stated otherwise. This section introduces features of the
 potential relevant to finding periodic orbits, defining dividing
@@ -447,7 +447,7 @@ reference="fig:potentialcontour1"}.
 
 For a given fixed energy $E$, we are interested in the accessible region
 in the configuration space which, following the celestial mechanics
-literature, we refer to as Hill region [@Hill1905], and the geometry of
+literature, we refer to as Hill region {% cite Hill1905 --file refs %}, and the geometry of
 the energy surface. Since the system as defined in Section
 [\[subsec:system\]](#subsec:system){reference-type="ref" reference="subsec:system"} is
 a natural mechanical system $H=T+U$ and the kinetic energy $T$ is always
@@ -515,7 +515,7 @@ interval $E_0<E\leq E_1$ we can only expect vibrating, oscillator like,
 periodic orbits. Of special interest are periodic orbits that project
 onto a line with both ends on an equipotential. In the celestial
 mechanics literature these orbits are referred to as periodic *brake
-orbits* (the name is due to Ruiz [@Ruiz75]).
+orbits* (the name is due to Ruiz {% cite Ruiz75 --file refs %}).
 
 Here we present a list of the important families of periodic orbits
 together with a brief description of their evolution. Configuration
@@ -533,7 +533,7 @@ $E=2$.[]{label="fig:po2"}](figures/po2.png){#fig:po2}
     bifurcations above $E=20$, $\Gamma^i$ consists of hyperbolic brake
     orbits. Around $E=21.47$ the orbits become inverse hyperbolic and at
     $E = 22.27$ they become heteroclinic to $z_2^\pm$ and undergo a
-    Morse bifurcation, similar to those described in [@MacKay2014]. At
+    Morse bifurcation, similar to those described in {% cite MacKay2014 --file refs %}. At
     higher energies, $\Gamma^i$ consists of rotating orbits that undergo
     further bifurcations. The periodic orbits are by some authors
     referred to as inner or tight periodic orbits. We denote the
@@ -630,7 +630,7 @@ rotating periodic orbits it is equal to twice its action.
 Figure [\[fig:bifurcationR\]](#fig:bifurcationR){reference-type="ref"
 reference="fig:bifurcationR"} shows the evolution of the Greene residue
 of orbits in the families. The Greene residue, due to J. M. Greene
-[@Greene68] is a quantity characterizing the stability of the orbits. It
+{% cite Greene68 --file refs %} is a quantity characterizing the stability of the orbits. It
 is derived from the monodromy matrix, a matrix that describes the
 behaviour of solutions in the neighbourhood of a periodic orbit.
 
@@ -668,7 +668,7 @@ after a full period $T$, i.e. $M\delta=\delta$. A similar argument holds
 for an initial displacement perpendicular to the energy surface
 $\delta\parallel \nabla H$. Consequently, two of the eigenvalues of $M$
 are $\lambda_1=\lambda_2=1$. More details including a reduction of $M$
-can be found in [@Eckhardt91].
+can be found in {% cite Eckhardt91 --file refs %}.
 
 As the variational equation satisfied by $M(t)$ is Hamiltonian, the
 preservation of phase space volume following Liouville's theorem implies
@@ -697,7 +697,7 @@ it is inverse hyperbolic.
 
 In this section we discuss dividing surfaces associated with transition
 states, the backbone of Transition State Theory. Following
-[@MacKay2014; @MacKay2015] we define transition states more formally as
+{% cite MacKay2014 MacKay2015 --file refs %} we define transition states more formally as
 follows.
 
 A transition state for a Hamiltonian system is a closed, invariant,
@@ -715,7 +715,7 @@ In a system with $2$ degrees of freedom, a TS consists of unstable
 periodic orbit. Generally a TS is a codimension-$2$ normally hyperbolic
 invariant manifold, a manifold on the energy surface invariant under the
 Hamiltonian flow, such that instabilities transversal to it dominate the
-instabilities tangential to it ([@Fenichel71], [@Hirsch77]).
+instabilities tangential to it ({% cite Fenichel71 --file refs %}, [@Hirsch77]).
 
 In general, a dividing surface (DS) is a surface that divides the energy
 surface into two disjoint components. By a DS associated with a TS we
@@ -744,13 +744,13 @@ and in the dynamics on DSs under the corresponding return map.
 The geometry of the DSs is due to the form of the kinetic energy and the
 local geometry of the energy surface. It is well known that a DS
 associated to a brake periodic orbit is a sphere and the brake periodic
-orbit is an equator of this sphere, [@Waalkens04]. The equator divides
+orbit is an equator of this sphere, {% cite Waalkens04 --file refs %}. The equator divides
 the sphere into hemispheres, whereby the flux through the two
 hemispheres is equal in size and opposite in direction. Trajectories
 passing this sphere from reactants to products intersect one hemisphere
 and the other hemisphere is crossed on the way from products to
 reactants. The flux through a hemisphere is then by Stokes' theorem
-equal to the action of the periodic orbit [@MacKay1990].
+equal to the action of the periodic orbit {% cite MacKay1990 --file refs %}.
 
 Rotating periodic orbits, on the other hand, such as $\Gamma^o$, give
 rise to a DS that is a torus. The two orbits of the same family with
@@ -758,7 +758,7 @@ opposite orientation are circles on the torus and divide it into two
 annuli with properties identical to the hemispheres. Using Stokes'
 theorem we find that the flux across each annulus is given by the sum of
 the actions of the two orbits, or simply twice the action of a single
-orbit [@MacKay2014].
+orbit {% cite MacKay2014 --file refs %}.
 
 Should it be necessary to distinguish the hemispheres or annuli of a DS
 by the direction of flux, the outward hemisphere or annulus is the one
@@ -1037,9 +1037,9 @@ Canonical coordinates are obtained by defining a new radial variable
 $\rho(r,\theta)=r-\bar{r}(\theta)$ that is constant along $\Gamma^i_+$,
 where the curve $\bar{r}(\theta)$ is the approximation of the
 configuration space projection of $\Gamma^i_+$, similarly to
-[@Jaffe1999]. Due to the symmetry of the system, $\Gamma^i_+$ can be
+{% cite Jaffe1999 --file refs %}. Due to the symmetry of the system, $\Gamma^i_+$ can be
 very well approximated by a quadratic polynomial for every energy. Next
-we use the generating function (type 2 in [@Arnold76])
+we use the generating function (type 2 in {% cite Arnold76 --file refs %})
 
 $$G(r,\theta,p_\rho,p_\sigma)=(r-\bar{r}(\theta))p_\rho+\theta p_\sigma.$$
 
@@ -1204,15 +1204,15 @@ equilibrium. While there is a sufficient amount of observations and
 intuitive understanding of what roaming is, an exact definition has not
 yet been generally adopted.
 
-Mauguière et al. [@Mauguiere2014] proposed a classification of
+Mauguière et al. {% cite Mauguiere2014 --file refs %} proposed a classification of
 trajectories based on the number of turning points of trajectories in
 the interaction region $B_2$. Later the authors refine their definition
-in [@Mauguiere2014b] based on the number of intersections of a
+in {% cite Mauguiere2014b --file refs %} based on the number of intersections of a
 trajectory with the middle DS. Dissociating trajectories need to cross
 the middle DS at least three times before they are classified as
 roaming.
 
-Huston et al. [@Huston2016], on the other hand, set the criteria such
+Huston et al. {% cite Huston2016 --file refs %}, on the other hand, set the criteria such
 that roaming trajectories have to spend a certain amount of time at a
 minimum radius, have low average kinetic energy and have on average a
 certain number of bonds over time.
@@ -1226,7 +1226,7 @@ direct dissociation along the radical and molecular channel. The
 framework, that describes how codimension-$1$ invariant manifolds divide
 the energy surface in two and thereby separate reactive trajectories
 from non-reactive ones, is very well known in reaction dynamics, see
-[@MacKay84], [@OzoriodeAlmeida90], [@Rom-Kedar90], [@Meiss15].
+{% cite MacKay84 --file refs %}, [@OzoriodeAlmeida90], [@Rom-Kedar90], [@Meiss15].
 
 Due to the different local geometries of the energy surface, we need to
 be careful with the invariant manifolds at this point. TSs that are
@@ -1289,7 +1289,7 @@ The intersections of the interiors of $W_{\Gamma^a}^{s+}$ and
 $W_{\Gamma^a}^{u+}$ or $W_{\Gamma^a}^{s-}$ and $W_{\Gamma^a}^{u-}$, on
 the other hand, lead to the recrossing of the middle DS. In case a
 trajectory originating in $B_1^\pm$ dissociates after recrossing of the
-middle DS, by the definition of Mauguière et al. [@Mauguiere2014b] it is
+middle DS, by the definition of Mauguière et al. {% cite Mauguiere2014b --file refs %} it is
 a roaming trajectory. From the above it is clear that roaming
 trajectories are contained in intersection of the interiors of
 $W_{\Gamma^i_\pm}^{u+}$, $W_{\Gamma^a}^{s-}$, $W_{\Gamma^a}^{u+}$,
@@ -1402,7 +1402,7 @@ therefore never return to the middle DS. Therefore points in
 $\gamma^{u+}_{i}\cap\gamma^{s-}_{o}$ do not have an image under the
 return map $P$, in fact the whole of $\gamma^{s-}_{o}$ does not have an
 image. This is in accordance with the results on "reactive islands" by
-[@OzoriodeAlmeida90]. Figures
+{% cite OzoriodeAlmeida90 --file refs %}. Figures
 [\[fig:roam\_init1\]](#fig:roam_init1){reference-type="ref"
 reference="fig:roam_init1"},
 [\[fig:roam\_init2\]](#fig:roam_init2){reference-type="ref"
@@ -1446,12 +1446,12 @@ map $P$ and it is $P\gamma^{u+}_{i}$. Note that the corresponding
 trajectories are guided to and from the middle DS by the invariant
 cylinders $W_{\Gamma^a}^{s-}$, $W_{\Gamma^a}^{u+}$, $W_{\Gamma^a}^{s+}$,
 $W_{\Gamma^a}^{u-}$. We remark that based on the understanding of lobe
-dynamics ([@Rom-Kedar90], trajectories that cross the outward annulus of
+dynamics ({% cite Rom-Kedar90 --file refs %}, trajectories that cross the outward annulus of
 the middle DS and do not reach the outer DS are repelled by
 $\Gamma^o_\pm$ and necessarily pass through the homoclinic tangle of
 $\Gamma^o_\pm$.
 
-By the definition of Mauguière et al. [@Mauguiere2014b], roaming
+By the definition of Mauguière et al. {% cite Mauguiere2014b --file refs %}, roaming
 trajectories cross the middle DS at least three times, which means
 crossing the outward annulus at least twice and the inward annulus at
 least once. Roaming trajectories must therefore contained in
@@ -1465,7 +1465,7 @@ Heteroclinic intersections are therefore necessary.
 
 Arguably, recrossings of the middle DS are inevitable to capture the
 process of intramolecular hydrogen abstraction, as reported by
-[@Bowman2011], where the free H atom has to return back to the
+{% cite Bowman2011 --file refs %}, where the free H atom has to return back to the
 $\text{CH}_3^+$ core.
 
 Isomerisation trajectories are also contained in
@@ -1532,3 +1532,5 @@ $B_2$ at $E=2$.
 
 
 # References
+
+{% bibliography --file refs --cited %}
