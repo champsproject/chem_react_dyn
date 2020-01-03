@@ -86,11 +86,11 @@
   expand_sections: true
   sections:
   - title: Three-DoF Barbanis system
-    url: /act3/barbanis_3dof/barbanis_3dof
+    url: /act3/barbanis_3dof/barbanis_3dof-jekyll-bib
   - title: N-DoF System-Bath Model 2
-    url: /act3/system_bath2/system_bath
+    url: /act3/system_bath2/system_bath-jekyll-bib
   - title: N-DoF System-Bath Model 1
-    url: /act3/system_bath1/main
+    url: /act3/system_bath1/main-jekyll-bib
   
 - title: GitHub repository
   url: https://github.com/champsproject/chem_react_dyn
