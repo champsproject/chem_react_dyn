@@ -366,3 +366,6 @@ used to set up starting guess for other numerical procedures which rely
 on good initial guess or can also be used in conjunction with machine
 learning methods for rendering the smooth pieces of
 NHIM [@bardakcioglu2018; @feldmaier_invariant_2019].
+
+
+# References
