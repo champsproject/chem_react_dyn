@@ -1,6 +1,8 @@
+<!-- #region -->
 # Chesnavich Model
 
-## Introduction{#sec:introch4}
+## Introduction
+<a id="sec:introch4"></a>
 
 For a long time it was believed that dissociation of molecules can only
 happen in two ways. Firstly, the original molecule can dissociate into
@@ -174,7 +176,9 @@ dynamics and in particular roaming are discussed from a global
 perspective in Sec. [\[sec:representation\]](#sec:representation). Conclusions are given in
 Sec. [\[sec:conclusions\]](#sec:conclusions)
 
-# Development of the Problem: Chesnavich's CH$_4^+$ dissociation model{#sec:setup}
+# Development of the Problem: Chesnavich's CH$_4^+$ dissociation model
+<a id="sec:setup"></a>
+
 
 Like [@Mauguiere2014] and [@Mauguiere2014b], we use the model for the
 $\text{CH}_4^+ \rightarrow \text{CH}_3^+ + \text{H}$ dissociation
@@ -269,7 +273,7 @@ $$\begin{gathered}
    \frac{\partial^2 H}{\partial r^2}=\frac{3}{m r^4} (p_\theta - \lambda )^2 + \frac{\mathrm{d^2} U}{\mathrm{d} r^2} = \frac{3}{r} \frac{\mathrm{d} U}{\mathrm{d} r}+ \frac{\mathrm{d^2} U}{\mathrm{d} r^2}
    \\=c\frac{3(2+\epsilon)}{r^{4+\epsilon}}-c\frac{(3+\epsilon)(2+\epsilon)}{r^{4+\epsilon}}=-c\frac{\epsilon(2+\epsilon)}{r^{4+\epsilon}}.
   \end{gathered}$$
-
+<!-- #endregion -->
 
 ![Schematic representation of the dominant long range potential and the
 "centrifugal term" over $r$ (left), and of $r_1$ over $p_\theta$
@@ -295,7 +299,8 @@ $$\left(\frac{\lambda^2}{2 m r^2} + U(r,\theta)\right)\in o(r^{-2}) \quad \text{
 and additionally require $\left(\frac{\lambda^2}{2 m r^2}  + U(r,\theta)\right)$ to have at most
 one maximum for each $\theta$. We do not impose restrictions on $U$ near $r=0$ and admit several maxima.
 
-### Potential energy {#subsec:ch4potential}
+### Potential energy
+<a id="subsec:ch4potential"></a>
 
 The potential as suggested by Chesnavich [@Chesnavich1986] is the sum
 
@@ -326,9 +331,9 @@ does it have any significant implications.
 
 
 ![Left: Graph of $U_{CH}$ versus $r$. Right: Graph of $U_{0}$ with
-$a = 1$ versus $r$.](potentialChesnavichPartVCH.png){width="50%"}
+$a = 1$ versus $r$.](figures/potentialChesnavichPartVCH.png)
  ![Left: Graph of $U_{CH}$ versus $r$. Right: Graph of $U_{0}$ with
-$a = 1$ versus $r$.](potentialChesnavichPartVcoup.png){width="50%"}
+$a = 1$ versus $r$.](figures/potentialChesnavichPartVcoup.png)
 [Left: Graph of $U_{CH}$ versus $r$. Right: Graph of $U_{0}$ with
 $a = 1$ versus $r$.[]{#fig:ChesnavichCH4pR}]
 
@@ -391,7 +396,8 @@ on the energy surface.
 
 ## Revealing Phase Space Structures
 
-### Energy levels and Hill regions {#subsec:hill}
+### Energy levels and Hill regions
+<a id="subsec:hill"></a>
 
 Here we give details about the features of the potential relevant to the
 dynamics of the system. Being the most basic characteristic of the
@@ -464,7 +470,8 @@ to rotation occurs earlier. Although energy levels remain topologically
 equivalent, note the larger potential well and the smaller energy
 interval where the boundary of Hill region consists of three circles.
 
-### Periodic orbits {#subsec:PO}
+### Periodic orbits
+<a id="subsec:PO"></a>
 
 
 Next we study the invariant structures that can be found in the system
@@ -676,7 +683,8 @@ By definition
 $R<0$ if $\Gamma$ is hyperbolic, $0<R<1$ if it is elliptic and $R>1$ if
 it is inverse hyperbolic.
 
-## Implications for Reaction Dynamics {#subsec:DS}
+## Implications for Reaction Dynamics
+<a id="subsec:DS"></a>
 
 In this section we discuss dividing surfaces associated with transition
 states, the backbone of Transition State Theory. Following
@@ -751,7 +759,8 @@ $p_\theta=0$. The inward hemisphere or annulus is then intersected by
 $\theta=0$, $p_r<0$, $p_\theta=0$ and/or $\theta=\pi$, $p_r<0$,
 $p_\theta=0$
 
-### Division of energy surface {#subsec:divide energy surface}
+### Division of energy surface
+<a id="subsec:divide_energy_surface"></a>
 
 
 Using the inner and outer DSs we can define regions on the energy
@@ -809,7 +818,8 @@ is twice the action of $\Gamma^i_+$. We see that for $E\leq.32$, the
 outer DS has the lowest flux, while for higher energies it is the inner
 DS.
 
-### Residence times and rotation numbers {#sec:observations}
+### Residence times and rotation numbers
+<a id="sec:observations"></a>
 
 
 Before we proceed to the discussion of how invariant manifolds cause
@@ -960,7 +970,8 @@ up, see Figures [\[fig:rot\]](#fig:rot) and
 angular degree of freedom, the dissociating trajectories are naturally
 not becoming more direct with increasing energy.
 
-#### Residence times on the inner DS {#subsec:res inner DS}
+#### Residence times on the inner DS
+<a id="subsec:res_inner_DS"></a>
 
 Similarly to the surface $\theta=0, p_\theta>0$, we can study residence
 times and rotation numbers for trajectories starting on a DS. In Section
@@ -1053,7 +1064,8 @@ around CH$_3^+$. Long dissociations seem to occur in fractal-like
 structures that are caused by invariant manifolds, proof of which will
 be given in Section [\[subsec:sec manifs\]](#subsec:sec manifs).
 
-### Reactive Islands {#subsec:sec manifs}
+### Reactive Islands
+<a id="subsec:sec manifs"></a>
 
 Let us now have a closer look at manifolds on the two surfaces of
 section presented above and establish a link between invariant
@@ -1157,7 +1169,8 @@ heteroclinic points that cause tongues, but we need to keep local
 recrossings in mind. In the next section we present a detailed view on
 the dynamics on the middle DS.
 
-### Roaming {#sec:discussion}
+### Roaming
+<a id="sec:discussion"></a>
 
 In this section we recall possible definitions of roaming used in
 previous works. We then elaborate on the observations above and analyse
@@ -1185,7 +1198,8 @@ that roaming trajectories have to spend a certain amount of time at a
 minimum radius, have low average kinetic energy and have on average a
 certain number of bonds over time.
 
-#### The Roaming mechanism {#subsec:roaming mech}
+#### The Roaming mechanism
+<a id="subsec:roaming mech"></a>
 
 Based on intersections of invariant manifolds, we would like to report
 on the types of trajectories in this dissociation problem and explain
@@ -1289,7 +1303,8 @@ The definition of Mauguière et al. admits nondissociating roaming
 trajectories. These are contained in $W_{\Gamma^i_\pm}^{u+}$ and
 $W_{\Gamma^a}^{s+}$, but not in $W_{\Gamma^o}^{s-}$.
 
-#### Roaming on the middle DS {#subsec:roaming middle DS}
+#### Roaming on the middle DS
+<a id="subsec:roaming_middle_DS"></a>
 
 ![First and last intersections of invariant manifolds with the outward
 annulus of the middle DS for $E=1$. $W_{\Gamma^i_+}^{u+}$ (green) forms
