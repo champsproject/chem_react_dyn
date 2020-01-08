@@ -236,10 +236,9 @@ Poincaré sections depends on trajectories returning to this surface can
 not be circumvented since trajectories on and inside the spherical
 cylinders will not return to the Poincaré surface of section.
 
-![](./figures/Barbanis2dof_psect_finalT1500_E15-000_E15-125_E15-250.png){width="80.00000%"} 
-![](./figures/lag_desc_Barbanis_finalT1500_E15-000_E15-125_E15-250_x-px_tau50.png){width="80.00000%"}
+![Poincar\'e surface of section, $U_{xp_x}$~\eqref{eqn:sos_Uxpx}, at excess energy (a) $\Delta E = -0.125$, (b) $\Delta E = 0.000$, (c) $\Delta E = 0.125$ where the intersection of the surface of section with the energy surface is shown in green. The magenta and cyan curves in $p_x > 0$ correspond to the invariant manifolds of unstable periodic orbit at $y > 0$ index-1 saddle, and the ones in $p_x < 0$ correspnd to the invariant manifolds of unstable periodic orbit at $y < 0$ index-1 saddle.](./figures/Barbanis2dof_psect_finalT1500_E15-000_E15-125_E15-250.png){#fig:Barbanis2dof_psect_finalT1500_E15-000_E15-125_E15-250}
 
-Fig. 3. __Top row:__ Poincar\'e surface of section, $U_{xp_x}$~\eqref{eqn:sos_Uxpx}, at excess energy (a) $\Delta E = -0.125$, (b) $\Delta E = 0.000$, (c) $\Delta E = 0.125$ where the intersection of the surface of section with the energy surface is shown in green. __Bottom row:__ Lagrangian descriptor on the surface of section, $U_{xp_x}$ \eqref{eqn:sos_Uxpx}, for the excess energies (d) $\Delta E = -0.125$, (e) $\Delta E = 0.000$, (f) $\Delta E = 0.125$ and the integration time $\tau = 50$. The intersection of the surface of section with the cylindrical manifolds of the NHIM \textemdash unstable periodic orbit for this system \textemdash associated with the index-1 saddle equilibrium point in the bottleneck is shown in cyan (stable) and magenta (unstable) curves. The magenta and cyan curves in $p_x > 0$ correspond to the invariant manifolds of unstable periodic orbit at $y > 0$ index-1 saddle, and the ones in $p_x < 0$ correspnd to the invariant manifolds of unstable periodic orbit at $y < 0$ index-1 saddle.
+![Lagrangian descriptor on the surface of section, $U_{xp_x}$ \eqref{eqn:sos_Uxpx}, for the excess energies (d) $\Delta E = -0.125$, (e) $\Delta E = 0.000$, (f) $\Delta E = 0.125$ and the integration time $\tau = 50$. The intersection of the surface of section with the cylindrical manifolds of the NHIM \textemdash unstable periodic orbit for this system \textemdash associated with the index-1 saddle equilibrium point in the bottleneck is shown in cyan (stable) and magenta (unstable) curves. The magenta and cyan curves in $p_x > 0$ correspond to the invariant manifolds of unstable periodic orbit at $y > 0$ index-1 saddle, and the ones in $p_x < 0$ correspnd to the invariant manifolds of unstable periodic orbit at $y < 0$ index-1 saddle.](./figures/lag_desc_Barbanis_finalT1500_E15-000_E15-125_E15-250_x-px_tau50.png){#fig:lag_desc_Barbanis_finalT1500_E15-000_E15-125_E15-250_x-px_tau50}
 
 
 Coupled harmonic 2 DoF system
@@ -296,12 +295,12 @@ placed near the $x$-coordinate of the saddle equilibrium that has the
 negative $y$-coordinate. This can be expressed as a parametric two
 dimensional surface 
 
-$$\begin{aligned}
+\begin{aligned}
 %  U_{xy}^+ = & \left\{(x,y,p_x,p_y) \; | \; p_x = 0, \; p_y(x,y;e) > 0 \right\}, \\
 U_{xp_x}^+(k) = & \left\{(x,y,p_x,p_y) \, | \, y = k, p_y(x,y,p_x;e) > 0 \right\} 
 \label{eqn:sos_xpx_k}
 %  U_{yp_y}^+ = & \left\{(x,y,p_x,p_y) \; | \; x = k_x, \; p_y(x,y,p_x;e) > 0 \right\},
-\end{aligned}$$
+\end{aligned}
 
 for total energy, $e$, which is above the critical energy, $E_c$, $k$ is
 the $y$-coordinate. The variable integration time LD contour maps are

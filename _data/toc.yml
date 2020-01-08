@@ -66,9 +66,9 @@
   - title: Caldera Model
     url: /act2/caldera/caldera-1-jekyll
   - title: De Leon Model
-    url: /act2/deLeon_Berne/deleon_berne-jekyll-bib
+    url: /act2/deLeon_Berne/deleon_berne-jekyll
   - title: System Bath 1
-    url: /act2/system_bath1/system_bath1-jekyll-bib
+    url: /act2/system_bath1/system_bath1-jekyll
   - title: Four-well Potential
     url: /act2/four_well_morse/four_well_morse-jekyll
   - title: Double-Morse Oscillator
@@ -90,7 +90,7 @@
   - title: N-DoF System-Bath Model 2
     url: /act3/system_bath2/system_bath-jekyll-bib
   - title: N-DoF System-Bath Model 1
-    url: /act3/system_bath1/main-jekyll-bib
+    url: /act3/system_bath1/main-jekyll
   
 - title: GitHub repository
   url: https://github.com/champsproject/chem_react_dyn

@@ -296,12 +296,12 @@ placed near the $x$-coordinate of the saddle equilibrium that has the
 negative $y$-coordinate. This can be expressed as a parametric two
 dimensional surface 
 
-$$\begin{aligned}
+\begin{aligned}
 %  U_{xy}^+ = & \left\{(x,y,p_x,p_y) \; | \; p_x = 0, \; p_y(x,y;e) > 0 \right\}, \\
 U_{xp_x}^+(k) = & \left\{(x,y,p_x,p_y) \, | \, y = k, p_y(x,y,p_x;e) > 0 \right\} 
 \label{eqn:sos_xpx_k}
 %  U_{yp_y}^+ = & \left\{(x,y,p_x,p_y) \; | \; x = k_x, \; p_y(x,y,p_x;e) > 0 \right\},
-\end{aligned}$$
+\end{aligned}
 
 for total energy, $e$, which is above the critical energy, $E_c$, $k$ is
 the $y$-coordinate. The variable integration time LD contour maps are
