@@ -161,22 +161,18 @@ the Conley-McGehee representation
 energy surface in full $3$ dimensions.
 
 The chapter is organized as follows. In
-Sec. [\[sec:setup\]](#sec:setup){reference-type="ref" reference="sec:setup"} we
+Sec. [\[sec:setup\]](#sec:setup) we
 introduce the Chesnavich's CH$_4^+$ model. In
-Sec. [\[sec:dynamics\]](#sec:dynamics){reference-type="ref" reference="sec:dynamics"}
+Sec. [\[sec:dynamics\]](#sec:dynamics)
 we discuss various periodic orbits and their role in setting up the
 problem of transport of phase space volumes between different phase
-space regions. In Sec. [\[sec:observations\]](#sec:observations){reference-type="ref"
-reference="sec:observations"} we study the dynamics of the Chesnavich
+space regions. In Sec. [\[sec:observations\]](#sec:observations) we study the dynamics of the Chesnavich
 model by looking at trajectories from various perspectives. This section
 is followed by relating the dynamics to roaming in
-Sec. [\[sec:discussion\]](#sec:discussion){reference-type="ref"
-reference="sec:discussion"}. The invariant manifolds that govern the
+Sec. [\[sec:discussion\]](#sec:discussion). The invariant manifolds that govern the
 dynamics and in particular roaming are discussed from a global
-perspective in Sec. [\[sec:representation\]](#sec:representation){reference-type="ref"
-reference="sec:representation"}. Conclusions are given in
-Sec. [\[sec:conclusions\]](#sec:conclusions){reference-type="ref"
-reference="sec:conclusions"}
+perspective in Sec. [\[sec:representation\]](#sec:representation). Conclusions are given in
+Sec. [\[sec:conclusions\]](#sec:conclusions)
 
 # Development of the Problem: Chesnavich's CH$_4^+$ dissociation model{#sec:setup}
 
@@ -219,8 +215,7 @@ $$\begin{aligned}
   
 where $U(r,\theta)$ is the potential energy from
 [@Chesnavich1986] that we will discuss later in Section
-[\[subsec:ch4potential\]](#subsec:ch4potential){reference-type="ref"
-reference="subsec:ch4potential"}. In the last expression the term
+[\[subsec:ch4potential\]](#subsec:ch4potential). In the last expression the term
 $\frac{\lambda}{m r^2} p_\theta$ gives rise to a Coriolis force in the
 equations of motion.
 
@@ -261,8 +256,7 @@ $$\dot {p}_r = -\frac{\partial H}{\partial r} = \frac{1}{m r^3} (p_\theta - \lam
 
 For the class of potentials $U= -c r^{-(2+\epsilon)}$ with
 $c,\epsilon>0$, the relative equilibrium is unstable (Fig.
-[\[fig:centrifugalTS\]](#fig:centrifugalTS){reference-type="ref"
-reference="fig:centrifugalTS"}). This follows from the reduced
+[\[fig:centrifugalTS\]](#fig:centrifugalTS)). This follows from the reduced
 $1$-degree-of-freedom Hamiltonian having a saddle at this equilibrium as
 can be seen from computing the Hessian matrix which is diagonal with the
 elements 
@@ -279,7 +273,7 @@ $$\begin{gathered}
 
 ![Schematic representation of the dominant long range potential and the
 "centrifugal term" over $r$ (left), and of $r_1$ over $p_\theta$
-(right).[]{label="fig:centrifugalTS"}](figures/longrangepot.png){#fig:centrifugalTS
+(right)](figures/longrangepot.png){#fig:centrifugalTS
 width="100%"}
 
 In the full system, the relative equilibrium is manifested as the
@@ -321,8 +315,7 @@ where $x = \frac{r}{r_e}$. The constants $D_e=47$ kcal/mol and $r_e=1.1$
 respectively. $c_1=7.37$ and $c_2=1.61$ result in a harmonic oscillator
 limit with stretching frequency $3000$ cm$^{-1}$. A graph of $U_{CH}$,
 using Chesnavich's choice of coefficients, can be found in Figure
-[\[fig:ChesnavichCH4pR\]](#fig:ChesnavichCH4pR){reference-type="ref"
-reference="fig:ChesnavichCH4pR"}. As expected for long range
+[\[fig:ChesnavichCH4pR\]](#fig:ChesnavichCH4pR). As expected for long range
 interactions, it is meant to dominate the potential for large values of
 $r$ and not be subject to the orientation of CH$_3^+$. Therefore
 $U_{CH}$ is independent of the angle and its leading term for large $r$
@@ -352,14 +345,12 @@ $$U_0(r) = U_e e^{-a(r-r_e)^2},$$
 is the rotor barrier, which is a
 smoothly decreasing function of the distance $r$, and $U_e=55$ kcal/mol
 is the barrier height, see Figure
-[\[fig:ChesnavichCH4pR\]](#fig:ChesnavichCH4pR){reference-type="ref"
-reference="fig:ChesnavichCH4pR"}. The constant $a$ influences the value
+[\[fig:ChesnavichCH4pR\]](#fig:ChesnavichCH4pR). The constant $a$ influences the value
 of $r$ at which the transition from vibration to rotation occurs. The
 transition is referred to as *early* if it occurs at small $r$ and as
 *late* otherwise. For comparison, see the late transition for $a=1$,
 which we will be using, and the early transition for $a=5$ in Figure
-[\[fig:potentialcontour1\]](#fig:potentialcontour1){reference-type="ref"
-reference="fig:potentialcontour1"}. Note the different proportions of
+[\[fig:potentialcontour1\]](#fig:potentialcontour1). Note the different proportions of
 the potential well (dark blue) with respect to the high potential
 islands along the vertical axis.
 
@@ -442,14 +433,13 @@ $$E_0 < E_1 < 0 < \widetilde{E}_1 < E_2,$$
 
 and all critical points can
 be found in the contour plot in Figure
-[\[fig:potentialcontour1\]](#fig:potentialcontour1){reference-type="ref"
-reference="fig:potentialcontour1"}.
+[\[fig:potentialcontour1\]](#fig:potentialcontour1).
 
 For a given fixed energy $E$, we are interested in the accessible region
 in the configuration space which, following the celestial mechanics
 literature, we refer to as Hill region [@Hill1905], and the geometry of
 the energy surface. Since the system as defined in Section
-[\[subsec:system\]](#subsec:system){reference-type="ref" reference="subsec:system"} is
+[\[subsec:system\]](#subsec:system) is
 a natural mechanical system $H=T+U$ and the kinetic energy $T$ is always
 non-negative, the Hill region consists of all $(r,\theta)$ such that
 $U(r,\theta) \leq E$ and is bounded by the equipotential
@@ -467,11 +457,9 @@ Topologically this is equivalent to the case with the energy
 $0<E<\widetilde{E}_1$.
 
 Hill regions are shown for various energies in Figure
-[\[fig:potentialcontour1\]](#fig:potentialcontour1){reference-type="ref"
-reference="fig:potentialcontour1"}. For comparison, we also include Hill
+[\[fig:potentialcontour1\]](#fig:potentialcontour1). For comparison, we also include Hill
 regions for the case $a=5$ in Figure
-[\[fig:potentialcontour1\]](#fig:potentialcontour1){reference-type="ref"
-reference="fig:potentialcontour1"}, where the transition from vibration
+[\[fig:potentialcontour1\]](#fig:potentialcontour1), where the transition from vibration
 to rotation occurs earlier. Although energy levels remain topologically
 equivalent, note the larger potential well and the smaller energy
 interval where the boundary of Hill region consists of three circles.
@@ -481,7 +469,7 @@ interval where the boundary of Hill region consists of three circles.
 
 Next we study the invariant structures that can be found in the system
 at various energies. Critical points $z_i^\pm$ described in Section
-[\[subsec:hill\]](#subsec:hill){reference-type="ref" reference="subsec:hill"} are
+[\[subsec:hill\]](#subsec:hill) are
 the most basic invariant structures at energies $E_i$. In the following
 we discuss (non-degenerate) periodic orbits on the $3$-dimensional
 energy surface. They create a backbone for the understanding the
@@ -505,7 +493,7 @@ evolve with varying energy, they occasionally bifurcate with other
 families of periodic orbits.
 
 Based on the knowledge of Hill regions we gained in Section
-[\[subsec:hill\]](#subsec:hill){reference-type="ref" reference="subsec:hill"}, we
+[\[subsec:hill\]](#subsec:hill), we
 can formulate some expectations about periodic orbits in this system.
 For $E\leq E_1$, the system does not admit rotating periodic orbits,
 orbits that are periodic in $\theta$ and along which always $p_\theta>0$
@@ -520,7 +508,7 @@ orbits* (the name is due to Ruiz [@Ruiz75]).
 Here we present a list of the important families of periodic orbits
 together with a brief description of their evolution. Configuration
 space projections of the periodic orbits at $E=2$ are shown in
-Fig. [\[fig:po2\]](#fig:po2){reference-type="ref" reference="fig:po2"}.
+Fig. [\[fig:po2\]](#fig:po2).
 
 
 ![Configuration space projections of $\Gamma^i_\pm$ (blue),
@@ -568,8 +556,7 @@ $E=2$.[]{label="fig:po2"}](figures/po2.png){#fig:po2}
     become elliptic and undergo a reverse period doubling at $E=2.4025$.
     Note that the energetic gap between these two bifurcations is so
     small that they are almost indistinguishable in Figure
-    [\[fig:bifurcationS\]](#fig:bifurcationS){reference-type="ref"
-    reference="fig:bifurcationS"}. After that $\Gamma^b$ remains stable
+    [\[fig:bifurcationS\]](#fig:bifurcationS). After that $\Gamma^b$ remains stable
     until it collides with $\Gamma^a$ and $\Gamma^o$. For $E<2.4025$ the
     family consists of four periodic orbits with twice the period
     compared to all the previously mentioned ones. The orbits related by
@@ -584,8 +571,7 @@ above, the configuration space projections of $\Gamma^a$ lie between
 $\Gamma^i$ and $\Gamma^o$. In fact there are no other periodic orbits
 with single period ($2\pi$-periodic in $\theta$) in this region of
 configuration space. We use orbits of the family $\Gamma^a$ in Section
-[\[subsec:divide energy surface\]](#subsec:divide energy surface){reference-type="ref"
-reference="subsec:divide energy surface"} to define dividing surfaces
+[\[subsec:divide energy surface\]](#subsec:divide energy surface) to define dividing surfaces
 and divide phase space into regions. $\Gamma^b$ is needed for a complete
 description of the evolution of $\Gamma^o$ and $\Gamma^a$ and its
 bifurcations may hint at qualitative changes of structures formed by
@@ -619,16 +605,13 @@ have the same configuration space projection and bifurcate at different
 energies. With increasing $|\lambda|$ the differences become more
 pronounced.
 
-In Figure [\[fig:bifurcationS\]](#fig:bifurcationS){reference-type="ref"
-reference="fig:bifurcationS"} we present the evolution of the orbits in
+In Figure [\[fig:bifurcationS\]](#fig:bifurcationS) we present the evolution of the orbits in
 above-mentioned families in the energy-action ($E,S$) plane. We will
-explain in Section [\[subsec:DS\]](#subsec:DS){reference-type="ref"
-reference="subsec:DS"} why flux through a dividing surface associated
+explain in Section [\[subsec:DS\]](#subsec:DS) why flux through a dividing surface associated
 with a vibrating periodic orbit is equal to its action, while for
 rotating periodic orbits it is equal to twice its action.
 
-Figure [\[fig:bifurcationR\]](#fig:bifurcationR){reference-type="ref"
-reference="fig:bifurcationR"} shows the evolution of the Greene residue
+Figure [\[fig:bifurcationR\]](#fig:bifurcationR) shows the evolution of the Greene residue
 of orbits in the families. The Greene residue, due to J. M. Greene
 [@Greene68] is a quantity characterizing the stability of the orbits. It
 is derived from the monodromy matrix, a matrix that describes the
@@ -817,10 +800,9 @@ Invariant manifolds of other TSs will be denoted analogously.
 
 We remark that we may use TST to consider the evolution of periodic
 orbits in the energy-action plane shown in Figure
-[\[fig:bifurcationS\]](#fig:bifurcationS){reference-type="ref"
-reference="fig:bifurcationS"} in the context of transport of energy
+[\[fig:bifurcationS\]](#fig:bifurcationS) in the context of transport of energy
 surface volume from $B_1$ to $B_3$. Recall for Section
-[\[subsec:DS\]](#subsec:DS){reference-type="ref" reference="subsec:DS"} that the
+[\[subsec:DS\]](#subsec:DS) that the
 flux across the outer and middle DSs is twice the action of $\Gamma^o_+$
 and $\Gamma^a_+$ respectively. The combined flux through both inner DSs
 is twice the action of $\Gamma^i_+$. We see that for $E\leq.32$, the
@@ -838,16 +820,14 @@ insight into the amount of time needed to dissociate, the locations
 where dissociation is fast or slow and how these properties change with
 increasing energy. We use this knowledge to establish a link between
 invariant manifolds and slow dissociation on which we further elaborate
-in Section [\[sec:discussion\]](#sec:discussion){reference-type="ref"
-reference="sec:discussion"} in the context of roaming.
+in Section [\[sec:discussion\]](#sec:discussion) in the context of roaming.
 
 For various energies $0<E<6.13$ where $\Gamma^o$ exists, we investigate
 trajectories starting in $B_1^+$, $B_2$ and $B_3$ on the surface
 $\theta=0, p_\theta>0$. We study how long it takes trajectories to reach
 a terminal condition representing the dissociated state.
 
-In Section [\[subsec:divide energy surface\]](#subsec:divide energy surface){reference-type="ref"
-reference="subsec:divide energy surface"} we said that we consider the
+In Section [\[subsec:divide energy surface\]](#subsec:divide energy surface) we said that we consider the
 molecule dissociated as soon as the system enters $B_3$. Naturally, then
 the terminal condition should be that trajectories reach the outer DS.
 However using the outer DS raises uncertainty of whether a faster
@@ -899,7 +879,7 @@ $\Gamma^i_+$ (blue), $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$
 (green) and $\Gamma^o_+$ (black) are also
 included.[]{#fig:rot}]
 
-Figure [\[fig:rot\]](#fig:rot){reference-type="ref" reference="fig:rot"}
+Figure [\[fig:rot\]](#fig:rot)
 shows rotation numbers for selected energies, with marked periodic
 orbits and invariant manifolds. As expected, initial conditions with
 $p_r>0$ large are the fastest ones to escape. The slowest ones are
@@ -968,18 +948,15 @@ long time. More pronounced, due to the discrete nature of the number of
 rotations, are structures inside $B_1^+$, just below $p_r=0$ and in the
 neighbourhood of $\Gamma^o_+$ and $W_{\Gamma^o_+}$.
 
-Note in Figure [\[fig:rot\_num\]](#fig:rot_num){reference-type="ref"
-reference="fig:rot_num"} that the fractal like structures recede with
+Note in Figure [\[fig:rot\_num\]](#fig:rot_num) that the fractal like structures recede with
 increasing energy and by $E=5$ most of them lie either in $B_1^+$, near
 $p_r=0$ as mentioned above and in the proximity of the homoclinic tangle
 of $\Gamma^o_+$. The homoclinic tangle seems to tend to a homoclinic
 loop as it disappears for $E \rightarrow 6.13$. It is also worth noting
 that fast and simple dissociation, i.e. low residence time and low
 rotation number, is not only becoming more dominant, but also speeding
-up, see Figures [\[fig:rot\]](#fig:rot){reference-type="ref"
-reference="fig:rot"} and
-[\[fig:rot\_num\]](#fig:rot_num){reference-type="ref"
-reference="fig:rot_num"}. Due to the increase in kinetic energy in the
+up, see Figures [\[fig:rot\]](#fig:rot) and
+[\[fig:rot\_num\]](#fig:rot_num). Due to the increase in kinetic energy in the
 angular degree of freedom, the dissociating trajectories are naturally
 not becoming more direct with increasing energy.
 
@@ -987,10 +964,9 @@ not becoming more direct with increasing energy.
 
 Similarly to the surface $\theta=0, p_\theta>0$, we can study residence
 times and rotation numbers for trajectories starting on a DS. In Section
-[\[subsec:divide energy surface\]](#subsec:divide energy surface){reference-type="ref"
-reference="subsec:divide energy surface"} we formulated our problem as a
+[\[subsec:divide energy surface\]](#subsec:divide energy surface) we formulated our problem as a
 transport problem from the inner to the outer DS. According to Section
-[\[subsec:DS\]](#subsec:DS){reference-type="ref" reference="subsec:DS"},
+[\[subsec:DS\]](#subsec:DS),
 trajectories enter $B_1^+$ through one hemisphere of the inner DS and
 leave through the other. Naturally we are interested in the latter
 hemisphere.
@@ -1056,8 +1032,7 @@ now defined by $\rho=0$, $\dot{\rho}>0$, i.e. the outward hemisphere of
 the inner DS corresponding to transport in the direction from $B_1^+$ to
 $B_2$.
 
-Figure [\[fig:disI\_rot\]](#fig:disI_rot){reference-type="ref"
-reference="fig:disI_rot"} shows the distribution of residence times for
+Figure [\[fig:disI\_rot\]](#fig:disI_rot) shows the distribution of residence times for
 initial conditions on the inner DS. We can see that slow dissociation is
 specific to two areas of the surface of section. Initial conditions on
 the rest of the surface leave $B_2$ quickly. Information from the two
@@ -1076,15 +1051,14 @@ dissociation ranging from fast and direct, where the H atom escapes
 almost radially, to slow that involves H revolving a multitude of times
 around CH$_3^+$. Long dissociations seem to occur in fractal-like
 structures that are caused by invariant manifolds, proof of which will
-be given in Section [\[subsec:sec manifs\]](#subsec:sec manifs){reference-type="ref"
-reference="subsec:sec manifs"}.
+be given in Section [\[subsec:sec manifs\]](#subsec:sec manifs).
 
 ### Reactive Islands {#subsec:sec manifs}
 
 Let us now have a closer look at manifolds on the two surfaces of
 section presented above and establish a link between invariant
 structures and slow dissociation. In Section
-[\[subsec:res th0\]](#subsec:res th0){reference-type="ref" reference="subsec:res th0"}
+[\[subsec:res th0\]](#subsec:res th0)
 we already noted that the homoclinic tangle of $\Gamma^i_+$ is
 responsible for a fractal structure of slow dissociation of initial
 conditions in $B_1^+$. Furthermore the homoclinic tangle of $\Gamma^o_+$
@@ -1116,8 +1090,7 @@ The section on the inner DS, just as all other DSs, does not suffer from
 these problems, because they do not depend on the direction of rotation.
 Moreover, these surfaces are almost everywhere transversal to the flow.
 
-In Figure [\[fig:sec\_disI\]](#fig:sec_disI){reference-type="ref"
-reference="fig:sec_disI"} we present the intersection of
+In Figure [\[fig:sec\_disI\]](#fig:sec_disI) we present the intersection of
 $W_{\Gamma^o_+}$ with the inner DS at $E=1$ and $E=2$. Since slow
 dissociation fades away at higher energies, we do not present the
 section at higher energies. In fact, for $E\geq 2.5$ the manifolds
@@ -1126,16 +1099,12 @@ $W_{\Gamma^i_+}$ and $W_{\Gamma^o_+}$ do not intersect at all. Clearly
 then, slow dissociation, and thereby roaming, is induced by the
 heteroclinic tangle of $W_{\Gamma^i_+}$ and $W_{\Gamma^o_+}$. This claim
 is further supported by what we see in Figures
-[\[fig:disI\_rot\]](#fig:disI_rot){reference-type="ref"
-reference="fig:disI_rot"} and
-[\[fig:sec\_disI\]](#fig:sec_disI){reference-type="ref"
-reference="fig:sec_disI"}.
+[\[fig:disI\_rot\]](#fig:disI_rot) and
+[\[fig:sec\_disI\]](#fig:sec_disI).
 
 When we compare Figures
-[\[fig:disI\_rot\]](#fig:disI_rot){reference-type="ref"
-reference="fig:disI_rot"} and
-[\[fig:sec\_disI\]](#fig:sec_disI){reference-type="ref"
-reference="fig:sec_disI"}, we clearly see that longer residence times
+[\[fig:disI\_rot\]](#fig:disI_rot) and
+[\[fig:sec\_disI\]](#fig:sec_disI), we clearly see that longer residence times
 are prevalent in the same locations where $W_{\Gamma^o_+}^{s-}$
 intersects the inner DS. At $E=1$ we can even recognize the structure of
 the of the intersection in both figures. As the manifolds
@@ -1168,8 +1137,7 @@ $\sigma=0$, $p_\rho>0$, $p_\sigma=0$ (equivalent to $\theta=0$, $p_r>0$,
 $p_\theta=0$), the prototype of a fast dissociation, must lie inside
 $W_{\Gamma^o_+}^{s-}$ to quickly reach the outer DS. The tongues of
 $W_{\Gamma^o_+}^{s-}$ visible in Figure
-[\[fig:sec\_disI\]](#fig:sec_disI){reference-type="ref"
-reference="fig:sec_disI"} therefore mostly contain trajectories that do
+[\[fig:sec\_disI\]](#fig:sec_disI) therefore mostly contain trajectories that do
 not dissociate immediately.
 
 This problem is present on both the inner and outer DSs. Sections on
@@ -1333,22 +1301,19 @@ $\gamma^{u+}_{i}$. Selected initial conditions for roaming with very
 long residence times are marked with blue
 crosses.](sos_disA_1.png){#fig:roam_init1 width="70%"}
 
-As mentioned in Section [\[subsec:sec manifs\]](#subsec:sec manifs){reference-type="ref"
-reference="subsec:sec manifs"}, the middle DS seems to be better suited
+As mentioned in Section [\[subsec:sec manifs\]](#subsec:sec manifs), the middle DS seems to be better suited
 for the study of roaming than the inner and outer DSs. More precisely,
 we will study dynamics on the outward annulus of the middle DS, i.e. the
 annulus crossed by the prototypical dissociating trajectory $\theta=0$,
 $p_r>0$, $p_\theta=0$. We may introduce canonical coordinates on this
 annulus using a generating function in the same way as we did in Section
-[\[subsec:res inner DS\]](#subsec:res inner DS){reference-type="ref"
-reference="subsec:res inner DS"}, but for for the sake of simplicity we
+[\[subsec:res inner DS\]](#subsec:res inner DS), but for for the sake of simplicity we
 continue using the coordinates $(\theta,p_\theta)$.
 
 In the following elaboration we need means to precisely express the
 order in which invariant cylinders intersect the outward annulus of the
 middle DS. Based on the arguments in Section
-[\[subsec:roaming mech\]](#subsec:roaming mech){reference-type="ref"
-reference="subsec:roaming mech"}, roaming involves the invariant
+[\[subsec:roaming mech\]](#subsec:roaming mech), roaming involves the invariant
 cylinders $W_{\Gamma^i_\pm}^{u+}$, $W_{\Gamma^a}^{s+}$ and
 $W_{\Gamma^o}^{s-}$. Due to symmetry we have that every statement
 regarding $W_{\Gamma^i_+}^{u+}$ also holds for $W_{\Gamma^i_-}^{u+}$.
@@ -1403,12 +1368,9 @@ $\gamma^{u+}_{i}\cap\gamma^{s-}_{o}$ do not have an image under the
 return map $P$, in fact the whole of $\gamma^{s-}_{o}$ does not have an
 image. This is in accordance with the results on "reactive islands" by
 [@OzoriodeAlmeida90]. Figures
-[\[fig:roam\_init1\]](#fig:roam_init1){reference-type="ref"
-reference="fig:roam_init1"},
-[\[fig:roam\_init2\]](#fig:roam_init2){reference-type="ref"
-reference="fig:roam_init2"} and
-[\[fig:roam\_init2\_5\]](#fig:roam_init2_5){reference-type="ref"
-reference="fig:roam_init2_5"} show this intersection for various
+[\[fig:roam\_init1\]](#fig:roam_init1),
+[\[fig:roam\_init2\]](#fig:roam_init2) and
+[\[fig:roam\_init2\_5\]](#fig:roam_init2_5) show this intersection for various
 energies together with the first/last intersections of other invariant
 cylinders.
 
@@ -1480,12 +1442,9 @@ $W_{\Gamma^i_-}^{s+}$ with the outward annulus, for some $n$.
 It remains to discuss the first intersection of $W_{\Gamma^o_+}^{u-}$,
 $W_{\Gamma^o_-}^{u-}$ and $W_{\Gamma^i_+}^{u-}$ on the surface of
 section shown in Figures
-[\[fig:roam\_init1\]](#fig:roam_init1){reference-type="ref"
-reference="fig:roam_init1"},
-[\[fig:roam\_init2\]](#fig:roam_init2){reference-type="ref"
-reference="fig:roam_init2"} and
-[\[fig:roam\_init2\_5\]](#fig:roam_init2_5){reference-type="ref"
-reference="fig:roam_init2_5"}. We shall denote the intersections
+[\[fig:roam\_init1\]](#fig:roam_init1),
+[\[fig:roam\_init2\]](#fig:roam_init2) and
+[\[fig:roam\_init2\_5\]](#fig:roam_init2_5). We shall denote the intersections
 according to the convention above by $\gamma^{u-}_{o}$ and
 $\gamma^{u-}_{i}$, respectively.
 
@@ -1498,12 +1457,9 @@ $W_{\Gamma^o}^{u-}$ is guided from the inward hemisphere of the inner DS
 by $W_{\Gamma^i_+}^{u-}$ and its homoclinic intersections cause tongues.
 In the process, $W_{\Gamma^o}^{u-}$ and $W_{\Gamma^i_+}^{u-}$ are
 stretched and compressed causing only one to be visible in Figures
-[\[fig:roam\_init1\]](#fig:roam_init1){reference-type="ref"
-reference="fig:roam_init1"} and
-[\[fig:roam\_init2\]](#fig:roam_init2){reference-type="ref"
-reference="fig:roam_init2"}. In Figure
-[\[fig:roam\_init2\_5\]](#fig:roam_init2_5){reference-type="ref"
-reference="fig:roam_init2_5"} $W_{\Gamma^o}^{u-}$ does not enter $B_1^+$
+[\[fig:roam\_init1\]](#fig:roam_init1) and
+[\[fig:roam\_init2\]](#fig:roam_init2). In Figure
+[\[fig:roam\_init2\_5\]](#fig:roam_init2_5) $W_{\Gamma^o}^{u-}$ does not enter $B_1^+$
 and the two invariant cylinders are visible.
 
 It is important to point out that seemingly $W_{\Gamma^o}^{u-}$ and
