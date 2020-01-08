@@ -10,9 +10,11 @@ However, the construction of the DS for 2 DoF systems using the Lyapunov family 
 
 ## Development of the Problem
 
-Our model potential (see @fig:ModelFig) has been introduced in act 2 and consists of a one-dimensional double well oscillator that represents the reactive system, coupled to a one-dimensional harmonic oscillator representing the bath. To facilitat the reading we will reintroduce the details of the model here.
+Our model potential (see [fig:1](#ModelFig)) has been introduced in act 2 and consists of a one-dimensional double well oscillator that represents the reactive system, coupled to a one-dimensional harmonic oscillator representing the bath. To facilitat the reading we will reintroduce the details of the model here.
 
-![Schematic representation (left) and definitions (right) of the model system used in our study. ](./figures/SB_model.png){#fig:ModelFig width=100%}
+![Schematic representation (left) and definitions (right) of the model system used in our study. ](./figures/SB_model.png)
+<figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em> Schematic representation (left) and definitions (right) of the model system used in our study. </em></figcaption><a id="ModelFig"></a>
+<hr>
 
 The Hamiltonian that describes the system is as follows:
 
@@ -21,9 +23,11 @@ H(\mathbf{x})=H(\mathbf{r},\mathbf{p})=\frac{p_1^2}{2\mu_1}+\frac{p_2^2}{2\mu_2}
 \label{modelEq}
 \end{equation}
 
-where the subscripts 1 and 2 refer to the reactive system and bath oscillators respectively; $r=(r_1,r_2 )$ is the position of the two oscillators and $p=(p_1,p_2 )$ represents the conjugate momenta. The reduced mass of each oscillator is $\mu$, and $c$ are coefficients whose values are listed in @fig:ModelFig. The potential energy can be divided between $V_1 = \sum_{j=1}^{5} c_j r_1^{j-1}$ as the potential of the reactive system, $V_2=c_6 (c_7-r_2 )^2$ as the potential of the bath and $V_{int}=c_8/(r_2-r_1 )^{-12}$ as the interaction between the two; hence $V=V_1+V_2+V_{int}$. The potential of the reactant, shown in @fig:PESFig, is chosen to have a minimum at $r_1=1.0$ and a second one at $r_1=2.0$ , with respective potential energies $V_1=0.0$ and $V_1=-10$. The maximum energy is at $r_1=1.33867$ and $V_1=2.0$. The full potential, shown in @fig:PESFig, has a saddle point at $r_1=1.36561$ and $r_2=2.161769$ at $V=3.47291$. The "reactant" minimum occurs at $r_1 = 0.98779$, $r_2 = 1.80661$, $V = 0.77040$. The "product" minimum occurs at $r_1 = 1.98517$, $r_2 = 2.75642$, $V = -6.66284$.
+where the subscripts 1 and 2 refer to the reactive system and bath oscillators respectively; $r=(r_1,r_2 )$ is the position of the two oscillators and $p=(p_1,p_2 )$ represents the conjugate momenta. The reduced mass of each oscillator is $\mu$, and $c$ are coefficients whose values are listed in [fig:1](#ModelFig). The potential energy can be divided between $V_1 = \sum_{j=1}^{5} c_j r_1^{j-1}$ as the potential of the reactive system, $V_2=c_6 (c_7-r_2 )^2$ as the potential of the bath and $V_{int}=c_8/(r_2-r_1 )^{-12}$ as the interaction between the two; hence $V=V_1+V_2+V_{int}$. The potential of the reactant, shown in [fig:2](#PESFig), is chosen to have a minimum at $r_1=1.0$ and a second one at $r_1=2.0$ , with respective potential energies $V_1=0.0$ and $V_1=-10$. The maximum energy is at $r_1=1.33867$ and $V_1=2.0$. The full potential, shown in [fig:2](#PESFig), has a saddle point at $r_1=1.36561$ and $r_2=2.161769$ at $V=3.47291$. The "reactant" minimum occurs at $r_1 = 0.98779$, $r_2 = 1.80661$, $V = 0.77040$. The "product" minimum occurs at $r_1 = 1.98517$, $r_2 = 2.75642$, $V = -6.66284$.
 
-![(Left) Reactive system's potential energy profile. (Right) Contours of the full potential energy surface. The contours are depicted in the $-7 \leq V \leq 6$ interval. ](figures/PES.png){#fig:PESFig width=100%}
+![(Left) Reactive system's potential energy profile. (Right) Contours of the full potential energy surface. The contours are depicted in the $-7 \leq V \leq 6$ interval. ](figures/PES.png)
+<figcaption style="text-align:center;font-size:14px"><b>fig:2 </b><em> (Left) Reactive system's potential energy profile. (Right) Contours of the full potential energy surface. The contours are depicted in the $-7 \leq V \leq 6$ interval. </em></figcaption><a id="PESFig"></a>
+<hr>
 
 ## Revealing Phase Space Structures
 
@@ -88,9 +92,11 @@ In this method, the evolution of the trajectory defines the initial conditions a
 
 ### Method 1
 
-The images shown in @fig:LDFirst where obtained by the above mentioned grid methodology. In those figures, for each point in the plot, the momenta of the bath DoF was equal to 0. The location of the saddle point (blue line) and the PO associated to it (red line) were included in the plots to better understanding of the information obtained. Of significant relevance are the plots obtained for the position and momenta of the reactive DoF (a plots in @fig:LDFirst). In those plots we can see how the invariant manifolds converge at the PO that encloses the DS forming a crossing point that indicates its location.
+The images shown in [fig:3](#LDFirst) where obtained by the above mentioned grid methodology. In those figures, for each point in the plot, the momenta of the bath DoF was equal to 0. The location of the saddle point (blue line) and the PO associated to it (red line) were included in the plots to better understanding of the information obtained. Of significant relevance are the plots obtained for the position and momenta of the reactive DoF (a plots in [fig:3](#LDFirst)). In those plots we can see how the invariant manifolds converge at the PO that encloses the DS forming a crossing point that indicates its location.
 
-![LD plots for the different reduced masses of the bath for (a) the position and momenta of the reactive DoF and (b) the position of both DoF, each with a close up of on the saddle point area. The blue straigth line in the first line of plots indicates the position of the saddle point and the red line in the close ups represents the PO enclosing the DS. ](figures/LDFirst.png){#fig:LDFirst width="96%"}
+![LD plots for the different reduced masses of the bath for (a) the position and momenta of the reactive DoF and (b) the position of both DoF, each with a close up of on the saddle point area. The blue straigth line in the first line of plots indicates the position of the saddle point and the red line in the close ups represents the PO enclosing the DS. ](figures/LDFirst.png)
+<figcaption style="text-align:center;font-size:14px"><b>fig:3 </b><em> LD plots for the different reduced masses of the bath for (a) the position and momenta of the reactive DoF and (b) the position of both DoF, each with a close up of on the saddle point area. The blue straigth line in the first line of plots indicates the position of the saddle point and the red line in the close ups represents the PO enclosing the DS. </em></figcaption><a id="LDFirst"></a>
+<hr>
 
 It is important to note that this plots represent a section of the full phase space in which all the kinetic energy is in the reactive DoF. Thus, all we can expect to see from the PODS is the intersection with this section. Of course this is not a big problem, as it is very easy to change the value of the momenta of the bath at which the LD is calculated. 
 
@@ -98,17 +104,23 @@ It is important to note that this plots represent a section of the full phase sp
 
 We could suppose that the 2DoF from the described system are instead 2 collective coordinates obtained from a system of multiples DoF. We then proceed to calculate the LD as described in our second method, first to check if we could replicate the results from the previous method and then to analyze the extra information we are generating with it.
 
-In @fig:LDSecondSec we can see how the plots are very similar to those obtained in @fig:LDFirst. The main difference appears as we increase the mass of the bath where this effect reduces the ergodicity of the system. Even in those cases, there are similarities between plots in the places visited by the trajectories.
+In [fig:4](#LDSecondSec) we can see how the plots are very similar to those obtained in [fig:3](#LDFirst). The main difference appears as we increase the mass of the bath where this effect reduces the ergodicity of the system. Even in those cases, there are similarities between plots in the places visited by the trajectories.
 
-![Equivalent plots from @fig:LDFirst obtained with the second methodology ](figures/LDSecondSection.png){#fig:LDSecondSec width="100%"}
+![Equivalent plots from fig:3](#LDFirst) obtained with the second methodology ](figures/LDSecondSection.png)
+<figcaption style="text-align:center;font-size:14px"><b>fig:4 </b><em> Equivalent plots from [fig:3</em></figcaption><a id="LDSecondSec"></a>
+<hr>
 
-But this is just a small amount of information that we have obtained from the calculations. The full set of values that this method produces can be projected into a single plot. Obviously these projections have so many dynamical structures depicted in them that it is very difficult to see anything. But with a bit of *cleaning* we can obtain a nice picture of the dynamical structure of the system. The plots shown in @fig:LDProject where obtained by projecting in configurational space all the values obtained from the calculations. However, for each value proyected in the same point only the minimum value was represented. This is because the value of the LD is expected to be a minimum in the vicinity of the PODS. These plots show a clear picture of the behaviour of the trajectories after crossing the DS but also they have a clear definition of the projection of the PODS in configurational space.
+But this is just a small amount of information that we have obtained from the calculations. The full set of values that this method produces can be projected into a single plot. Obviously these projections have so many dynamical structures depicted in them that it is very difficult to see anything. But with a bit of *cleaning* we can obtain a nice picture of the dynamical structure of the system. The plots shown in [fig:5](#LDProject) where obtained by projecting in configurational space all the values obtained from the calculations. However, for each value proyected in the same point only the minimum value was represented. This is because the value of the LD is expected to be a minimum in the vicinity of the PODS. These plots show a clear picture of the behaviour of the trajectories after crossing the DS but also they have a clear definition of the projection of the PODS in configurational space.
 
-![(a) LD plots for the different reduced masses of the bath in configurational space and (b) their respective close up. The value of LD was obtained by selecting the minimum value between all the values that share the same point in configurational space. The red line in the close ups represents the PO enclosing the DS.  ](figures/LDSecondProjection.png){#fig:LDProject width="100%"}
+![(a) LD plots for the different reduced masses of the bath in configurational space and (b) their respective close up. The value of LD was obtained by selecting the minimum value between all the values that share the same point in configurational space. The red line in the close ups represents the PO enclosing the DS.  ](figures/LDSecondProjection.png)
+<figcaption style="text-align:center;font-size:14px"><b>fig:5 </b><em> (a) LD plots for the different reduced masses of the bath in configurational space and (b) their respective close up. The value of LD was obtained by selecting the minimum value between all the values that share the same point in configurational space. The red line in the close ups represents the PO enclosing the DS.  </em></figcaption><a id="LDProject"></a>
+<hr>
 
-Moreover, if take a slice of the plots in @fig:LDProject we can visualize the effect of the DS in the value of the LD (see @fig:LDSlice). This is quite obvious in @fig:LDProject but it will be very useful in multiples degrees of freedom where there will be much more noise.
+Moreover, if take a slice of the plots in [fig:5](#LDProject) we can visualize the effect of the DS in the value of the LD (see [fig:6](#LDSlice)). This is quite obvious in [fig:5](#LDProject) but it will be very useful in multiples degrees of freedom where there will be much more noise.
 
-![Slice at bath position of 2.2 of the LD values along the reactive coordinate. ](figures/LDSecondSlice.png){#fig:LDSlice width="100%"}
+![Slice at bath position of 2.2 of the LD values along the reactive coordinate. ](figures/LDSecondSlice.png)
+<figcaption style="text-align:center;font-size:14px"><b>fig:6 </b><em> Slice at bath position of 2.2 of the LD values along the reactive coordinate. </em></figcaption><a id="LDSlice"></a>
+<hr>
 
 We have shown that the DS can be easily identified by the calculation of LD, not only with the grid methodology, but also with our version of the method. It is expected that for multidimensional problems the results will not be as clear and sharp as with this simple model. After all, we are including a significant amount of DoF that will introduce a lot of noise in the calculations. However, if we can identify the DS signal in the LD calculation, then we can begin to understand the dynamical properties that make the system behave as it does, like in the former case, the coupling between the bath and the reactive system.
 
