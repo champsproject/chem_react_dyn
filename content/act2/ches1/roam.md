@@ -360,11 +360,11 @@ islands along the vertical axis.
 
 ![Contour plots of potential for $a = 1$, corresponding to a late
 transition, and $a = 5$, corresponding to an early
-transition.](ch4contoura1.jpg "fig:"){#fig:potentialcontour1
+transition.](figures/ch4contoura1.jpg "fig:"){#fig:potentialcontour1
 width="50%"} ![Contour plots of potential for $a = 1$,
 corresponding to a late transition, and $a = 5$, corresponding to an
 early
-transition.](ch4contoura5.jpg "fig:"){#fig:potentialcontour1
+transition.](figures/ch4contoura5.jpg "fig:"){#fig:potentialcontour1
 width="50%"}
 [Contour plots of potential for $a = 1$, corresponding to a late
 transition, and $a = 5$, corresponding to an early
@@ -812,9 +812,9 @@ is twice the action of $\Gamma^i_+$. We see that for $E\leq.32$, the
 outer DS has the lowest flux, while for higher energies it is the inner
 DS.
 
+
 ### Residence times and rotation numbers
 <a id="sec:observations"></a>
-
 
 Before we proceed to the discussion of how invariant manifolds cause
 slow dissociations, let us describe some numerical observations of how
@@ -853,28 +853,28 @@ The dots correspond to the periodic orbits $\Gamma^i_+$ (blue),
 $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$ (magenta) and
 $\Gamma^o_+$ (cyan). Invariant manifolds of $\Gamma^i_+$ (green) and
 $\Gamma^o_+$ (black) are also
-included.](rot1.jpg){width="50%"}
+included.](figures/rot1.jpg){width="50%"}
 ![From top left to bottom right the plots show
 residence times on the surface of section $\theta=0$, $p_\theta>0$ for
 energies $E=1,2,2.5,5$. The dots correspond to the periodic orbits
 $\Gamma^i_+$ (blue), $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$
 (magenta) and $\Gamma^o_+$ (cyan). Invariant manifolds of $\Gamma^i_+$
 (green) and $\Gamma^o_+$ (black) are also
-included.](rot2.jpg){width="50%"}\
+included.](figures/rot2.jpg){width="50%"}\
 ![From top left to bottom right the plots show residence times on the
 surface of section $\theta=0$, $p_\theta>0$ for energies $E=1,2,2.5,5$.
 The dots correspond to the periodic orbits $\Gamma^i_+$ (blue),
 $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$ (magenta) and
 $\Gamma^o_+$ (cyan). Invariant manifolds of $\Gamma^i_+$ (green) and
 $\Gamma^o_+$ (black) are also
-included.](rot2_5.jpg){width="50%"}
+included.](figures/rot2_5.jpg){width="50%"}
 ![From top left to bottom right the plots show
 residence times on the surface of section $\theta=0$, $p_\theta>0$ for
 energies $E=1,2,2.5,5$. The dots correspond to the periodic orbits
 $\Gamma^i_+$ (blue), $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$
 (magenta) and $\Gamma^o_+$ (cyan). Invariant manifolds of $\Gamma^i_+$
 (green) and $\Gamma^o_+$ (black) are also
-included.](rot5.jpg){width="50%"}
+included.](figures/rot5.jpg){width="50%"}
 [From top left to bottom right the plots show
 residence times on the surface of section $\theta=0$, $p_\theta>0$ for
 energies $E=1,2,2.5,5$. The dots correspond to the periodic orbits
@@ -911,7 +911,7 @@ The dots correspond to the periodic orbits $\Gamma^i_+$ (blue),
 $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$ (magenta) and
 $\Gamma^o_+$ (cyan). Invariant manifolds of $\Gamma^i_+$ (green) and
 $\Gamma^o_+$ (black) are also
-included.](rot_number1.jpg "fig:"){width="50%"}
+included.](figures/rot_number1.jpg "fig:"){width="50%"}
 ![From top left
 to bottom right the plots show rotation numbers on the surface of
 section $\theta=0$, $p_\theta>0$ for energies $E=1,2,2.5,5$. The dots
@@ -919,14 +919,14 @@ correspond to the periodic orbits $\Gamma^i_+$ (blue), $\Gamma^a_+$
 (red), orbits of the family $\Gamma^b$ (magenta) and $\Gamma^o_+$
 (cyan). Invariant manifolds of $\Gamma^i_+$ (green) and $\Gamma^o_+$
 (black) are also
-included.](rot_number2.jpg "fig:"){width="50%"}\
+included.](figures/rot_number2.jpg "fig:"){width="50%"}\
 ![From top left to bottom right the plots show rotation numbers on the
 surface of section $\theta=0$, $p_\theta>0$ for energies $E=1,2,2.5,5$.
 The dots correspond to the periodic orbits $\Gamma^i_+$ (blue),
 $\Gamma^a_+$ (red), orbits of the family $\Gamma^b$ (magenta) and
 $\Gamma^o_+$ (cyan). Invariant manifolds of $\Gamma^i_+$ (green) and
 $\Gamma^o_+$ (black) are also
-included.](rot_number2_5.jpg "fig:"){width="50%"}
+included.](figures/rot_number2_5.jpg "fig:"){width="50%"}
 ![From top
 left to bottom right the plots show rotation numbers on the surface of
 section $\theta=0$, $p_\theta>0$ for energies $E=1,2,2.5,5$. The dots
@@ -934,7 +934,7 @@ correspond to the periodic orbits $\Gamma^i_+$ (blue), $\Gamma^a_+$
 (red), orbits of the family $\Gamma^b$ (magenta) and $\Gamma^o_+$
 (cyan). Invariant manifolds of $\Gamma^i_+$ (green) and $\Gamma^o_+$
 (black) are also
-included.](rot_number5.jpg "fig:"){width="50%"}
+included.](figures/rot_number5.jpg "fig:"){width="50%"}
 
 [From top
 left to bottom right the plots show rotation numbers on the surface of
@@ -978,24 +978,24 @@ hemisphere.
 direction for energies $E=1,2,2.5,5$. Note that the scale for $E=5$ is
 different, because $9$ is an upper bound for the residence time for
 initial conditions on the inner
-DS.](disI_ps_res_1.jpg "fig:"){width="50%"}
+DS.](figures/disI_ps_res_1.jpg "fig:"){width="50%"}
 ![Residence times
 for initial conditions on the inner DS with outward direction for
 energies $E=1,2,2.5,5$. Note that the scale for $E=5$ is different,
 because $9$ is an upper bound for the residence time for initial
 conditions on the inner
-DS.](disI_ps_res_2.jpg "fig:"){width="50%"}\
+DS.](figures/disI_ps_res_2.jpg "fig:"){width="50%"}\
 ![Residence times for initial conditions on the inner DS with outward
 direction for energies $E=1,2,2.5,5$. Note that the scale for $E=5$ is
 different, because $9$ is an upper bound for the residence time for
 initial conditions on the inner
-DS.](disI_ps_res_2_5.jpg "fig:"){width="50%"} 
+DS.](figures/disI_ps_res_2_5.jpg "fig:"){width="50%"} 
 ![Residence
 times for initial conditions on the inner DS with outward direction for
 energies $E=1,2,2.5,5$. Note that the scale for $E=5$ is different,
 because $9$ is an upper bound for the residence time for initial
 conditions on the inner
-DS.](disI_ps_res_5.jpg "fig:"){width="50%"}
+DS.](figures/disI_ps_res_5.jpg "fig:"){width="50%"}
 [Residence
 times for initial conditions on the inner DS with outward direction for
 energies $E=1,2,2.5,5$. Note that the scale for $E=5$ is different,
@@ -1061,8 +1061,7 @@ be given in Section (#subsec:sec manifs).
 
 Let us now have a closer look at manifolds on the two surfaces of
 section presented above and establish a link between invariant
-structures and slow dissociation. In Section
-[\[subsec:res th0\]](#subsec:res th0)
+structures and slow dissociation. In Section (#subsec:res th0)
 we already noted that the homoclinic tangle of $\Gamma^i_+$ is
 responsible for a fractal structure of slow dissociation of initial
 conditions in $B_1^+$. Furthermore the homoclinic tangle of $\Gamma^o_+$
@@ -1117,8 +1116,8 @@ dissociation at $E=2.5$ remains as a relic of the intersection.
 Afterall, trajectories close to $W_{\Gamma^o_+}^{s-}$ follow the
 manifold and approach $\Gamma^o_+$ before dissociation is completed.
 
-![$W_{\Gamma^o_+}^{s-}$ invariant manifolds on the inner DS for $E=1$ (left) and $E=2$ (right). For energies $E\geq 2.5$ the manifolds $W_{\Gamma^o_+}^{-}$ don't reach the inner DS.](disO_sos1.png "fig:"){width="50%"}
-![$W_{\Gamma^o_+}^{s-}$ invariant manifolds on the inner DS for $E=1$ (left) and $E=2$ (right). For energies $E\geq 2.5$ the manifolds $W_{\Gamma^o_+}^{-}$ don't reach the inner DS.](disO_sos2.png "fig:"){width="50%"}
+![$W_{\Gamma^o_+}^{s-}$ invariant manifolds on the inner DS for $E=1$ (left) and $E=2$ (right). For energies $E\geq 2.5$ the manifolds $W_{\Gamma^o_+}^{-}$ don't reach the inner DS.](figures/disO_sos1.png){width="50%"}
+![$W_{\Gamma^o_+}^{s-}$ invariant manifolds on the inner DS for $E=1$ (left) and $E=2$ (right). For energies $E\geq 2.5$ the manifolds $W_{\Gamma^o_+}^{-}$ don't reach the inner DS.](figures/disO_sos2.png){width="50%"}
 [$W_{\Gamma^o_+}^{s-}$ invariant manifolds on the inner DS for $E=1$ (left) and $E=2$ (right). For energies $E\geq 2.5$ the manifolds $W_{\Gamma^o_+}^{-}$ don't reach the inner DS.[]{#fig:sec_disI label="fig:sec_disI"}]
 
 Note that there was no word of $W_{\Gamma^o_+}^{u-}$. This is mainly due
@@ -1306,21 +1305,19 @@ $W_{\Gamma^o_+}^{u-}$ is black and $W_{\Gamma^o_-}^{u-}$ is grey.
 $W_{\Gamma^i_+}^{u-}$ copies the shape of $W_{\Gamma^o_+}^{u-}$ inside
 $\gamma^{u+}_{i}$. Selected initial conditions for roaming with very
 long residence times are marked with blue
-crosses.](sos_disA_1.png){#fig:roam_init1 width="70%"}
+crosses.](figures/sos_disA_1.png){#fig:roam_init1 width="70%"}
 
-As mentioned in Section [\[subsec:sec manifs\]](#subsec:sec manifs), the middle DS seems to be better suited
+As mentioned in Section (#subsec:sec manifs), the middle DS seems to be better suited
 for the study of roaming than the inner and outer DSs. More precisely,
 we will study dynamics on the outward annulus of the middle DS, i.e. the
 annulus crossed by the prototypical dissociating trajectory $\theta=0$,
 $p_r>0$, $p_\theta=0$. We may introduce canonical coordinates on this
-annulus using a generating function in the same way as we did in Section
-[\[subsec:res inner DS\]](#subsec:res inner DS), but for for the sake of simplicity we
+annulus using a generating function in the same way as we did in Section (#subsec:res inner DS), but for for the sake of simplicity we
 continue using the coordinates $(\theta,p_\theta)$.
 
 In the following elaboration we need means to precisely express the
 order in which invariant cylinders intersect the outward annulus of the
-middle DS. Based on the arguments in Section
-[\[subsec:roaming mech\]](#subsec:roaming mech), roaming involves the invariant
+middle DS. Based on the arguments in Section (#subsec:roaming mech), roaming involves the invariant
 cylinders $W_{\Gamma^i_\pm}^{u+}$, $W_{\Gamma^a}^{s+}$ and
 $W_{\Gamma^o}^{s-}$. Due to symmetry we have that every statement
 regarding $W_{\Gamma^i_+}^{u+}$ also holds for $W_{\Gamma^i_-}^{u+}$.
@@ -1353,7 +1350,7 @@ $W_{\Gamma^o_+}^{u-}$ is black and $W_{\Gamma^o_-}^{u-}$ is grey.
 $W_{\Gamma^i_+}^{u-}$ copies the shape of $W_{\Gamma^o_+}^{u-}$ inside
 $\gamma^{u+}_{i}$. Selected initial conditions for roaming with very
 long residence times are marked with blue
-crosses.](sos_disA_2.png){#fig:roam_init2 width="70%"}
+crosses.](figures/sos_disA_2.png){#fig:roam_init2 width="70%"}
 
 Denote the interior of the first/last intersection of the invariant
 cylinders $W_{\Gamma^i_+}^{u+}$ and $W_{\Gamma^o}^{s-}$ with the outward
@@ -1398,7 +1395,7 @@ $W_{\Gamma^o_-}^{s-}$ (orange) form the boundary of $\gamma^{s-}_{o}$,
 $W_{\Gamma^o_+}^{u-}$ is black and $W_{\Gamma^o_-}^{u-}$ is grey,
 $W_{\Gamma^i_+}^{u-}$ is cyan. Roaming is not present because
 $\gamma^{u+}_{i}\subset \gamma^{s-}_{o}$ and $W_{\Gamma^i_+}^{u+}$ and
-$W_{\Gamma^o_+}^{s-}$ are disjoint.](sos_disA_2_5.png){#fig:roam_init2_5 width="70%"}
+$W_{\Gamma^o_+}^{s-}$ are disjoint.](figures/sos_disA_2_5.png){#fig:roam_init2_5 width="70%"}
 
 It remains to explain what happens to
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$. Since trajectories
