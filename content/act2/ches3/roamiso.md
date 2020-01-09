@@ -26,12 +26,12 @@ reaction mechanisms at constant kinetic energy. Specifically, we study
 Chesnavich's model for an ion-molecule reaction subjected to a
 Hamiltonian isokinetic thermostat.
 
-Chesnavich's empirical model for the ion-molecule reaction CH$_4^+$
-$\rightleftharpoons$ CH$_3^+$ $+$ H was introduced in reference . A
+Chesnavich's empirical model for the ion-molecule reaction $\text{CH}_4^+$
+$\rightleftharpoons$ $\text{CH}_3^++\text{H}$ was introduced in reference . A
 detailed derivation of this model can be found in reference .
 Chesnavich's model captures many of the essential aspects of the roaming
 mechanism. It describes the situation where a hydrogen atom separates
-from the rigid CH$_3^+$ core and, instead of dissociating, roams in a
+from the rigid $\text{CH}_3^+$ core and, instead of dissociating, roams in a
 region of nearly constant potential only to return to the core. While
 Chesnavich's model does not accurately describe the intramolecular
 abstraction and subsequent dissociation, it has nevertheless provided
@@ -201,17 +201,17 @@ differs by scaling by a constant factor.
 ### Chesnavich's Model and Roaming {#sec:CMR}
 
 In this section we introduce Chesnavich's model for the ion-molecule
-reaction CH$_4^+$ $\rightleftharpoons$ CH$_3^+$ $+$ H and recall known
+reaction $\text{CH}_4^+$ $\rightleftharpoons$ $\text{CH}_3^+$ $+$ H and recall known
 results about roaming in this system. The model was introduced by
 Chesnavich [@Chesnavich1986] to investigate the transition from
 vibration/librational motion of the H-atom in a deep potential well
-representing CH$_4^+$ to nearly-free rotation in a flat and rotationally
+representing $\text{CH}_4^+$ to nearly-free rotation in a flat and rotationally
 symmetric region representing the dissociated CH$_3^++$H.
 
 ### Chesnavich's Model Hamiltonian {#sec:CMH}
 
-Chesnavich's CH$_4^+$ model is a Hamiltonian system with 2 degrees of
-freedom, consisting of a rigid CH$_3^+$ molecule and a mobile H atom.
+Chesnavich's $\text{CH}_4^+$ model is a Hamiltonian system with 2 degrees of
+freedom, consisting of a rigid $\text{CH}_3^+$ molecule and a mobile H atom.
 The system is defined by the Hamiltonian
 
 \begin{equation}
@@ -221,14 +221,14 @@ H(r,\theta,p_r, p_\theta) = \frac{1}{2} \frac{p_r^2}{\mu} + \frac{1}{2}p_\theta^
 
 where $(r, \theta, \phi)$ are polar coordinates
 describing the position of the H-atom in a body-fixed frame attached to
-the CH$_3^+$ core (coordinate $\phi$ is ignorable in this model). The
+the $\text{CH}_3^+$ core (coordinate $\phi$ is ignorable in this model). The
 reduced mass of the system $\mu=\frac{m_{CH_3}m_{H}}{m_{CH_3}+m_{H}}$,
 where $m_{H}=1.007825$ u and $m_{CH_3}=3m_{H}+12.0$ u, and the moment of
-inertia of the rigid body CH$_3^+$ $I_{CH_3}=2.373409$ uÅ$^2$.
+inertia of the rigid body $\text{CH}_3^+$ $I_{CH_3}=2.373409$ uÅ$^2$.
 
 The potential $U(r,\theta)$ consists of a radial long range potential
 $U_{CH}$ and a short range potential $U_{coup}$ that models the short
-range anisotropy of the rigid CH$_3^+$ body.
+range anisotropy of the rigid $\text{CH}_3^+$ body.
 
 \begin{equation}
 \label{eq:U}
@@ -236,7 +236,7 @@ range anisotropy of the rigid CH$_3^+$ body.
 \end{equation}
 
 It is characterised
-by two deep wells corresponding to bound CH$_4^+$, two areas of high
+by two deep wells corresponding to bound $\text{CH}_4^+$, two areas of high
 potential and a flat area beyond them as shown in Fig.
 [\[fig:pot\]](#fig:pot){reference-type="ref" reference="fig:pot"}.
 
@@ -272,7 +272,7 @@ considered in previous works, namely $a=1$
 $a=4$ [@Chesnavich1986; @mauguiere2014roaming] and a range of values
 $0.7\leq a\leq 8$. [@krajnak2018influence]
 
-The CH$_3^+$ is a symmetric top in Chesnavich's model. Although the
+The $\text{CH}_3^+$ is a symmetric top in Chesnavich's model. Although the
 range of coordinate $\theta$ is $0 \leq \theta \leq \pi$, in the planar
 (zero overall angular momentum) version of the model the range of
 $\theta$ is extended to $0 \leq \theta \leq 2 \pi$, and the potential
@@ -306,7 +306,7 @@ reference="table:equil"} and shown in Fig.
 
 As mentioned in Section [\[sec:intro\]](#sec:intro){reference-type="ref"
 reference="sec:intro"}, we are interested in the roaming mechanism
-wherein the hydrogen atom separates from the CH$_3^+$ core only to
+wherein the hydrogen atom separates from the $\text{CH}_3^+$ core only to
 return to the vicinity of the core before dissociating. Here we review
 the dynamical definition of roaming as introduced in
 [@mauguiere2014roaming], which is based on periodic orbits as invariant
@@ -331,7 +331,7 @@ width="60%"}
 
 Their significance is as follows:
 
--   $\Gamma^i$: Delimits the potential wells that correspond to CH$_4^+$
+-   $\Gamma^i$: Delimits the potential wells that correspond to $\text{CH}_4^+$
     isomers. The orbits oscillate around the axes $\theta=0$ and
     $\theta=\pi$.
 
@@ -377,7 +377,7 @@ hemisphere of DS$^i$.
 Roaming can hereby be reformulated as a transport problem in phase
 space. Every trajectory leaving the well must cross the outward
 hemisphere of DS$^i$ and every trajectory that dissociates must cross
-the outward annulus of DS$^o$. Dissociation of a CH$_4^+$ molecule is
+the outward annulus of DS$^o$. Dissociation of a $\text{CH}_4^+$ molecule is
 therefore equivalent to the transport of trajectories from the outward
 hemisphere of DS$^i$ to the outward annulus of DS$^o$. Roaming involves
 crossing the inward annulus of DS$^a$, because between two crossings of
@@ -870,12 +870,12 @@ LD_o=\int\limits^{\tau}_{0} |\dot{r}| dt.
 $\tau=8$ (left) and $LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref"
 reference="eq:LDo"} for $\tau=8$ (right) for initial conditions on
 $\theta=0$, $\dot{\theta}>0$ and their profiles for
-$r=6$.](ldIth0t8.png){width="50%"} ![Lagrangian descriptors $LD_i$
+$r=6$.](figures/ldIth0t8.png){width="50%"} ![Lagrangian descriptors $LD_i$
 [\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} for
 $\tau=8$ (left) and $LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref"
 reference="eq:LDo"} for $\tau=8$ (right) for initial conditions on
 $\theta=0$, $\dot{\theta}>0$ and their profiles for
-$r=6$.](ldOth0t8.png){width="50%"}
+$r=6$.](figures/ldOth0t8.png){width="50%"}
 
 [\[fig:manifs\_th0\]]{#fig:manifs_th0 label="fig:manifs_th0"}
 
@@ -906,10 +906,10 @@ intersect.
 ![Lagrangian descriptor $LD_i$
 [\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} for
 $\tau=6$ (left) and $\tau=8$ (right) for initial conditions on $r=3.6$,
-$\dot{r}>0$.](ldIr36t6.png){width="50%"} ![Lagrangian descriptor
+$\dot{r}>0$.](figures/ldIr36t6.png){width="50%"} ![Lagrangian descriptor
 $LD_i$ [\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"}
 for $\tau=6$ (left) and $\tau=8$ (right) for initial conditions on
-$r=3.6$, $\dot{r}>0$.](ldIr36t8.png){width="50%"}
+$r=3.6$, $\dot{r}>0$.](figures/ldIr36t8.png){width="50%"}
 
 [\[fig:manifsI\_r36\]]{#fig:manifsI_r36 label="fig:manifsI_r36"}
 
@@ -921,11 +921,11 @@ annulus of DS$^a$ used in the Hamiltonian case.
 ![Lagrangian descriptor $LD_o$
 [\[eq:LDo\]](#eq:LDo){reference-type="eqref" reference="eq:LDo"} for
 $\tau=10$ (left) and for $\tau=20$ (right) for initial conditions on
-$r=3.6$, $\dot{r}>0$.](ldOr36t10.png){width="50%"} ![Lagrangian
+$r=3.6$, $\dot{r}>0$.](figures/ldOr36t10.png){width="50%"} ![Lagrangian
 descriptor $LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref"
 reference="eq:LDo"} for $\tau=10$ (left) and for $\tau=20$ (right) for
 initial conditions on $r=3.6$,
-$\dot{r}>0$.](ldOr36t20.png){width="50%"}
+$\dot{r}>0$.](figures/ldOr36t20.png){width="50%"}
 
 [\[fig:manifsO\_r36\]]{#fig:manifsO_r36 label="fig:manifsO_r36"}
 
@@ -1036,5 +1036,3 @@ Fig. [\[fig:manifsI\_r36\]](#fig:manifsI_r36){reference-type="ref"
 reference="fig:manifsI_r36"} and
 [\[fig:manifsO\_r36\]](#fig:manifsO_r36){reference-type="ref"
 reference="fig:manifsO_r36"}.
-
-# References
