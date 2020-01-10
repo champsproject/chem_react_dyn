@@ -1,4 +1,3 @@
-<!-- #region -->
 # Influence of Mass and Energy Surface Geometry in Chesnavich's Model
 
 ## Introduction
@@ -131,8 +130,8 @@ We introduce the potential in more detail and explain the role of the
 parameter $a$ is Section [sec:2](#sec:potential){reference-type="ref"
 reference="sec:potential"}. Subsequently we give an overview of roaming
 up to date in Section [sec:1](#sec:roam), we explain how phase space structures influence
-the dynamics in Section (#sec:phase transport) and focus on how these structures cause
-roaming in (#sec:phase roaming).
+the dynamics in Section [sec:3](#sec:phase_transport) and focus on how these structures cause
+roaming in [sec:4](#sec:phase_roaming).
 
 To study the dependence of roaming on the mass of the free atom, we
 replace the free H atom by a atom of mass $m$, so that the reduced mass
@@ -203,6 +202,7 @@ for $-\pi\leq\theta<0$.
  |            $>0$           |  $>1.1$  |       $\pi/2$    |        local maximum       |      $q_2^+$|
  |            $<0$           |  $>1.1$  |       $\pi/2$    |     isomerisation saddle |  $\widetilde{q}_1^+$|
 
+
 <a id="tab:equil"></a>
 <figcaption style="text-align:center;font-size:14px"><b>tab:1 </b><em>Equilibrium points for potential $U(r, \theta)$. Energy and radial coordinate of $q_1^+$, $q_2^+$ and $\widetilde{q}_1^+$ varies with $a$ and is shown graphically in Figure [fig:2](#fig:thpi2).</em></figcaption><hr>
 
@@ -233,6 +233,7 @@ but dynamically remain distinct.
 <a id="fig:pot"></a>
 <figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em>Contour plots of the potential energy surface $U$ for $a=1,3,6,8$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot. Critical points of the potential $q_0^-$, $q_1^-$, $q_2^-$ and $\widetilde{q}_1^-$, as introduced in Table [tab:1](#tab:equil) are indicated.</em></figcaption><hr>
 
+
 ![Radial sections of the potential $U$ along $\theta=\frac{\pi}{2}$ for $a=1,2,3,4,5,6,7,8$](figures/figure2.jpg)
 <a id="fig:thpi2"></a>
 <figcaption style="text-align:center;font-size:14px"><b>fig:2 </b><em>Radial sections of the potential $U$ along $\theta=\frac{\pi}{2}$ for $a=1,2,3,4,5,6,7,8$</em></figcaption><hr>
@@ -255,7 +256,8 @@ transition from one type of dynamics to the other depends heavily on the
 size and height of the areas of high potential that is influenced by $a$
 as described above.
 
-## Revealing the Phase Space Structures {#sec:phase transport}
+## Revealing the Phase Space Structures 
+<a id="sec:phase_transport"></a>
 
 There are three important families of periodic orbits
 {% cite Mauguiere2014 Mauguiere2014b Krajnak2018 --file refs %} in Chesnavich's CH$_4^+$
@@ -447,7 +449,8 @@ All of this is a consequence of the local energy surface geometry that
 is not uniform throughout the energy surface and can be observed as
 qualitatively different forms of dynamics - vibration and rotation.
 
-### Phase space structures responsible for roaming {#sec:phase roaming}
+### Phase space structures responsible for roaming 
+<a id="sec:phase_roaming"></a>
 
 We study invariant manifolds and their intersections on a surface of
 section, namely on an accurate approximation of the outward annulus of
@@ -474,7 +477,7 @@ with the outward annulus of DS$^a$.
 Note that the section of $W_{\Gamma^i}^{u+}$ with the outward annulus of
 DS$^a$ produces a topological circle (further denoted $\gamma^{u+}_{i}$)
 centered at $\theta=0$, $p_\theta=0$. Recall from Section
-(#sec:phase transport) that all branches of $W_{\Gamma^i}$ are
+[sec:3](#sec:phase_transport) that all branches of $W_{\Gamma^i}$ are
 centered at/symmetric with respect to $\theta=0$, $p_r=p_\theta=0$. The
 shape of $\gamma^{u+}_{i}$ is just a consequence of this fact.
 
@@ -659,7 +662,6 @@ such surfaces when $m$ is varied.
 <a id="fig:Wiincr"></a>
 <figcaption style="text-align:center;font-size:14px"><b>fig:5 </b><em>Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=2$, masses $m=0.7,1.007825,4,6$ and $a=2$.</em></figcaption><hr>
 
-
 ![](figures/figure6a.jpg)
 ![](figures/figure6b.jpg)
 ![](figures/figure6c.jpg)
@@ -761,6 +763,7 @@ Figure [fig:7](#fig:middlesmallm).
 ![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of DS$^a$ for $E=1$, $a=1$ and masses $m=0.2,0.4,0.7,0.9$.](figures/figure7d.jpg)
 <a id="fig:middlesmallm"></a>
 <figcaption style="text-align:center;font-size:14px"><b>fig:7 </b><em>Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of DS$^a$ for $E=1$, $a=1$ and masses $m=0.2,0.4,0.7,0.9$.</em></figcaption><hr>
+
 For $m<m_H$, $p_\theta^2$ has a significant influence on $\dot{p}_r$,
 especially in the wells where $r$ is small, and also
 $\dot{r} = \frac{1}{m} p_r$ grows faster. This prevents
@@ -787,7 +790,7 @@ of potential islands around the index-$2$ saddles with increasing $a$
 does have a significant impact on roaming. As can be seen from Figure
 [fig:8](#fig:middleE1aa), the area
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ increases with $a$. However,
-as pointed out in Section (#sec:phase roaming) if
+as pointed out in Section [sec:4](#sec:phase_roaming) if
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ grows,
 $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ must shrink and therefore
 larger values of $a$ result all other classes of dynamics diminishing in
@@ -925,6 +928,4 @@ nonreactivity, yet are separated by a sufficiently high isomerisation
 barrier.
 
 # References
-
 {% bibliography --file refs --cited %}
-<!-- #endregion -->

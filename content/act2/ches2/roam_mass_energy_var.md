@@ -129,8 +129,8 @@ We introduce the potential in more detail and explain the role of the
 parameter $a$ is Section (#sec:potential){reference-type="ref"
 reference="sec:potential"}. Subsequently we give an overview of roaming
 up to date in Section (#sec:roam), we explain how phase space structures influence
-the dynamics in Section (#sec:phase transport) and focus on how these structures cause
-roaming in (#sec:phase roaming).
+the dynamics in Section (#sec:phase_transport) and focus on how these structures cause
+roaming in (#sec:phase_roaming).
 
 To study the dependence of roaming on the mass of the free atom, we
 replace the free H atom by a atom of mass $m$, so that the reduced mass
@@ -193,7 +193,6 @@ indicates the index of the saddle and the superscript indicates the half
 plane in which the critical point lies: $+$ for $0\leq\theta<\pi$, $-$
 for $-\pi\leq\theta<0$.
 
-
  |  Energy (kcal mol$^{-1}$) |  $r$ (Å) |  $\theta$ (radians)  |     Significance    |          Label   |
  | --------------------------| ---------| --------------------| ----------------------| ---------------------|
  |           $-47$           |   $1.1$   |        $0$         |     potential well      |      $q_0^+$|
@@ -201,9 +200,7 @@ for $-\pi\leq\theta<0$.
  |            $>0$           |  $>1.1$  |       $\pi/2$    |        local maximum       |      $q_2^+$|
  |            $<0$           |  $>1.1$  |       $\pi/2$    |     isomerisation saddle |  $\widetilde{q}_1^+$|
 
-
 ![Equilibrium points for potential $U(r, \theta)$. Energy and radial coordinate of $q_1^+$, $q_2^+$ and $\widetilde{q}_1^+$ varies with $a$ and is shown graphically in Figure (#fig:thpi2).]{#tab:equil}
-
 
 We remark that $q_1^+$ and $q_2^+$ are energetically inaccessible at
 energies considered in this work. Four more critical points $q_0^-$,
@@ -230,7 +227,6 @@ but dynamically remain distinct.
 ![](figures/figure1c.jpg)
 ![Contour plots of the potential energy surface $U$ for $a=1,3,6,8$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot. Critical points of the potential $q_0^-$, $q_1^-$, $q_2^-$ and $\widetilde{q}_1^-$, as introduced in Table (#tab:equil) are indicated.](figures/figure1d.jpg){#fig:pot} 
 
-
 ![Radial sections of the potential $U$ along $\theta=\frac{\pi}{2}$ for $a=1,2,3,4,5,6,7,8$](figures/figure2.jpg){#fig:thpi2}
 
 Due to the exponential decay of the anisotropic term $U_{coup}$ and the
@@ -251,7 +247,7 @@ transition from one type of dynamics to the other depends heavily on the
 size and height of the areas of high potential that is influenced by $a$
 as described above.
 
-## Revealing the Phase Space Structures {#sec:phase transport}
+## Revealing the Phase Space Structures {#sec:phase_transport}
 
 There are three important families of periodic orbits
 [@Mauguiere2014; @Mauguiere2014b; @Krajnak2018] in Chesnavich's CH$_4^+$
@@ -279,7 +275,6 @@ associated with a saddle point on the potential energy surface.
 ![](figures/figure3b.jpg)
 ![](figures/figure3c.jpg)
 ![Configuration space projections of the inner, middle and outer periodic orbits for $E=5$ and a combination of $a=1,3$ and $m=m_H,4$. Note that for $m=4$, $\Gamma^o$ lies far outside the field of view. Critical points of the potential as introduced previously are also indicated.](figures/figure3d.jpg "fig:"){#fig:poconfig}
-
 
 The family of outer periodic orbits $\Gamma^o$ is proven [@Krajnak2018]
 to exist due to a centrifugal barrier for a class of systems including
@@ -442,7 +437,7 @@ All of this is a consequence of the local energy surface geometry that
 is not uniform throughout the energy surface and can be observed as
 qualitatively different forms of dynamics - vibration and rotation.
 
-### Phase space structures responsible for roaming {#sec:phase roaming}
+### Phase space structures responsible for roaming {#sec:phase_roaming}
 
 We study invariant manifolds and their intersections on a surface of
 section, namely on an accurate approximation of the outward annulus of
@@ -469,7 +464,7 @@ with the outward annulus of DS$^a$.
 Note that the section of $W_{\Gamma^i}^{u+}$ with the outward annulus of
 DS$^a$ produces a topological circle (further denoted $\gamma^{u+}_{i}$)
 centered at $\theta=0$, $p_\theta=0$. Recall from Section
-(#sec:phase transport) that all branches of $W_{\Gamma^i}$ are
+(#sec:phase_transport) that all branches of $W_{\Gamma^i}$ are
 centered at/symmetric with respect to $\theta=0$, $p_r=p_\theta=0$. The
 shape of $\gamma^{u+}_{i}$ is just a consequence of this fact.
 
@@ -770,7 +765,7 @@ of potential islands around the index-$2$ saddles with increasing $a$
 does have a significant impact on roaming. As can be seen from Figure
 (#fig:middleE1aa), the area
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ increases with $a$. However,
-as pointed out in Section (#sec:phase roaming) if
+as pointed out in Section (#sec:phase_roaming) if
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ grows,
 $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ must shrink and therefore
 larger values of $a$ result all other classes of dynamics diminishing in
@@ -848,7 +843,6 @@ estimate is outside of the scope of this work.
 |   $7$   |  0.163 |  0.162 |  0.162 | 0.161 | 0.148 | 0.137 | 0.127 |
 |   $8$   |  0.183 |  0.182 |  0.180 | 0.178 | 0.163 | 0.151 | 0.141 |
 |   $a$   | - | - | -  | - | - | - | - |
-
 
 $E=1$                                           
 
