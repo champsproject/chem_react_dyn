@@ -1,11 +1,13 @@
+<!-- #region -->
 
 # Two Degree-of-Freedom Chesnavich Model with Isokinetic thermostat
 
-## Introduction {#sec:intro}
+## Introduction 
+<a id="sec:intro"></a>
 
 The roaming mechanism for chemical reactions was introduced in reference
 to the description of the photodissociation of formaldehyde
-[@zee:1664; @townsend2004roaming; @bowman]. After excitation of the
+{% cite zee:1664 townsend2004roaming bowman --file allrefs %}. After excitation of the
 formaldehyde molecule by a laser pulse, a single CH bond begins to
 stretch. Rather than proceed directly to dissociation, the hydrogen atom
 rotates around the molecular fragment in a region of the potential
@@ -19,7 +21,7 @@ mechanism.
 Since the pioneering formaldehyde studies a similar roaming mechanism
 has been observed to occur in a number of chemical reactions. Many of
 these reactions are described in several review
-articles[@suits2008; @bowman2011roaming; @Bowman2011Suits; @BowmanRoaming; @mauguiere2017roaming].
+articles{% cite suits2008 bowman2011roaming Bowman2011Suits BowmanRoaming mauguiere2017roaming --file allrefs %}.
 
 Essentially all of these roaming reactions have been studied at constant
 total energy. The goal of this chapter is to study analogous roaming
@@ -44,19 +46,19 @@ thermostat to Chesnavich's model. This thermostat is not as widely used
 as the Nosé-Hoover thermostat, and its many variants, but the
 non-Hamiltonian version of the isokinetic thermostat has been developed
 and applied to a variety of problems of interest in chemistry by Minary
-et al. [@Minary03a; @Minary03b]. In this thermostat, the particle
+et al. {% cite Minary03a Minary03b --file allrefs %}. In this thermostat, the particle
 momenta are subject to a nonholonomic constraint that keeps the kinetic
 energy constant. The resulting dynamics (if ergodic) generates a
 canonical distribution in configuration space, where the associated
 temperature is related to the value of the conserved kinetic energy
-[@Morriss98]. A Hamiltonian version of the isokinetic thermostat was
-given by Dettmann [@Dettmann96; @Morriss98] (see also
-[@Litniewski93; @Morishita03]).
+{% cite Morriss98 --file allrefs %}. A Hamiltonian version of the isokinetic thermostat was
+given by Dettmann {% cite Dettmann96 Morriss98 --file allrefs %} (see also
+{% cite Litniewski93 Morishita03 --file allrefs %}).
 
 The Hamiltonian isokinetic thermostat dynamics explored in our chapter is
 relatively unfamiliar, although, as noted, there has been some relevant
-earlier work in the chemical literature [@Minary03a; @Minary03b]. The
-basic theory [@Dettmann96; @Morriss98] shows that Hamiltonian dynamics
+earlier work in the chemical literature {% cite Minary03a Minary03b --file allrefs %}. The
+basic theory {% cite Dettmann96 Morriss98 --file allrefs %} shows that Hamiltonian dynamics
 in terms of a set of variables related to the physical variables by a
 *noncanonical* tranformation, together with the use of the exponentiated
 potential results in a canonical distribution in the physical
@@ -79,12 +81,13 @@ development in our understanding of phase space structures governing
 chemical reaction dynamics in recent years, see, for example, references.
  This phase space structure approach has been applied to the
 Hamiltonian isokinetic thermostat formalism
-[@ezra2008impenetrable; @collins2010phase]. In this chapter we continue
+{% cite ezra2008impenetrable collins2010phase --file allrefs %}. In this chapter we continue
 these developments in our study of the Hamiltonian phase space structure
 associated with the roaming mechanism as exhibited in Chesnavich's model
 subjected to a Hamiltonian isokinetic thermostat.
 
-## Development of the Problem {#sec:HIK}
+## Development of the Problem 
+<a id="sec:HIK"></a>
 
 ### Thermostatted Hamiltonian
 
@@ -133,7 +136,8 @@ along the solutions of Hamilton's equations
  \label{eq:eqKham}
 \end{equation}
 
-### Time scaling {#sec:scaling}
+### Time scaling 
+<a id="sec:scaling"></a>
 
 In this section, we show that the dynamics defined by equations \eqref{eq:eqKham} produce equivalent dynamics regardless of the
 value of $T_0^2$. We prove that a suitable scaling of time and momenta
@@ -189,17 +193,19 @@ $$\mathcal{K}_1(q,\Pi) = \frac{1}{T^2_0}\mathcal{K}(q,\pi).$$
 the dynamics of $\mathcal{K}$ and $\mathcal{K}_1$ is equivalent and only
 differs by scaling by a constant factor.
 
-### Chesnavich's Model and Roaming {#sec:CMR}
+### Chesnavich's Model and Roaming 
+<a id="sec:CMR"></a>
 
 In this section we introduce Chesnavich's model for the ion-molecule
 reaction $\text{CH}_4^+$ $\rightleftharpoons$ $\text{CH}_3^+$ $+$ H and recall known
 results about roaming in this system. The model was introduced by
-Chesnavich [@Chesnavich1986] to investigate the transition from
+Chesnavich {% cite Chesnavich1986 --file allrefs %} to investigate the transition from
 vibration/librational motion of the H-atom in a deep potential well
 representing $\text{CH}_4^+$ to nearly-free rotation in a flat and rotationally
 symmetric region representing the dissociated CH$_3^++$H.
 
-### Chesnavich's Model Hamiltonian {#sec:CMH}
+### Chesnavich's Model Hamiltonian 
+<a id="sec:CMH"></a>
 
 Chesnavich's $\text{CH}_4^+$ model is a Hamiltonian system with 2 degrees of
 freedom, consisting of a rigid $\text{CH}_3^+$ molecule and a mobile H atom.
@@ -228,9 +234,11 @@ range anisotropy of the rigid $\text{CH}_3^+$ body.
 
 It is characterised
 by two deep wells corresponding to bound $\text{CH}_4^+$, two areas of high
-potential and a flat area beyond them as shown in Fig. (#fig:pot).
+potential and a flat area beyond them as shown in Fig. [fig:1](#fig:pot).
 
-![Contour plot of Chesnavich's potential energy surface $U$ for $a=1$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot.](figures/figure1.jpg){#fig:pot}
+![Contour plot of Chesnavich's potential energy surface $U$ for $a=1$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot.](figures/figure1.jpg)
+<a id="fig:pot"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em>Contour plot of Chesnavich's potential energy surface $U$ for $a=1$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot.</em></figcaption><hr>
 
 The long range potential is
 
@@ -240,7 +248,7 @@ The long range potential is
 \end{equation}
 
 with parameter values as used in the original work
-[@Chesnavich1986]:$x = \frac{r}{r_e}$, dissociation energy $D_e=47$
+{% cite Chesnavich1986 --file allrefs %}:$x = \frac{r}{r_e}$, dissociation energy $D_e=47$
 kcal/mol, equilibrium bond length $r_e=1.1$ Å, $c_1=7.37$ and
 $c_2=1.61$. The short range hindered rotor potential $U_{coup}$ is
 defined by
@@ -254,9 +262,9 @@ where $U_e=55$ kcal/mol is the equilibrium barrier height. The distance
 at which transition occurs from rotation to vibration is determined by
 the parameter $a$ (in Å$^{-2}$). Various values of $a$ have been
 considered in previous works, namely $a=1$
-[@Chesnavich1986; @mauguiere2014roaming; @mauguiere2014multiple; @krajnak2018phase],
-$a=4$ [@Chesnavich1986; @mauguiere2014roaming] and a range of values
-$0.7\leq a\leq 8$. [@krajnak2018influence]
+{% cite Chesnavich1986 mauguiere2014roaming mauguiere2014multiple krajnak2018phase --file allrefs %},
+$a=4$ {% cite Chesnavich1986 mauguiere2014roaming --file allrefs %} and a range of values
+$0.7\leq a\leq 8$. {% cite krajnak2018influence --file allrefs %}
 
 The $\text{CH}_3^+$ is a symmetric top in Chesnavich's model. Although the
 range of coordinate $\theta$ is $0 \leq \theta \leq \pi$, in the planar
@@ -270,7 +278,7 @@ U(r,\theta)=U(r,-\theta)=U(r,\pi-\theta)=U(r,\pi+\theta).
 \end{equation}
 
 The potential admits four pairs of equilibrium points pairwise related
-by symmetry \eqref{eq:sym}, as listed in Tab. (#tab:equil) and shown in Fig. (#fig:pot).
+by symmetry \eqref{eq:sym}, as listed in Tab. [tab:1](#tab:equil) and shown in Fig. [fig:1](#fig:pot).
 
  |  Energy (kcal mol$^{-1}$) |  $r$ (Å) |  $\theta$ (radians)  |     Significance    |          Label   |
  | --------------------------| ---------| --------------------| ----------------------| ---------------------|
@@ -279,29 +287,34 @@ by symmetry \eqref{eq:sym}, as listed in Tab. (#tab:equil) and shown in Fig. (#f
  |            $22.27$           |  $1.63$  |       $\pi/2$    |        local maximum       |      $q_2^+$|
  |            $8$           |  $1.1$  |       $\pi/2$    |     isomerisation saddle |  $\widetilde{q}_1^+$|
 
-![Equilibrium points of the potential $U(r, \theta)$.]{#tab:equil}
+
+<a id="tab:equil"></a>
+<figcaption style="text-align:center;font-size:14px"><b>tab:1 </b><em>Equilibrium points of the potential $U(r, \theta)$.</em></figcaption><hr>
 
 ## Revealing Phase Space Structures 
-### Roaming in Chesnavich's Model {#sec:roamingChes}
+### Roaming in Chesnavich's Model 
+<a id="sec:roamingChes"></a>
 
-As mentioned in Section (#sec:intro), we are interested in the roaming mechanism
+As mentioned in Section [sec:1](#sec:intro), we are interested in the roaming mechanism
 wherein the hydrogen atom separates from the $\text{CH}_3^+$ core only to
 return to the vicinity of the core before dissociating. Here we review
 the dynamical definition of roaming as introduced in
-[@mauguiere2014roaming], which is based on periodic orbits as invariant
+{% cite mauguiere2014roaming --file allrefs %}, which is based on periodic orbits as invariant
 structures having dynamical relevance.
 
 In the relevant energy interval $0\leq E\leq 5$, there are three
-important families of periodic orbits [@mauguiere2014multiple]. At any
+important families of periodic orbits {% cite mauguiere2014multiple --file allrefs %}. At any
 given fixed energy $0\leq E\leq 5$, there are three pairs of important
 periodic orbits present in this system, pairwise related by symmetry of \eqref{eq:sym}, as
-shown in Fig. (#fig:orbitse5). Therefore we refer to a continuum of periodic
+shown in Fig. [fig:2](#fig:orbitse5). Therefore we refer to a continuum of periodic
 orbits parametrised by energy as a family of periodic orbits. We will
 refer to these families as the inner ($\Gamma^i$), middle ($\Gamma^a$)
 and outer ($\Gamma^o$) periodic orbits. It is important to note that
 none of the orbits is directly related to a saddle point of the system.
 
-![Configuration space projections of inner ($\Gamma^i$), middle ($\Gamma^a$) and outer ($\Gamma^o$) periodic orbits for $E=5$.](figures/figure2.jpg){#fig:orbitse5}
+![Configuration space projections of inner ($\Gamma^i$), middle ($\Gamma^a$) and outer ($\Gamma^o$) periodic orbits for $E=5$.](figures/figure2.jpg)
+<a id="fig:orbitse5"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:2 </b><em>Configuration space projections of inner ($\Gamma^i$), middle ($\Gamma^a$) and outer ($\Gamma^o$) periodic orbits for $E=5$.</em></figcaption><hr>
 
 Their significance is as follows:
 
@@ -317,7 +330,7 @@ Their significance is as follows:
     states. Two rotational orbits with opposite orientation - one
     clockwise, one counter-clockwise.
 
-Roaming was shown [@krajnak2018phase] to disappear for $E\geq 2.5$. In
+Roaming was shown {% cite krajnak2018phase --file allrefs %} to disappear for $E\geq 2.5$. In
 the energy interval $0< E< 2.5$, all of the above-mentioned periodic
 orbits are unstable. Define the dividing surfaces using DS$^i$, DS$^a$
 and DS$^o$ as the set of all phase space points
@@ -339,10 +352,10 @@ dissociated states.
 As explained in reference , the oscillatory nature of $\Gamma^i$ implies
 that DS$^i$ consists of two spheres, while the rotational nature of
 $\Gamma^a$ and $\Gamma^o$ means that DS$^a$ and DS$^o$ are
-tori[@mauguiere2016ozone]. Each sphere can be divided using the
+tori{% cite mauguiere2016ozone --file allrefs %}. Each sphere can be divided using the
 corresponding periodic orbit into two hemispheres and each torus can be
 divided using both corresponding periodic orbits into two
-annuli[@mauguiere2016ozone]. All hemispheres and annuli are surfaces of
+annuli{% cite mauguiere2016ozone --file allrefs %}. All hemispheres and annuli are surfaces of
 unidirectional flux, for example all trajectories leaving the potential
 well cross the same (outward) hemisphere of DS$^i$, while all
 trajctories entering the potential well cross the other (inward)
@@ -361,8 +374,8 @@ versa.
 Transport of trajectories in the neighbourhood of an unstable periodic
 orbit (or NHIM in general) is governed by invariant manifolds of this
 orbit
-[@wwju; @uzer2002geometry; @WaalkensSchubertWiggins08; @wiggins2016]. It
-was shown[@krajnak2018phase; @krajnak2018influence] that the roaming
+{% cite wwju uzer2002geometry WaalkensSchubertWiggins08 wiggins2016 --file allrefs %}. It
+was shown{% cite krajnak2018phase krajnak2018influence --file allrefs %} that the roaming
 phenomenon involves a heteroclinic intersection of the invariant
 manifolds of $\Gamma^i$ and $\Gamma^o$. The condition
 $H(r,\theta=0,p_r>0, p_\theta=0)$ defines an invariant subsystem that
@@ -371,10 +384,12 @@ Therefore if the invariant manifolds of $\Gamma^i$ and $\Gamma^o$ do not
 intersect, the former are contained in interior of the latter and each
 trajectory leaving the potential well dissociates immediately. An
 intersection assures that some trajectories leaving the well do not
-dissociate immediately and return to DS$^a$ as illustrated in Fig. (#fig:DSa). This
+dissociate immediately and return to DS$^a$ as illustrated in Fig. [fig:3](#fig:DSa). This
 allows for roaming and isomerisation.
 
-![Intersection of invariant manifolds of $\Gamma^i$ (blue) and $\Gamma^o$ (orange) with the outward annulus of DS$^a$ for $E=1$. Trajectories that just left the potential well are shown in blue, immediately dissociating trajectories in orange. Roaming and isomerising trajectories in the blue area just left the well and do not dissociate immediately, while roaming and dissociating trajectories in the orange are dissociate immediately but did not just leave the potential wells.](figures/figure3.jpg){#fig:DSa}
+![Intersection of invariant manifolds of $\Gamma^i$ (blue) and $\Gamma^o$ (orange) with the outward annulus of DS$^a$ for $E=1$. Trajectories that just left the potential well are shown in blue, immediately dissociating trajectories in orange. Roaming and isomerising trajectories in the blue area just left the well and do not dissociate immediately, while roaming and dissociating trajectories in the orange are dissociate immediately but did not just leave the potential wells.](figures/figure3.jpg)
+<a id="fig:DSa"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:3 </b><em>Intersection of invariant manifolds of $\Gamma^i$ (blue) and $\Gamma^o$ (orange) with the outward annulus of DS$^a$ for $E=1$. Trajectories that just left the potential well are shown in blue, immediately dissociating trajectories in orange. Roaming and isomerising trajectories in the blue area just left the well and do not dissociate immediately, while roaming and dissociating trajectories in the orange are dissociate immediately but did not just leave the potential wells.</em></figcaption><hr>
 
 ### Hamiltonian and periodic orbits for thermostatted Chesnavich model
 
@@ -442,17 +457,19 @@ steeper walls. In contrast to the microcanonical case, the isokinetic
 model only possesses two periodic orbits with period $2\pi$ and due to
 constant nonzero kinetic energy does not admit self-retracing orbits
 (also referred to as brake orbits) such as $\Gamma^i$ introduced in
-Section (#sec:roamingChes){reference-type="ref"
+Section [sec:6](#sec:roamingChes){reference-type="ref"
 reference="sec:roamingChes"}. One of the periodic orbits delimits the
-potential wells, see Fig. (#fig:disI); we therefore refer to it as the inner orbit.
+potential wells, see Fig. [fig:4](#fig:disI); we therefore refer to it as the inner orbit.
 
-![Inner periodic orbit on the potential energy surface $- \frac{1}{2}e^{-U}$.](figures/figure4.jpg){#fig:disI}
+![Inner periodic orbit on the potential energy surface $- \frac{1}{2}e^{-U}$.](figures/figure4.jpg)
+<a id="fig:disI"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:4 </b><em>Inner periodic orbit on the potential energy surface $- \frac{1}{2}e^{-U}$.</em></figcaption><hr>
 
 The outer orbit, beyond which trajectories do not return and corresponds
 to the dissociated state of the molecule, is associated with a
 centrifugal barrier. It is rotationally symmetric and has a radius
 $r\approx13.43$. Its existence can be proven using a similar argument as
-in the original system [@krajnak2018phase]: suppose $r$ is sufficiently
+in the original system {% cite krajnak2018phase --file allrefs %}: suppose $r$ is sufficiently
 large so that $U$ is effectively independent of $\theta$. Denote
 $r_{po}$ the solution of
 
@@ -478,18 +495,20 @@ instability poses a serious challenge to calculation of its invariant
 manifolds that guide trajectories in phase space.
 
 ## Implications for Reaction Dynamics
-### Classification of trajectories and roaming in the isokinetic Chesnavich model {#subsec:results}
+### Classification of trajectories and roaming in the isokinetic Chesnavich model 
+<a id="subsec:results"></a>
 
 In this section we investigate dynamics in phase space and show the
 presence of roaming in the thermostatted Chesnavich model. Due to the
 strength of instability of the inner periodic orbit, we visualise phase
 space structures using escape times and Lagrangian
-descriptors[@madrid2009ld; @lopesino2015cnsns] on surfaces of section
+descriptors{% cite madrid2009ld lopesino2015cnsns --file allrefs %} on surfaces of section
 rather than calculating invariant manifolds themselves.
 
 ![](figures/figure5a.jpg)
 ![](figures/figure5b.jpg)
-![Escape times for initial conditions on the outward annulus of DS$^a$ in Chesnavich's model (left) and on the outward annulus of the inner DS in the isokinetic model (right). Short isomerisation times are shown in light purple, long isomerisation times in dark purple, short dissociation times in light green and long dissociation times in dark green.]{#fig:DSescape}
+<a id="fig:DSescape"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:5 </b><em>Escape times for initial conditions on the outward annulus of DS$^a$ in Chesnavich's model (left) and on the outward annulus of the inner DS in the isokinetic model (right). Short isomerisation times are shown in light purple, long isomerisation times in dark purple, short dissociation times in light green and long dissociation times in dark green.</em></figcaption><hr>
 
 The two most natural surfaces of section for this system are: (i)
 $\theta=0$, $\dot{\theta}>0$ and (ii) the outward annulus of the inner
@@ -503,11 +522,11 @@ r=\bar{r}(\theta).
 \end{equation}
 
 Then all points in phase space satisfying \eqref{eq:disI} form
-a surface with coordinates $\theta$ and the canonically conjugate momentum[@Arnold78]
+a surface with coordinates $\theta$ and the canonically conjugate momentum{% cite Arnold78 --file allrefs %}
 
 $$p_\sigma=p_\theta+\bar{r}'(\theta)p_r.$$
 
-We remark that this surface is, similarly to DS$^a$ and DS$^o$ in Sec. (#sec:roamingChes), a torus. On this torus, the value of
+We remark that this surface is, similarly to DS$^a$ and DS$^o$ in Sec. [sec:6](#sec:roamingChes), a torus. On this torus, the value of
 $p_r^2$ is given implicitly by $\theta$, $p_\sigma$ and \eqref{eq:constantT} and the sign of $p_r$ is chosen so that
 
 $$\dot{r}>\bar{r}'(\theta),$$
@@ -519,8 +538,8 @@ The escape time is defined as the time a trajectory takes to escape the
 interaction region and reach a dissociated state beyond the outer orbit
 or either of the wells. Escape time plots obtained for initial
 conditions on the inner DS in the isokinetic model and on DS$^a$ in the
-Hamiltonian Chesnavich model are shown in Fig. (#fig:DSescape). The dynamics on DS$^a$ is explained in Sec.
-(#sec:roamingChes). We can see that while the surfaces share a
+Hamiltonian Chesnavich model are shown in Fig. [fig:5](#fig:DSescape). The dynamics on DS$^a$ is explained in Sec.
+[sec:6](#sec:roamingChes). We can see that while the surfaces share a
 toroidal geometry, the distributions of escape times of trajectories on
 them are quite dissimilar. Most of the trajectories in the
 microcanonical case escape in the same manner as the prototypical
@@ -533,11 +552,12 @@ uniform isomerisation regions around $\theta=1$ and $\theta=2$.
 
 ![](figures/figure6a.jpg)
 ![](figures/figure6b.jpg)
-![Escape times for initial conditions on $\theta=0$, $\dot{\theta}>0$ and a the profile of the surface for $r=6$ with details of the fractal structure. Short isomerisation times are shown in light purple, long isomerisation times in dark purple, short dissociation times in light green and long dissociation times in dark green.]{#fig:thetaescape}
+<a id="fig:thetaescape"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:6 </b><em>Escape times for initial conditions on $\theta=0$, $\dot{\theta}>0$ and a the profile of the surface for $r=6$ with details of the fractal structure. Short isomerisation times are shown in light purple, long isomerisation times in dark purple, short dissociation times in light green and long dissociation times in dark green.</em></figcaption><hr>
 
 The boundary between dissociating and isomerising trajectories, as well
 as between direct dissociation and more complicated dynamics, consists
-of invariant manifolds. Fig. (#fig:thetaescape) shows escape times on the surface of
+of invariant manifolds. Fig. [fig:6](#fig:thetaescape) shows escape times on the surface of
 section $\theta=0$, $\dot{\theta}>0$. Note the singularity in the plot
 separating a homogeneous area of relatively fast dissociation for large
 values of $p_r$ from more complicated dynamics for lower values of
@@ -548,23 +568,25 @@ As it is the case in the microcanonical system, directly dissociating
 trajectories are guided by the stable invariant manifold of the outer
 periodic orbit across the phase space bottleneck associated with the
 outer periodic orbit. Directly dissociating trajectories are located
-above the stable invariant manifold in Fig. (#fig:thetaescape). All trajectories below the manifold
+above the stable invariant manifold in Fig. [fig:6](#fig:thetaescape). All trajectories below the manifold
 correspond to roaming, isomerizing or nonreactive trajectories. As
-argued in Sec. (#sec:roamingChes), if there are trajectories on the inner DS
+argued in Sec. [sec:6](#sec:roamingChes), if there are trajectories on the inner DS
 that do not dissociate, the invariant manifolds of the inner and outer
-orbits must intersect. Fig. (#fig:DSescape) shows regions of isomerization, therefore the
+orbits must intersect. Fig. [fig:5](#fig:DSescape) shows regions of isomerization, therefore the
 manifolds intersect and all dissociating trajectories in the fractal
 structures of complicated dynamics on the inner DS correspond to roaming
 trajectories.
 
-![Representative trajectories for different classes along $\theta=0$, $\dot{\theta}>0$, $r=6$.](figures/figure7.jpg){#fig:timetraj}
+![Representative trajectories for different classes along $\theta=0$, $\dot{\theta}>0$, $r=6$.](figures/figure7.jpg)
+<a id="fig:timetraj"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:7 </b><em>Representative trajectories for different classes along $\theta=0$, $\dot{\theta}>0$, $r=6$.</em></figcaption><hr>
 
 The bands of isomerizing and dissociating trajectories form a fractal
 structure and can be classified by the number of rotations in $\theta$
 before escaping from the interaction region. These too are separated by
 invariant manifolds on the inner and outer periodic orbits. The fractal
-structure from Fig. (#fig:thetaescape) can be understood using the configuration
-space projections of representative trajectories shown in Fig. (#fig:timetraj). In general, trajectories exhibit two
+structure from Fig. [fig:6](#fig:thetaescape) can be understood using the configuration
+space projections of representative trajectories shown in Fig. [fig:7](#fig:timetraj). In general, trajectories exhibit two
 dynamical 'motifs': they can perform a rotation at large $r$ or interact
 with the areas of high potential near the local maxima at small $r$.
 Interaction with areas of high potential leads to escape out of the
@@ -572,10 +594,10 @@ interaction region, capture in one of the potential wells, rotation in
 the same direction or rotation in the opposite direction. Trajectories
 are grouped by the sequence of these motifs in the fractal structure,
 for example trajectories that rotation by $\pi/2$ and then dissociate or
-isomerise (see second panel in Fig. (#fig:timetraj)) are close to each other and well separated
+isomerise (see second panel in Fig. [fig:7](#fig:timetraj)) are close to each other and well separated
 from trajectories that rotate by $\pi$. Each class could be denoted by a
 sequence of integers denoting the number of rotations (see third panel
-in Fig. (#fig:timetraj)) between interactions with the areas of high
+in Fig. [fig:7](#fig:timetraj)) between interactions with the areas of high
 potential.
 
 In this way we can find trajectories that perform any possible
@@ -587,11 +609,12 @@ isokinetic system is the same as in the microcanonical system.
 
 ![](figures/figure8a.jpg)
 ![](figures/figure8b.jpg)
-![Lagrangian descriptors \eqref{eq:ld05} (top) and \eqref{eq:ldr} (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.]{#fig:thetald}
+<a id="fig:thetald"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:8 </b><em>Lagrangian descriptors \eqref{eq:ld05} (top) and \eqref{eq:ldr} (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.</em></figcaption><hr>
 
 It is important to note that the same results can be obtained using
-Lagrangian descriptors[@madrid2009ld; @lopesino2015cnsns] as shown in
-Fig. (#fig:thetald). We present the plot for the forward Lagrangian
+Lagrangian descriptors{% cite madrid2009ld lopesino2015cnsns --file allrefs %} as shown in
+Fig. [fig:8](#fig:thetald). We present the plot for the forward Lagrangian
 descriptor
 
 \begin{equation}
@@ -614,13 +637,13 @@ are even more pronounced for the radial gain Lagrangian descriptor
 
 The goal of this chapter is to extend our previous study of the
 analogous roaming reaction mechanisms at constant kinetic energy
-[@krajnak2019isokinetic]. We do this by applying a Hamiltonian
+{% cite krajnak2019isokinetic --file allrefs %}. We do this by applying a Hamiltonian
 isokinetic thermostat
-[@Dettmann96; @Morriss98; @Litniewski93; @Morishita03] to Chesnavich's
+{% cite Dettmann96 Morriss98 Litniewski93 Morishita03 --file allrefs %} to Chesnavich's
 model. Use of the isokinetic thermostat means that we are effectively
 investigating roaming at constant temperature. A detailed study of
 Chesnavich's model subjected to the Hamiltonian isokinetic thermostat is
-given in [@krajnak2019isokinetic]. In that work it was found that
+given in {% cite krajnak2019isokinetic --file allrefs %}. In that work it was found that
 certain of the periodic orbits that govern the roaming dynamics are
 highly unstable: their Lyapunov exponents are $\sim 10^{21}$. In such a
 situation detection of the periodic orbits, as well as the computation
@@ -628,7 +651,7 @@ of their stable and unstable manifolds, becomes problematic using
 traditional approaches.
 
 In this section we show that the method of Lagrangian descriptors (introduced in the Prologue)
-[@madrid2009ld; @craven2016deconstructing; @craven2017lagrangian; @craven2015lagrangian; @junginger2016transition; @junginger2017chemical; @feldmaier2017obtaining; @junginger2016transition; @feldmaier2017obtaining; @patra2018detecting]
+{% cite madrid2009ld craven2016deconstructing craven2017lagrangian craven2015lagrangian junginger2016transition junginger2017chemical feldmaier2017obtaining junginger2016transition feldmaier2017obtaining patra2018detecting --file allrefs %}
 can be used to compute stable and unstable manifolds of such highly
 unstable periodic orbits. We applying this approach to Chesnavich's
 model subjected to a Hamiltonian isokinetic thermostat and show that the
@@ -690,7 +713,7 @@ phase space bottlenecks.
 
 Due to the large instability of the inner orbit, it was not previously
 possible to compute its invariant manifolds to create an analogue of
-Fig. (#fig:DSa).
+Fig. [fig:3](#fig:DSa).
 The Lagrangian descriptors defined in Sec. (#sec:newLD) uncover
 trajectories in the proximity of invariant manifolds and we thereby
 avoid having to compute invariant manifolds at all.
@@ -758,18 +781,19 @@ locally minimises
 LD_o=\int\limits^{\tau}_{0} |\dot{r}| dt.
  \label{eq:LDo}
 \end{equation}
-
+<!-- #endregion -->
 
 ![](figures/ldIth0t8.png)
 ![](figures/ldOth0t8.png)
-![Lagrangian descriptors $LD_i$ \eqref{eq:LDi} for $\tau=8$ (top) and $LD_o$ \eqref{eq:LDo} for $\tau=8$ (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.]{#fig:manifs_th0}
+<a id="fig:manifs_th0"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:9 </b><em>Lagrangian descriptors $LD_i$ \eqref{eq:LDi} for $\tau=8$ (top) and $LD_o$ \eqref{eq:LDo} for $\tau=8$ (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.</em></figcaption><hr>
 
-In [@krajnak2019isokinetic], we found that singularities in the escape
+In {% cite krajnak2019isokinetic --file allrefs %}, we found that singularities in the escape
 time plot matched significant changes in Lagrangian descriptor plots.
 Both these features indicated the presence of invariant manifolds. In
-Fig. (#fig:manifs_th0) we show $LD_i$ \eqref{eq:LDi} and $LD_o$ \eqref{eq:LDo}
+Fig. [fig:9](#fig:manifs_th0) we show $LD_i$ \eqref{eq:LDi} and $LD_o$ \eqref{eq:LDo}
 on the surface $\theta=0$, $\dot{\theta}>0$, where the latter is similar
-to the plots in [@krajnak2019isokinetic] and the former shows similar
+to the plots in {% cite krajnak2019isokinetic --file allrefs %} and the former shows similar
 features reflected about $p_r=0$ due to the opposite time direction in
 the definition of $LD_i$. Both plots show LD values on a uniform
 $400\times400$ grid. A higher density improves accuracy but does not
@@ -777,14 +801,15 @@ yield additional qualitative information. The accompanying sections for
 $r=6$ illustrate the nature of the local minima.
 
 The presence of roaming is only possible if $W_i^u$ and $W_o^s$
-intersect [@krajnak2018phase]. Fig. (#fig:manifs_th0) provides direct evidence of the intersection
+intersect {% cite krajnak2018phase --file allrefs %}. Fig. [fig:9](#fig:manifs_th0) provides direct evidence of the intersection
 - the two panels show $W_i^u$ and $W_o^s$ using different Lagrangian
 descriptors on the same surface of section. These manifolds necessarily
 intersect.
 
 ![](figures/ldIr36t6.png)
 ![](figures/ldIr36t8.png)
-![Lagrangian descriptor \eqref{eq:LDi} for $\tau=6$ (top) and $\tau=8$ (bottom) for initial conditions on $r=3.6$, $\dot{r}>0$.]{#fig:manifsI_r36}
+<a id="fig:manifsI_r36"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:10 </b><em>Lagrangian descriptor \eqref{eq:LDi} for $\tau=6$ (top) and $\tau=8$ (bottom) for initial conditions on $r=3.6$, $\dot{r}>0$.</em></figcaption><hr>
 
 Further information on the geometry of the intersection of $W_i^u$ and
 $W_o^s$ can be seen using a surface of section analogous to the outward
@@ -792,14 +817,15 @@ annulus of DS$^a$ used in the Hamiltonian case.
 
 ![](figures/ldOr36t10.png)
 ![](figures/ldOr36t20.png)
-![Lagrangian descriptor $LD_o$ \eqref{eq:LDo} for $\tau=10$ (top) and for $\tau=20$ (bottom) for initial conditions on $r=3.6$, $\dot{r}>0$.]{#fig:manifsO_r36}
+<a id="fig:manifsO_r36"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:11 </b><em>Lagrangian descriptor $LD_o$ \eqref{eq:LDo} for $\tau=10$ (top) and for $\tau=20$ (bottom) for initial conditions on $r=3.6$, $\dot{r}>0$.</em></figcaption><hr>
 
 Due to the absence of other $2\pi$-periodic orbits, one cannot expect to
 easily obtain a surface of section that is transversal to the flow. For
 simplicity, we use a surface of section defined by the condition
 $r=3.6$, $\dot{r}>0$. Figures
-(#fig:manifsI_r36) and
-(#fig:manifsO_r36) show $LD_i$
+[fig:10](#fig:manifsI_r36) and
+[fig:11](#fig:manifsO_r36) show $LD_i$
 \eqref{eq:LDi} and $LD_o$ \eqref{eq:LDo}
 on this surface. Areas of low values of $LD_i$ and $LD_o$ correspond to
 trajectories that are asymptotic to the respective periodic orbits. Note
@@ -824,24 +850,26 @@ inner periodic orbit with $p_\theta>0$. The S-shape closest to
 $\theta=-1$, $p_\theta=0$ corresponds to the inner periodic orbit with
 $p_\theta<0$. The other S-shapes are related by symmetry.
 
-![Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. (#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig (#fig:manifsO_r36) that separate different classes of dynamics. For details see text.](figures/manif_intersection400_labels.png){#fig:intersection}
+![Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. [fig:10](#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig [fig:11](#fig:manifsO_r36) that separate different classes of dynamics. For details see text.](figures/manif_intersection400_labels.png)
+<a id="fig:intersection"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:12 </b><em>Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. [fig:10][fig:10](#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig [fig:11](#fig:manifsO_r36) that separate different classes of dynamics. For details see text.</em></figcaption><hr>
 
-Fig. (#fig:intersection) shows superposed manifolds approximated
+Fig. [fig:12](#fig:intersection) shows superposed manifolds approximated
 from $LD_i$ ($\tau=6$) and $LD_o$ ($\tau=20$) values. Minima of $LD_o$
 for fixed values of $\theta$ reveal $W_o^s$ immediately.
 
 Due to the high instability of the inner orbit, locating $W_i^u$ using
 minima of $LD_i$ requires a very dense sampling with a correspondingly
 high computational cost. (Note how narrow the interval for finding the
-minimum on the profile of $LD_i$ on $\theta=0$, $r=6$ in Fig. (#fig:manifs_th0) is.) Instead we can take advantage of the
+minimum on the profile of $LD_i$ on $\theta=0$, $r=6$ in Fig. [fig:9](#fig:manifs_th0) is.) Instead we can take advantage of the
 steepnes of the gradient near the invariant manifold and consider maxima
 of $\Delta_\theta LD_i$ on a $400\times400$ grid for fixed $p_\theta$
 values. This way we recover the four S-shapes due to $W_i^u$. Applying a
 cutoff at high values of $LD_i$ before calculating $\Delta_\theta LD_i$
-delivers a cleaner image; in Fig. (#fig:intersection) we used a cutoff at
+delivers a cleaner image; in Fig. [fig:12](#fig:intersection) we used a cutoff at
 $\frac{1}{2}(\text{max}_{LD_i}+\text{min}_{LD_i})$.
 
-Aside from $W_i^u$, Fig. (#fig:intersection) shows traces of two nearly linear segments
+Aside from $W_i^u$, Fig. [fig:12](#fig:intersection) shows traces of two nearly linear segments
 near $W_i^u$ pointing towards the points $\theta=\frac{\pi}{2}$,
 $p_\theta=0$ and $\theta=\frac{3\pi}{2}$, $p_\theta=0$ on the surface of
 section. These are initial conditions of trajectories asymptotic to the
@@ -853,7 +881,7 @@ $\theta=\frac{3\pi}{2}$, $p_\theta=0$, $p_r<0$.)
 
 Having identified $W_i^u$ and $W_o^s$, we can observe that these
 invariant manifolds guide trajectories in the same way as in the
-microcanonical model. Fig. (#fig:intersection) is analogous to Fig. (#fig:DSa). The
+microcanonical model. Fig. [fig:12](#fig:intersection) is analogous to Fig. [fig:3](#fig:DSa). The
 area between the two circles of $W_o^s$ is crossed by trajectories that
 are led by $W_o^s$ to dissociation. The area containing
 $\theta=p_\theta=0$ between two of the S-shapes of $W_i^u$ is crossed by
@@ -874,9 +902,11 @@ entering one of the wells or dissociating.
 
 It is important to note that all classes of dynamics are separated by an
 intricate fractal structure made up of invariant manifolds, as shown in
-[@krajnak2019isokinetic]. The structure becomes visible when integrating
+{% cite krajnak2019isokinetic --file allrefs %}. The structure becomes visible when integrating
 any Lagrangian descriptor over a long time interval, see the details of
-Fig. (#fig:manifsI_r36) and (#fig:manifsO_r36).
+Fig. [fig:10](#fig:manifsI_r36) and [fig:11](#fig:manifsO_r36).
 
 # References
 
+
+{% bibliography --file allrefs --cited %}
