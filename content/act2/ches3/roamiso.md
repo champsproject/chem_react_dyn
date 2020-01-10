@@ -243,8 +243,7 @@ potential and a flat area beyond them as shown in Fig.
 ![Contour plot of Chesnavich's potential energy surface $U$ for $a=1$.
 Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$.
 Contours correspond to values of potential shown on the colorbar right,
-with some values indicated in the plot.
-[]{label="fig:pot"}](figures/figure1.jpg){#fig:pot width="50%"}
+with some values indicated in the plot.](figures/figure1.jpg){#fig:pot}
 
 The long range potential is
 
@@ -326,8 +325,7 @@ none of the orbits is directly related to a saddle point of the system.
 
 ![Configuration space projections of inner ($\Gamma^i$), middle
 ($\Gamma^a$) and outer ($\Gamma^o$) periodic orbits for
-$E=5$.[]{label="fig:orbitse5"}](figures/figure2.jpg){#fig:orbitse5
-width="60%"}
+$E=5$.](figures/figure2.jpg){#fig:orbitse5}
 
 Their significance is as follows:
 
@@ -408,7 +406,7 @@ immediately dissociating trajectories in orange. Roaming and isomerising
 trajectories in the blue area just left the well and do not dissociate
 immediately, while roaming and dissociating trajectories in the orange
 are dissociate immediately but did not just leave the potential
-wells.[]{label="fig:DSa"}](figures/figure3.jpg){#fig:DSa}
+wells.](figures/figure3.jpg){#fig:DSa}
 
 ### Hamiltonian and periodic orbits for thermostatted Chesnavich model
 
@@ -487,8 +485,7 @@ potential wells, see Fig. [\[fig:disI\]](#fig:disI){reference-type="ref"
 reference="fig:disI"}; we therefore refer to it as the inner orbit.
 
 ![Inner periodic orbit on the potential energy surface
-$- \frac{1}{2}e^{-U}$.[]{label="fig:disI"}](figures/figure4.jpg){#fig:disI
-width="60%"}
+$- \frac{1}{2}e^{-U}$.](figures/figure4.jpg){#fig:disI}
 
 The outer orbit, beyond which trajectories do not return and corresponds
 to the dissociated state of the molecule, is associated with a
@@ -531,20 +528,15 @@ space structures using escape times and Lagrangian
 descriptors[@madrid2009ld; @lopesino2015cnsns] on surfaces of section
 rather than calculating invariant manifolds themselves.
 
-![Escape times for initial conditions on the outward annulus of DS$^a$
-in Chesnavich's model (left) and on the outward annulus of the inner DS
-in the isokinetic model (right). Short isomerisation times are shown in
-light purple, long isomerisation times in dark purple, short
-dissociation times in light green and long dissociation times in dark
-green.[]{label="fig:DSescape"}](figures/figure5a.jpg){#fig:DSescape
-width="49%"} ![Escape times for initial conditions on the outward
+![](figures/figure5a.jpg)
+![](figures/figure5b.jpg)
+![Escape times for initial conditions on the outward
 annulus of DS$^a$ in Chesnavich's model (left) and on the outward
 annulus of the inner DS in the isokinetic model (right). Short
 isomerisation times are shown in light purple, long isomerisation times
 in dark purple, short dissociation times in light green and long
 dissociation times in dark
-green.[]{label="fig:DSescape"}](figures/figure5b.jpg){#fig:DSescape
-width="49%"}
+green.]{#fig:DSescape}
 
 The two most natural surfaces of section for this system are: (i)
 $\theta=0$, $\dot{\theta}>0$ and (ii) the outward annulus of the inner
@@ -593,19 +585,14 @@ the constant kinetic energy constraint - note the nearly uniform
 dissociation around the local maximum at $\theta=\pi/2$ and nearly
 uniform isomerisation regions around $\theta=1$ and $\theta=2$.
 
-![Escape times for initial conditions on $\theta=0$, $\dot{\theta}>0$
-and a the profile of the surface for $r=6$ with details of the fractal
-structure. Short isomerisation times are shown in light purple, long
-isomerisation times in dark purple, short dissociation times in light
-green and long dissociation times in dark
-green.[]{label="fig:thetaescape"}](figures/figure6a.jpg){#fig:thetaescape
-width="49%"} ![Escape times for initial conditions on $\theta=0$,
+![](figures/figure6a.jpg)
+![](figures/figure6b.jpg)
+![Escape times for initial conditions on $\theta=0$,
 $\dot{\theta}>0$ and a the profile of the surface for $r=6$ with details
 of the fractal structure. Short isomerisation times are shown in light
 purple, long isomerisation times in dark purple, short dissociation
 times in light green and long dissociation times in dark
-green.[]{label="fig:thetaescape"}](figures/figure6b.jpg){#fig:thetaescape
-width="49%"}
+green.]{#fig:thetaescape}
 
 The boundary between dissociating and isomerising trajectories, as well
 as between direct dissociation and more complicated dynamics, consists
@@ -637,8 +624,7 @@ structures of complicated dynamics on the inner DS correspond to roaming
 trajectories.
 
 ![Representative trajectories for different classes along $\theta=0$,
-$\dot{\theta}>0$, $r=6$.[]{label="fig:timetraj"}](figures/figure7.jpg){#fig:timetraj
-width="90%"}
+$\dot{\theta}>0$, $r=6$.](figures/figure7.jpg){#fig:timetraj}
 
 The bands of isomerizing and dissociating trajectories form a fractal
 structure and can be classified by the number of rotations in $\theta$
@@ -658,12 +644,10 @@ the same direction or rotation in the opposite direction. Trajectories
 are grouped by the sequence of these motifs in the fractal structure,
 for example trajectories that rotation by $\pi/2$ and then dissociate or
 isomerise (see second panel in Fig.
-[\[fig:timetraj\]](#fig:timetraj){reference-type="ref"
-reference="fig:timetraj"}) are close to each other and well separated
+[\[fig:timetraj\]](#fig:timetraj)) are close to each other and well separated
 from trajectories that rotate by $\pi$. Each class could be denoted by a
 sequence of integers denoting the number of rotations (see third panel
-in Fig. [\[fig:timetraj\]](#fig:timetraj){reference-type="ref"
-reference="fig:timetraj"}) between interactions with the areas of high
+in Fig. [\[fig:timetraj\]](#fig:timetraj)) between interactions with the areas of high
 potential.
 
 In this way we can find trajectories that perform any possible
@@ -673,24 +657,13 @@ other words, regardless of the lack of self-retracing orbits in the
 interaction region, the scale of complicated dynamics exhibited by the
 isokinetic system is the same as in the microcanonical system.
 
-![Lagrangian descriptors [\[eq:ld05\]](#eq:ld05){reference-type="eqref"
-reference="eq:ld05"} (left) and
-[\[eq:ldr\]](#eq:ldr){reference-type="eqref" reference="eq:ldr"} (right)
-for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their
-profiles for
-$r=6$.[]{label="fig:thetald"}](figures/figure8a.jpg){#fig:thetald
-width="49%"} ![Lagrangian descriptors
-[\[eq:ld05\]](#eq:ld05){reference-type="eqref" reference="eq:ld05"}
-(left) and [\[eq:ldr\]](#eq:ldr){reference-type="eqref"
-reference="eq:ldr"} (right) for initial conditions on $\theta=0$,
-$\dot{\theta}>0$ and their profiles for
-$r=6$.[]{label="fig:thetald"}](figures/figure8b.jpg){#fig:thetald
-width="49%"}
+![](figures/figure8a.jpg)
+![](figures/figure8b.jpg)
+![Lagrangian descriptors (#eq:ld05)(top) and (#eq:ldr) (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.]{#fig:thetald}
 
 It is important to note that the same results can be obtained using
 Lagrangian descriptors[@madrid2009ld; @lopesino2015cnsns] as shown in
-Fig. [\[fig:thetald\]](#fig:thetald){reference-type="ref"
-reference="fig:thetald"}. We present the plot for the forward Lagrangian
+Fig. [\[fig:thetald\]](#fig:thetald). We present the plot for the forward Lagrangian
 descriptor
 
 \begin{equation}
@@ -865,27 +838,18 @@ LD_o=\int\limits^{\tau}_{0} |\dot{r}| dt.
 
 
 
-![Lagrangian descriptors $LD_i$
-[\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} for
-$\tau=8$ (left) and $LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref"
-reference="eq:LDo"} for $\tau=8$ (right) for initial conditions on
-$\theta=0$, $\dot{\theta}>0$ and their profiles for
-$r=6$.](figures/ldIth0t8.png){width="50%"} ![Lagrangian descriptors $LD_i$
-[\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} for
-$\tau=8$ (left) and $LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref"
-reference="eq:LDo"} for $\tau=8$ (right) for initial conditions on
-$\theta=0$, $\dot{\theta}>0$ and their profiles for
-$r=6$.](figures/ldOth0t8.png){width="50%"}
-
-[\[fig:manifs\_th0\]]{#fig:manifs_th0 label="fig:manifs_th0"}
+![](figures/ldIth0t8.png)
+![](figures/ldOth0t8.png)
+![Lagrangian descriptors $LD_i$ (#eq:LDi) for
+$\tau=8$ (top) and $LD_o$ (#eq:LDo) for $\tau=8$ (bottom) for initial conditions on
+$\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.]{#fig:manifs_th0}
 
 In [@krajnak2019isokinetic], we found that singularities in the escape
 time plot matched significant changes in Lagrangian descriptor plots.
 Both these features indicated the presence of invariant manifolds. In
-Fig. [\[fig:manifs\_th0\]](#fig:manifs_th0){reference-type="ref"
-reference="fig:manifs_th0"} we show $LD_i$
-[\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} and
-$LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref" reference="eq:LDo"}
+Fig. [\[fig:manifs\_th0\]](#fig:manifs_th0) we show $LD_i$
+[\[eq:LDi\]](#eq:LDi) and
+$LD_o$ [\[eq:LDo\]](#eq:LDo)
 on the surface $\theta=0$, $\dot{\theta}>0$, where the latter is similar
 to the plots in [@krajnak2019isokinetic] and the former shows similar
 features reflected about $p_r=0$ due to the opposite time direction in
@@ -903,42 +867,28 @@ descriptors on the same surface of section. These manifolds necessarily
 intersect.
 
 
-![Lagrangian descriptor $LD_i$
-[\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} for
-$\tau=6$ (left) and $\tau=8$ (right) for initial conditions on $r=3.6$,
-$\dot{r}>0$.](figures/ldIr36t6.png){width="50%"} ![Lagrangian descriptor
-$LD_i$ [\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"}
-for $\tau=6$ (left) and $\tau=8$ (right) for initial conditions on
-$r=3.6$, $\dot{r}>0$.](figures/ldIr36t8.png){width="50%"}
-
-[\[fig:manifsI\_r36\]]{#fig:manifsI_r36 label="fig:manifsI_r36"}
+![](figures/ldIr36t6.png)
+![](figures/ldIr36t8.png)
+![Lagrangian descriptor (#eq:LDi) for $\tau=6$ (top) and $\tau=8$ (bottom) for initial conditions on
+$r=3.6$, $\dot{r}>0$.]{#fig:manifsI_r36}
 
 Further information on the geometry of the intersection of $W_i^u$ and
 $W_o^s$ can be seen using a surface of section analogous to the outward
 annulus of DS$^a$ used in the Hamiltonian case.
 
 
-![Lagrangian descriptor $LD_o$
-[\[eq:LDo\]](#eq:LDo){reference-type="eqref" reference="eq:LDo"} for
-$\tau=10$ (left) and for $\tau=20$ (right) for initial conditions on
-$r=3.6$, $\dot{r}>0$.](figures/ldOr36t10.png){width="50%"} ![Lagrangian
-descriptor $LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref"
-reference="eq:LDo"} for $\tau=10$ (left) and for $\tau=20$ (right) for
-initial conditions on $r=3.6$,
-$\dot{r}>0$.](figures/ldOr36t20.png){width="50%"}
-
-[\[fig:manifsO\_r36\]]{#fig:manifsO_r36 label="fig:manifsO_r36"}
+![](figures/ldOr36t10.png)
+![](figures/ldOr36t20.png)
+![Lagrangian descriptor $LD_o$ (#eq:LDo) for $\tau=10$ (top) and for $\tau=20$ (bottom) for
+initial conditions on $r=3.6$, $\dot{r}>0$.]{#fig:manifsO_r36}
 
 Due to the absence of other $2\pi$-periodic orbits, one cannot expect to
 easily obtain a surface of section that is transversal to the flow. For
 simplicity, we use a surface of section defined by the condition
 $r=3.6$, $\dot{r}>0$. Figures
-[\[fig:manifsI\_r36\]](#fig:manifsI_r36){reference-type="ref"
-reference="fig:manifsI_r36"} and
-[\[fig:manifsO\_r36\]](#fig:manifsO_r36){reference-type="ref"
-reference="fig:manifsO_r36"} show $LD_i$
-[\[eq:LDi\]](#eq:LDi){reference-type="eqref" reference="eq:LDi"} and
-$LD_o$ [\[eq:LDo\]](#eq:LDo){reference-type="eqref" reference="eq:LDo"}
+[\[fig:manifsI\_r36\]](#fig:manifsI_r36) and
+[\[fig:manifsO\_r36\]](#fig:manifsO_r36) show $LD_i$
+[\[eq:LDi\]](#eq:LDi) and $LD_o$ [\[eq:LDo\]](#eq:LDo)
 on this surface. Areas of low values of $LD_i$ and $LD_o$ correspond to
 trajectories that are asymptotic to the respective periodic orbits. Note
 that the structures are well defined visually for times that are of the
@@ -965,15 +915,11 @@ $p_\theta<0$. The other S-shapes are related by symmetry.
 
 ![Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$
 extracted from $LD_i$ for $\tau=6$ shown in Fig.
-[\[fig:manifsI\_r36\]](#fig:manifsI_r36){reference-type="ref"
-reference="fig:manifsI_r36"} and $LD_o$ for $\tau=20$ shown in Fig
-[\[fig:manifsO\_r36\]](#fig:manifsO_r36){reference-type="ref"
-reference="fig:manifsO_r36"} that separate different classes of
-dynamics. For details see
-text.[]{label="fig:intersection"}](figures/manif_intersection400_labels.png){#fig:intersection}
+(#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig
+(#fig:manifsO_r36) that separate different classes of
+dynamics. For details see text.](figures/manif_intersection400_labels.png){#fig:intersection}
 
-Fig. [\[fig:intersection\]](#fig:intersection){reference-type="ref"
-reference="fig:intersection"} shows superposed manifolds approximated
+Fig. (#fig:intersection) shows superposed manifolds approximated
 from $LD_i$ ($\tau=6$) and $LD_o$ ($\tau=20$) values. Minima of $LD_o$
 for fixed values of $\theta$ reveal $W_o^s$ immediately.
 
@@ -981,20 +927,17 @@ Due to the high instability of the inner orbit, locating $W_i^u$ using
 minima of $LD_i$ requires a very dense sampling with a correspondingly
 high computational cost. (Note how narrow the interval for finding the
 minimum on the profile of $LD_i$ on $\theta=0$, $r=6$ in Fig.
-[\[fig:manifs\_th0\]](#fig:manifs_th0){reference-type="ref"
-reference="fig:manifs_th0"} is.) Instead we can take advantage of the
+[\[fig:manifs\_th0\]](#fig:manifs_th0) is.) Instead we can take advantage of the
 steepnes of the gradient near the invariant manifold and consider maxima
 of $\Delta_\theta LD_i$ on a $400\times400$ grid for fixed $p_\theta$
 values. This way we recover the four S-shapes due to $W_i^u$. Applying a
 cutoff at high values of $LD_i$ before calculating $\Delta_\theta LD_i$
 delivers a cleaner image; in Fig.
-[\[fig:intersection\]](#fig:intersection){reference-type="ref"
-reference="fig:intersection"} we used a cutoff at
+[\[fig:intersection\]](#fig:intersection) we used a cutoff at
 $\frac{1}{2}(\text{max}_{LD_i}+\text{min}_{LD_i})$.
 
 Aside from $W_i^u$, Fig.
-[\[fig:intersection\]](#fig:intersection){reference-type="ref"
-reference="fig:intersection"} shows traces of two nearly linear segments
+[\[fig:intersection\]](#fig:intersection) shows traces of two nearly linear segments
 near $W_i^u$ pointing towards the points $\theta=\frac{\pi}{2}$,
 $p_\theta=0$ and $\theta=\frac{3\pi}{2}$, $p_\theta=0$ on the surface of
 section. These are initial conditions of trajectories asymptotic to the
@@ -1007,9 +950,8 @@ $\theta=\frac{3\pi}{2}$, $p_\theta=0$, $p_r<0$.)
 Having identified $W_i^u$ and $W_o^s$, we can observe that these
 invariant manifolds guide trajectories in the same way as in the
 microcanonical model. Fig.
-[\[fig:intersection\]](#fig:intersection){reference-type="ref"
-reference="fig:intersection"} is analogous to Fig.
-[\[fig:DSa\]](#fig:DSa){reference-type="ref" reference="fig:DSa"}. The
+[\[fig:intersection\]](#fig:intersection) is analogous to Fig.
+[\[fig:DSa\]](#fig:DSa). The
 area between the two circles of $W_o^s$ is crossed by trajectories that
 are led by $W_o^s$ to dissociation. The area containing
 $\theta=p_\theta=0$ between two of the S-shapes of $W_i^u$ is crossed by
@@ -1032,7 +974,4 @@ It is important to note that all classes of dynamics are separated by an
 intricate fractal structure made up of invariant manifolds, as shown in
 [@krajnak2019isokinetic]. The structure becomes visible when integrating
 any Lagrangian descriptor over a long time interval, see the details of
-Fig. [\[fig:manifsI\_r36\]](#fig:manifsI_r36){reference-type="ref"
-reference="fig:manifsI_r36"} and
-[\[fig:manifsO\_r36\]](#fig:manifsO_r36){reference-type="ref"
-reference="fig:manifsO_r36"}.
+Fig. [\[fig:manifsI\_r36\]](#fig:manifsI_r36) and [\[fig:manifsO\_r36\]](#fig:manifsO_r36).
