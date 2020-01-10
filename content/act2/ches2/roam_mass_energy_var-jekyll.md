@@ -4,14 +4,14 @@
 
 Following recent developments in the understanding of the roaming
 mechanism in molecular dynamics
-[@Townsend2004; @Bowman2011; @Bowman2014; @Mauguiere2014; @Mauguiere2014b; @Mauguiere2015; @Mauguiere2016; @Bowman2017; @Krajnak2018],
-the results of Heazlewood et al. [@Heazlewood08] on roaming being the
+{% cite Townsend2004 Bowman2011 Bowman2014 Mauguiere2014 Mauguiere2014b Mauguiere2015 Mauguiere2016 Bowman2017 Krajnak2018 --file refs %},
+the results of Heazlewood et al. {% cite Heazlewood08 --file refs %} on roaming being the
 dominant mechanism for acetaldehyde photodissociation triggered the
 following question: Can some of the standard parameter values in
-Chesnavich's CH$_4^+$ model [@Chesnavich1986] be altered so that it
+Chesnavich's CH$_4^+$ model {% cite Chesnavich1986 --file refs %} be altered so that it
 admits roaming as the dominant form of dissociation? It is well known
 that roaming plays a minor role in the dissociation of
-Formaldehyde[@Townsend2004]. Since acetaldehyde dissociates into
+Formaldehyde{% cite Townsend2004 --file refs %}. Since acetaldehyde dissociates into
 CH$_4+$CO, one of the obvious differences in the dissociation of
 Formaldehyde into H$_2+$CO is the mass ratio of the products. Therefore
 we investigate the influence of various masses of the free atom on
@@ -21,9 +21,9 @@ and radial degrees of freedom in Chesnavich's potential, and deduce its
 impact on roaming. Physically speaking, $a$ controls the strength of the
 short range anisotropy of the CH$_3^+$ molecule and its precise role in
 the potential is discussed in Section
-(#sec:potential).
+[sec:2](#sec:potential).
 
-Chesnavich's CH$_4^+$ model [@Chesnavich1986] is a phenomenological $2$
+Chesnavich's CH$_4^+$ model {% cite Chesnavich1986 --file refs %} is a phenomenological $2$
 degree of freedom model introduced that was introduced to study the
 transition from vibrational reactants to rotational products in the
 presence of multiple transition states. We use it to study the first
@@ -36,13 +36,14 @@ least $4$ degrees of freedom. At the moment no tools for a qualitative
 dynamical study that would explain roaming in its entirety in $4$
 degrees of freedom have been developed.
 
-### Roaming {#sec:roam}
+### Roaming 
+<a id="sec:roam"></a>
 
 Roaming was discovered in the study of photodissociation of formaldehyde
-[@Townsend2004] (H$_2$CO) and explained the unusual energy distribution
-between H$_2$ and CO experimentally observed previously [@vanZee1993].
+{% cite Townsend2004 --file refs %} (H$_2$CO) and explained the unusual energy distribution
+between H$_2$ and CO experimentally observed previously {% cite vanZee1993 --file refs %}.
 Since then roaming was reported in a number of other molecules
-[@Bowman2017]. Initial states of roaming resemble radical dissociation,
+{% cite Bowman2017 --file refs %}. Initial states of roaming resemble radical dissociation,
 when a single H atom escapes from HCO by breaking a single covalent bond
 and immediately dissociates. Instead of dissociating, the free hydrogen
 'roams' around a flat monotonic region of the potential near HCO and
@@ -51,25 +52,25 @@ the products of this dissociation are identical to the products of
 molecular dissociation. While molecular dissociation requires the system
 to pass over a potential saddle, no saddle is involved in roaming.
 Consequently the distribution of energy between the products can differ
-significantly. Following a study [@Bowman2011] of H$_2$CO and CH$_3$CHO
+significantly. Following a study {% cite Bowman2011 --file refs %} of H$_2$CO and CH$_3$CHO
 it was established that regardless of similarity of products, roaming is
 actually closer to radical dissociation than to molecular dissociation
-and further evidence was published subsequently [@Huston2016].
+and further evidence was published subsequently {% cite Huston2016 --file refs %}.
 
 In light of developments following a phase space approach to chemical
-reaction dynamics [@Wigginsetal01; @Uzeretal02; @Waalkens04], we employ
+reaction dynamics {% cite Wigginsetal01 Uzeretal02 Waalkens04 --file refs %}, we employ
 the definition of roaming introduced in Ref. . This definition considers
 the number of intersections of a trajectory with a dynamically justified
 dividing surface and thereby accounts for the influence of various phase
 space structures. The dividing surface is constructed using an unstable
 periodic orbit that is not associated with any potential saddle. It was
-shown [@Mauguiere2015] how invariant manifolds of unstable periodic
+shown {% cite Mauguiere2015 --file refs %} how invariant manifolds of unstable periodic
 orbits convey trajectories between two potential wells in what is called
 a 'shepherding mechanism'. The exact phase space structure, an
 intersection of invariant manifolds of unstable periodic orbits,
-responsible for roaming was since identified [@Krajnak2018]. The key to
+responsible for roaming was since identified {% cite Krajnak2018 --file refs %}. The key to
 understanding roaming follows from the use of toric surfaces of section
-[@MacKay2014; @MacKay2015; @Mauguiere2016] to study invariant manifolds.
+{% cite MacKay2014 MacKay2015 Mauguiere2016 --file refs %} to study invariant manifolds.
 
 ## Development of the Problem
 
@@ -96,10 +97,10 @@ Chesnavich's potential $U(r,\theta)$ has the form
 and it is the sum
 of radial long range potential $U_{CH}$ and short range "hindered rotor"
 potential $U_{coup}$, that represents the anisotropy
-[@Chesnavich1986; @Jordan1991] of the rigid molecule CH$_3^+$. We use
+{% cite Chesnavich1986 Jordan1991 --file refs %} of the rigid molecule CH$_3^+$. We use
 the standard definition of $U_{CH}$ and $U_{coup}$ and standard
-parameter values as suggested by Chesnavich [@Chesnavich1986] and used
-in recent publications [@Mauguiere2014; @Mauguiere2014b; @Krajnak2018],
+parameter values as suggested by Chesnavich {% cite Chesnavich1986 --file refs %} and used
+in recent publications {% cite Mauguiere2014 Mauguiere2014b Krajnak2018 --file refs %},
 namely 
 
 \begin{equation}
@@ -118,19 +119,19 @@ and $c_2=1.61$, and
 where $U_e=55$ kcal/mol. The parameter $a$ (in Å$^{-2}$) influences the
 value of $r$ at which the transition from vibration to rotation occurs,
 for example $a=1$ represents a late transition
-[@Mauguiere2014b; @Mauguiere2014; @Krajnak2018] and $a=4$ an early
-transition [@Mauguiere2014b]. In this chapter we shall explore all values
+{% cite Mauguiere2014b Mauguiere2014 Krajnak2018 --file refs %} and $a=4$ an early
+transition {% cite Mauguiere2014b --file refs %}. In this chapter we shall explore all values
 of $a$ that may be relevant to roaming.
 
 The total energy $H(r,\theta,p_r, p_\theta)=E$ is given in kcal/mol with
 respect to the dissociation energy $0$.
 
 We introduce the potential in more detail and explain the role of the
-parameter $a$ is Section (#sec:potential){reference-type="ref"
+parameter $a$ is Section [sec:2](#sec:potential){reference-type="ref"
 reference="sec:potential"}. Subsequently we give an overview of roaming
-up to date in Section (#sec:roam), we explain how phase space structures influence
-the dynamics in Section (#sec:phase_transport) and focus on how these structures cause
-roaming in (#sec:phase_roaming).
+up to date in Section [sec:1](#sec:roam), we explain how phase space structures influence
+the dynamics in Section [sec:3](#sec:phase_transport) and focus on how these structures cause
+roaming in [sec:4](#sec:phase_roaming).
 
 To study the dependence of roaming on the mass of the free atom, we
 replace the free H atom by a atom of mass $m$, so that the reduced mass
@@ -152,9 +153,9 @@ Since $m$ is only present in the kinetic part of the Hamiltonian
 influence cannot be seen in configuration space. We explain how
 variations in mass of the free atom influence the system, phase space
 structures and roaming in different parts of phase space in Sections
-(#sec:inner),
-(#sec:outer) and
-(#sec:small).
+[sec:5](#sec:inner),
+[sec:6](#sec:outer) and
+[sec:7](#sec:small).
 
 The phase space structures that enable us to study dynamics in phase
 space are normally hyperbolic invariant manifolds (NHIMs) and the
@@ -162,7 +163,8 @@ corresponding stable and unstable invariant manifolds. We build upon the
 understanding of the role of NHIMs and invariant manifolds in governing
 dynamics as described in Refs. in great detail.
 
-### Role of the coupling parameter ($a$) {#sec:potential}
+### Role of the coupling parameter ($a$) 
+<a id="sec:potential"></a>
 
 The potential $U(r,\theta)$ as defined by
 Equations \eqref{eq:U}, \eqref{eq:UCH} and \eqref{eq:Ucoup},
@@ -186,7 +188,7 @@ the wells and areas of high potential are symmetric.
 
 All of the characteristics listed above can be derived from the critical
 points of $U(r,\theta)$. Table
-(#tab:equil) shows critical points of $U$ for
+[tab:1](#tab:equil) shows critical points of $U$ for
 $0\leq\theta<\pi$, while symmetric counterparts exist in
 $-\pi\leq\theta<0$. We denote critical points by $q$, the subscript
 indicates the index of the saddle and the superscript indicates the half
@@ -200,39 +202,46 @@ for $-\pi\leq\theta<0$.
  |            $>0$           |  $>1.1$  |       $\pi/2$    |        local maximum       |      $q_2^+$|
  |            $<0$           |  $>1.1$  |       $\pi/2$    |     isomerisation saddle |  $\widetilde{q}_1^+$|
 
-![Equilibrium points for potential $U(r, \theta)$. Energy and radial coordinate of $q_1^+$, $q_2^+$ and $\widetilde{q}_1^+$ varies with $a$ and is shown graphically in Figure (#fig:thpi2).]{#tab:equil}
+
+<a id="tab:equil"></a>
+<figcaption style="text-align:center;font-size:14px"><b>tab:1 </b><em>Equilibrium points for potential $U(r, \theta)$. Energy and radial coordinate of $q_1^+$, $q_2^+$ and $\widetilde{q}_1^+$ varies with $a$ and is shown graphically in Figure [fig:2](#fig:thpi2).</em></figcaption><hr>
 
 We remark that $q_1^+$ and $q_2^+$ are energetically inaccessible at
 energies considered in this work. Four more critical points $q_0^-$,
 $q_1^-$, $q_2^-$ and $\widetilde{q}_1^-$ are related to the ones above
 by symmetry. The location of the critical points in configuration space
-can be seen in Figure (#fig:pot) for $a=1,3,6,8$.
+can be seen in Figure [fig:1](#fig:pot) for $a=1,3,6,8$.
 
 The coupling term $U_{coup}$ through which $a$ influences the potential,
 vanishes around $\theta=0$ and $\theta=\pi$ and is maximal around
 $\theta=\pm\frac{\pi}{2}$. Therefore variations of $a$ leave most of the
 well unaffected, while the potential maxima and associated critical
 points vary significantly. Figure
-(#fig:thpi2)
+[fig:2](#fig:thpi2)
 illustrates how the potential barrier between the wells recedes with
 increasing $a$. The figure also shows how $q_1^+$, $q_2^+$ and
 $\widetilde{q}_1^+$ are affected by $a$, note the decrease of energy of
 $q_1^+$. When considered in context of the contour plots in Figure
-(#fig:pot), for
+[fig:1](#fig:pot), for
 $a=6$ and larger the wells merge into one from an energetic perspective,
 but dynamically remain distinct.
 
 ![](figures/figure1a.jpg)
 ![](figures/figure1b.jpg)
 ![](figures/figure1c.jpg)
-![Contour plots of the potential energy surface $U$ for $a=1,3,6,8$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot. Critical points of the potential $q_0^-$, $q_1^-$, $q_2^-$ and $\widetilde{q}_1^-$, as introduced in Table (#tab:equil) are indicated.](figures/figure1d.jpg){#fig:pot} 
+![](figures/figure1d.jpg)
+<a id="fig:pot"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em>Contour plots of the potential energy surface $U$ for $a=1,3,6,8$. Dashed lines correspond to $U<0$, solid lines correspond to $U\geq0$. Contours correspond to values of potential shown on the colorbar right, with some values indicated in the plot. Critical points of the potential $q_0^-$, $q_1^-$, $q_2^-$ and $\widetilde{q}_1^-$, as introduced in Table [tab:1](#tab:equil) are indicated.</em></figcaption><hr>
 
-![Radial sections of the potential $U$ along $\theta=\frac{\pi}{2}$ for $a=1,2,3,4,5,6,7,8$](figures/figure2.jpg){#fig:thpi2}
+
+![Radial sections of the potential $U$ along $\theta=\frac{\pi}{2}$ for $a=1,2,3,4,5,6,7,8$](figures/figure2.jpg)
+<a id="fig:thpi2"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:2 </b><em>Radial sections of the potential $U$ along $\theta=\frac{\pi}{2}$ for $a=1,2,3,4,5,6,7,8$</em></figcaption><hr>
 
 Due to the exponential decay of the anisotropic term $U_{coup}$ and the
 $o(r^{-4})$ decay of $U$ as a whole, the area of flat potential that can
-be seen in Figures (#fig:pot) and
-(#fig:thpi2)
+be seen in Figures [fig:1](#fig:pot) and
+[fig:2](#fig:thpi2)
 remains unchanged. In this area $U$ is negative, monotonic in $r$, very
 close to zero and certainly has no saddles.
 
@@ -247,10 +256,11 @@ transition from one type of dynamics to the other depends heavily on the
 size and height of the areas of high potential that is influenced by $a$
 as described above.
 
-## Revealing the Phase Space Structures {#sec:phase_transport}
+## Revealing the Phase Space Structures 
+<a id="sec:phase_transport"></a>
 
 There are three important families of periodic orbits
-[@Mauguiere2014; @Mauguiere2014b; @Krajnak2018] in Chesnavich's CH$_4^+$
+{% cite Mauguiere2014 Mauguiere2014b Krajnak2018 --file refs %} in Chesnavich's CH$_4^+$
 model. By family of periodic orbits we mean a continuum of periodic
 orbits parametrised by energy, so that each family contains two orbits
 related by (reflectional) symmetry for a given $E$. We will refer to
@@ -268,20 +278,22 @@ symmetry. If we only refer to one orbit, we refer to $\Gamma^a$ and
 $\Gamma^o$ with $p_\theta>0$ and $\Gamma^i$ oscillating around
 $\theta=0$.
 
-Configuration space projections are shown in Figure (#fig:poconfig). Note that none of these families is
+Configuration space projections are shown in Figure [fig:3](#fig:poconfig). Note that none of these families is
 associated with a saddle point on the potential energy surface.
 
 ![](figures/figure3a.jpg)
 ![](figures/figure3b.jpg)
 ![](figures/figure3c.jpg)
-![Configuration space projections of the inner, middle and outer periodic orbits for $E=5$ and a combination of $a=1,3$ and $m=m_H,4$. Note that for $m=4$, $\Gamma^o$ lies far outside the field of view. Critical points of the potential as introduced previously are also indicated.](figures/figure3d.jpg "fig:"){#fig:poconfig}
+![Configuration space projections of the inner, middle and outer periodic orbits for $E=5$ and a combination of $a=1,3$ and $m=m_H,4$. Note that for $m=4$, $\Gamma^o$ lies far outside the field of view. Critical points of the potential as introduced previously are also indicated.](figures/figure3d.jpg "fig:")
+<a id="fig:poconfig"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:3 </b><em>Configuration space projections of the inner, middle and outer periodic orbits for $E=5$ and a combination of $a=1,3$ and $m=m_H,4$. Note that for $m=4$, $\Gamma^o$ lies far outside the field of view. Critical points of the potential as introduced previously are also indicated.</em></figcaption><hr>
 
-The family of outer periodic orbits $\Gamma^o$ is proven [@Krajnak2018]
+The family of outer periodic orbits $\Gamma^o$ is proven {% cite Krajnak2018 --file refs %}
 to exist due to a centrifugal barrier for a class of systems including
 the one considered here. It was also shown that the orbits in this
 family are unstable. States of the system beyond the outer orbits
 correspond to dissociated states CH$_3^++$H. Orbits of this family are
-therefore the outer boundary of the roaming region [@Mauguiere2014]. We
+therefore the outer boundary of the roaming region {% cite Mauguiere2014 --file refs %}. We
 prefer to use the more general term interaction region as the phase
 space structures responsible for roaming and isomerisation among
 trajectories that leave the well, also arbitrate whether incoming
@@ -298,7 +310,7 @@ Inside the interaction region lies the family of middle orbits, which
 are crucial in the definition of roaming. These orbits are unstable for
 small positive energies ($E<2.72$ for $a=1$ and $m=m_H$) and stable
 after a period doubling bifurcation involving a family denoted sometimes
-by FR$12$ [@Mauguiere2014; @Mauguiere2014b] or $\Gamma^b$ [@Krajnak2018]
+by FR$12$ {% cite Mauguiere2014 Mauguiere2014b --file refs %} or $\Gamma^b$ {% cite Krajnak2018 --file refs %}
 that is of no further importance. The exact energy of the period
 doubling bifurcation varies with $m$ and $a$, but for $m=m_H$ and $a=1$
 is at approximately $E=2.72$. The family is also subject to bifurcations
@@ -313,8 +325,8 @@ $H_m(r,\theta,p_r, p_\theta)=E$, such that $(r,\theta)$ is a point on
 the configuration space projection of $\Gamma^a$.
 
 It is known that a spherical dividing surface may in the neighbourhood
-of an index-1 saddle bifurcate into a torus [@MacKay2014; @MacKay2015]
-and it was recognised [@Mauguiere2016] that dividing surfaces
+of an index-1 saddle bifurcate into a torus {% cite MacKay2014 MacKay2015 --file refs %}
+and it was recognised {% cite Mauguiere2016 --file refs %} that dividing surfaces
 constructed using periodic orbits that rotate such as DS$^a$, as opposed
 to vibrate, are tori. In addition, if $\Gamma^a$ is unstable, then
 DS$^a$ does not admit local recrossings.
@@ -334,7 +346,7 @@ dissociating. If a trajectory crosses DS$^a$ an even number of times and
 enters either one of the potential wells, it is an isomerisation
 trajectory.
 
-Roaming can be reformulated as a transport problem [@Krajnak2018] in the
+Roaming can be reformulated as a transport problem {% cite Krajnak2018 --file refs %} in the
 following manner. Let DS$^i$ and DS$^o$ be defined using $\Gamma^i$ and
 $\Gamma^o$ analogously to DS$^a$. It is well known that a dividing
 surface associated with a periodic orbit that reaches two
@@ -394,9 +406,9 @@ well and cross the inward annulus of DS$^a$ before dissociating are
 roaming trajectories.
 
 The role of phase space structures in reaction dynamics has been
-explained on many occasions [@Wigginsetal01; @Uzeretal02; @Waalkens04].
+explained on many occasions {% cite Wigginsetal01 Uzeretal02 Waalkens04 --file refs %}.
 Dividing surfaces as defined above can be shown to be the surfaces of
-minimal flux [@Waalkens04] and therefore sit in the narrowest part of
+minimal flux {% cite Waalkens04 --file refs %} and therefore sit in the narrowest part of
 the bottleneck, be it a sphere such as DS$^i$ or a torus such as DS$^a$
 and DS$^o$. Structures that convey trajectories across such a bottleneck
 were identified to be stable and unstable invariant manifolds of the
@@ -437,7 +449,8 @@ All of this is a consequence of the local energy surface geometry that
 is not uniform throughout the energy surface and can be observed as
 qualitatively different forms of dynamics - vibration and rotation.
 
-### Phase space structures responsible for roaming {#sec:phase_roaming}
+### Phase space structures responsible for roaming 
+<a id="sec:phase_roaming"></a>
 
 We study invariant manifolds and their intersections on a surface of
 section, namely on an accurate approximation of the outward annulus of
@@ -458,13 +471,13 @@ $W_{\Gamma^i}^{u+}$, the manifold guiding trajectories that leave the
 potential well into the interaction region, and $W_{\Gamma^o}^{s-}$, the
 manifold guiding trajectories out of the interaction region into
 dissociated states. Figure
-(#fig:middlesec) illustrates intersections of these manifolds
+[fig:4](#fig:middlesec) illustrates intersections of these manifolds
 with the outward annulus of DS$^a$.
 
 Note that the section of $W_{\Gamma^i}^{u+}$ with the outward annulus of
 DS$^a$ produces a topological circle (further denoted $\gamma^{u+}_{i}$)
 centered at $\theta=0$, $p_\theta=0$. Recall from Section
-(#sec:phase_transport) that all branches of $W_{\Gamma^i}$ are
+[sec:3](#sec:phase_transport) that all branches of $W_{\Gamma^i}$ are
 centered at/symmetric with respect to $\theta=0$, $p_r=p_\theta=0$. The
 shape of $\gamma^{u+}_{i}$ is just a consequence of this fact.
 
@@ -482,13 +495,13 @@ for the sake of simplicity we take advantage of symmetry of the system
 and usually restrict ourselves to $\theta\in[-\pi/2,\pi/2]$,
 $p_\theta\geq0$ when considering the outward annulus of DS$^a$.
 Consequently, with the exception of Figure
-(#fig:middlesec), we only show manifolds corresponding to one
+[fig:4](#fig:middlesec), we only show manifolds corresponding to one
 of the orbits of $\Gamma^i$ and one of $\Gamma^o$.
 
 Recall that the interior of $\gamma^{u+}_{i}$ contains trajectories that
 leave the well, while $\gamma^{s-}_{o}$ contains dissociating
 trajectories which do not return to the surface of section as indicated
-in Figure (#fig:middlesec). The intersection must therefore contain
+in Figure [fig:4](#fig:middlesec). The intersection must therefore contain
 trajectories that lead to immediate dissociation, such as the radial
 trajectory $\theta=0$, $p_\theta=0$.
 
@@ -502,7 +515,7 @@ of the wells, these correspond to isomerisation.
 If $\gamma^{u+}_{i}$ and $\gamma^{s-}_{o}$ do not intersect, that is,
 all of $W_{\Gamma^i}^{u+}$ is contained in $W_{\Gamma^o}^{s-}$, roaming
 is not present in the system for the given parameter values. For this
-reason the system does not admit [@Krajnak2018] roaming for $E\geq2.5$,
+reason the system does not admit {% cite Krajnak2018 --file refs %} roaming for $E\geq2.5$,
 $m=m_H$ and $a=1$.
 
 While it is true that $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ contains
@@ -516,7 +529,7 @@ $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ behave like complements.
 Therefore the amount of roaming is limited by
 $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$, the area where roaming and
 nonreactive trajectories (see Figure
-(#fig:middlesec)) cross the outer annulus of DS$^a$ for the
+[fig:4](#fig:middlesec)) cross the outer annulus of DS$^a$ for the
 last time before dissociating.
 
 To see how $m$ and $a$ influence roaming, we will study how
@@ -532,32 +545,35 @@ orbits $\Gamma^i$ and $\Gamma^o$.
 The area $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ grows with increasing
 $m$. Consequently we arrive at one of the main conclusions of this work,
 namely that roaming diminishes for large and small values of $m$ (Figure
-(#fig:Wiincr)) with an optimum inbetween. This can be seen for
+[fig:5](#fig:Wiincr)) with an optimum inbetween. This can be seen for
 $a\leq2$, but for larger values of $a$, the optimum may move towards
 masses unreasonable for roaming. Disappearance of roaming for large
 masses is due to a slowdown in the radial degree of freedom and the
 significant variation of position of $\Gamma^o$ with mass. We explain
 these two effect separately in Sections
-(#sec:inner) and
-(#sec:outer). The reason
+[sec:5](#sec:inner) and
+[sec:6](#sec:outer). The reason
 for the disappearance of roaming for low masses is due to a stronger
 coupling of the degrees of freedom in the kinetic part of the
 Hamiltonian (Equation \eqref{eq:Hamm}) that we deal with in Section
-(#sec:small).
+[sec:7](#sec:small).
 
 The parameter $a$ influences the transition between vibration and
 rotation by controlling the amplitude of the anisotropy in the
-potential. As noted in Section (#sec:potential), the larger $a$ is, the more the potential
+potential. As noted in Section [sec:2](#sec:potential), the larger $a$ is, the more the potential
 wells open up in the angular direction allowing easier access of the
 wells by trajectories from the interaction region. Instead of promoting
 roaming, this favours isomerisation, because at the same time the height
 of the potential barrier between the wells decreases as shown in Figure
-(#fig:thpi2).
-We explain the process in Section (#sec:alpha).
+[fig:2](#fig:thpi2).
+We explain the process in Section [sec:8](#sec:alpha).
 
-![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=1$, $m=1.007825$ and $a=1$, indicating where trajectories corresponding to different types of dynamics intersect the surface. Area enclosed by $\gamma^{u+}_{i}$ is crossed by trajectories that are leaving the well, while $\gamma^{s-}_{o}$ leads dissociating trajectories out of the interaction region, $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ contains roaming and isomerisation trajectories, and $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ is crossed by roaming and non-reactive trajectories.](figures/figure4.jpg){#fig:middlesec}
+![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=1$, $m=1.007825$ and $a=1$, indicating where trajectories corresponding to different types of dynamics intersect the surface. Area enclosed by $\gamma^{u+}_{i}$ is crossed by trajectories that are leaving the well, while $\gamma^{s-}_{o}$ leads dissociating trajectories out of the interaction region, $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ contains roaming and isomerisation trajectories, and $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ is crossed by roaming and non-reactive trajectories.](figures/figure4.jpg)
+<a id="fig:middlesec"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:4 </b><em>Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=1$, $m=1.007825$ and $a=1$, indicating where trajectories corresponding to different types of dynamics intersect the surface. Area enclosed by $\gamma^{u+}_{i}$ is crossed by trajectories that are leaving the well, while $\gamma^{s-}_{o}$ leads dissociating trajectories out of the interaction region, $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ contains roaming and isomerisation trajectories, and $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ is crossed by roaming and non-reactive trajectories.</em></figcaption><hr>
 
-### Simplification of the system and inner orbits {#sec:inner}
+### Simplification of the system and inner orbits 
+<a id="sec:inner"></a>
 
 The mass of the free atom $m$ is only present in terms of the kinetic
 part of the Hamiltonian (Equation \eqref{eq:Hamm}) and therefore cannot be studied from a
@@ -631,25 +647,30 @@ Implications for the section of $W_{\Gamma^i}^{u+}$ with the DS$^a$:
 -   A push from the potential island in the radial direction means
     decrease in $p_\theta$ along $W_{\Gamma^i}^{u+}$.
 
-Note that Figures (#fig:Wiincr) and
-(#fig:Wiincrdetail) seem to contradict the last point. This is
+Note that Figures [fig:5](#fig:Wiincr) and
+[fig:6](#fig:Wiincrdetail) seem to contradict the last point. This is
 due to the varying radial position of DS$^a$, when $\Gamma^a$ comes
 closer to $\Gamma^i$ as $m$ increases (see Figure
-(#fig:poconfig)). The decrease can be observed on surfaces
+[fig:3](#fig:poconfig)). The decrease can be observed on surfaces
 with constant radius, however $W_{\Gamma^i}^{u+}$ can become tangent to
 such surfaces when $m$ is varied.
 
 ![](figures/figure5a.jpg "fig:") 
 ![](figures/figure5b.jpg "fig:")
 ![](figures/figure5c.jpg "fig:")
-![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=2$, masses $m=0.7,1.007825,4,6$ and $a=2$.](figures/figure5d.jpg){#fig:Wiincr}
+![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=2$, masses $m=0.7,1.007825,4,6$ and $a=2$.](figures/figure5d.jpg)
+<a id="fig:Wiincr"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:5 </b><em>Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=2$, masses $m=0.7,1.007825,4,6$ and $a=2$.</em></figcaption><hr>
 
 ![](figures/figure6a.jpg)
 ![](figures/figure6b.jpg)
 ![](figures/figure6c.jpg)
-![Detail of the intersection of $W_{\Gamma^o}^{s-}$ (green) and $W_{\Gamma^i}^{u+}$ (red) with the outward annulus of the DS$^a$ for $E=2$, masses $0.7,1.007825,4,6$ and $a=2$.](figures/figure6d.jpg){#fig:Wiincrdetail}
+![Detail of the intersection of $W_{\Gamma^o}^{s-}$ (green) and $W_{\Gamma^i}^{u+}$ (red) with the outward annulus of the DS$^a$ for $E=2$, masses $0.7,1.007825,4,6$ and $a=2$.](figures/figure6d.jpg)
+<a id="fig:Wiincrdetail"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:6 </b><em>Detail of the intersection of $W_{\Gamma^o}^{s-}$ (green) and $W_{\Gamma^i}^{u+}$ (red) with the outward annulus of the DS$^a$ for $E=2$, masses $0.7,1.007825,4,6$ and $a=2$.</em></figcaption><hr>
 
-### Reduction of the system and outer orbits {#sec:outer}
+### Reduction of the system and outer orbits 
+<a id="sec:outer"></a>
 
 If $r$ is sufficiently large, $U$ is rotationally symmetric and
 $$V_{red}(r)=\frac{p_\theta^2}{2 m r^2} + U(r),$$
@@ -726,19 +747,22 @@ Implications for $\gamma^{s-}_{o}$:
 -   $p_\theta$ increases along $\gamma^{s-}_{o}$ with $m$ and it is less
     influenced by the radial degree of freedom.
 
-### Small masses {#sec:small}
+### Small masses 
+<a id="sec:small"></a>
 
-As justified in Section (#sec:outer), $r_{po}$ and $(p^\pm_\theta)^2$ increase with
+As justified in Section [sec:6](#sec:outer), $r_{po}$ and $(p^\pm_\theta)^2$ increase with
 $m$. Therefore for $m<m_H$ we see that $\Gamma^o_\pm$ moves inward and
 $p_\theta$ along $\gamma^{s-}_{o}$ decreases. This alone does not
 suffice to make conclusions regarding roaming, because we know that
 roaming does not exist for atoms with very small masses as suggested by
-Figure (#fig:middlesmallm).
+Figure [fig:7](#fig:middlesmallm).
 
 ![](figures/figure7a.jpg)
 ![](figures/figure7b.jpg)
 ![](figures/figure7c.jpg)
-![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of DS$^a$ for $E=1$, $a=1$ and masses $m=0.2,0.4,0.7,0.9$.](figures/figure7d.jpg){#fig:middlesmallm}
+![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of DS$^a$ for $E=1$, $a=1$ and masses $m=0.2,0.4,0.7,0.9$.](figures/figure7d.jpg)
+<a id="fig:middlesmallm"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:7 </b><em>Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of DS$^a$ for $E=1$, $a=1$ and masses $m=0.2,0.4,0.7,0.9$.</em></figcaption><hr>
 
 For $m<m_H$, $p_\theta^2$ has a significant influence on $\dot{p}_r$,
 especially in the wells where $r$ is small, and also
@@ -751,10 +775,11 @@ decreases, fewer and shorter segments of $W_{\Gamma^i}^{u+}$ can gain
 sufficient angular momentum to be repelled by the centrifugal barrier
 back into the interaction region.
 
-### Influence of the coupling parameter $a$ on roaming {#sec:alpha}
+### Influence of the coupling parameter $a$ on roaming 
+<a id="sec:alpha"></a>
 
 The parameter $a$ influences the strength of coupling of the degrees of
-freedom via the potential and thereby it influences [@Chesnavich1986]
+freedom via the potential and thereby it influences {% cite Chesnavich1986 --file refs %}
 how early (e.g. $a=4$) or late (e.g. $a=1$) the transition from
 vibration to rotation occurs. An investigation of the differences in
 dynamics for $a=1$ and $a=4$ can be found in Ref. . In physical terms,
@@ -763,9 +788,9 @@ $a$ controls the anisotropy of the rigid molecule $CH_3^+$.
 It turns out that the expansion of the potential wells and the reduction
 of potential islands around the index-$2$ saddles with increasing $a$
 does have a significant impact on roaming. As can be seen from Figure
-(#fig:middleE1aa), the area
+[fig:8](#fig:middleE1aa), the area
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ increases with $a$. However,
-as pointed out in Section (#sec:phase_roaming) if
+as pointed out in Section [sec:4](#sec:phase_roaming) if
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ grows,
 $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ must shrink and therefore
 larger values of $a$ result all other classes of dynamics diminishing in
@@ -774,7 +799,9 @@ favour of isomerisation.
 ![](figures/figure8a.jpg)
 ![](figures/figure8b.jpg)
 ![](figures/figure8c.jpg)
-![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=1$, mass $m_H$ and coupling $a=1,3,6,8$.](figures/figure8d.jpg){#fig:middleE1aa}
+![Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=1$, mass $m_H$ and coupling $a=1,3,6,8$.](figures/figure8d.jpg)
+<a id="fig:middleE1aa"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:8 </b><em>Intersection of $W_{\Gamma^o}^{s-}$ (orange) and $W_{\Gamma^i}^{u+}$ (blue) with the outward annulus of the DS$^a$ for $E=1$, mass $m_H$ and coupling $a=1,3,6,8$.</em></figcaption><hr>
 
 ### Upper bound on roaming
 
@@ -792,8 +819,8 @@ trajectories, because these are cut off when they re-enter one of the
 wells. Since all trajectories with the exception of stable islands must
 eventually leave the wells and the interaction region, we effectively
 avoid double-counting. Values of the upper bound can be found in Table
-(#tab:1) as well as
-in Figure (#fig:corrroam).
+[tab:2](#tab:1) as well as
+in Figure [fig:9](#fig:corrroam).
 
 We do not provide values for $E=0.5$ and $m>4$ due to the large radius
 of $\Gamma^o$; for $E=1$, $a=8$ and $m<0.9$ due to a bifurcation of
@@ -801,24 +828,24 @@ $\Gamma^i$ around $m=0.856$ after which DS$^i$ no longer delimits the
 corresponding potential well in a reasonable manner and similarly for
 $E=2$ and $a=8$.
 
-As the values in Table (#tab:1) show, the prominence of roaming does not evolve in a
+As the values in Table [tab:2](#tab:1) show, the prominence of roaming does not evolve in a
 simple manner. In agreement with conclusions in Sections
-(#sec:inner),
-(#sec:outer),
-(#sec:small), the
+[sec:5](#sec:inner),
+[sec:6](#sec:outer),
+[sec:7](#sec:small), the
 proportion of roaming decreases or even disappears for very large and
 very small masses of the free atom and we known it also recedes in
 favour of isomerisation with increasing $a$. Unlike the area of
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$, which grows monotonically
 both in $m$ and $a$, our upper bound on roaming being the smaller of
 $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ and
-$\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ does not. Figure (#fig:corrroam) suggest that while there is an optimum at a
+$\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ does not. Figure [fig:9](#fig:corrroam) suggest that while there is an optimum at a
 reasonable mass for $a=1$ and occasionally $a=2$, the bound otherwise
 decreases with $m$ with an optimum at a value of $m$ smaller than
 considered in this work.
 
 The strange evolution of the bound with respect to $a$, which is shown
-in Figure (#fig:corrroam), is probably due to the inaccuracy of the
+in Figure [fig:9](#fig:corrroam), is probably due to the inaccuracy of the
 bound. Overall it seems that the proportion of roaming mostly decreases,
 which is due to prevalence of isomerisation as $a$ increases.
 
@@ -871,11 +898,14 @@ $E=2$
 |   $7$    | 0.177 | 0.173 | 0.170 | 0.166 | 0.144 | 0.129 | 0.119 | 0.111 | 0.105 | 0.100 | 0.096|
 |   $a$   | - | - | - | - | - | - | - | - |
 
-![Ratio of the minimum of the areas $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ and $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ to the measure of all trajectories in the system (for details see text) for $E=0.5,1,2$ and various values of $m$ and $a$.]{#tab:1}
+<a id="tab:1"></a>
+<figcaption style="text-align:center;font-size:14px"><b>tab:2 </b><em>Ratio of the minimum of the areas $\gamma^{u+}_{i}\setminus\gamma^{s-}_{o}$ and $\gamma^{s-}_{o}\setminus\gamma^{u+}_{i}$ to the measure of all trajectories in the system (for details see text) for $E=0.5,1,2$ and various values of $m$ and $a$.</em></figcaption><hr>
 
 ![](figures/figure9a.jpg)
 ![](figures/figure9b.jpg)
-![Upper bound on roaming for energies $E=0.5,1,2$.](figures/figure9c.jpg){#fig:corrroam}
+![Upper bound on roaming for energies $E=0.5,1,2$.](figures/figure9c.jpg)
+<a id="fig:corrroam"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:9 </b><em>Upper bound on roaming for energies $E=0.5,1,2$.</em></figcaption><hr>
 
 From a quantitative perspective we established an upper bound on the
 prominence of roaming in Chesnavich's CH$_4^+$ model. The bound only
@@ -887,7 +917,7 @@ motion to radial motion to prevent isomerisation.
 
 We conclude that it is not possible to choose realistic values of $m$
 and $a$, such that roaming becomes the dominant form of dissociation
-such as found in acetaldehyde [@Heazlewood08]. Therefore the dominance
+such as found in acetaldehyde {% cite Heazlewood08 --file refs %}. Therefore the dominance
 of roaming must be due to other properties of the system than only mass
 of the free atom and strength of potential coupling of the degrees of
 freedom. Our investigation shows that roaming is prone to being
@@ -898,3 +928,4 @@ nonreactivity, yet are separated by a sufficiently high isomerisation
 barrier.
 
 # References
+{% bibliography --file refs --cited %}
