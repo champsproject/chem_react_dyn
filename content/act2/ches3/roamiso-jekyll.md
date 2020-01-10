@@ -7,7 +7,7 @@
 
 The roaming mechanism for chemical reactions was introduced in reference
 to the description of the photodissociation of formaldehyde
-{% cite zee:1664 townsend2004roaming bowman --file roamiso-jekyll-bib %}. After excitation of the
+{% cite zee:1664 townsend2004roaming bowman --file allrefs %}. After excitation of the
 formaldehyde molecule by a laser pulse, a single CH bond begins to
 stretch. Rather than proceed directly to dissociation, the hydrogen atom
 rotates around the molecular fragment in a region of the potential
@@ -21,7 +21,7 @@ mechanism.
 Since the pioneering formaldehyde studies a similar roaming mechanism
 has been observed to occur in a number of chemical reactions. Many of
 these reactions are described in several review
-articles{% cite suits2008 bowman2011roaming Bowman2011Suits BowmanRoaming mauguiere2017roaming --file roamiso-jekyll-bib %}.
+articles{% cite suits2008 bowman2011roaming Bowman2011Suits BowmanRoaming mauguiere2017roaming --file allrefs %}.
 
 Essentially all of these roaming reactions have been studied at constant
 total energy. The goal of this chapter is to study analogous roaming
@@ -46,19 +46,19 @@ thermostat to Chesnavich's model. This thermostat is not as widely used
 as the Nosé-Hoover thermostat, and its many variants, but the
 non-Hamiltonian version of the isokinetic thermostat has been developed
 and applied to a variety of problems of interest in chemistry by Minary
-et al. {% cite Minary03a Minary03b --file roamiso-jekyll-bib %}. In this thermostat, the particle
+et al. {% cite Minary03a Minary03b --file allrefs %}. In this thermostat, the particle
 momenta are subject to a nonholonomic constraint that keeps the kinetic
 energy constant. The resulting dynamics (if ergodic) generates a
 canonical distribution in configuration space, where the associated
 temperature is related to the value of the conserved kinetic energy
-{% cite Morriss98 --file roamiso-jekyll-bib %}. A Hamiltonian version of the isokinetic thermostat was
-given by Dettmann {% cite Dettmann96 Morriss98 --file roamiso-jekyll-bib %} (see also
-{% cite Litniewski93 Morishita03 --file roamiso-jekyll-bib %}).
+{% cite Morriss98 --file allrefs %}. A Hamiltonian version of the isokinetic thermostat was
+given by Dettmann {% cite Dettmann96 Morriss98 --file allrefs %} (see also
+{% cite Litniewski93 Morishita03 --file allrefs %}).
 
 The Hamiltonian isokinetic thermostat dynamics explored in our chapter is
 relatively unfamiliar, although, as noted, there has been some relevant
-earlier work in the chemical literature {% cite Minary03a Minary03b --file roamiso-jekyll-bib %}. The
-basic theory {% cite Dettmann96 Morriss98 --file roamiso-jekyll-bib %} shows that Hamiltonian dynamics
+earlier work in the chemical literature {% cite Minary03a Minary03b --file allrefs %}. The
+basic theory {% cite Dettmann96 Morriss98 --file allrefs %} shows that Hamiltonian dynamics
 in terms of a set of variables related to the physical variables by a
 *noncanonical* tranformation, together with the use of the exponentiated
 potential results in a canonical distribution in the physical
@@ -81,7 +81,7 @@ development in our understanding of phase space structures governing
 chemical reaction dynamics in recent years, see, for example, references.
  This phase space structure approach has been applied to the
 Hamiltonian isokinetic thermostat formalism
-{% cite ezra2008impenetrable collins2010phase --file roamiso-jekyll-bib %}. In this chapter we continue
+{% cite ezra2008impenetrable collins2010phase --file allrefs %}. In this chapter we continue
 these developments in our study of the Hamiltonian phase space structure
 associated with the roaming mechanism as exhibited in Chesnavich's model
 subjected to a Hamiltonian isokinetic thermostat.
@@ -199,7 +199,7 @@ differs by scaling by a constant factor.
 In this section we introduce Chesnavich's model for the ion-molecule
 reaction $\text{CH}_4^+$ $\rightleftharpoons$ $\text{CH}_3^+$ $+$ H and recall known
 results about roaming in this system. The model was introduced by
-Chesnavich {% cite Chesnavich1986 --file roamiso-jekyll-bib %} to investigate the transition from
+Chesnavich {% cite Chesnavich1986 --file allrefs %} to investigate the transition from
 vibration/librational motion of the H-atom in a deep potential well
 representing $\text{CH}_4^+$ to nearly-free rotation in a flat and rotationally
 symmetric region representing the dissociated CH$_3^++$H.
@@ -248,7 +248,7 @@ The long range potential is
 \end{equation}
 
 with parameter values as used in the original work
-{% cite Chesnavich1986 --file roamiso-jekyll-bib %}:$x = \frac{r}{r_e}$, dissociation energy $D_e=47$
+{% cite Chesnavich1986 --file allrefs %}:$x = \frac{r}{r_e}$, dissociation energy $D_e=47$
 kcal/mol, equilibrium bond length $r_e=1.1$ Å, $c_1=7.37$ and
 $c_2=1.61$. The short range hindered rotor potential $U_{coup}$ is
 defined by
@@ -262,9 +262,9 @@ where $U_e=55$ kcal/mol is the equilibrium barrier height. The distance
 at which transition occurs from rotation to vibration is determined by
 the parameter $a$ (in Å$^{-2}$). Various values of $a$ have been
 considered in previous works, namely $a=1$
-{% cite Chesnavich1986 mauguiere2014roaming mauguiere2014multiple krajnak2018phase --file roamiso-jekyll-bib %},
-$a=4$ {% cite Chesnavich1986 mauguiere2014roaming --file roamiso-jekyll-bib %} and a range of values
-$0.7\leq a\leq 8$. {% cite krajnak2018influence --file roamiso-jekyll-bib %}
+{% cite Chesnavich1986 mauguiere2014roaming mauguiere2014multiple krajnak2018phase --file allrefs %},
+$a=4$ {% cite Chesnavich1986 mauguiere2014roaming --file allrefs %} and a range of values
+$0.7\leq a\leq 8$. {% cite krajnak2018influence --file allrefs %}
 
 The $\text{CH}_3^+$ is a symmetric top in Chesnavich's model. Although the
 range of coordinate $\theta$ is $0 \leq \theta \leq \pi$, in the planar
@@ -299,11 +299,11 @@ As mentioned in Section [sec:1](#sec:intro), we are interested in the roaming me
 wherein the hydrogen atom separates from the $\text{CH}_3^+$ core only to
 return to the vicinity of the core before dissociating. Here we review
 the dynamical definition of roaming as introduced in
-{% cite mauguiere2014roaming --file roamiso-jekyll-bib %}, which is based on periodic orbits as invariant
+{% cite mauguiere2014roaming --file allrefs %}, which is based on periodic orbits as invariant
 structures having dynamical relevance.
 
 In the relevant energy interval $0\leq E\leq 5$, there are three
-important families of periodic orbits {% cite mauguiere2014multiple --file roamiso-jekyll-bib %}. At any
+important families of periodic orbits {% cite mauguiere2014multiple --file allrefs %}. At any
 given fixed energy $0\leq E\leq 5$, there are three pairs of important
 periodic orbits present in this system, pairwise related by symmetry of \eqref{eq:sym}, as
 shown in Fig. [fig:2](#fig:orbitse5). Therefore we refer to a continuum of periodic
@@ -330,7 +330,7 @@ Their significance is as follows:
     states. Two rotational orbits with opposite orientation - one
     clockwise, one counter-clockwise.
 
-Roaming was shown {% cite krajnak2018phase --file roamiso-jekyll-bib %} to disappear for $E\geq 2.5$. In
+Roaming was shown {% cite krajnak2018phase --file allrefs %} to disappear for $E\geq 2.5$. In
 the energy interval $0< E< 2.5$, all of the above-mentioned periodic
 orbits are unstable. Define the dividing surfaces using DS$^i$, DS$^a$
 and DS$^o$ as the set of all phase space points
@@ -352,10 +352,10 @@ dissociated states.
 As explained in reference , the oscillatory nature of $\Gamma^i$ implies
 that DS$^i$ consists of two spheres, while the rotational nature of
 $\Gamma^a$ and $\Gamma^o$ means that DS$^a$ and DS$^o$ are
-tori{% cite mauguiere2016ozone --file roamiso-jekyll-bib %}. Each sphere can be divided using the
+tori{% cite mauguiere2016ozone --file allrefs %}. Each sphere can be divided using the
 corresponding periodic orbit into two hemispheres and each torus can be
 divided using both corresponding periodic orbits into two
-annuli{% cite mauguiere2016ozone --file roamiso-jekyll-bib %}. All hemispheres and annuli are surfaces of
+annuli{% cite mauguiere2016ozone --file allrefs %}. All hemispheres and annuli are surfaces of
 unidirectional flux, for example all trajectories leaving the potential
 well cross the same (outward) hemisphere of DS$^i$, while all
 trajctories entering the potential well cross the other (inward)
@@ -374,8 +374,8 @@ versa.
 Transport of trajectories in the neighbourhood of an unstable periodic
 orbit (or NHIM in general) is governed by invariant manifolds of this
 orbit
-{% cite wwju uzer2002geometry WaalkensSchubertWiggins08 wiggins2016 --file roamiso-jekyll-bib %}. It
-was shown{% cite krajnak2018phase krajnak2018influence --file roamiso-jekyll-bib %} that the roaming
+{% cite wwju uzer2002geometry WaalkensSchubertWiggins08 wiggins2016 --file allrefs %}. It
+was shown{% cite krajnak2018phase krajnak2018influence --file allrefs %} that the roaming
 phenomenon involves a heteroclinic intersection of the invariant
 manifolds of $\Gamma^i$ and $\Gamma^o$. The condition
 $H(r,\theta=0,p_r>0, p_\theta=0)$ defines an invariant subsystem that
@@ -469,7 +469,7 @@ The outer orbit, beyond which trajectories do not return and corresponds
 to the dissociated state of the molecule, is associated with a
 centrifugal barrier. It is rotationally symmetric and has a radius
 $r\approx13.43$. Its existence can be proven using a similar argument as
-in the original system {% cite krajnak2018phase --file roamiso-jekyll-bib %}: suppose $r$ is sufficiently
+in the original system {% cite krajnak2018phase --file allrefs %}: suppose $r$ is sufficiently
 large so that $U$ is effectively independent of $\theta$. Denote
 $r_{po}$ the solution of
 
@@ -502,7 +502,7 @@ In this section we investigate dynamics in phase space and show the
 presence of roaming in the thermostatted Chesnavich model. Due to the
 strength of instability of the inner periodic orbit, we visualise phase
 space structures using escape times and Lagrangian
-descriptors{% cite madrid2009ld lopesino2015cnsns --file roamiso-jekyll-bib %} on surfaces of section
+descriptors{% cite madrid2009ld lopesino2015cnsns --file allrefs %} on surfaces of section
 rather than calculating invariant manifolds themselves.
 
 ![](figures/figure5a.jpg)
@@ -522,7 +522,7 @@ r=\bar{r}(\theta).
 \end{equation}
 
 Then all points in phase space satisfying \eqref{eq:disI} form
-a surface with coordinates $\theta$ and the canonically conjugate momentum{% cite Arnold78 --file roamiso-jekyll-bib %}
+a surface with coordinates $\theta$ and the canonically conjugate momentum{% cite Arnold78 --file allrefs %}
 
 $$p_\sigma=p_\theta+\bar{r}'(\theta)p_r.$$
 
@@ -613,7 +613,7 @@ isokinetic system is the same as in the microcanonical system.
 <figcaption style="text-align:center;font-size:14px"><b>fig:8 </b><em>Lagrangian descriptors \eqref{eq:ld05} (top) and \eqref{eq:ldr} (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.</em></figcaption><hr>
 
 It is important to note that the same results can be obtained using
-Lagrangian descriptors{% cite madrid2009ld lopesino2015cnsns --file roamiso-jekyll-bib %} as shown in
+Lagrangian descriptors{% cite madrid2009ld lopesino2015cnsns --file allrefs %} as shown in
 Fig. [fig:8](#fig:thetald). We present the plot for the forward Lagrangian
 descriptor
 
@@ -637,13 +637,13 @@ are even more pronounced for the radial gain Lagrangian descriptor
 
 The goal of this chapter is to extend our previous study of the
 analogous roaming reaction mechanisms at constant kinetic energy
-{% cite krajnak2019isokinetic --file roamiso-jekyll-bib %}. We do this by applying a Hamiltonian
+{% cite krajnak2019isokinetic --file allrefs %}. We do this by applying a Hamiltonian
 isokinetic thermostat
-{% cite Dettmann96 Morriss98 Litniewski93 Morishita03 --file roamiso-jekyll-bib %} to Chesnavich's
+{% cite Dettmann96 Morriss98 Litniewski93 Morishita03 --file allrefs %} to Chesnavich's
 model. Use of the isokinetic thermostat means that we are effectively
 investigating roaming at constant temperature. A detailed study of
 Chesnavich's model subjected to the Hamiltonian isokinetic thermostat is
-given in {% cite krajnak2019isokinetic --file roamiso-jekyll-bib %}. In that work it was found that
+given in {% cite krajnak2019isokinetic --file allrefs %}. In that work it was found that
 certain of the periodic orbits that govern the roaming dynamics are
 highly unstable: their Lyapunov exponents are $\sim 10^{21}$. In such a
 situation detection of the periodic orbits, as well as the computation
@@ -651,7 +651,7 @@ of their stable and unstable manifolds, becomes problematic using
 traditional approaches.
 
 In this section we show that the method of Lagrangian descriptors (introduced in the Prologue)
-{% cite madrid2009ld craven2016deconstructing craven2017lagrangian craven2015lagrangian junginger2016transition junginger2017chemical feldmaier2017obtaining junginger2016transition feldmaier2017obtaining patra2018detecting --file roamiso-jekyll-bib %}
+{% cite madrid2009ld craven2016deconstructing craven2017lagrangian craven2015lagrangian junginger2016transition junginger2017chemical feldmaier2017obtaining junginger2016transition feldmaier2017obtaining patra2018detecting --file allrefs %}
 can be used to compute stable and unstable manifolds of such highly
 unstable periodic orbits. We applying this approach to Chesnavich's
 model subjected to a Hamiltonian isokinetic thermostat and show that the
@@ -788,12 +788,12 @@ LD_o=\int\limits^{\tau}_{0} |\dot{r}| dt.
 <a id="fig:manifs_th0"></a>
 <figcaption style="text-align:center;font-size:14px"><b>fig:9 </b><em>Lagrangian descriptors $LD_i$ \eqref{eq:LDi} for $\tau=8$ (top) and $LD_o$ \eqref{eq:LDo} for $\tau=8$ (bottom) for initial conditions on $\theta=0$, $\dot{\theta}>0$ and their profiles for $r=6$.</em></figcaption><hr>
 
-In {% cite krajnak2019isokinetic --file roamiso-jekyll-bib %}, we found that singularities in the escape
+In {% cite krajnak2019isokinetic --file allrefs %}, we found that singularities in the escape
 time plot matched significant changes in Lagrangian descriptor plots.
 Both these features indicated the presence of invariant manifolds. In
 Fig. [fig:9](#fig:manifs_th0) we show $LD_i$ \eqref{eq:LDi} and $LD_o$ \eqref{eq:LDo}
 on the surface $\theta=0$, $\dot{\theta}>0$, where the latter is similar
-to the plots in {% cite krajnak2019isokinetic --file roamiso-jekyll-bib %} and the former shows similar
+to the plots in {% cite krajnak2019isokinetic --file allrefs %} and the former shows similar
 features reflected about $p_r=0$ due to the opposite time direction in
 the definition of $LD_i$. Both plots show LD values on a uniform
 $400\times400$ grid. A higher density improves accuracy but does not
@@ -801,7 +801,7 @@ yield additional qualitative information. The accompanying sections for
 $r=6$ illustrate the nature of the local minima.
 
 The presence of roaming is only possible if $W_i^u$ and $W_o^s$
-intersect {% cite krajnak2018phase --file roamiso-jekyll-bib %}. Fig. [fig:9](#fig:manifs_th0) provides direct evidence of the intersection
+intersect {% cite krajnak2018phase --file allrefs %}. Fig. [fig:9](#fig:manifs_th0) provides direct evidence of the intersection
 - the two panels show $W_i^u$ and $W_o^s$ using different Lagrangian
 descriptors on the same surface of section. These manifolds necessarily
 intersect.
@@ -850,9 +850,9 @@ inner periodic orbit with $p_\theta>0$. The S-shape closest to
 $\theta=-1$, $p_\theta=0$ corresponds to the inner periodic orbit with
 $p_\theta<0$. The other S-shapes are related by symmetry.
 
-![Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. [fig:10](#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig [fig:11][fig:11](#fig:manifsO_r36) that separate different classes of dynamics. For details see text.](figures/manif_intersection400_labels.png)
+![Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. [fig:10](#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig [fig:11](#fig:manifsO_r36) that separate different classes of dynamics. For details see text.](figures/manif_intersection400_labels.png)
 <a id="fig:intersection"></a>
-<figcaption style="text-align:center;font-size:14px"><b>fig:12 </b><em>Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. [fig:10][fig:10](#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig [fig:11][fig:11](#fig:manifsO_r36) that separate different classes of dynamics. For details see text.</em></figcaption><hr>
+<figcaption style="text-align:center;font-size:14px"><b>fig:12 </b><em>Approximations of invariant manifolds on $r=3.6$, $\dot{r}>0$ extracted from $LD_i$ for $\tau=6$ shown in Fig. [fig:10][fig:10](#fig:manifsI_r36) and $LD_o$ for $\tau=20$ shown in Fig [fig:11](#fig:manifsO_r36) that separate different classes of dynamics. For details see text.</em></figcaption><hr>
 
 Fig. [fig:12](#fig:intersection) shows superposed manifolds approximated
 from $LD_i$ ($\tau=6$) and $LD_o$ ($\tau=20$) values. Minima of $LD_o$
@@ -902,11 +902,11 @@ entering one of the wells or dissociating.
 
 It is important to note that all classes of dynamics are separated by an
 intricate fractal structure made up of invariant manifolds, as shown in
-{% cite krajnak2019isokinetic --file roamiso-jekyll-bib %}. The structure becomes visible when integrating
+{% cite krajnak2019isokinetic --file allrefs %}. The structure becomes visible when integrating
 any Lagrangian descriptor over a long time interval, see the details of
 Fig. [fig:10](#fig:manifsI_r36) and [fig:11](#fig:manifsO_r36).
 
 # References
 
 
-{% bibliography --file roamiso-jekyll-bib --cited %}
+{% bibliography --file allrefs --cited %}
