@@ -1,13 +1,4 @@
 ---
-title: |-
-  Barbanis Model
-pagenum: 15
-prev_page:
-  url: /act2/hamiltonian_sn/HSN_victor-jekyll.html
-next_page:
-  url: /act2/caldera/caldera-1-jekyll.html
-suffix: .md
-search: dimensional file findingnhimanddofnonlinear surface cite y space energy x e phase manifolds delta ld eqn fig invariant section unstable periodic nhim px py trajectories index orbit potential method hamiltonian also poincar escape structures high shown system left right saddle motion systems dof eqref using figures png u such region trajectory lagrangian frac coordinate points contour regions well omegay used low where along diagnostic its initial plots not model coupled harmonic aligned omegax label ec positive d integration physics nonlinear dynamics dynamical show methods configuration numerical sections our qquad excess intersection sosuxpx maps barbanisdofmxe rates chemical ionization transport mechanics step focus
 author: " "
 csl: ./elsevier-without-titles.csl
 geometry: margin = 1in
@@ -19,17 +10,11 @@ output:
     fig_caption: yes
     fig_height: 1
 bibliography: ./finding_nhim_2-3dof_nonlinear.bib
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
-    <main class="jupyter-page">
-    <div id="page-info"><div id="page-title">Barbanis Model</div>
-</div>
-    <div class="jb_cell">
+# Introduction
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h1><p>It is well-known now that the paradigm of escape from a potential well
+It is well-known now that the paradigm of escape from a potential well
 and the topology of phase space structures that mediate such escape are
 used in a broad array of problems such as isomerization of molecular
 clusters {% cite Komatsuzaki2001 --file finding_nhim_2and3dof_nonlinear %}, reaction rates in chemical
@@ -44,7 +29,7 @@ escape into inflation or re-collapse to singularity in
 cosmology {% cite DeOliveira2002 --file finding_nhim_2and3dof_nonlinear %}. As such a method that can identify the high
 dimensional phase space structures using low dimensional surface as
 probes can aid in quantifying the escape rates. These low dimensional
-surfaces has been shown to be of as <em>reactive islands</em> in chemical
+surfaces has been shown to be of as *reactive islands* in chemical
 physics and lead to insights into sampling rare transition
 events {% cite patra_classical-quantum_2015 patra_detecting_2018 --file finding_nhim_2and3dof_nonlinear %}. However,
 to benchmark the methodology, we first applied it to linear systems
@@ -65,8 +50,9 @@ studied as first benchmark nonlinear systems in applying new phase space
 transport methods to astrophysical and molecular motion. In this
 chapter, we will present verification of a method that uses trajectory
 diagnostic on a low dimensional surface for revealing the phase space
-structures in 4 or more dimensions.</p>
-<p>Conservative dynamics on an open potential well has received
+structures in 4 or more dimensions.
+
+Conservative dynamics on an open potential well has received
 considerable attention because the phase space structures, normally
 hyperbolic invariant manifolds (NHIM) and its invariant manifolds,
 explain the intricate fractal structure of ionization
@@ -80,8 +66,9 @@ formulae {% cite de_leon_intramolecular_1981 --file finding_nhim_2and3dof_nonli
 escape of electrons from atoms sets a precedent for applying new methods
 for finding NHIM and its invariant manifolds in Hamiltonian with open
 potential wells
- {% cite mitchell_analysis_2004 mitchell_chaos-induced_2004 mitchell_nonlinear_2009 mitchell_structure_2007 wang_photoionization_2010 --file finding_nhim_2and3dof_nonlinear %}.</p>
-<p>As we noted earlier, trajectory diagnostic methods which can probe phase
+ {% cite mitchell_analysis_2004 mitchell_chaos-induced_2004 mitchell_nonlinear_2009 mitchell_structure_2007 wang_photoionization_2010 --file finding_nhim_2and3dof_nonlinear %}.
+
+As we noted earlier, trajectory diagnostic methods which can probe phase
 space to detect the high dimensional invariant manifolds have potential
 to be of use in many degrees-of-freedom models. One such method is the
 Lagrangian descriptors (LDs) that can reveal phase space structures by
@@ -97,11 +84,12 @@ Besides, also being applicable to both Hamiltonian and non-Hamiltonian
 systems, as well as to systems with arbitrary time-dependence such as
 stochastic and dissipative forces, and geophysical data from satellite
 and numerical
-simulations {% cite amism11 mendoza2014 ggmwm15 lopesino2017 ramos2018 --file finding_nhim_2and3dof_nonlinear %}.</p>
-<p>The method of Lagrangian descriptors (LDs) is straightforward to implement
+simulations {% cite amism11 mendoza2014 ggmwm15 lopesino2017 ramos2018 --file finding_nhim_2and3dof_nonlinear %}.
+
+The method of Lagrangian descriptors (LDs) is straightforward to implement
 computationally and it provides a "high resolution" method for exploring
 the influence of high dimensional phase space structure on trajectory
-behaviour. The method of LDs takes an <em>opposite</em> approach to that of
+behaviour. The method of LDs takes an *opposite* approach to that of
 classical Lyapunov exponent type calculations by emphasizing the initial
 conditions of trajectories, rather than their advected locations that is
 involved in calculating normalized rate of divergence. This is achieved
@@ -121,10 +109,12 @@ other computational
 means {% cite junginger2016transition bardakcioglu2018 ezra_2018 --file finding_nhim_2and3dof_nonlinear %}. In this
 chapter, we will present the method's capability to detect the high
 dimensional phase space structures such as the NHIM, their stable, and
-unstable manifolds in the 2 DoF Barbanis system.</p>
-<!-- #region -->
-# Barbanis 2 DoF Model
-{#sec:model_prob_2dof}
+unstable manifolds in the 2 DoF Barbanis system.
+
+
+# Barbanis 2 DoF Model 
+<a id="sec:model_prob_2dof"></a>
+
 
 ## Model system: coupled harmonic 2 DoF Hamiltonian
 
@@ -133,12 +123,12 @@ As pointed out in the Introduction, our focus is to adopt a
 well-understood model system which is a 2 degrees-of-freedom coupled
 harmonic oscillator with the Hamiltonian
 
-$$\begin{aligned}
+\begin{aligned}
 \mathcal{H}(x,y,p_x,p_y) =& T(p_x, p_y) + V_{\rm B}(x,y) \\ 
 =& \frac{1}{2}p_x^2 + \frac{1}{2}p_y^2 + \frac{1}{2}\omega_x^2 x^2 + \frac{1}{2}\omega_y^2 y^2 +
-\delta x y^2  
+\delta x y^2
+\label{eqn:Hamiltonian_Barbanis}
 \end{aligned}
-\label{eqn:Hamiltonian_Barbanis}$$ 
 
 
 where $\omega_x, \omega_y, \delta$ are the harmonic oscillator frequencies of the $x$ and $y$
@@ -170,7 +160,7 @@ located at $\left( 5.5, \pm 7.071, 0,
 0 \right)$ and have energy, $E_c = 15.125$.
 
 The contours of the coupled harmonic 2 DoF potential energy function in \eqref{eqn:Hamiltonian_Barbanis} is shown in
-Fig. @fig:pes_cont_Barbanis along with the 3D view of the
+Fig. [fig:1](#fig:pes_cont_Barbanis) along with the 3D view of the
 surface. We note here that the potential has steep walls for $x < 0$
 when $\delta < 0$ and steep drop-off beyond the bottlenecks around the
 index-1 saddles. This leads to unphysical motion in the sense of
@@ -178,8 +168,7 @@ trajectories approaching $-\infty$ with ever increasing acceleration
 even for finite values of the configuration space
 coordinates {% cite brumer_variational_1976 --file finding_nhim_2and3dof_nonlinear %}.
 
-In
-Fig. @fig:hills_region_Barbanis we show the *Hill's region*, as
+In Fig. [fig:2](#fig:hills_region_Barbanis) we show the *Hill's region*, as
 defined in App. [5](#ssect:coupled_2dof), for the model
 system \eqref{eqn:Hamiltonian_Barbanis}. It is important to note here that
 even though Hill's region is shown on the configuration space, it
@@ -190,13 +179,22 @@ two-dimensional surfaces to explore trajectory behavior. The complete
 description of the unstable periodic orbit and its invariant manifolds
 is described in App. [5.1](#ssect:tube_mani) along with the visualization in the 3D
 space.
-<!-- #endregion -->
 
-<p><img src="./figures/pes_cont_Barbanis.png" alt="">
-<img src="./figures/pes_cont_Barbanis_3D.png" alt="">
-<img src="./figures/Hills_region_Barbanis.png" alt=""></p>
-<p>Fig. 1. (a) Potential energy function underlying the coupled harmonic Hamiltonian \eqref{eqn:Hamiltonian_Barbanis} as isopotential contour and surface. The index-1 saddles are shown as red crosses in both the plots. (b) Hill's region for energy below and above the energy of the index-1 saddle. Parameters used are $\omega_x = 1.0, \omega_y = 1.1, \delta = -0.11$.</p>
-<p>Since this model system is conservative 2 DoF Hamiltonian, that is the
+
+(SPLIT SET OF FIGURES INTO TWO, AS WELL AS CAPTIONS.)
+
+![](./figures/pes_cont_Barbanis.png)
+![](./figures/pes_cont_Barbanis_3D.png)
+<a id="fig:pes_cont_Barbanis"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em>Potential energy function underlying the coupled harmonic Hamiltonian \eqref{eqn:Hamiltonian_Barbanis} as isopotential contour and surface. The index-1 saddles are shown as red crosses in both the plots. Parameters used are $\omega_x = 1.0, \omega_y = 1.1, \delta = -0.11$.</em></figcaption><hr>
+
+
+![Hill's region for energy below and above the energy of the index-1 saddle. Parameters used are $\omega_x = 1.0, \omega_y = 1.1, \delta = -0.11$.](./figures/Hills_region_Barbanis.png)
+<a id="fig:hills_region_Barbanis"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:2 </b><em>Hill's region for energy below and above the energy of the index-1 saddle. Parameters used are $\omega_x = 1.0, \omega_y = 1.1, \delta = -0.11$.</em></figcaption><hr>
+
+<!-- #region -->
+Since this model system is conservative 2 DoF Hamiltonian, that is the
 phase space is $\mathbb{R}^4$, the energy surface is three dimensional,
 the dividing surface is two dimensional, and the normally hyperbolic
 invariant manifold (NHIM), referred to as the unstable periodic orbit,
@@ -204,26 +202,40 @@ is one dimensional {% cite wiggins_role_2016 --file finding_nhim_2and3dof_nonli
 intersection of a two dimensional surface with the three-dimensional
 energy surface, we would obtain the one-dimensional energy boundary on
 the surface of section. We will focus our study by using the
-isoenergetic two-dimensional surface</p>
-$$\begin{aligned}
-%    U_{V, +} &amp;= \left\{(y,p_y) \; | \; x = 0, \; p_x(y,p_y;e) &gt; 0 \right\} , \qquad \text{motion 
+isoenergetic two-dimensional surface 
+
+<!--- %$$\begin{aligned}
+%    U_{V, +} &= \left\{(y,p_y) \; | \; x = 0, \; p_x(y,p_y;e) > 0 \right\} , \qquad \text{motion 
 %to the right}  \label{eqn:sos_U_Vp} \\
-%    U_{V, -} &amp;= \left\{(y,p_y) \; | \; x = 0, \; p_x(y,p_y;e) &lt; 0 \right\} , \qquad \text{motion 
+%    U_{V, -} &= \left\{(y,p_y) \; | \; x = 0, \; p_x(y,p_y;e) < 0 \right\} , \qquad \text{motion 
 %to the left}  \label{eqn:sos_U_Vm} \\
-    U_{xp_x, +} &amp;= \left\{(x,y,p_x,p_y) \; | \; y = 0, \; p_y(x,y,p_x;e) &gt; 0 \right\} 
-    \label{eqn:sos_Uxpx} 
-%    U_{H, -} &amp;= \left\{(x,p_x) \; | \; y = 0, \; p_y(x,p_x;e) &lt; 0 \right\} , \qquad \text{motion 
-%to the bottom}  \label{eqn:sos_U_Hm}
-\end{aligned}$$<p></p>
-<p>where the sign of
+%U_{xp_x, +} &= \left\{(x,y,p_x,p_y) \; | \; y = 0, \; p_y(x,y,p_x;e) > 0 \right\} 
+%\label{eqn:sos_Uxpx} 
+%    U_{H, -} &= \left\{(x,p_x) \; | \; y = 0, \; p_y(x,p_x;e) < 0 \right\} , \qquad \text{motion 
+%to the bottom}  
+%\label{eqn:sos_U_Hm}
+%\end{aligned}$$ --->
+
+
+\begin{equation}
+U_{xp_x, +} = \left\{(x,y,p_x,p_y) \; | \; y = 0, \; p_y(x,y,p_x;e) > 0 \right\}
+\label{eqn:sos_Uxpx} 
+\end{equation}
+
+
+where the sign of
 the momentum coordinate enforces a directional crossing of the surface.
-Due to the form of the vector field \eqref{eqn:two_dof_Barbanis} and choice of $\delta &lt; 0$, this
-directionality condition implies motion towards positive $y$-coordinate.</p>
-<p>In this article, detecting the phase space structures will constitute
+Due to the form of the vector field \eqref{eqn:two_dof_Barbanis} and choice of $\delta < 0$, this
+directionality condition implies motion towards positive $y$-coordinate.
+
+In this article, detecting the phase space structures will constitute
 finding the intersection of the NHIM and its invariant manifolds with a
-two dimensional surface (for example,
-Eqn. \eqref{eqn:sos_Uxpx}).</p>
-<h2 id="Results">Results<a class="anchor-link" href="#Results"> </a></h2><p>We begin by noting that two-dimensional Poincaré surface of section have
+two dimensional surface (for example, Eqn. \eqref{eqn:sos_Uxpx}).
+<!-- #endregion -->
+
+## Results
+
+We begin by noting that two-dimensional Poincaré surface of section have
 sufficient dimensionality to capture trajectories on a three dimensional
 energy surface, however for high dimensional systems trajectories can go
 "around" the two dimensional surface. One approach available in the
@@ -233,10 +245,18 @@ virtual 3D space. Even when gets around this issue, using suitable
 projective geometry, the fact that the qualitative analysis based on
 Poincaré sections depends on trajectories returning to this surface can
 not be circumvented since trajectories on and inside the spherical
-cylinders will not return to the Poincaré surface of section.</p>
-<p><img src="./figures/Barbanis2dof_psect_finalT1500_E15-000_E15-125_E15-250.png" alt="Poincar\&#39;e surface of section, $U_{xp_x}$~\eqref{eqn:sos_Uxpx}, at excess energy (a) $\Delta E = -0.125$, (b) $\Delta E = 0.000$, (c) $\Delta E = 0.125$ where the intersection of the surface of section with the energy surface is shown in green. The magenta and cyan curves in $p_x &gt; 0$ correspond to the invariant manifolds of unstable periodic orbit at $y &gt; 0$ index-1 saddle, and the ones in $p_x &lt; 0$ correspnd to the invariant manifolds of unstable periodic orbit at $y &lt; 0$ index-1 saddle.">{#fig:Barbanis2dof_psect_finalT1500_E15-000_E15-125_E15-250}</p>
-<p><img src="./figures/lag_desc_Barbanis_finalT1500_E15-000_E15-125_E15-250_x-px_tau50.png" alt="Lagrangian descriptor on the surface of section, $U_{xp_x}$ \eqref{eqn:sos_Uxpx}, for the excess energies (d) $\Delta E = -0.125$, (e) $\Delta E = 0.000$, (f) $\Delta E = 0.125$ and the integration time $\tau = 50$. The intersection of the surface of section with the cylindrical manifolds of the NHIM \textemdash unstable periodic orbit for this system \textemdash associated with the index-1 saddle equilibrium point in the bottleneck is shown in cyan (stable) and magenta (unstable) curves. The magenta and cyan curves in $p_x &gt; 0$ correspond to the invariant manifolds of unstable periodic orbit at $y &gt; 0$ index-1 saddle, and the ones in $p_x &lt; 0$ correspnd to the invariant manifolds of unstable periodic orbit at $y &lt; 0$ index-1 saddle.">{#fig:lag_desc_Barbanis_finalT1500_E15-000_E15-125_E15-250_x-px_tau50}</p>
-<h2 id="Coupled-harmonic-2-DoF-system">Coupled harmonic 2 DoF system<a class="anchor-link" href="#Coupled-harmonic-2-DoF-system"> </a></h2><p>As discussed in aforementioned
+cylinders will not return to the Poincaré surface of section.
+
+![](./figures/Barbanis2dof_psect_finalT1500_E15-000_E15-125_E15-250.png) 
+![](./figures/lag_desc_Barbanis_finalT1500_E15-000_E15-125_E15-250_x-px_tau50.png)
+<a id="fig:psect_lag_desc_Barbanis"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:3 </b><em> Top row: Poincar\'e surface of section, $U_{xp_x}$~\eqref{eqn:sos_Uxpx}, at excess energy (a) $\Delta E = -0.125$, (b) $\Delta E = 0.000$, (c) $\Delta E = 0.125$ where the intersection of the surface of section with the energy surface is shown in green. Bottom row: Lagrangian descriptor on the surface of section, $U_{xp_x}$ \eqref{eqn:sos_Uxpx}, for the excess energies (d) $\Delta E = -0.125$, (e) $\Delta E = 0.000$, (f) $\Delta E = 0.125$ and the integration time $\tau = 50$. The intersection of the surface of section with the cylindrical manifolds of the NHIM \textemdash unstable periodic orbit for this system \textemdash associated with the index-1 saddle equilibrium point in the bottleneck is shown in cyan (stable) and magenta (unstable) curves. The magenta and cyan curves in $p_x > 0$ correspond to the invariant manifolds of unstable periodic orbit at $y > 0$ index-1 saddle, and the ones in $p_x < 0$ correspnd to the invariant manifolds of unstable periodic orbit at $y < 0$ index-1 saddle.</em></figcaption><hr>
+
+
+## Coupled harmonic 2 DoF system
+
+
+As discussed in aforementioned
 literature {% cite madrid2009 lopesino2017 demian2017 --file finding_nhim_2and3dof_nonlinear %}, points with
 minimum Lagrangian descriptor (LD) values and singularity are on the
 invariant manifolds. In addition, LD plots show dynamical correspondence
@@ -245,7 +265,7 @@ chaotic dynamics are distinct in both Poincaré section and LD plots)
 while also depicting the geometry of manifold
 intersections {% cite demian2017 lopesino2017 garcia-garrido_2018 --file finding_nhim_2and3dof_nonlinear %}. This
 correspondence in the LD features and Poincaré section is confirmed in
-Fig. @fig:psect_lag_desc_Barbanis where we show the Poincaré
+Fig. [fig:3](#fig:psect_lag_desc_Barbanis) where we show the Poincaré
 surface of section
 Eqn. \eqref{eqn:sos_Uxpx} of trajectories and LD contour maps on the
 same isoenergetic two-dimensional surface for negative and positive
@@ -263,12 +283,12 @@ identifies these regions as discontinuities in the LD values. These
 regions lead to escape because they are inside the cylindrical manifolds
 of the unstable periodic orbit associated with the index-1 saddle
 equilibrium point {% cite NaRo2017 --file finding_nhim_2and3dof_nonlinear %}. These regions on the isoenergetic
-two-dimensional surface are also referred to as <em>reactive islands</em> in
+two-dimensional surface are also referred to as *reactive islands* in
 chemical reaction dynamics {% cite DeLeon1992 DeMeTo1991 DeMeTo1991a --file finding_nhim_2and3dof_nonlinear %}. The
 escape regions or reactive islands that appear over the integration time
 interval can also be identified by using the forward and backward LD
 contour maps where these regions appear as discontinuities. In
-Fig. @fig:psect_lag_desc_Barbanis (f), we show these for
+Fig. [fig:3](#fig:psect_lag_desc_Barbanis) (f), we show these for
 $\Delta E = 
 0.125$ and $\tau = 50$ along with the intersection of the cylindrical
 manifolds' intersections that are computed using differential correction
@@ -277,45 +297,59 @@ high dimensional systems is not the focus of this study and will be
 discussed in forthcoming work. Thus LD maps also provide a quick and
 reliable approach for detecting regions that will lead to escape within
 the observed time, or in the computational context, the integration
-time.</p>
-<p>To detect the NHIM  in this case, unstable periodic orbit  associated
+time.
+
+To detect the NHIM  in this case, unstable periodic orbit  associated
 with the index-1 saddles (marked by cross in
-Fig. @fig:pes_cont_Barbanis ), we define an isoenergetic two
+Fig. [fig:1](#fig:pes_cont_Barbanis) ), we define an isoenergetic two
 dimensional surface that is parametrized by the $y$-coordinate and
 placed near the $x$-coordinate of the saddle equilibrium that has the
 negative $y$-coordinate. This can be expressed as a parametric two
-dimensional surface</p>
+dimensional surface 
+
 \begin{aligned}
-%  U_{xy}^+ = &amp; \left\{(x,y,p_x,p_y) \; | \; p_x = 0, \; p_y(x,y;e) &gt; 0 \right\}, \\
-U_{xp_x}^+(k) = &amp; \left\{(x,y,p_x,p_y) \, | \, y = k, p_y(x,y,p_x;e) &gt; 0 \right\} 
+%  U_{xy}^+ = & \left\{(x,y,p_x,p_y) \; | \; p_x = 0, \; p_y(x,y;e) > 0 \right\}, \\
+U_{xp_x}^+(k) = & \left\{(x,y,p_x,p_y) \, | \, y = k, p_y(x,y,p_x;e) > 0 \right\} 
 \label{eqn:sos_xpx_k}
-%  U_{yp_y}^+ = &amp; \left\{(x,y,p_x,p_y) \; | \; x = k_x, \; p_y(x,y,p_x;e) &gt; 0 \right\},
-\end{aligned}<p>for total energy, $e$, which is above the critical energy, $E_c$, $k$ is
+%  U_{yp_y}^+ = & \left\{(x,y,p_x,p_y) \; | \; x = k_x, \; p_y(x,y,p_x;e) > 0 \right\},
+\end{aligned}
+
+for total energy, $e$, which is above the critical energy, $E_c$, $k$ is
 the $y$-coordinate. The variable integration time LD contour maps are
-shown in Fig. @fig:Barbanis2dof_M1500x1500_E15-250) along with the
+shown in Fig. [fig:4](#fig:Barbanis2dof_M1500x1500_E15-250) ) along with the
 projection of the low dimensional
 slices \eqref{eqn:sos_xpx_k} in the configuration space and the NHIM. The
 points on NHIM, which is an unstable periodic orbit for 2 DoF, on this
 surface is the coordinate with maximum (for variable integration time)
 LD value. The full visualization of the NHIM as the black ellipse,
 $\mathbb{S}^1$, is in
-Fig. @fig:Barbanis2dof_M1500x1500_E15-250 (d) and has been
+Fig. [fig:4](#fig:Barbanis2dof_M1500x1500_E15-250) (d) and has been
 computed using differential correction and numerical continuation
-(details in App. <a href="#ssect:tube_mani">5.1</a> ) and shows clearly that points on this
-unstable periodic orbit are detected by the LD contour map.</p>
-<p><img src="./figures/Barbanis2dof_M1500x1500_E15-250_xpx_yneg70e-1.png" alt="">
-<img src="./figures/Barbanis2dof_M1500x1500_E15-250_xpx_yneg71e-1.png" alt="">
-<img src="./figures/Barbanis2dof_M1500x1500_E15-250_xpx_yneg72e-1.png" alt="">
-<img src="./figures/Barbanis2DoF_UPO_M1500x1500_E15-250_xpxy_variable-time-exit-saddle-region.png" alt=""></p>
-<p>Fig. 4. Lagrangian descriptor computed for variable integration time on two dimensional slices \eqref{eqn:sos_xpx_k} near the bottleneck that detect the NHIM and its invariant manifolds associated with the index-1 saddle. The two dimensional surfaces are shown in the top figure in (d) projected as orange lines on the configuration space and the unstable periodic orbit as black line connecting the isopotential contour corresponding to $\Delta E = 0.125$ with the Hill's region shown in grey. The two dimensional slices represent low dimensional probe of the unstable periodic orbit and the movie of a rotating view can be found <a href="https://youtu.be/Ai65ULLlljc">here</a>.</p>
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions"> </a></h2><p>In this article, we discussed a trajectory diagnostic method as a low
+(details in App. [5.1](#ssect:tube_mani) ) and shows clearly that points on this
+unstable periodic orbit are detected by the LD contour map.
+
+![](./figures/Barbanis2dof_M1500x1500_E15-250_xpx_yneg70e-1.png)
+![](./figures/Barbanis2dof_M1500x1500_E15-250_xpx_yneg71e-1.png)
+![](./figures/Barbanis2dof_M1500x1500_E15-250_xpx_yneg72e-1.png)
+![](./figures/Barbanis2DoF_UPO_M1500x1500_E15-250_xpxy_variable-time-exit-saddle-region.png)
+<a id="fig:Barbanis2dof_M1500x1500_E15-250"></a>
+<figcaption style="text-align:center;font-size:14px"><b>fig:4 </b><em>Lagrangian descriptor computed for variable integration time on two dimensional slices \eqref{eqn:sos_xpx_k} near the bottleneck that detect the NHIM and its invariant manifolds associated with the index-1 saddle. The two dimensional surfaces are shown in the top figure in (d) projected as orange lines on the configuration space and the unstable periodic orbit as black line connecting the isopotential contour corresponding to $\Delta E = 0.125$ with the Hill's region shown in grey. </em></figcaption><hr>
+
+The two dimensional slices represent low dimensional probe of the unstable periodic orbit and the movie of a rotating view can be found [here](https://youtu.be/Ai65ULLlljc).
+
+
+## Conclusions
+
+
+In this article, we discussed a trajectory diagnostic method as a low
 dimensional probe of high dimensional invariant manifolds in 2 DoF
 nonlinear Hamiltonian systems. This trajectory diagnostic --- Lagrangian
 descriptor (LD) --- can represent a geometric property of interest in a
 system with escape/transition and features, that is minima or maxima, in
 its contour map identify points on the high dimensional invariant
-manifolds.</p>
-<p>Comparing the points on the NHIM in 2 DoF system obtained using the LD
+manifolds.
+
+Comparing the points on the NHIM in 2 DoF system obtained using the LD
 method with differential correction and numerical continuation, we also
 verified the method for a nonlinear autonomous system following our
 previous work on decoupled and coupled 2 DoF linear
@@ -326,16 +360,8 @@ transport to problems in physics and chemistry. This method can also be
 used to set up starting guess for other numerical procedures which rely
 on good initial guess or can also be used in conjunction with machine
 learning methods for rendering the smooth pieces of
-NHIM {% cite bardakcioglu2018 feldmaier_invariant_2019 --file finding_nhim_2and3dof_nonlinear %}.</p>
-<h1 id="References">References<a class="anchor-link" href="#References"> </a></h1><p>{% bibliography --file finding_nhim_2and3dof_nonlinear --cited %}</p>
+NHIM {% cite bardakcioglu2018 feldmaier_invariant_2019 --file finding_nhim_2and3dof_nonlinear %}.
 
-</div>
-</div>
-</div>
-</div>
+# References
 
- 
-
-
-    </main>
-    
+{% bibliography --file finding_nhim_2and3dof_nonlinear --cited %}
