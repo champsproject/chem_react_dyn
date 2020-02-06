@@ -270,8 +270,8 @@ $$\begin{gathered}
    \frac{\partial^2 H}{\partial r^2}=\frac{3}{m r^4} (p_\theta - \lambda )^2 + \frac{\mathrm{d^2} U}{\mathrm{d} r^2} = \frac{3}{r} \frac{\mathrm{d} U}{\mathrm{d} r}+ \frac{\mathrm{d^2} U}{\mathrm{d} r^2}
    \\=c\frac{3(2+\epsilon)}{r^{4+\epsilon}}-c\frac{(3+\epsilon)(2+\epsilon)}{r^{4+\epsilon}}=-c\frac{\epsilon(2+\epsilon)}{r^{4+\epsilon}}.
   \end{gathered}$$
-  
-  
+
+
 ![Schematic representation of the dominant long range potential and the "centrifugal term" over $r$ (left), and of $r_1$ over $p_\theta$ (right)](figures/longrangepot.png)
 <a id="fig:centrifugalTS"></a>
 <figcaption style="text-align:center;font-size:14px"><b>fig:1 </b><em>Schematic representation of the dominant long range potential and the "centrifugal term" over $r$ (left), and of $r_1$ over $p_\theta$ (right)</em></figcaption><hr> 
@@ -940,18 +940,21 @@ around CH$_3^+$. Long dissociations seem to occur in fractal-like
 structures that are caused by invariant manifolds, proof of which will
 be given in Section [subsec:7](#subsec:sec_manifs).
 
+
+
 ### Reactive Islands 
 <a id="subsec:sec_manifs"></a>
 
 Let us now have a closer look at manifolds on the two surfaces of
 section presented above and establish a link between invariant
-structures and slow dissociation. In Section (#subsec:res_th0)
+structures and slow dissociation. In Section (#subsec:resth0)
 we already noted that the homoclinic tangle of $\Gamma^i_+$ is
 responsible for a fractal structure of slow dissociation of initial
 conditions in $B_1^+$. Furthermore the homoclinic tangle of $\Gamma^o_+$
 (and $\Gamma^o_-$) is responsible for slow dissociation in the
 interaction region $B_2$, especially at the top half of the energy
 interval.
+
 
 It is important to say that the section $\theta=const$, $p_\theta>0$ is
 not very well suited for the study of invariant manifolds. This is
@@ -995,7 +998,6 @@ $W_{\Gamma^o_+}^{s-}$ recede with increasing energy, the area of slow
 dissociation at $E=2.5$ remains as a relic of the intersection.
 Afterall, trajectories close to $W_{\Gamma^o_+}^{s-}$ follow the
 manifold and approach $\Gamma^o_+$ before dissociation is completed.
-
 
 ![](figures/disO_sos1.png)
 ![](figures/disO_sos2.png)
