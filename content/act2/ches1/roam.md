@@ -165,7 +165,7 @@ Sec. (#sec:setup) we introduce the Chesnavich's CH$_4^+$ model. In Sec. (#sec:
 we discuss various periodic orbits and their role in setting up the
 problem of transport of phase space volumes between different phase
 space regions. In Sec. (#sec:DS) we study the dynamics of the Chesnavich
-model by looking at trajectories from various perspectives, such as residence times and rotation number in Subsections {#sec:observations} and (#subsec:res_inner_DS) and their relation to invariant manifolds in Subsection (#subsec:sec_manifs). This is followed by relating the dynamics to roaming in
+model by looking at trajectories from various perspectives, such as residence times and rotation number in Subsections (#sec:observations) and (#subsec:res_inner_DS) and their relation to invariant manifolds in Subsection (#subsec:sec_manifs). This is followed by relating the dynamics to roaming in
 Sec. (#sec:discussion) and the explanation of the roaming mechanism via invariant manifolds that govern the
 dynamics.
 
