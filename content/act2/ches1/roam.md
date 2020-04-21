@@ -161,21 +161,16 @@ the Conley-McGehee representation
 energy surface in full $3$ dimensions.
 
 The chapter is organized as follows. In
-Sec. (#sec:setup) we
-introduce the Chesnavich's CH$_4^+$ model. In
-Sec. (#sec:dynamics)
+Sec. (#sec:setup) we introduce the Chesnavich's CH$_4^+$ model. In Sec. (#sec:PO)
 we discuss various periodic orbits and their role in setting up the
 problem of transport of phase space volumes between different phase
-space regions. In Sec. (#sec:observations) we study the dynamics of the Chesnavich
-model by looking at trajectories from various perspectives. This section
-is followed by relating the dynamics to roaming in
-Sec. (#sec:discussion). The invariant manifolds that govern the
-dynamics and in particular roaming are discussed from a global
-perspective in Sec. (#sec:representation). Conclusions are given in
-Sec. (#sec:conclusions)
+space regions. In Sec. (#sec:DS) we study the dynamics of the Chesnavich
+model by looking at trajectories from various perspectives, such as residence times and rotation number in Subsections {#sec:observations} and (#subsec:res_inner_DS) and their relation to invariant manifolds in Subsection (#subsec:sec_manifs). This is followed by relating the dynamics to roaming in
+Sec. (#sec:discussion) and the explanation of the roaming mechanism via invariant manifolds that govern the
+dynamics.
 
-# Development of the Problem: Chesnavich's CH$_4^+$ dissociation model {#sec:setup}
-
+## Development of the Problem {#sec:setup}
+### Chesnavich's CH$_4^+$ dissociation model
 
 Like [@Mauguiere2014] and [@Mauguiere2014b], we use the model for the
 $\text{CH}_4^+ \rightarrow \text{CH}_3^+ + \text{H}$ dissociation
@@ -373,8 +368,6 @@ surfaces and formulating roaming in terms of transport between regions
 on the energy surface.
 
 
-## Revealing Phase Space Structures
-
 ### Energy levels and Hill regions {#subsec:hill}
 
 Here we give details about the features of the potential relevant to the
@@ -447,7 +440,8 @@ to rotation occurs earlier. Although energy levels remain topologically
 equivalent, note the larger potential well and the smaller energy
 interval where the boundary of Hill region consists of three circles.
 
-### Periodic orbits {#subsec:PO}
+## Revealing Phase Space Structures {#sec:PO}
+### Periodic orbits
 
 Next we study the invariant structures that can be found in the system
 at various energies. Critical points $z_i^\pm$ described in Section (#subsec:hill) are
@@ -639,7 +633,7 @@ By definition
 $R<0$ if $\Gamma$ is hyperbolic, $0<R<1$ if it is elliptic and $R>1$ if
 it is inverse hyperbolic.
 
-## Implications for Reaction Dynamics {#subsec:DS}
+## Implications for Reaction Dynamics {#sec:DS}
 
 In this section we discuss dividing surfaces associated with transition
 states, the backbone of Transition State Theory. Following
